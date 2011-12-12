@@ -134,6 +134,18 @@ Now BeEF is up-and-running and can be updated to the latest revision with the us
               echo
 
 ## Backtrack 5 change Ruby environment
+
+Some Backtrack 5 security tools need ruby 1.8 (i.e. whatweb) and others ruby 1.9.2 (i.e. BeEF). This script automates the switch. 
+
+By setting the ruby environment to the correct ruby version we can run all the tools. This script aims to make this small task easier to do and in a more scripting-friendly way. 
+
+###Installation Instructions: 
+copy-paste code below into a file called setrubyenv.sh, ideally somewhere in your PATH 
+_chmod 700 setrubyenv.sh_ # (obviously!) 
+
+
+**IMPORTANT**: You need to call this script with a ". " in front of it to alter your environment settings.
+
               #!/usr/bin/env bash
               # Description:
               # Some tools (metasploit, whatweb and others) require ruby 1.8 and others (i.e. BeEF) require ruby 1.9.2
