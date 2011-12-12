@@ -10,7 +10,7 @@ In order to check for XSS cross-domain, we inject an XSS payload that will conta
 # How to use the Xssrays extension
 1. Select which hooked browser you want to use to inject the Xssrays Javascript code. By default Xssrays will check for XSS on cross-domain resources. Note that the hooked browser domain is currently http://172.31.229.247/
 
-![xssrays![xssrays-how-to-use](http://antisnatchor.com/BeEF-images/XSSRAYS-select.png)
+![xssrays-how-to-use](http://antisnatchor.com/BeEF-images/XSSRAYS-select.png)
 If you want to start a custom Xssrays scan, you can first configure the extension settings and then click on Scan. Here you can configure the default timeout for iFrames removal, and if cross-domain resources should be checked as well.
 
 ![xssrays-scan-config](http://antisnatchor.com/BeEF-images/XSSRAYS-selectCustom.png)
