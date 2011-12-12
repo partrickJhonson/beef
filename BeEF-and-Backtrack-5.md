@@ -10,19 +10,19 @@ Following the next steps you will be able to use use the latest BeEF on your pen
 
 **1.**  _rm -rf/pentest/web/beef-ng_ 
 
-**2.** _ svn check_out http://beef.googlecode.com/svn/trunk/ /pentest/web/beef _ 
+**2.** _svn check_out http://beef.googlecode.com/svn/trunk/ /pentest/web/beef_ 
 
-**3.**  _ GEM PATHS _  defined in the Gem Environment are wrong, so: 
+**3.**  _GEM PATHS_  defined in the Gem Environment are wrong, so: 
 
-add  _ export GEM_PATH=/var/lib/gems/1.9.2/gems _   
+add  _export GEM_PATH=/var/lib/gems/1.9.2/gems_   
 
-and  _ export GEM_HOME=/var/lib/gems/1.9.2/gems _   
+and  _export GEM_HOME=/var/lib/gems/1.9.2/gems_   
 
-to  _ /etc/profile  _ 
+to  _/etc/profile_ 
 
-**4.**   _ source /etc/profile  _ 
+**4.**   _source /etc/profile_ 
 
-**5.**  _ cd /pentest/web/beef _ , then run   _ ruby install _  , and press 2 to list all the required gems 
+**5.**  _cd /pentest/web/beef_ , then run   _ruby install_  , and press 2 to list all the required gems 
 
 **6.** install these required gems with gem install 'gem list from previous step' 
 
@@ -36,6 +36,6 @@ to  _ /etc/profile  _
         => ["/var/lib/gems/1.9.2/gems"]
         irb(main):004:0> quit`
 
-**8.** Start BeEF with the default SQLite DB:  ruby beef -x
+**8.** Start BeEF with the default SQLite DB:  _ruby beef -x_
 
-Now BeEF is up-and-running and can be updated to the latest trunk version with the usual  svn update  command from the /pentest/web/beef directory
+Now BeEF is up-and-running and can be updated to the latest trunk version with the usual svn update  command from the /pentest/web/beef directory
