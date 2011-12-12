@@ -28,12 +28,19 @@ to  _/etc/profile_
 
 **7.** to see if everything went ok:
 `root@bt:~# irb
+
         irb(main):001:0> require 'rubygems'
+
         => false
+
         irb(main):002:0> require 'dm-core'
+
         => true
+
         irb(main):003:0> Gem.path
+
         => ["/var/lib/gems/1.9.2/gems"]
+
         irb(main):004:0> quit`
 
 **8.** Start BeEF with the default SQLite DB:  _ruby beef -x_
