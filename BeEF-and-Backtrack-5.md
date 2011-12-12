@@ -46,3 +46,87 @@ to  _/etc/profile_
 **8.** Start BeEF with the default SQLite DB:  _ruby beef -x_
 
 Now BeEF is up-and-running and can be updated to the latest revision with the usual _git pull_ command from the /pentest/web/beef directory
+
+## Backtrack 5 installation script
+              #!/bin/sh
+              #@author Abraham Aranguren <name.surname@gmail.com> http://securityconscious.blogspot.com
+              #@comment Script to upgrade BeEF in Bactrack 5 based on the wiki steps here: https://github.com/beefproject/beef/wiki/BeEF-and-Backtrack-5
+
+              DESTINATION="/pentest/web/beef"
+              echo
+              echo "Warning!!!: This will delete your $DESTINATION folder, press enter if you are sure, Control+C to cancel"
+              echo "NOTE: By default Backtrack 5 has beef on /pentest/web/beef-ng instead"
+              read intputvar
+
+              echo "Checking internet connectivity ..."
+              INTERNET=$(host www.google.com|grep "timed out"|wc -l)
+              if [ $INTERNET -eq 1 ]; then
+                      echo
+                      echo "You need internet connectivity to download the latest BeEF version from the internet"
+                      echo "It looks like you have no internet connectivity. If you are lazy use the following command:"
+                      echo "/etc/init.d/networking start"
+                      exit
+              else
+                      echo "Internet connectity OK"
+              fi
+
+              echo
+              echo "Upgrading BeEF..."
+              rm -rf $DESTINATION
+              git clone git@github.com:beefproject/beef.git $DESTINATION
+              cd $DESTINATION
+              #Select option 2: ruby1.9.2
+              #2            /usr/bin/ruby1.9.2   400       manual mode
+              echo
+              echo "Selecting option 2: ruby1.9.2 .."
+              echo
+              (sleep 1 ; echo 2) | update-alternatives --config ruby
+              echo
+              echo "Installing BeEF .."
+              echo
+              (sleep 2 ; echo 2) | ruby install > tmpfiledeleteme.txt
+
+              #Present info to the user
+              cat tmpfiledeleteme.txt
+
+              command=$(tail -2 tmpfiledeleteme.txt|grep gem)
+              rm -f tmpfiledeleteme.txt
+
+              echo
+              echo "Modifying /etc/profile to include correct Gem paths ..."
+              echo
+              gempaths="export#GEM_PATH=/var/lib/gems/1.9.2/gems export#GEM_HOME=/var/lib/gems/1.9.2/gems" #works
+              #gempaths="export#GEM_PATH=/var/lib/gems/1.9.2 export#GEM_HOME=/var/lib/gems/1.9.2" #works too
+              for i in $gempaths; do
+                      line=$(echo $i | sed 's/#/ /g')
+                      nummatches=$(grep "$line" /etc/profile|wc -l)
+                      if [ $nummatches -eq 0 ]; then # Check config line is not there yet, if not there add it
+                              echo "$line" >> /etc/profile
+                      fi
+              done
+
+              source /etc/profile
+              #Load these new environment variables
+              . /etc/profile
+
+              echo
+              echo "Installing Gems ..."
+              echo
+              $command
+              #Issue 496 Fix: Added erubis gem installation by hand as otherwise this does not work in BT5 R1:
+              gem install erubis
+
+              echo
+              echo "Verifying installation was successful, please review this!"
+              echo "require 'rubygems' -> should be 'false'. require 'dm-core' -> should be 'true'. Gem.path should be [\"/var/lib/gems/1.9.2/gems\"]"
+              echo
+              #Now check things are working
+              (sleep 2; echo "require 'rubygems'"; sleep 1; echo "require 'dm-core'"; sleep 1; echo Gem.path ; sleep 1; echo quit)|irb
+
+              echo
+              echo "IMPORTANT!!: If you did not run this script with '. ' at the beginning please run the following command so that Gem paths are correctly set:"
+              echo ". /etc/profile"
+              echo
+              echo "To start BeEF with the default SQLite DB use the following command:"
+              echo "ruby beef -x"
+              echo
