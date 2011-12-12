@@ -6,4 +6,4 @@ A hooked browser is a web browser that has requested and executed the initial in
 
 ### Details ###
 
-The hooked browser is co-ordinated by the Communication Server. There are two types of hooked browsers - OnlineHookedBrowser and OfflineHookedBrowser
+The hooked browser is co-ordinated by the Communication Server. There are two types of hooked browsers - [[Online Hooked Browser|https://github.com/beefproject/beef/wiki/Online-Hooked-Browser]] and [[Offline Hooked Browser|https://github.com/beefproject/beef/wiki/Offline-Hooked-Browser]]
