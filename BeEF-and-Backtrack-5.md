@@ -28,8 +28,8 @@ to  _/etc/profile_
 
 **7.** to see if everything went ok:
               root@bt:~# irb
-                      irb(main):001:0> require 'rubygems'
-                      => false
+              irb(main):001:0> require 'rubygems'
+              => false
                       irb(main):002:0> require 'dm-core'
                       => true
                       irb(main):003:0> Gem.path
