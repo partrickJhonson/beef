@@ -130,3 +130,36 @@ Now BeEF is up-and-running and can be updated to the latest revision with the us
               echo "To start BeEF with the default SQLite DB use the following command:"
               echo "ruby beef -x"
               echo
+
+## Backtrack 5 change Ruby environment
+              #!/usr/bin/env bash
+              # Description:
+              # Some tools (metasploit, whatweb and others) require ruby 1.8 and others (i.e. BeEF) require ruby 1.9.2
+              # This script allows you to quickly change from ruby 1.8 to 1.9.2 and viceversa
+              #
+              # Author abraham.aranguren < abraham dot aranguren _ a t_ gmail d o t com > http://securityconscious.blogspot.com
+
+
+              if [ $# -ne 1 ]; then
+                      echo "Syntax: $0 <ruby_version: 1.8, 1.9.2>"
+                      echo 
+                      echo "Examples:"
+                      echo "- Set ruby 1.8: $0 1.8"
+                      echo "- Set ruby 1.9.2: $0 1.9.2"
+                      exit
+              fi
+
+              VERSION=$1
+              echo $VERSION
+
+              OPTION="1"
+              if [ '1.9.2' == $VERSION ]; then
+                      OPTION="2"
+              fi
+
+              # Export version gem paths
+              export GEM_PATH=/var/lib/gems/$VERSION/gems
+              export GEM_HOME=/var/lib/gems/$VERSION/gems
+              # Pick ruby version
+              #(sleep 2 ; echo $OPTION) | update-alternatives --config ruby > /dev/null
+              (sleep 2 ; echo $OPTION) | update-alternatives --config ruby
