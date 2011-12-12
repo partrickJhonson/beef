@@ -1,9 +1,9 @@
 ## Introduction
 On BackTrack5 both the old BeEF (PHP) and BeEF (Ruby) have been added but as we're doing a lot of development with a new alpha release every month, the (incorrectly named) BeEF-ng version is not up-to-date. Required gems are also not installed by default, and the gem environment is not configured correctly. This document will discuss how to setup this functionality.
 
-NOTE 1: A script has been published to automate the steps described in this guide.
+NOTE 1: A script has been published to automate the steps described in this guide. Please see "**Backtrack 5 installation script**", bottom of the page.
 
-NOTE 2: If you run tools that require ruby 1.8 you might find this script handy
+NOTE 2: If you run tools that require ruby 1.8 you might the script "**Backtrack 5 change Ruby environment**" handy (bottom of the page)
 
 ## Installing BeEF from trunk in BT5
 Following the next steps you will be able to use use the latest BeEF on your pentests using BT5: 
