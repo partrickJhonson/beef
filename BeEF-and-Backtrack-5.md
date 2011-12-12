@@ -8,7 +8,7 @@ NOTE 2: If you run tools that require ruby 1.8 you might find this script handy
 ## Installing BeEF from trunk in BT5
 Following the next steps you will be able to use use the latest BeEF on your pentests using BT5: 
 
-**1.**  _ rm -rf/pentest/web/beef-ng  _ 
+**1.**  _rm -rf/pentest/web/beef-ng_ 
 
 **2.** _ svn check_out http://beef.googlecode.com/svn/trunk/ /pentest/web/beef _ 
 
