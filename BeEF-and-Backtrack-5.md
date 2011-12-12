@@ -10,7 +10,7 @@ Following the next steps you will be able to use use the latest BeEF on your pen
 
 **1.**  _rm -rf/pentest/web/beef-ng_ 
 
-**2.** _svn check_out http://beef.googlecode.com/svn/trunk/ /pentest/web/beef_ 
+**2.** _git clone git@github.com:beefproject/beef.git /pentest/web/beef_ 
 
 **3.**  _GEM PATHS_  defined in the Gem Environment are wrong, so: 
 
@@ -45,4 +45,4 @@ to  _/etc/profile_
 
 **8.** Start BeEF with the default SQLite DB:  _ruby beef -x_
 
-Now BeEF is up-and-running and can be updated to the latest trunk version with the usual svn update  command from the /pentest/web/beef directory
+Now BeEF is up-and-running and can be updated to the latest revision with the usual _git pull_ command from the /pentest/web/beef directory
