@@ -9,14 +9,23 @@ NOTE 2: If you run tools that require ruby 1.8 you might the script "**Backtrack
 Following the next steps you will be able to use use the latest BeEF on your pentests using BT5: 
 
 **1.**  _rm -rf/pentest/web/beef-ng_ 
+
 **2.** _git clone git@github.com:beefproject/beef.git /pentest/web/beef_ 
+
 **3.**  _GEM PATHS_  defined in the Gem Environment are wrong, so: 
+
 add  _export GEM_PATH=/var/lib/gems/1.9.2/gems_   
+
 and  _export GEM_HOME=/var/lib/gems/1.9.2/gems_   
+
 to  _/etc/profile_ 
+
 **4.**   _source /etc/profile_ 
+
 **5.**  _cd /pentest/web/beef_ , then run   _ruby install_  , and press 2 to list all the required gems 
-**6.** install these required gems with gem install 'gem list from previous step' 
+
+**6.** install these required gems with _gem install 'gem list from previous step'_ 
+
 **7.** to see if everything went ok:
               root@bt:~# irb
                       irb(main):001:0> require 'rubygems'
@@ -26,6 +35,7 @@ to  _/etc/profile_
                       irb(main):003:0> Gem.path
                       => ["/var/lib/gems/1.9.2/gems"]
                       irb(main):004:0> quit
+
 **8.** Start BeEF with the default SQLite DB:  _ruby beef -x_
 
 Now BeEF is up-and-running and can be updated to the latest revision with the usual _git pull_ command from the /pentest/web/beef directory
