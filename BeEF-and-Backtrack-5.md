@@ -27,15 +27,16 @@ to  _/etc/profile_
 **6.** install these required gems with _gem install 'gem list from previous step'_ 
 
 **7.** to see if everything went ok:
+`
               root@bt:~# irb
               irb(main):001:0> require 'rubygems'
               => false
-                      irb(main):002:0> require 'dm-core'
-                      => true
-                      irb(main):003:0> Gem.path
-                      => ["/var/lib/gems/1.9.2/gems"]
-                      irb(main):004:0> quit
-
+              irb(main):002:0> require 'dm-core'
+              => true
+              irb(main):003:0> Gem.path
+              => ["/var/lib/gems/1.9.2/gems"]
+              irb(main):004:0> quit
+`
 **8.** Start BeEF with the default SQLite DB:  _ruby beef -x_
 
 Now BeEF is up-and-running and can be updated to the latest revision with the usual _git pull_ command from the /pentest/web/beef directory
