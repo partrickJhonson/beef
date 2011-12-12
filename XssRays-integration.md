@@ -13,14 +13,14 @@ In order to check for XSS cross-domain, we inject an XSS payload that will conta
 ![xssrays![xssrays-how-to-use](http://antisnatchor.com/BeEF-images/XSSRAYS-select.png)
 If you want to start a custom Xssrays scan, you can first configure the extension settings and then click on Scan. Here you can configure the default timeout for iFrames removal, and if cross-domain resources should be checked as well.
 
-![xssrays-sca![xssrays-scan-config](http://antisnatchor.com/BeEF-images/XSSRAYS-selectCustom.png)
+![xssrays-scan-config](http://antisnatchor.com/BeEF-images/XSSRAYS-selectCustom.png)
 
 2. When an XSS vulnerability is found, you will see a notification in the BeEF logs, something like "received ray from HB". Also, opening the XssRays->Logs tab you can see the details of the XSS that has been found by XssRays.
-![xssrays-results]![xssrays-results](http://antisnatchor.com/BeEF-images/XSSRAYS-ray.png)
+![xssrays-results](http://antisnatchor.com/BeEF-images/XSSRAYS-ray.png)
 
 3. If you have direct access to the application, you can test the Xssrays finding using the PoC provided. As you can see in the image below, the XSS that has been found by Xssrays was not a false-positive.
 
-![xssrays-confirm-poc]![xssrays-confirm-poc](http://antisnatchor.com/BeEF-images/XSSRAYS-poc.png)
+![xssrays-confirm-poc](http://antisnatchor.com/BeEF-images/XSSRAYS-poc.png)
 
 # What's next
 If Xssrays has found an XSS on a cross-domain resource, and you don't have access to that resource (i.e. a victim's internal network web server), the user could always trigger the victim to open a link that points to the vulnerable resource using the BeEF hook in your attack vector. In this way your attack surface will be expanded, and the same victim browser will be hooked in BeEF on 2 different domains: the original one, and the new one with the XSS found by XssRays.
