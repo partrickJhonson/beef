@@ -1,3 +1,5 @@
+### Overview ###
+
 The Browser Exploitation Framework (BeEF) is a powerful professional security tool. BeEF is pioneering techniques that provide the experienced penetration tester with practical client side attack vectors. Unlike other security frameworks, BeEF focuses on leveraging browser vulnerabilities to assess the security posture of a target. This project is developed solely for lawful research and penetration testing.
 
 BeEF hooks one or more web browsers as beachheads for the launching of directed command modules. Each browser is likely to be within a different security context, and each context may provide a set of unique attack vectors. The framework allows the penetration tester to select specific modules (in real-time) to target each browser, and therefore each context.
