@@ -33,7 +33,7 @@ This page will detail the different type of input boxes that can be used in modu
 
 ### Example ###
 
-```
+```ruby
   def initialize
     super({
       'Name' => 'Demo Exploit',
