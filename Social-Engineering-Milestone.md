@@ -1,0 +1,1 @@
+Add tab nabbing and other social engineering functionality. 
