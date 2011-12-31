@@ -1,6 +1,6 @@
 With obfuscation ALL traffic between the BeEF server and the hooked browser goes via the network stack. This means it is all obfuscated and un-obfuscated without the rest of the framework components knowing about it.
 
-What we want is to have obfuscation extensions that can be used with the framework. These could be specified in the config file. They could even be chained, for example, one that is focused on compression and then one that obfuscates the data more. Also, there are plans to have the framework communicate using DNS tunnelling. Whilst that functionality isn't in the code base yet we need to plan for it.
+What we want is to have obfuscation extensions that can be used with the framework. These could be specified in the config file. They could even be chained. For example, one that is focused on compression and then one that obfuscates the data more. Also, there are plans to have the framework communicate using DNS tunnelling. Whilst that functionality isn't in the code base , we do need to plan for it.
 
 The API will look something like the below. We will need to consider these more.
 GetBootStrapJS (Extension) - This is the method the framework uses to get the JS from the extension for the initial communication with the (soon to be) hooked browser.
@@ -8,7 +8,7 @@ GetSessionID (Extension) - This is the method the framework uses to get the sess
 ObfuscateData (Ruby and JS) - Self explanatory 
 UnObfuscateData (Ruby and JS) - Self explanatory
 
-What I propose is the following steps. 
+Implementation will occur in the following steps: 
 
 Step One:
 Implement the unit test wrapper that will be used with all the obfuscation extensions. 
