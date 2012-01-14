@@ -1,1 +1,20 @@
-Add tab nabbing and other social engineering functionality. 
+Social engineering is considered one of the most used techniques by targeted attackers to 
+
+penetrate large coroporates, as well as being a very easy way to hack into small scale systems. 
+
+All this makes it inevitable to use social engineering in penetration testing scenarios. Also, 
+
+with the browser being the gateway to almost everywhere, it is important to focus on browser 
+
+related social engineering attacks. The social engineering milestone aims to add a whole new 
+
+factor to BeEF's exploitation arsenal, i.e. social engineering. This would be achieved by adding 
+
+components for phishing and social media recon.
+
+The phishing component of the frameowk wouuld have the ability to clone portions of websites to 
+
+convince a target to enter his credentials on it. Also, with the tab nabbing feature, it is possible to direct the target to a site will look interesting but long to read. After the user switches to another tab, the whole page is changed to resemeble the login page of the phished website. Now the user might think that he has been logged out of his account and trip into entering his credentials in our phishing site.
+
+
+On the other hand, the social media component plays a big role in acquiring information from different social networking websites. <Add text here>
