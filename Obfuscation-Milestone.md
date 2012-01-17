@@ -1,6 +1,9 @@
 With obfuscation ALL traffic between the BeEF server and the hooked browser goes via the network stack. This means it is all obfuscated and un-obfuscated without the rest of the framework components knowing about it.
 
-What we want is to have obfuscation extensions that can be used with the framework. These could be specified in the config file. They could even be chained. For example, one that is focused on compression and then one that obfuscates the data more. Also, there are plans to have the framework communicate using DNS tunnelling. Whilst that functionality isn't in the code base , we do need to plan for it.
+What we want is to have obfuscation extensions that can be used with the framework. These could be specified in the config file. They could even be chained. For example, one that is focused on compression and then one that obfuscates the data more. Also, there are plans to have the framework communicate using DNS tunnelling. 
+
+A high level architecture of where the Obfuscation extension will have place in the BeEF framework is the following:
+![Obfuscation high-level overview](http://antisnatchor.com/BeEF-images/CommunicationServerClient.png)
 
 The API will look something like the below. We will need to consider these more.
 GetBootStrapJS (Extension) - This is the method the framework uses to get the JS from the extension for the initial communication with the (soon to be) hooked browser.
