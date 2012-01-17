@@ -30,3 +30,6 @@ Implement a minify obfuscation extension and the associated unit tests.
 
 Step Six:
 Update this Wiki page.
+
+All the steps are split in various issues, and can be found here:
+https://github.com/beefproject/beef/issues?sort=created&labels=Obfuscation&direction=asc&state=open
