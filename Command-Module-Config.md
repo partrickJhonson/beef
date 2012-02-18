@@ -83,7 +83,7 @@ target:
     not_working:
         ALL:
             os: ["iPhone"]
-    working: ["O", "FF", "S", "IE"]]
+    working: ["O", "FF", "S", "IE"]
     user_notify: ["C"]
 ```
 
