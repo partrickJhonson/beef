@@ -65,6 +65,8 @@ The "description" node determines the text to be displayed when the user selects
 description: "Grab the local network settings (ie internal ip address)."
 ```
 
+### Target ###
+
 The "target" node is mandatory. This node determines which browsers the module has been confirmed to work with. It has many child-nodes which may contain strings or arrays, for example:
 
 ```ruby
@@ -88,3 +90,10 @@ target:
 ```
 
 In this instance, an iPhone running Safari would match both not_working and working, but as not_working is first, that would be the final rating for a module with this particular target configuration.
+
+The final rating is converted into an icon in BeEF:
+
+* Green (VERIFIED_WORKING) for works
+* Orange (VERIFIED_USER_NOTIFY) for user will be notified
+* Red (VERIFIED_NOT_WORKING) for doesn't work
+* Grey (VERIFIED_UNKNOWN) for unknown
