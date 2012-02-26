@@ -1,6 +1,10 @@
 ## Preamble
 If you're running Backtrack5-r2 BeEF IS working. The package maintainers did a great job on fixing all the issues below that were applicable to Backtrack5.
 
+To fix BeEF simply run:
+
+              root@bt:~# apt-get install beef
+
 If you're running Backtrack5-r1, then we recommend you to update to release2, following this official guide written by muts and the other folks of OffensiveSecurity: http://www.backtrack-linux.org/backtrack/upgrading-to-backtrack-5-r2/
 
 ## Introduction
