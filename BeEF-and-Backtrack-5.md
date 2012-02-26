@@ -1,5 +1,10 @@
+## Preamble
+If you're running Backtrack5-r2 BeEF IS working. The package maintainers did a great job on fixing all the issues below that were applicable to Backtrack5.
+
+If you're running Backtrack5-r1, then we recommend you to update to release2, following this official guide written by muts and the other folks of OffensiveSecurity: http://www.backtrack-linux.org/backtrack/upgrading-to-backtrack-5-r2/
+
 ## Introduction
-On BackTrack5 both the old BeEF (PHP) and BeEF (Ruby) have been added but as we're doing a lot of development with a new alpha release every month, the (incorrectly named) BeEF-ng version is not up-to-date. Required gems are also not installed by default, and the gem environment is not configured correctly. This document will discuss how to setup this functionality.
+On BackTrack5 ( <= r1) both the old BeEF (PHP) and BeEF (Ruby) have been added but as we're doing a lot of development with a new alpha release every month, the (incorrectly named) BeEF-ng version is not up-to-date. Required gems are also not installed by default, and the gem environment is not configured correctly. This document will discuss how to setup this functionality.
 
 NOTE 1: A script has been published to automate the steps described in this guide. Please see "**Backtrack 5 installation script**", bottom of the page.
 
