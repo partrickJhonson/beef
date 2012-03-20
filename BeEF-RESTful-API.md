@@ -10,7 +10,8 @@ When BeEF starts, look at the console output for
 **Handler** => /api/hooks
 The _hooks_ handler gives information about the hooked browsers, both online and offline.
 
-**Request**
+**Request** => GET /api/hooks
+
 `curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
 **Response**
@@ -48,7 +49,8 @@ The _hooks_ handler gives information about the hooked browsers, both online and
 **Handler** => /api/logs
 The _logs_ handler gives information about hooked browser logs, both global and relative ones.
 
-**Request**
+**Request** => GET /api/logs
+
 `curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
 **Response (snip)**
@@ -76,7 +78,8 @@ The _logs_ handler gives information about hooked browser logs, both global and 
 
 In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous /api/hooks call: the _session_ key value.
 
-**Request**
+**Request** => GET /api/logs/:session
+
 `curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
 **Response (snip)**
@@ -116,3 +119,8 @@ In order to retrieve relative hooked browser logs, so events that are logged for
 ```
 ## Command Modules
 **Handler** => /api/modules
+The _modules_ handler do multiple things:
+* list all available and enabled command modules, **Request** => GET /api/modules
+* return information about a specified module (description, category, input options), **Request** => GET /api/modules/:module_id
+* send a command module to the specified hooked browser, **Request** => POST /api/modules/:session/:module_id
+* return information about the specific command module previously executed, *Request*, GET /api/modules/:session/:mod_id/:cmd_id
