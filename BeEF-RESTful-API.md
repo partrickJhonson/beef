@@ -16,7 +16,7 @@ The _hooks_ handler gives information about the hooked browsers, both online and
 
 **Response**
 
-```text
+```json
 {
     "hooked-browsers": {
         "online": {
@@ -55,7 +55,7 @@ The _logs_ handler gives information about hooked browser logs, both global and 
 
 **Response (snip)**
 
-```text
+```json
 {
     "logs_count": 8,
     "logs": [
@@ -65,7 +65,6 @@ The _logs_ handler gives information about hooked browser logs, both global and 
             "event": "127.0.0.1 just joined the horde from the domain: 127.0.0.1:3000",
             "type": "Zombie"
         },
-<snip>
         {
             "id": 8,
             "date": "2012-03-20T16:18:27+01:00",
@@ -84,7 +83,7 @@ In order to retrieve relative hooked browser logs, so events that are logged for
 
 **Response (snip)**
 
-```text
+```json
 {
     "logs_count": 13,
     "logs": [
@@ -94,7 +93,6 @@ In order to retrieve relative hooked browser logs, so events that are logged for
             "event": "127.0.0.1 just joined the horde from the domain: 127.0.0.1:3000",
             "type": "Zombie"
         },
-<snip>
         {
             "id": 16,
             "date": "2012-03-20T16:40:18+01:00",
@@ -113,14 +111,63 @@ In order to retrieve relative hooked browser logs, so events that are logged for
             "event": "8.099s - [User Typed] "hor" > input#imptxt(Important Text)",
             "type": "Event"
         }
-<snip>
     ]
 }
 ```
 ## Command Modules
 **Handler** => /api/modules
 The _modules_ handler do multiple things:
-* list all available and enabled command modules, **Request** => GET /api/modules
-* return information about a specified module (description, category, input options), **Request** => GET /api/modules/:module_id
-* send a command module to the specified hooked browser, **Request** => POST /api/modules/:session/:module_id
-* return information about the specific command module previously executed, *Request*, GET /api/modules/:session/:mod_id/:cmd_id
+**list all available and enabled command modules**
+**Request** => GET /api/modules
+
+`curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+
+**Response (snip)**
+
+```json
+{
+    "0": {
+        "id": 1,
+        "name": "Linksys WRT54G CSRF",
+        "category": "Router"
+    },
+    "65": {
+        "id": 69,
+        "name": "Redirect Browser (Rickroll)",
+        "category": "Browser"
+    },
+    "66": {
+        "id": 70,
+        "name": "Replace Videos",
+        "category": "Browser"
+    },
+    "67": {
+        "id": 71,
+        "name": "Create Prompt Dialog",
+        "category": "Browser"
+    }
+}
+```
+**return information about a specified module (description, category, input options)**
+**Request** => GET /api/modules/:module_id
+
+`curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+
+**Response**
+
+```json
+{
+    "name": "prompt_dialog",
+    "description": "Sends a prompt dialog to the hooked browser.",
+    "category": "Browser",
+    "options": [
+        {
+            "name": "question",
+            "description": "Prompt text",
+            "ui_label": "Prompt text"
+        }
+    ]
+}
+```
+* send a command module to the specified hooked browser, (POST /api/modules/:session/:module_id)
+* return information about the specific command module previously executed, (GET /api/modules/:session/:mod_id/:cmd_id)
