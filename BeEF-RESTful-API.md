@@ -95,33 +95,22 @@ In order to retrieve relative hooked browser logs, so events that are logged for
         {
             "id": 16,
             "date": "2012-03-20T16:40:18+01:00",
-            "event": "6.071s - [User Typed] \"an\" > input#imptxt(Important Text)",
+            "event": "6.071s - [User Typed] "an" > input#imptxt(Important Text)",
             "type": "Event"
         },
         {
             "id": 17,
             "date": "2012-03-20T16:40:19+01:00",
-            "event": "7.086s - [User Typed] \"tisnatc\" > input#imptxt(Important Text)",
+            "event": "7.086s - [User Typed] "tisnatc" > input#imptxt(Important Text)",
             "type": "Event"
         },
         {
             "id": 18,
             "date": "2012-03-20T16:40:20+01:00",
-            "event": "8.099s - [User Typed] \"hor\" > input#imptxt(Important Text)",
-            "type": "Event"
-        },
-        {
-            "id": 19,
-            "date": "2012-03-20T16:40:21+01:00",
-            "event": "9.114s - [User Typed] \"\r\" > input#imptxt(Important Text)",
-            "type": "Event"
-        },
-        {
-            "id": 20,
-            "date": "2012-03-20T16:40:23+01:00",
-            "event": "10.458s - [Blur] Browser has lost focus.",
+            "event": "8.099s - [User Typed] "hor" > input#imptxt(Important Text)",
             "type": "Event"
         }
+<snip>
     ]
 }
 ```
