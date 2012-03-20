@@ -75,7 +75,7 @@ The _logs_ handler gives information about hooked browser logs, both global and 
 }
 ```
 
-In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous /api/hooks call: the _session_ key value.
+In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
 **Request** => GET /api/logs/:session
 
@@ -172,7 +172,7 @@ The _modules_ handler do multiple things:
     ]
 }
 ```
-**===Send a command module to the specified hooked browser**
+**===Send a command module to the specified hooked browser===**
 
 NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _prompt-dialog_ command module: according to the previous _/api/modules/71_ call, we can specify the _question_ input with our custom value. 
 
