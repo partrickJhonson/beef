@@ -13,6 +13,8 @@ An example with curl:
 
 response: `{"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}`
 
+In this way you can parse the JSON response grabbing the token, and use it for your next requests to BeEF.
+
 ## Hooked Browsers
 **Handler** => /api/hooks
 The _hooks_ handler gives information about the hooked browsers, both online and offline.
