@@ -45,6 +45,40 @@ The _hooks_ handler gives information about the hooked browsers, both online and
                 "page_uri": "http://127.0.0.1:3000/demos/basic.html"
 }}}}
 ```
+In order to retrieve relative hooked browser details (like enabled plugins and technologies, cookies, screen size and additional info), we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
+
+**Request** => GET /api/hooks/:session
+
+`curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+
+**Response (snip)**
+
+```json
+{ "BrowserName" : "O",
+  "BrowserPlugins" : "Shockwave Flash\nJava Applet Plug-in\nQuickTime Plug-in 7.7.1\nSharePoint Browser Plug-in\nSilverlight Plug-In\nWebEx64 General Plugin Container",
+  "BrowserReportedName" : "Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.62",
+  "BrowserType" : "{\"O11\":true,\"O\":true}",
+  "BrowserVersion" : "11",
+  "Cookies" : "BEEFHOOK=nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk",
+  "HasActiveX" : "No",
+  "HasFlash" : "Yes",
+  "HasGoogleGears" : "No",
+  "HasWebSocket" : "No",
+  "HostName" : "127.0.0.1",
+  "JavaEnabled" : "Yes",
+  "OsName" : "Macintosh",
+  "PageReferrer" : "No Referrer",
+  "PageTitle" : "BeEF Basic Demo",
+  "PageURI" : "http://127.0.0.1:3000/demos/basic.html",
+  "ScreenParams" : "{\"width\"=>1680, \"height\"=>1050, \"colordepth\"=>32}",
+  "SystemPlatform" : "MacIntel",
+  "VBScriptEnabled" : "No",
+  "WindowSize" : "{\"width\"=>1000, \"height\"=>729}",
+  "hasPersistentCookies" : "Yes",
+  "hasSessionCookies" : "Yes"
+}
+```
+
 ## Logs
 **Handler** => /api/logs
 The _logs_ handler gives information about hooked browser logs, both global and relative ones.
