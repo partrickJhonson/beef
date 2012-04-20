@@ -6,6 +6,13 @@ and is then added to the _BeEF::Configuration_ object. It can be retrieved at an
 
 When BeEF starts, look at the console output for 
 `[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`. That will be the value of the _token_ parameter
+
+Alternatively, for example if you want to write automated scripts that uses the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file (beef.credentials).
+An example with curl: 
+`curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login`
+
+response: `{"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}`
+
 ## Hooked Browsers
 **Handler** => /api/hooks
 The _hooks_ handler gives information about the hooked browsers, both online and offline.
