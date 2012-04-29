@@ -60,7 +60,7 @@ $ ruby beef<br>
 ### Method 2 (If no previous version of Ruby is installed or needed)
 
 $ sudo apt-get update<br> 
-$ sudo apt-get install ruby1.9.1-dev build-essential libsqlite3-ruby libsqlite3-devq build-essential libsqlite3-ruby git libsqlite3-dev  <br> 
+$ sudo apt-get install ruby1.9.1-dev build-essential libsqlite3-ruby libsqlite3-dev build-essential libsqlite3-ruby git libsqlite3-dev  <br> 
 $ git clone git://github.com/beefproject/beef.git<br> 
 $ cd beef<br> 
 $ sudo gem install bundler<br> 
