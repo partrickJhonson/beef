@@ -14,4 +14,6 @@ Finally, enable the Metasploit extension in the main BeEF `config.yaml` file (in
 
 In the example, if the Aurora exploit will be successful, you will see a new session in your metasploit console (`sessions -i`).
 
+Launching metasploit modules can also be automated thanks to the RESTful API. Have a look here (last section `A real example: Java 1.6.0u27 mass-pwner`): https://github.com/beefproject/beef/wiki/BeEF-RESTful-API
+
 Thanks to @lukesun629 for the images and some of the testing. He also wrote a chinese version of it here: http://seckungfu.com/blog/2012/06/29/how-to-use-metasploit-though-beef/
