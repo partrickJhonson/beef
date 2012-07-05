@@ -266,7 +266,8 @@ This is why there is "command_id":"not_available" in the response.
     "command_id": "not_available"
 }
 ```
-## A real example: Java 1.6.0u27 mass-pwner
+## A real example: Java 1.6.0u27 mass-pwner 
+Screencast here: http://vimeo.com/41644329
 ```ruby
 #
 #   Copyright 2012 Michele Orru michele.orru@antisnatchor.com
