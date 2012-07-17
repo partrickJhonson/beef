@@ -4,6 +4,9 @@ If you're running Backtrack5-r2 BeEF IS working. The package maintainers did a g
 To fix BeEF simply run:
 
               root@bt:~# apt-get install beef
+              root@bt:~# gem install --user-install bundler
+Ignore the WARNINGS when installing bundler (there's something wrong with the Ruby environment in BT5). Also, in case 'bundle' is not found in your PATH, us the command below (inside the beef directory).
+              root@bt:/pentest/web/beef# /etc/alternatives/gem-bin/bundle install
 
 If you're running Backtrack5-r1, then we recommend you to update to release2, following this official guide written by muts and the other folks of OffensiveSecurity: http://www.backtrack-linux.org/backtrack/upgrading-to-backtrack-5-r2/
 
