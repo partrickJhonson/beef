@@ -11,6 +11,10 @@ Ignore the WARNINGS when installing bundler (there's something wrong with the Ru
 
 If you're running Backtrack5-r1, then we recommend you to update to release2, following this official guide written by muts and the other folks of OffensiveSecurity: http://www.backtrack-linux.org/backtrack/upgrading-to-backtrack-5-r2/
 
+You may also want to update BeEF to the latest alpha edition (the deb package doesn't contain .git files, so you can't do a git pull). 
+
+            root@bt:~# rm -rf /pentest/web/beef && git clone https://github.com/beefproject/beef.git /pentest/web/beef
+
 ## Introduction
 On BackTrack5 ( <= r1) both the old BeEF (PHP) and BeEF (Ruby) have been added but as we're doing a lot of development with a new alpha release every month, the (incorrectly named) BeEF-ng version is not up-to-date. Required gems are also not installed by default, and the gem environment is not configured correctly. This document will discuss how to setup this functionality.
 
