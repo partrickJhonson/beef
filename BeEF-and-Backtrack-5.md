@@ -1,7 +1,7 @@
 ## Preamble
-If you're running Backtrack5-r2 BeEF IS working. The package maintainers did a great job on fixing all the issues below that were applicable to Backtrack5.
+If you're running Backtrack5-r3 BeEF should work by default. The package maintainers did a great job on fixing all the issues below that were applicable to Backtrack5.
 
-To fix BeEF simply run:
+If you're upgrading from BT5-r1 to r2, or from BT5-r2 to r3, to fix BeEF simply run:
 
               root@bt:~# apt-get install beef
               root@bt:~# gem install --user-install bundler
@@ -11,7 +11,7 @@ Ignore the WARNINGS when installing bundler (there's something wrong with the Ru
 
 If you're running Backtrack5-r1, then we recommend you to update to release2, following this official guide written by muts and the other folks of OffensiveSecurity: http://www.backtrack-linux.org/backtrack/upgrading-to-backtrack-5-r2/
 
-You may also want to update BeEF to the latest alpha edition (the deb package doesn't contain .git files, so you can't do a git pull). 
+You also want (and need) to update BeEF to the latest alpha edition (the deb package doesn't contain .git files, so you can't do a git pull). 
 
             root@bt:~# rm -rf /pentest/web/beef && git clone https://github.com/beefproject/beef.git /pentest/web/beef
 
