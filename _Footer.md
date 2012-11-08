@@ -1,1 +1,0 @@
-[BeEF project](http://beefproject.com/) | [Blog](http://blog.beefproject.com/) | [Code](https://github.com/beefproject/beef)
