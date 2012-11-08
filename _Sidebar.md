@@ -22,12 +22,12 @@
 
 ## IV - Development
 1. [[Organization|Development-Organization]]
-1. Core BeEF organization
-1. BeEF Javascript API
+1. [[Core BeEF organization|Core-BeEF-Organization]]
+1. [[BeEF Javascript API|Javascript-API]]
 1. [[Advanced module creation|Advanced-Module-Creation]]
-1. Creating a new extension
-1. BeEF Testing
-1. Database schema
+1. [[Creating a new extension|Creating-A-New-Extension]]
+1. [[BeEF Testing|BeEF-Testing]]
+1. [[Database schema|Database-Schema]]
 1. [[Development Milestones|Milestones]]
 
 ## V - References
