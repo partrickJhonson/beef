@@ -31,6 +31,7 @@
 1. [[Development Milestones|Milestones]]
 
 ## V - References
-1. [[Other|Other]]
-1. [[References|References]]
 1. [[Modules|BeEF-modules]]
+1. [[References|References]]
+1. [[Other|Other]]
+
