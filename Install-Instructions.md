@@ -53,8 +53,8 @@ $ rvm install 1.9.3 <br>
 $ rvm use 1.9.3<br> 
 $ git clone git://github.com/beefproject/beef.git<br> 
 $ cd beef<br> 
-$ sudo gem install bundler<br> 
-$ sudo bundle install<br> 
+$ gem install bundler<br> 
+$ bundle install<br> 
 $ ruby beef<br>
 
 ### Method 2 (If no previous version of Ruby is installed or needed)
