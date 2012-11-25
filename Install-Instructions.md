@@ -44,7 +44,7 @@ $ ./beef<br>
 ### Method 1 
 
 $ sudo apt-get update<br> 
-$ sudo apt-get install curl git ruby build-essential libsqlite3-ruby libsqlite3-dev build-essential libsqlite3-ruby libsqlite3-dev<br> 
+$ sudo apt-get install curl git ruby build-essential libsqlite3-ruby libsqlite3-dev<br> 
 $ sudo curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable<br> 
 $ sudo echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile<br> 
 $ sudo source ~/.bash_profile<br> 
