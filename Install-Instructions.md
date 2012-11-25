@@ -43,12 +43,12 @@ $ ./beef<br>
 
 ### Method 1 
 
-$ sudo apt-get update
+$ sudo apt-get update<br> 
 $ sudo apt-get install curl git ruby build-essential libsqlite3-ruby libsqlite3-dev build-essential libsqlite3-ruby libsqlite3-dev<br> 
 $ sudo curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable<br> 
-$ sudo echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile
+$ sudo echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile<br> 
 $ sudo source ~/.bash_profile<br> 
-$ rvm pkg install zlib
+$ rvm pkg install zlib <br> 
 $ rvm install 1.9.3 <br> 
 $ rvm use 1.9.3<br> 
 $ git clone git://github.com/beefproject/beef.git<br> 
