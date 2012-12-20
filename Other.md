@@ -4,8 +4,9 @@ This documentation have been firstly reorganized and completed by [Nibbler](http
 
 If you have any idea, please send us an email with your criticisms, ideas, feedbacks or proposition. If you want to complete a page still empty, please send us the draft with potential screenshot, we will manage the format and include in the wiki.
 
-Again, this wiki aims at gathering every feedback from BeEF users. So even a short mail to say : "This module does not work on this browser whether it should" is a good feedback for us !
+Again, this wiki aims at gathering every feedback from BeEF users. So even a short email to say : "This module does not work on this browser whether it should" is a good feedback for us !
 
+email : _nbblrr@gmail.com_
 
 ## Notes
 
