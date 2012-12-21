@@ -74,7 +74,7 @@
 
 ### Router
 
-1. [[3COM OfficeConnect Command Execution|3COM OfficeConnect Command Execution]]
+1. [[3COM OfficeConnect Command Execution|Module:-3COM-OfficeConnect-Command-Execution]]
 1. [[Asmax AR-804gu Command Execution|Module:-Asmax-AR-804gu-Command-Execution]]
 1. [[BT Home Hub CSRF|Module:-BT-Home-Hub-CSRF]]
 1. [[Cisco E2400 CSRF|Module:-Cisco-E2400-CSRF]]
@@ -153,7 +153,7 @@
 
 ## Phonegap
 
-1. [[Beep|Beep]]
+1. [[Beep|Module:-Beep]]
 1. [[Check connection|Module:-Check-connection]]
 1. [[Detect PhoneGap|Module:-Detect-PhoneGap]]
 1. [[Geolocation|Module:-Geolocation]]
