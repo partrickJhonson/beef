@@ -32,7 +32,7 @@ Apart from the standard install instructions (linked above) there is very little
 
 The LiveCD was generated using [Remastersys](http://www.remastersys.com/) and it's dist command, which generates the 850MB ISO file above. The custom splash screen and grub text are also customized by providing a custom splash.png and isolinug.cfg files. 
 
-A reference to the liveCD/BeEFLive.sh file in the BeEF repository is added to the profile of the default user to prove the user with a series of friendly prompts, including updating or running beef. 
+A reference to the liveCD/BeEFLive.sh file in the BeEF repository is added to the profile of the default user to provide the user with a series of friendly prompts, including updating or running beef. 
 
 
 Any suggestions for other customizations or feature requests for the BeEF LiveCD? Let us know [@beefproject](https://twitter.com/beefproject) or raise issues for us in GitHub. 
