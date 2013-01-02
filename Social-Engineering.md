@@ -17,9 +17,20 @@ You may also uses BeEF modules to redirect to external pages :
 * By using the basic [[rediret browser|Module:-Redirect-Browser]] module, you can redirect the hooked page to any other page. Note that it may be weird for the user to be redirect and that you will loose the zombie. To avoid loosing the browser from BeEF, you can also use the [[rediction module with iframe|Module:-Redirect-Browser-(iFrame)]] which will open a 100% iframe to the given url.
 * You can also use the great [[tabnabbing module|Module:-TabNabbing]] : this module detect when the user loose focus on the current tab and modify the whole page to load the given URL in an iframe at this time. When the use comes back to the tab, he will directly see the new web page.
 
-# Chrome extensions
+# Chrome/Firefox extensions
 
-[TODO]
+By requiring the user to install [[a fake flash update|Module:-Fake-Flash-Update]], it is possible to install a malicious Firefox/Chrome extension. Once installed this extension can communicate directly with BeEF and have access to much more information than code in the hooked browser.
+
+[[Images/module-fake-flash-update2.png|align=center]]
+
+By using Chrome extensiosn module, it is thus possible to use the malicious extension to :
+* [[Get all cookies|Module:-Get-All-Cookies]
+* [[List chrome extensions|Module:-Get-Chrome-Extensions]]
+* [[Grab Google contacts|Module:-Grab-Google-Contacts]] of the logged in Google account
+* [[Inject BeEF|Module:-Inject-BeEF]] in all tabs
+* [[Execute javascript code in a new tab|Module:-Execute-On-Tab]]
+* [[Take screenshot|Module:-Screenshot]]
+* [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
 
 # Other
 
