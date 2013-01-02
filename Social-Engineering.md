@@ -24,7 +24,7 @@ By requiring the user to install [[a fake flash update|Module:-Fake-Flash-Update
 [[Images/module-fake-flash-update2.png|align=center]]
 
 By using Chrome extensiosn module, it is thus possible to use the malicious extension to :
-* [[Get all cookies|Module:-Get-All-Cookies]
+* [[Get all cookies|Module:-Get-All-Cookies]]
 * [[List chrome extensions|Module:-Get-Chrome-Extensions]]
 * [[Grab Google contacts|Module:-Grab-Google-Contacts]] of the logged in Google account
 * [[Inject BeEF|Module:-Inject-BeEF]] in all tabs
