@@ -9,3 +9,7 @@ This page describes the project development cycle. The process is aimed to provi
 * **21st day of the month**: The code is frozen and no code can be committed to the repository until the next release. 
 * **26th day of the month**: This is the end the of the Testing/Verification phase of the development cycle. 
 * **28th day of the month**: The result of this development cycle is released. The code freeze is completed and code can be committed to the repository.
+
+***
+
+[[Previous|Module-creation]] |[[Next|Core-BeEF-Organization]]
