@@ -50,15 +50,54 @@
 
 ## Exploits
 
+1. [[Axous 1.1.1 Add User CSRF|Module:-Axous-1.1.1-Add-User-CSRF]]
+1. [[ColdFusion Directory Traversal Exploit|Module:-ColdFusion-Directory-Traversal-Exploit]]
+1. [[GlassFish WAR Upload XSRF|Module:-GlassFish-WAR-Upload-XSRF]]
+1. [[Jboss 6.0.0M1 JMX Deploy Exploit|Module:-Jboss-6.0.0M1-JMX-Deploy-Exploit]]
+1. [[Spring Framework Malicious Jar Exploit|Module:-Spring-Framework-Malicious-Jar-Exploit]]
+1. [[VTiger CRM Upload Exploit|Module:-VTiger-CRM-Upload-Exploit]]
+1. [[Zenoss 3.2.1 Add User CSRF|Module:-Zenoss-3.2.1-Add-User-CSRF]]
+1. [[Zenoss 3.2.1 Daemon CSRF|Module:-Zenoss-3.2.1-Daemon-CSRF]]
+1. [[boastMachine 3.1 Add User CSRF|Module:-boastMachine-3.1-Add-User-CSRF]]
+
 ### Camera
+
+1. [[Dlink DCS series CSRF|Module:-Dlink-DCS-series-CSRF]]
+1. [[Linksys WVC series CSRF|Module:-Linksys-WVC-series-CSRF]]
 
 ### Local Host
 
+1. [[Windows Mail Client DoS|Module:-Windows-Mail-Client-DoS]]
+1. [[ActiveX Command Execution|Module:-ActiveX-Command-Execution]]
+1. [[Java Payload|Module:-Java-Payload]]
+1. [[Safari Launch App|Module:-Safari-Launch-App]]
+
 ### Router
+
+1. [[3COM OfficeConnect Command Execution|Module:-3COM-OfficeConnect-Command-Execution]]
+1. [[Asmax AR-804gu Command Execution|Module:-Asmax-AR-804gu-Command-Execution]]
+1. [[BT Home Hub CSRF|Module:-BT-Home-Hub-CSRF]]
+1. [[Cisco E2400 CSRF|Module:-Cisco-E2400-CSRF]]
+1. [[Comtrend CT-5367 CSRF|Module:-Comtrend-CT-5367-CSRF]]
+1. [[Comtrend CT 5624 CSRF|Module:-Comtrend-CT-5624-CSRF]]
+1. [[D-Link DIR-615 Password Wipe|Module:-D-Link-DIR-615-Password-Wipe]]
+1. [[D-Link DSL500T CSRF|Module:-D-Link-DSL500T-CSRF]]
+1. [[Huawei SmartAX MT880 CSRF|Module:-Huawei-SmartAX-MT880-CSRF]]
+1. [[Linksys BEFSR41 CSRF|Module:-Linksys-BEFSR41-CSRF]]
+1. [[Linksys WRT54G CSRF|Module:-Linksys-WRT54G-CSRF]]
+1. [[Linksys WRT54G2 CSRF|Linksys-WRT54G2-CSRF]]
+1. [[Virgin Superhub CSRF|Module:-Virgin-Superhub-CSRF]]
 
 ### Switch
 
+1. [[Netgear GS108T CSRF|Module:-Netgear-GS108T-CSRF]]
+
 ### XSS
+
+1. [[AlienVault OSSIM 3.1 XSS|Module:-AlienVault-OSSIM-3.1-XSS]]
+1. [[Cisco Collaboration Server 5 XSS|Module:-Cisco-Collaboration-Server-5-XSS]]
+1. [[Serendipity <= 1.1.1 Add User CSRF|Module:-Serendipity--=-1.1.1-Add-User-CSRF]]
+
 
 ## Host
 
@@ -114,4 +153,24 @@
 
 ## Phonegap
 
+1. [[Beep|Module:-Beep]]
+1. [[Check connection|Module:-Check-connection]]
+1. [[Detect PhoneGap|Module:-Detect-PhoneGap]]
+1. [[Geolocation|Module:-Geolocation]]
+1. [[List Files|Module:-List-Files]]
+1. [[Persist resume|Module:-Persist-resume]]
+1. [[Persistence|Module:-Persistence]]
+1. [[Start Recording Audio|Module:-Start-Recording-Audio]]
+1. [[Stop Recording Audio|Module:-Stop-Recording-Audio]]
+1. [[Upload File|Module:-Upload-File]]
+
 ## Social Engineering
+
+1. [[Clickjacking|Module:-Clickjacking]]
+1. [[Clippy|Module:-Clippy]]
+1. [[Fake Flash Update|Module:-Fake-Flash-Update]]
+1. [[Google Phishing|Module:-Google-Phishing]]
+1. [[Lcamtuf Download|Module:-Lcamtuf-Download]]
+1. [[Pretty Theft|Module:-Pretty-Theft]]
+1. [[Simple Hijacker|Module:-Simple-Hijacker]]
+1. [[TabNabbing|Module:-TabNabbing]]

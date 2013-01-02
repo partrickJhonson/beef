@@ -12,6 +12,7 @@
 1. [[Metasploit|Metasploit]]
 1. [[Tunneling|Tunneling]]
 1. [[XSS Rays|XSS-Rays]]
+1. [[Persistence|Persistence]]
 
 ## III - Advanced Utilization
 1. [[RestFul API|BeEF-RESTful-API]]

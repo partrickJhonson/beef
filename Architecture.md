@@ -27,7 +27,7 @@ This guy is essential to how BeEF works. The Communication Server (CS) is the co
 
 [[/Images/Pattern1.png|align=center]]
 
-This is the most basic usage pattern for BeEF. An attacker simply need run up BeEF (`beef.rb`) and login directly to the UI. From here the attacker can see which [[hooked browsers|https://github.com/beefproject/beef/wiki/Hooked-Browser]] are [[online|https://github.com/beefproject/beef/wiki/Online-Hooked-Browser]] and which are [[offline|https://github.com/beefproject/beef/wiki/Offline-Hooked-Browser]], all information collected about/from a particular [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]], and run exploits against online [[hooked browsers|https://github.com/beefproject/beef/wiki/Hooked-Browser]].
+This is the most basic usage pattern for BeEF. An attacker simply need run up BeEF (`beef.rb`) and login directly to the UI. From here the attacker can see which hooked browsers are online and which are offline, all information collected about/from a particular hooked browser, and run exploits against online hooked browsers.
 
 ***
 [[Previous|Introducing-BeEF]] | [[Next|Installation]]

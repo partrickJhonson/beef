@@ -205,3 +205,7 @@ If you think that your module can be usefull to other people, join the BeEF comm
 
 * [[Reference Page on config.yml file|Command-Module-Config]]
 * [[Reference Page on format type for module.rb file|Form-Data-Types]]
+
+***
+
+[[Previous|BeEF-Console]] | [[Next|Development-Organization]]
