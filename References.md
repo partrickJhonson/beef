@@ -14,6 +14,7 @@ List of presentations made on BeEF during Conferences :
   * [Pwning Jboss 6.0.0M1 through JMX via the browser](http://www.youtube.com/watch?v=0n7qfvo_CMM)
   * [How to attack the Intranet via the browser](https://www.youtube.com/watch?v=0n7qfvo_CMM)
   * [Using the iPhone Skype URL module](https://www.youtube.com/watch?v=5SVu6VdLWgs)
+  * [BeEF XHR-polling versus WebSockets](http://vimeo.com/49678431)
 
 ## Blog Entries
 
