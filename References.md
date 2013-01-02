@@ -17,4 +17,4 @@ List of presentations made on BeEF during Conferences :
 
 ## Blog Entries
 
-  * [BeEf Clickjacking Module and using the REST API to Automate Attacks]:http://webstersprodigy.net/2012/12/06/beef-clickjacking-module-and-using-the-rest-api-to-automate-attacks/
+  * [BeEf Clickjacking Module and using the REST API to Automate Attacks](http://webstersprodigy.net/2012/12/06/beef-clickjacking-module-and-using-the-rest-api-to-automate-attacks/)
