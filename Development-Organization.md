@@ -12,4 +12,4 @@ This page describes the project development cycle. The process is aimed to provi
 
 ***
 
-[[Previous|Module-creation]] |[[Next|Core-BeEF-Organization]]
+[[Previous|Module-creation]] | [[Next|Core-BeEF-Organization]]
