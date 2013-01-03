@@ -31,8 +31,21 @@ Basically, this module will take any link in the page, check if it target one of
 
 ## Screenshots 
 
+_Command_ :
 [[Images/module-simplehijacker1.png|align=center]]
+
+_Amazon template_ :
+[[Images/module-simplehijacker2.png|align=center]]
+
+_Confirmbox :_ :
+[[Images/module-simplehijacker3.png|align=center]]
+
+_Chrome Cert 1:_ :
+[[Images/module-simplehijacker4.png|align=center]]
+
+_Chrome Cert 2:_ :
+[[Images/module-simplehijacker5.png|align=center]]
 
 ## Feedbacks
 
-* Domains are really important as the name should be included in the link. Links which are not included in this domain's list will not redirect anymore.
+* Domains are really important as the name should be included in the link. Links which are not included in this domain's list will not redirect to the correct URL anymore.
