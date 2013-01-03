@@ -2,7 +2,7 @@
 * **Objective**: Shows a confirm dialog to the user when he tries to close a tab. If he click yes, re-display the confirm dialog. Doesn't work on Opera
 * **Authors**: antisnatchor
 * **Browsers**: All except Opera (User is always notified)
-* **Parameters** : No parameters given
+* **Parameters** : No parameters needed
 * [Code](https://github.com/beefproject/beef/tree/master/modules/persistence/confirm_close_tab)
 
 ##Internal Working
