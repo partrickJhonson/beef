@@ -5,7 +5,6 @@
 * **Parameters** :
   * **URL** : URL for the redirection
   * **Wait** : Time before redirecting (in minutes)
-
 * [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/tabnabbing)
 
 ##Internal Working 
