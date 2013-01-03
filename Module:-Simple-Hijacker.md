@@ -9,7 +9,7 @@
 
 ## Internal working
 
-Basically, this module will take any link in the page, check if it target one of the domains given and load one template to modify the link.
+Basically, this module will take any link in the page, check if it target one of the domains given and load the template when the link is clicked.
 
 ```javascript
     $j('a').click(function(e) {
