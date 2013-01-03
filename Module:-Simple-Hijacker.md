@@ -4,8 +4,8 @@
 * **Browsers**: All (user notified)
 * **Parameters** :
   * **targeted domains** : Only links including one of this domain will be targeted (domains are separated by a comma)
-  * Template to use : List of template for social engineering attacks : credential, confirmbox, amazon, chromecertbeggar, chromecertbeggar2
-* "Code":https://github.com/beefproject/beef/tree/master/modules/social_engineering/simple_hijacker
+  * **Template to use** : List of template for social engineering attacks : credential, confirmbox, amazon, chromecertbeggar, chromecertbeggar2
+* [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/simple_hijacker)
 
 ## Internal working
 
