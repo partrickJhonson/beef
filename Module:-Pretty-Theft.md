@@ -3,7 +3,7 @@
 * **Authors**: pwndizzle, vt, xntrik
 * **Browsers**: Safari, Firefox, Chrome, Opera (User is notified)
 * **Paramters** :
-  * **Dialog Type : Type of dialog box : Facebook, Linked In or Generic
+  * **Dialog Type** : Type of dialog box : Facebook, Linked In or Generic
   * **Backing** : Color of the background (Grey or Clear)
   * **Custom Generic Logo** : URL of the logo for generic dialog type
 * [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/pretty_theft)
