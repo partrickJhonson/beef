@@ -45,7 +45,7 @@ _Error with Chrome  > 20_ :
 [[Images/chrome-extensions.png|align=center]]
 
 _Alert message on Firefox 17_ :
-[[Images/module-fake-flash-update2.png|align=center]]
+[[Images/module-fake-flash-update3.png|align=center]]
 
 ## Feedback
 
