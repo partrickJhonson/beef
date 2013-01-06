@@ -362,6 +362,38 @@ This is why there is "command_id":"not_available" in the response.
 }
 ```
 
+## Send a module to multiple hooked browsers
+
+###Handler
+* **URL** : POST /api/modules/multi_browser
+* **Description** : Fire a new command module to multiple hooked browsers. Returns the command IDs of the launched module, or 0 if firing got issues.
+* **Parameters** :
+  * mod_id : module ID
+  * mod_params : parameters needed for the module
+  * hb_ids : IDs of the target hooked browsers
+
+### Example : 
+
+NOTE: Alert module with custom text, 2 hooked browsers. 
+
+**Request** :
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_params":{"text":"vadi?"},"hb_ids":[1,2]}' -X POST http://beefserver.com:3000/api/modules/multi?token=2316d82702b83a293e2d46a0886a003a6be0a633
+```
+
+**Response**
+
+NOTE: in this case we cannot query BeEF nor Metasploit if module execution was successful or not.
+This is why there is "command_id":"not_available" in the response.
+
+```json
+{
+    "success": "true",
+    "command_id": "not_available"
+}
+```
+
 ## Scripts
 * [[Java-1.6.0u27 mass-pwner|Script:-Java-1.6.0u27-mass-pwner]]
 
