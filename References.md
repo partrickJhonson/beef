@@ -15,6 +15,8 @@ List of presentations made on BeEF during Conferences :
   * [How to attack the Intranet via the browser](https://www.youtube.com/watch?v=0n7qfvo_CMM)
   * [Using the iPhone Skype URL module](https://www.youtube.com/watch?v=5SVu6VdLWgs)
   * [BeEF XHR-polling versus WebSockets](http://vimeo.com/49678431)
+  * [How To Install BeEF … Browser Exploitation Framework](http://www.youtube.com/watch?v=mTGzvnJs3P8) by [Subliminal Hacking](http://www.subliminalhacking.net/2013/01/03/how-to-install-beef-browser-exploitation-framework/)
+  * [How To Autorun Modules in BeEF](http://www.youtube.com/watch?v=qATHn_iKCas) by [Subliminal Hacking](http://www.subliminalhacking.net/2013/01/03/how-to-autorun-modules-in-beef-browser-exploitation-framework/)
 
 ## Blog Entries
 
