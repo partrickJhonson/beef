@@ -8,6 +8,8 @@
 1. [[Play Sound|Module:-Play-Sound]]
 1. [[Unhook|Module:-Unhook]]
 1. [[Webcam|Module:-Webcam]]
+1. [[Get Firefox/Chrome Extensions|Module:-Detect-Extensions]]
+
 
 ### Hooked Domain
 
@@ -36,7 +38,6 @@
 
 1. [[Execute On Tab|Module:-Execute-On-Tab]]
 1. [[Get All Cookies|Module:-Get-All-Cookies]]
-1. [[Get Chrome Extensions|Module:-Get-Chrome-Extensions]]
 1. [[Grab Google Contacts|Module:-Grab-Google-Contacts]]
 1. [[Inject BeEF|Module:-Inject-BeEF]]
 1. [[Screenshot|Module:-Screenshot]]
