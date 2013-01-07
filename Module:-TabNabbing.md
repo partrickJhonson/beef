@@ -35,4 +35,4 @@ begin_countdown = function() {
 * It should be noticed that the time given is in minute which may be long regarding average of web sessions
 
 ## References
-* "Tabnabbing: A New Type of Phishing Attack":http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/ by Aza Raskin
+* [Tabnabbing: A New Type of Phishing Attack](http://www.azarask.in/blog/post/a-new-type-of-phishing-attack/) by Aza Raskin
