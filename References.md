@@ -10,8 +10,13 @@ List of presentations made on BeEF during Conferences :
   * 2012 : _Exploiting internal network vulns via the browser using BeEF Bind_, Michele "antisnatchor" Orru & Ty Miller ( [Slides](http://www.slideshare.net/micheleorru2/rooting-your-internals-exploiting-internal-network-vulns-via-the-browser-using-beef-bind) )
   * 2012 : _All you ever wanted to know about BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/zeronights2012beefworkshopantisnatchor) )
 
-## References
+## Other Papers
   * 2011 : _Intranet Footprinting_, Javier Marcos de Prado and Juan Galiana Lara
+
+## Podcasts
+
+* [Eurotrash with Michele Orru on BeEF](http://www.eurotrashsecurity.eu/index.php/Episode_35)
+* [Pauldotcom : Wade Alcorn of BeEF fame](http://pauldotcom.com/2012/08/wade-alcorn-of-beef-fame-on-ep.html)
 
 ## Videos
 
