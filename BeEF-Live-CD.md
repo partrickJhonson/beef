@@ -1,6 +1,6 @@
 By far the most common queries or issues our users encounter is how to get the dependancies BeEF requires up and running on their system with a minimum of hassle. While our [[installation guide|Installation]] includes instructions for most *Nix distributions we also put together LiveCD which includes a working install or BeEF, metasploit and sqlmap. 
 
-
+![BeEFLive](https://f.cloud.github.com/assets/1274050/58348/a67f24fe-5b6d-11e2-805a-1141d416e236.png)
 
 ## Using the LiveCD
 
@@ -14,9 +14,12 @@ To run, simply :
 1. Create a new VM using your virtualisation software of choice.
 1. Boot from the ISO. 
 1. The console will automatically login with user beef and present you with a few options at startup:
-1. Install & Setup SSH: this will enable SSH for remote acces to the VM and prompt you to create a password. 
+1. Install & Setup SSH: this will enable SSH for remote acces to the VM and prompt you to create a password.
+![BeEFLive](https://f.cloud.github.com/assets/1274050/58351/b6bad0c0-5b6d-11e2-97d0-678d4707b3fe.png) 
 1. Update BeEF (or metasploit/sqlmap) will update to the latest version available in GitHub 
-1. Start beef
+![BeEF Live](https://f.cloud.github.com/assets/1274050/58357/d31f56dc-5b6d-11e2-8ae1-ab9c7f84c6ee.png)
+1. Start beef<br>
+![BeEF Live](https://f.cloud.github.com/assets/1274050/58359/d98cd6ac-5b6d-11e2-8140-ae863f448bae.png)
 
 ## Known Issues
 
