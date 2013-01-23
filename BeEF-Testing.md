@@ -32,17 +32,20 @@ For example:
 a = 1
 b = 2
 ```
-
-`assert(a == b)` -> test pass
-
-`assert(not(a == b))` -> test fails
-
+Test OK.
+```ruby
+assert(a == b)
+```
+Test FAIL.
+```ruby
+assert(not(a == b))
+```
 To check if a code block hasn't raised (or throwned, as you prefer :-) any exception:
-
-`assert_nothing_raised do
+```ruby
+assert_nothing_raised do
     something
-end`
-
+end
+```
 ## Functional tests
 
 blabla
