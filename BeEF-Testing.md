@@ -74,3 +74,4 @@ For functional tests, other than using some aspects of the unit tests, we use Ca
     session
   end
 ```
+### Testing command modules
