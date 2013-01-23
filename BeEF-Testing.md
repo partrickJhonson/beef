@@ -123,3 +123,6 @@ def test_jools_simple
     assert_equal data,(repeat_string * repeat_count)
   end
 ```
+
+## Conclusion
+We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with VirtualMachines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
