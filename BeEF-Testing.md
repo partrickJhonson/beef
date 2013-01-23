@@ -25,11 +25,11 @@ The BeEF testing framework is a mix of 2 types of tests:
  - functional tests
 
 We currently have the following testing categories:
- - **integration**: mainly functional tests. We use Capybara and WebDriver in order to instrument the browser to do stuff for us. Whe running these tests, you will see a browser being open (currently Firefox, we're working on extendind the testing suite including all the other browser). The integration testing quite is responsible to run functional tests on the Web GUI and test module execution.
+ - **integration**: mainly functional tests. We use Capybara and WebDriver in order to instrument the browser to do stuff for us. When running these tests, you will see a browser being open (currently Firefox, we're working on extending the testing suite including all the other browser). The integration testing suite is responsible to run functional tests on the Web GUI and test module execution.
 
- - **unit**: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested.
+ - **unit**: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested here.
  
- - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to msgrpc is tested.
+ - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
 
 You will also notice another directory, **common**. As the name suggests, it contains things shared across testing suites, for instance constants and methods.
 
@@ -41,11 +41,13 @@ For example:
 
 ```ruby
 a = 1
-b = 2
+b = 1
 ```
 Test OK.
 ```ruby
 assert(a == b)
+# you can also use
+assert_equal a,b
 ```
 Test FAIL.
 ```ruby
