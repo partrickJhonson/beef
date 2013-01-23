@@ -75,3 +75,15 @@ For functional tests, other than using some aspects of the unit tests, we use Ca
   end
 ```
 ### Testing command modules
+In order to inject custom JavaScript into the hooked browser during testing, you have 2 choices:
+ - execute_script : available from objects of type Capybara::Session. It comes handy when the JavaScript you want to inject is actually returning something. Example:
+```javascript
+def test_jools_simple
+        victim = BeefTest.new_victim
+        script = " var ciccio = 'ciccio';
+            ciccio += '_pasticcio';
+            return ciccio;"
+       result = victim.execute_script(script)
+       assert_equal result,'ciccio_pasticcio'
+    end
+```
