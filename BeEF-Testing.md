@@ -76,7 +76,7 @@ For functional tests, other than using some aspects of the unit tests, we use Ca
 ```
 ### Testing command modules
 In order to inject custom JavaScript into the hooked browser during testing, you have 2 choices:
- - execute_script : available from objects of type Capybara::Session. It comes handy when the JavaScript you want to inject is actually returning something. Example:
+ - **execute_script** : available from objects of type Capybara::Session. It comes handy when the JavaScript you want to inject is actually returning something. Example:
 ```javascript
 def test_jools_simple
         victim = BeefTest.new_victim
@@ -86,4 +86,39 @@ def test_jools_simple
        result = victim.execute_script(script)
        assert_equal result,'ciccio_pasticcio'
     end
+```
+ - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can use it also for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module), we can write the following:
+```ruby
+## Test debug module "Test_return_long_string" using the RESTful API
+  def test_return_long_string
+    repeat_string = "BeEF"
+    repeat_count = 20
+
+    response = RestClient.post "#{RESTAPI_MODULES}/#{@@hb_session}/#{@@mod_debug_long_string}?token=#{@@token}",
+                               { 'repeat_string' => repeat_string,
+                                 'repeat'        => repeat_count}.to_json,
+                               :content_type => :json,
+                               :accept => :json
+    assert_equal 200, response.code
+    assert_not_nil response.body
+    result = JSON.parse(response.body)
+    success = result['success']
+    assert success
+
+    cmd_id = result['command_id']
+    count = 0
+    response = RestClient.get "#{RESTAPI_MODULES}/#{@@hb_session}/#{@@mod_debug_long_string}/#{cmd_id}?token=#{@@token}"
+
+    while(response.body.size <= 2 && count < 10)
+      response = RestClient.get "#{RESTAPI_MODULES}/#{@@hb_session}/#{@@mod_debug_long_string}/#{cmd_id}?token=#{@@token}"
+      sleep 2
+      count += 1
+    end
+    assert_equal 200, response.code
+    assert_not_nil response.body
+    result = JSON.parse(response.body)
+    data = JSON.parse(result['0']['data'])['data']
+    assert_not_nil data
+    assert_equal data,(repeat_string * repeat_count)
+  end
 ```
