@@ -87,7 +87,8 @@ def test_jools_simple
        assert_equal result,'ciccio_pasticcio'
     end
 ```
- - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can use it also for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module), we can write the following:
+ - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can use it also for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module),see the following example. Also, have a look at `<beef_root>/test/integration/tc_debug_modules.rb` in order to see how some variables like `hb_session`, `token` and others are retrieved from previous tests.
+
 ```ruby
 ## Test debug module "Test_return_long_string" using the RESTful API
   def test_return_long_string
