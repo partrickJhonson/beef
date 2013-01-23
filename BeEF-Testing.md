@@ -10,17 +10,26 @@ To run all tests, run (from `<beef_root>`):
 Otherwise, to run only some testing categories, for instance 'integration', run:
 `rake integration`
 
+Before running the tests locally on your machine, it's mandatory that you change in <beef_root>/test/common/test_constants.rb the values of ATTACK and VICTIM_DOMAIN, to something like:
+
+ATTACK_DOMAIN = "127.0.0.1"
+VICTIM_DOMAIN = "127.0.0.1"
+
+On our continuos integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure to don't commit/push these changes to the BeEF repo.
+
 ## Testing categories
 The BeEF testing framework is a mix of 2 types of tests:
  - unit tests
  - functional tests
 
 We currently have the following testing categories:
- - integration: mainly functional tests. We use Capybara and WebDriver in order to instrument the browser to do stuff for us. Whe running these tests, you will see a browser being open (currently Firefox, we're working on extendind the testing suite including all the other browser). The integration testing quite is responsible to run functional tests on the Web GUI and test module execution.
+ - **integration**: mainly functional tests. We use Capybara and WebDriver in order to instrument the browser to do stuff for us. Whe running these tests, you will see a browser being open (currently Firefox, we're working on extendind the testing suite including all the other browser). The integration testing quite is responsible to run functional tests on the Web GUI and test module execution.
 
- - unit: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested.
+ - **unit**: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested.
  
- - msf: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to msgrpc is tested.
+ - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to msgrpc is tested.
+
+You will also notice another directory, **common**. As the name suggests, it contains things shared across testing suites, for instance constants and methods.
 
 ## Unit tests
 When writing unit tests, you will mainly use two functions:
