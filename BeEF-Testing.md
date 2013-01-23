@@ -59,4 +59,18 @@ end
 ```
 ## Functional tests
 
-blabla
+For functional tests, other than using some aspects of the unit tests, we use Capybara and Selenium-WebDriver. The result is the possibility to programmatically control a browser (at the moment Firefox, we're working to improve our testing suite with Webkit and other browsers) from a user's point-of-view. For instance, we're able to instrument the browser to login into the BeEF Web GUI, as you can see here below:
+```ruby
+  def self.login(session = nil)
+    session = Capybara::Session.new(:selenium) if session.nil?
+    session.visit(ATTACK_URL)
+    sleep 2.0
+    session.has_content?('BeEF Authentication')
+    session.fill_in 'user', :with => 'beef'
+    session.fill_in 'pass', :with => 'beef'
+    session.click_button('Login')
+    sleep 20.0
+
+    session
+  end
+```
