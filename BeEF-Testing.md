@@ -28,8 +28,10 @@ When writing unit tests, you will mainly use two functions:
 assert(Boolean) -> test pass if the Boolean condition is true.
 For example:
 
-`a = 1
-b = 2`
+```ruby
+a = 1
+b = 2
+```
 
 `assert(a == b)` -> test pass
 
