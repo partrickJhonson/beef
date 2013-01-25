@@ -4,9 +4,9 @@ By far the most common queries or issues our users encounter is how to get the d
 
 ## Using the LiveCD
 
-Download here: [http://downloads.beefproject.com/BeEFLive1.2.iso](http://downloads.beefproject.com/BeEFLive1.2.iso)
+Download here: [http://downloads.beefproject.com/BeEFLive1.3.iso](http://downloads.beefproject.com/BeEFLive1.3.iso)
 
-MD5 (BeEFLive1.2.iso) = 1bfba0942a3270ee977ceaeae5a6efd2
+MD5 (BeEFLive1.3.iso) = c18db124a3dbd7b4e7a1e3e8111c11b6
 
 To run, simply :
 
