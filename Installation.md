@@ -1,16 +1,17 @@
 ## Installation on Windows
 
 **Install dependencies**
-Download and Install: http://rubyinstaller.org/
-(Including the Development Kit)
-Download and Extract into your Ruby BIN folder: http://www.sqlite.org/sqlitedll-3_7_0_1.zip
-Add your Ruby BIN folder to your system PATH variable.
-Open A command Prompt and browse to where you extracted the Development Kit, run:
+
+* Download and Install: http://rubyinstaller.org/
+* (Including the Development Kit)
+* Download and Extract into your Ruby BIN folder: http://www.sqlite.org/sqlitedll-3_7_0_1.zip
+* Add your Ruby BIN folder to your system PATH variable.
+* Open A command Prompt and browse to where you extracted the Development Kit, run:
 '''ruby dk.rb init
 ruby dk.rb install
 '''
 
-Browse to where you extracted BeEF and run:
+* Browse to where you extracted BeEF and run:
 '''gem install bundler
 bundle install
 '''
