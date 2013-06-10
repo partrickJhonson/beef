@@ -421,6 +421,158 @@ NOTE: the following means the Alert Dialog module execution had issues (returnin
 }
 ```
 
+## List the DNS ruleset
+
+### Handler
+
+* **URL** : GET /api/dns/ruleset
+* **Description** : Returns the current set of DNS rules.
+* **No parameters**
+
+### Example
+
+**Request**
+
+```bash
+curl http://beefserver.com:3000/api/dns/ruleset?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+```
+
+**Response**
+
+```json
+{
+    "count": 5,
+    "ruleset": [
+        {
+            "id": "0605e3d",
+            "pattern": "example.com",
+            "type": "NS",
+            "response": [
+                "ns.example.com"
+            ]
+        },
+        {
+            "id": "7e64183",
+            "pattern": "example.com",
+            "type": "MX",
+            "response": [
+                10,
+                "mail.example.com"
+            ]
+        },
+        {
+            "id": "a972452",
+            "pattern": "ns.example.com",
+            "type": "A",
+            "response": [
+                "10.0.2.15"
+            ]
+        },
+        {
+            "id": "0d28ff1",
+            "pattern": "mail.example.com",
+            "type": "A",
+            "response": [
+                "10.0.2.16"
+            ]
+        },
+        {
+            "id": "45ce397",
+            "pattern": "example.com",
+            "type": "HINFO",
+            "response": [
+                "M68000",
+                "VMS"
+            ]
+        }
+    ]
+}
+```
+
+## List a specific DNS rule
+
+### Handler
+
+* **URL** : GET /api/dns/rule/:id
+* **Description** : Returns an individual DNS rule given its unique id.
+* **Parameters** :
+  * :id : unique identifier associated with rule
+
+### Example
+
+**Request**
+
+```bash
+curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+```
+
+**Response**
+
+```json
+{
+    "id": "7e64183",
+    "pattern": "example.com",
+    "type": "MX",
+    "response": [
+        10,
+        "mail.example.com"
+    ]
+}
+```
+
+## Add a new DNS rule
+
+### Handler
+
+* **URL** : POST /api/dns/rule
+* **Description** : Adds a new DNS rule or "resource record". Does nothing if rule is already present.
+* **Parameters** :
+  * pattern : query pattern to recognize
+  * type : resource record type (e.g. A, CNAME, NS, etc.)
+  * response : array containing response data
+
+### Example
+
+**Request**
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example.com", "type": "A", "response": [ "10.0.2.14" ]}' -X POST http://beefserver.com:3000/api/dns/rule?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+```
+
+**Response**
+
+```json
+{
+    "success": true,
+    "id": "01f458a"
+}
+```
+
+## Remove an existing DNS rule
+
+### Handler
+
+* **URL** : DELETE /api/dns/rule/:id
+* **Description** : Removes an individual DNS rule given its unique id.
+* **Parameters** :
+  * :id : unique identifier associated with rule
+
+### Example
+
+**Request**
+
+```bash
+curl -X DELETE http://beefserver.com:3000/api/dns/rule/45ce397?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+```
+
+**Response**
+
+```json
+{
+    "success": true
+}
+```
+
 ## Scripts
 * [[Java-1.6.0u27 mass-pwner|Script:-Java-1.6.0u27-mass-pwner]]
 
