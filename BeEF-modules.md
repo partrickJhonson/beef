@@ -9,7 +9,7 @@
 1. [[Unhook|Module:-Unhook]]
 1. [[Webcam|Module:-Webcam]]
 1. [[Get Firefox/Chrome Extensions|Module:-Detect-Extensions]]
-
+1. [[Detect MS Office Version|Module:-Detect-Office]]
 
 ### Hooked Domain
 
@@ -115,6 +115,7 @@
 1. [[Get Wireless Keys|Module:-Get-Wireless-Keys]]
 1. [[Detect CUPS|Module:-Detect-CUPS]]
 1. [[Make Telephon Call|Module:-Make-Telephon-Call]]
+1. [[Detect Bit Defender 2012|Module:-Detect-BitDefender2012]]
 
 ## IPEC
 
