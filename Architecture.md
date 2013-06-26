@@ -6,6 +6,8 @@ The following diagrams and explanations should explain how BeEF works and the di
 
 ### High Level ###
 
+[[/Images/architecture.png|align=center]]
+
 [[/Images/BeEF_Overall.png|align=center]]
 
 When a user runs up BeEF currently, there are two components started: the User Interface and the Communication Server. These two components are the base components of BeEF and are discussed in detail below.
