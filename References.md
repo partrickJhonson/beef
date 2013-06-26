@@ -2,7 +2,7 @@
 
 ### 2007
 
-  * InterProtocol Exploitation, Wade Alcorn ([WP](http://nccgroup.com/media/18511/inter-protocol_exploitation.pdf)
+  * InterProtocol Exploitation, Wade Alcorn ([WP](http://nccgroup.com/media/18511/inter-protocol_exploitation.pdf))
 
 ### 2011
 
