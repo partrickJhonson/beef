@@ -1,17 +1,21 @@
-## Presentations on BeEF
+## Talks on BeEF
 
-List of presentations made on BeEF during Conferences :
+### 2011
+
   * 2011 : _Ground BeEF: Cutting, devouring and digesting the legs off a browser_, Michele "antisnatchor" Orru( [Slides](http://securitybyte.org/resources/2011/presentations/beef-presentation.pdf) )
+
+### 2012
+
   * 2012 : _BeEF in 2012: an introduction_, Mark "pipes" Piper ( [Slides](http://ill.net.nz/stash/Owasp2012-Beef.pdf) )
   * 2012 : _I'm the butcher do you want some BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/im-the-butcher-would-you-like-some-beef) )
   * 2012 : _Shake Hooves With BeEF_, Christian "xntrik" Frichot ( [Slides](http://www.slideshare.net/xntrik/shake-hooves-with-beef-owasp-appsec-apac-2012) )
   * 2012 : _Hookin’ Ain’t Easy, BeEF Injection with MITM_, Ryan Linn & Steve Ocepek ( [Slides](http://media.blackhat.com/bh-us-12/Briefings/Ocepek/BH_US_12_Ocepek_Linn_BeEF_MITM_WP.pdf) )
   * 2012 : _Advances in BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/advances-in-beef-athcon2012) )
-  * 2012 : _Exploiting internal network vulns via the browser using BeEF Bind_, Michele "antisnatchor" Orru & Ty Miller ( [Slides](http://www.slideshare.net/micheleorru2/rooting-your-internals-exploiting-internal-network-vulns-via-the-browser-using-beef-bind) )
-  * 2012 : _All you ever wanted to know about BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/zeronights2012beefworkshopantisnatchor) )
+  * RuxCon : _Exploiting internal network vulns via the browser using BeEF Bind_, Michele "antisnatchor" Orru & Ty Miller ( [Slides](http://www.slideshare.net/micheleorru2/rooting-your-internals-exploiting-internal-network-vulns-via-the-browser-using-beef-bind) )
+  * Zero Night : _All you ever wanted to know about BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/zeronights2012beefworkshopantisnatchor) )
 
 ## Other Papers
-  * 2011 : _Intranet Footprinting_, Javier Marcos de Prado and Juan Galiana Lara
+  * 2011 : _Intranet Footprinting_, Javier Marcos de Prado and Juan Galiana Lara ( [Slides](http://nebula.indocisc.co.id/~za/owasp/appseceu2011/JM%20del%20Prado%20&%20JG%20Lara%20-%20Intranet%20Footprinting.pdf) )
 
 ## Podcasts
 
