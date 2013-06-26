@@ -20,6 +20,8 @@ List of presentations made on BeEF during Conferences :
 
 ## Videos
 
+**[Youtube BeEF channel](http://www.youtube.com/user/thebeefproject)**
+
   * [Demonstrating BeEF's Metasploit Plugin](https://www.youtube.com/watch?v=al0veZ2950M)
   * [How to use Burp Scanner and sqlmap through the BeEF proxy](https://www.youtube.com/watch?v=Z4cHyC3lowk)
   * [Pwning Jboss 6.0.0M1 through JMX via the browser](http://www.youtube.com/watch?v=0n7qfvo_CMM)
