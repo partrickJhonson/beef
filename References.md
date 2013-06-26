@@ -1,5 +1,9 @@
 ## Talks on BeEF
 
+### 2007
+
+  * InterProtocol Exploitation, Wade Alcorn ([WP](http://nccgroup.com/media/18511/inter-protocol_exploitation.pdf)
+
 ### 2011
 
   * SecurityByte : _Ground BeEF: Cutting, devouring and digesting the legs off a browser_, Michele "antisnatchor" Orru( [Slides](http://securitybyte.org/resources/2011/presentations/beef-presentation.pdf) )
