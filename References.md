@@ -7,8 +7,8 @@
 
 ### 2012
 
-  * 2012 : _BeEF in 2012: an introduction_, Mark "pipes" Piper ( [Slides](http://ill.net.nz/stash/Owasp2012-Beef.pdf) )
-  * 2012 : _I'm the butcher do you want some BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/im-the-butcher-would-you-like-some-beef) )
+  * OWASP : _BeEF in 2012: an introduction_, Mark "pipes" Piper ( [Slides](http://ill.net.nz/stash/Owasp2012-Beef.pdf) )
+  * 44Con : _I'm the butcher do you want some BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/im-the-butcher-would-you-like-some-beef) )
   * OWASP AppSec : _Shake Hooves With BeEF_, Christian "xntrik" Frichot ( [Slides](http://www.slideshare.net/xntrik/shake-hooves-with-beef-owasp-appsec-apac-2012) )
   * Black Hat : _Hookin’ Ain’t Easy, BeEF Injection with MITM_, Ryan Linn & Steve Ocepek ( [Slides](http://media.blackhat.com/bh-us-12/Briefings/Ocepek/BH_US_12_Ocepek_Linn_BeEF_MITM_WP.pdf) )
   * AthCon : _Advances in BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/advances-in-beef-athcon2012) )
