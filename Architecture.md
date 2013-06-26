@@ -21,7 +21,7 @@ This is the control interface for using BeEF. From here a user can see all [[onl
 
 **Communication Server**
 
-This guy is essential to how BeEF works. The Communication Server (CS) is the component that communicates via HTTP with the [[hooked browsers|https://github.com/beefproject/beef/wiki/Hooked-Browser]].
+This guy is essential to how BeEF works. The Communication Server (CS) is the component that communicates via HTTP with the hooked browsers.
 
 ### Usage Pattern 1 ###
 
