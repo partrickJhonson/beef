@@ -17,7 +17,7 @@ When a user runs up BeEF currently, there are two components started: the User I
 
 **User Interface**
 
-This is the control interface for using BeEF. From here a user can see all [[online|https://github.com/beefproject/beef/wiki/Online-Hooked-Browser]] and [[offline|https://github.com/beefproject/beef/wiki/Offline-Hooked-Browser]] browsers, run exploits against them and see the results (Pattern 1).
+This is the control interface for using BeEF. From here a user can see all online and offline browsers, run exploits against them and see the results (Pattern 1).
 
 **Communication Server**
 
