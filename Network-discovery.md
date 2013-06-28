@@ -16,6 +16,8 @@ Then, by using Java, it is possible to launch ping request and identify alive ho
 
 By playing with timers, it is possible to detet whether the given hostname exist or not. In the first case, the request will take longer as the DNS resolution will be done and then the TCP connection will start (and probably fail). In the second case, the DNS request will return an error quickly, thus the brower is able to detect that there is no such DNS entry.
 
+See the corresponding [[Module:-DNS-Enumeration|BeEF module]]
+
 ## Port Scanning
 
 Now that we know the IP address of the hooked system and several hostnames, it would be interesting to launch port scanning. Happily several researchers have found that it is possible to use the same timing hack to scan ports by loading images into the browser. This attack was included in the [[Port Scanner|Module:-Port-Scanner]] module.
