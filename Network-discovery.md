@@ -1,4 +1,4 @@
-_By using Javascript hacks, it is possible to launch network attacks through a hooked browser by using BeEF modules._
+_With Javascript hacks, it is possible to launch network attacks through a hooked browser._
 
 ## Get Internal IP Address
 
