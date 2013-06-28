@@ -16,7 +16,7 @@ Then, by using Java, it is possible to launch ping request and identify alive ho
 
 By playing with timers, it is possible to detet whether the given hostname exist or not. In the first case, the request will take longer as the DNS resolution will be done and then the TCP connection will start (and probably fail). In the second case, the DNS request will return an error quickly, thus the brower is able to detect that there is no such DNS entry.
 
-See the corresponding [[Module:-DNS-Enumeration|BeEF module]]
+See the corresponding [[BeEF module|Module:-DNS-Enumeration]]
 
 ## Port Scanning
 
