@@ -14,15 +14,19 @@ ruby dk.rb install
 * Follow the steps described here: https://github.com/hiranpeiris/therubyracer_for_windows
 This is needed because the admin UI is using the Uglifier gem, which needs a JavaScript environment. This is quite painful to install in Windows, so that link provides pre-compiled DLLs for the v8 engine and 2 required gems.
 * Browse to where you extracted BeEF and run:
-'''gem install bundler'''
+```
+gem install bundler
+```
 * At this stage you should have the following gems installed:
-'''
+```
 bundler (1.5.1)
 ref (1.0.5)
 therubyracer (0.11.0beta1 x86-mingw32)
-'''
+```
 * You're now ready for the last step. After that, you can start BeEF.
-'''bundle install'''
+```
+bundle install
+```
 
 
 ***
