@@ -7,9 +7,10 @@
 * Download and Extract into your Ruby BIN folder: http://www.sqlite.org/sqlitedll-3_7_0_1.zip
 * Add your Ruby BIN folder to your system PATH variable.
 * Open a command Prompt and browse to where you extracted the Development Kit, run:
-'''ruby dk.rb init'''
-and
-'''ruby dk.rb install'''
+```
+ruby dk.rb init
+ruby dk.rb install
+```
 * Follow the steps described here: https://github.com/hiranpeiris/therubyracer_for_windows
 This is needed because the admin UI is using the Uglifier gem, which needs a JavaScript environment. This is quite painful to install in Windows, so that link provides pre-compiled DLLs for the v8 engine and 2 required gems.
 * Browse to where you extracted BeEF and run:
