@@ -3,7 +3,7 @@
 **Install dependencies**
 
 * Download and Install: http://rubyinstaller.org/
-* (Including the Development Kit)
+* (Including the Development Kit, for more info see here: https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
 * Download and Extract into your Ruby BIN folder: http://www.sqlite.org/sqlitedll-3_7_0_1.zip
 * Add your Ruby BIN folder to your system PATH variable.
 * Open A command Prompt and browse to where you extracted the Development Kit, run:
