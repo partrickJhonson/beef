@@ -41,9 +41,9 @@ bundle install
     sudo apt-get update 
     sudo apt-get install curl git ruby build-essential libsqlite3-ruby libsqlite3-dev libssl-dev
     sudo curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
-    sudo echo [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function' >> ~/.bash_profile 
-    sudo source ~/.bash_profile
+    source /etc/profile.d/rvm.sh
     rvm pkg install zlib --verify-downloads 1
+    rvm install ruby-1.9.3-p484
     rvm use 1.9.3
     gem install bundler
 ```
