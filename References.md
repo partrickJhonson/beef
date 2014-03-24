@@ -23,6 +23,7 @@
 ### 2013 
 
   * Ruxcon : _Buried by time, dust and BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/buried-by-timedustandbeefantisnatchorruxcon2013) )
+  * HackPra : _Rooting Your Internals: Inter-Protocol Exploitation, custom shellcode and BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/rooting-your-internals-interprotocol-exploitation-custom-shellcode-and-beef) )
 
 ### 2014
 
