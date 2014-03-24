@@ -20,6 +20,10 @@
   * Zero Night : _All you ever wanted to know about BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/zeronights2012beefworkshopantisnatchor) )
   * EUSecWest : _BeEF, the BrowserExploitation Framework What’s new from 2011_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/beefeusecwest2012micheleorru) )
 
+### 2014
+
+  * Insomni'Hack : _When you don't have 0days: client-side exploitation for the masses_, Michele "antisnatchor" Orru and Krzysiek Kotowicz ( [Slides](http://www.slideshare.net/micheleorru2/when-you-dont-have-0days-clientside-exploitation-for-the-masses) )
+
 ## Other Papers
   * 2011 : _Intranet Footprinting_, Javier Marcos de Prado and Juan Galiana Lara ( [Slides](http://nebula.indocisc.co.id/~za/owasp/appseceu2011/JM%20del%20Prado%20&%20JG%20Lara%20-%20Intranet%20Footprinting.pdf) )
 
