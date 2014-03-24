@@ -20,6 +20,10 @@
   * Zero Night : _All you ever wanted to know about BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/zeronights2012beefworkshopantisnatchor) )
   * EUSecWest : _BeEF, the BrowserExploitation Framework What’s new from 2011_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/beefeusecwest2012micheleorru) )
 
+### 2013 
+
+  * Ruxcon : _Buried by time, dust and BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/buried-by-timedustandbeefantisnatchorruxcon2013) )
+
 ### 2014
 
   * Insomni'Hack : _When you don't have 0days: client-side exploitation for the masses_, Michele "antisnatchor" Orru and Krzysiek Kotowicz ( [Slides](http://www.slideshare.net/micheleorru2/when-you-dont-have-0days-clientside-exploitation-for-the-masses) )
