@@ -24,6 +24,7 @@
 
   * Ruxcon : _Buried by time, dust and BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/buried-by-timedustandbeefantisnatchorruxcon2013) )
   * HackPra : _Rooting Your Internals: Inter-Protocol Exploitation, custom shellcode and BeEF_, Michele "antisnatchor" Orru ( [Slides](http://www.slideshare.net/micheleorru2/rooting-your-internals-interprotocol-exploitation-custom-shellcode-and-beef) )
+  * OWASP Belgium : _If You Tolerate This, Your Child Processes Will Be Next_ by Bart Leppens ( [slides](http://www.slideshare.net/BartLeppens/if-you-tolerate-this-your-child-processes-will-be-next)
 
 ### 2014
 
