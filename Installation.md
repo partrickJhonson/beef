@@ -40,7 +40,7 @@ bundle install
 ```bash
     sudo apt-get update 
     sudo apt-get install curl git ruby build-essential libsqlite3-ruby libsqlite3-dev libssl-dev
-    sudo curl https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
+    sudo curl https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
     source /home/[your username]/.rvm/scripts/rvm (Check RVM Install Instructions Here)
     rvm pkg install zlib --verify-downloads 1
     rvm install ruby-1.9.3-p484
@@ -68,7 +68,7 @@ bundle install
 
 ```bash
     sudo yum install -y git make gcc openssl-devel gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel bzip2 autoconf automake libtool bison iconv-devel sqlite-devel
-    wget https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer
+    wget https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer
     bash ./rvm-installer
     source ~/.rvm/scripts/rvm
     rvm pkg install openssl
@@ -115,7 +115,7 @@ cd beef
 **Install RVM and Ruby 1.9.3:**
 
 ```bash
-    bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer) source ~/.bash_profile
+    bash -s stable < <(curl -s https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer) source ~/.bash_profile
     rvm install 1.9.3-p0 --with-gcc=clang
     rvm use 1.9.3
 ```
