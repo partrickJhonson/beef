@@ -528,7 +528,7 @@ curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a
 * **Description** : Adds a new DNS rule or "resource record". Does nothing if rule is already present.
 * **Parameters** :
   * pattern : query pattern to recognize
-  * type : resource record type (e.g. A, CNAME, NS, etc.)
+  * resource : resource record type (e.g. A, CNAME, NS, etc.)
   * response : array containing response data
 
 ### Example
@@ -536,7 +536,7 @@ curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a
 **Request**
 
 ```bash
-curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example.com", "type": "A", "response": [ "10.0.2.14" ]}' -X POST http://beefserver.com:3000/api/dns/rule?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example.com", "resource": "A", "response": [ "10.0.2.14" ]}' -X POST http://beefserver.com:3000/api/dns/rule?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response**
