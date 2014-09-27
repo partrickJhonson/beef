@@ -33,20 +33,27 @@ bundle install
 
 ## Installation on Linux
 
+Note, in any place listing RVM installation instructions you can replcae them with this two steps:
+
+1. get ruby - assuming you do not want RVM and know a way to get ruby
+2. run: `gem install bundler`
+
+
 ### Debian / Ubuntu
 
 **Install dependencies**
 
 ```bash
-    sudo apt-get update 
-    sudo apt-get install curl git ruby build-essential libsqlite3-ruby libsqlite3-dev libssl-dev
-    sudo curl https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
-    source /home/[your username]/.rvm/scripts/rvm (Check RVM Install Instructions Here)
-    rvm pkg install zlib --verify-downloads 1
-    rvm install ruby-1.9.3-p484
-    rvm use 1.9.3
+    sudo apt-get update
+    sudo apt-get install curl git
+    curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
+    source ~/.rvm/scripts/rvm
+    rvm install ruby-1.9.3
+    rvm use 1.9.3 -- default
     gem install bundler
 ```
+
+Follow this instruction http://rvm.io/integration/gnome-terminal
 
 **Download BeEF**
 
@@ -67,14 +74,10 @@ bundle install
 **Install dependencies**
 
 ```bash
-    sudo yum install -y git make gcc openssl-devel gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel bzip2 autoconf automake libtool bison iconv-devel sqlite-devel
-    wget https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer
-    bash ./rvm-installer
+    curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
     source ~/.rvm/scripts/rvm
-    rvm pkg install openssl
-    rvm install 1.9.2 --with-openssl-dir=$rvm_path/usr
-    source ~/.rvm/scripts/rvm
-    rvm use 1.9.2 --default
+    rvm install 1.9.3
+    rvm use 1.9.3 --default
     gem install bundler
 ```
 
@@ -94,15 +97,14 @@ bundle install
     ./beef
 ```
 
-**Alternative install method** 
+**Alternative install method**
 
 ```bash
-bash << curl -s https://raw.github.com/xntrik/beefcloud/master/beef-installer
+bash << curl -sSL https://raw.github.com/xntrik/beefcloud/master/beef-installer
 source ~/.bash_profile
 cd beef
 ./beef
 ```
-
 
 ### BackTrack
 
@@ -137,7 +139,15 @@ You can download the [zip](https://github.com/beefproject/beef/zipball/master) o
 
 ## Installation on MAC OS
 
-[[See detailed instruction on MAC OS X installation|MAC-OSX-installation-using-RVM]]
+**Install RVM and Ruby 1.9.3:**
+
+```bash
+    curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
+    source ~/.rvm/scripts/rvm
+    rvm install 1.9.3
+    rvm use 1.9.3 --default
+    gem install bundler
+```
 
 ***
 [[Previous|Architecture]] | [[Next|Configuration]]
