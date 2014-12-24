@@ -20,6 +20,7 @@
 1. [[Twitter notification|Twitter-Notification]]
 1. [[Console|BeEF Console]]
 1. [[Creating a module|Module-creation]]
+1. [[WebRTC Extension|WebRTC-Extension]]
 
 ## IV - Development
 1. [[Organization|Development-Organization]]
