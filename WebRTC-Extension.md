@@ -1,3 +1,3 @@
 @xntrik to draft shortly!
 
-[[Previous|BeEF-Console]] | [[Next|Development-Organization]]
+[[Previous|Module-creation]] | [[Next|Development-Organization]]
