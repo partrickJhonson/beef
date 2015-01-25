@@ -1,0 +1,1 @@
+This module will force the browser to attempt a telephone call in iOS. It will exploit the insecure handling of the 'tel' URL scheme in iOS.
