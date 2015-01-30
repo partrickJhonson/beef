@@ -2,21 +2,27 @@ _With Javascript hacks, it is possible to launch network attacks through a hooke
 
 ## Get Internal IP Address
 
-The [[Get Internal IP Address|Module:-Get-Internal-IP]] module uses a Java applet to gather information on IP address of the computer. From this IP address, it becomes possible to imagine the internal addressing plan and use the other modules.
+Two modules exist to retrieve the IP addresses in use by the zombie browser host system. From these IP addresses it becomes possible to imagine the internal network addressing plan and use the other modules.
+
+The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firefox and Chrome uses WebRTC to retrieve the IP address for each network interface.
+
+![Get Internal IP Address WebRTC](https://cloud.githubusercontent.com/assets/434827/5973009/0a055c62-a8b7-11e4-82fd-96e726f8a60a.png)
+
+The [[Get Internal IP Address|Module:-Get-Internal-IP]] module uses a Java applet to retrieve the IP address.
 
 [[Images/module-get-internal-ip.png|align=center]]
 
-## Get Internal IP Address WebRTC
+## Identify LAN Subnets
 
-The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firefox and Chrome uses WebRTC to retrieve the IP address for each network interface. From these IP addresses, it becomes possible to imagine the internal addressing plan and uses the other modules.
+The Identify LAN Subnets module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules.
+
+![Identify LAN Subnets](https://cloud.githubusercontent.com/assets/434827/5973018/2059b59e-a8b7-11e4-9e67-17b7ea0b75bb.png)
 
 ## Get HTTP Servers
 
-The Get HTTP Servers module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and uses the other modules.
+The Get HTTP Servers module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules.
 
-## Identify LAN Subnets
-
-The Identify LAN Subnets module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and uses the other modules.
+![Get HTTP Servers](https://cloud.githubusercontent.com/assets/434827/5973022/330d4c78-a8b7-11e4-90e9-89260effd9c8.png)
 
 ## Ping Sweep (Java)
 
@@ -27,6 +33,8 @@ Then, by using Java, it is possible to launch ping request and identify alive ho
 ## Cross-Origin Scanner
 
 The Cross-Origin Scanner sends CORS requests to a specified IP range and returns the IP address, port, HTTP status code, page title and page contents for each CORS enabled web server identified.
+
+![Cross-Origin Scanner](https://cloud.githubusercontent.com/assets/434827/5973004/ebd4b0b2-a8b6-11e4-9777-f5e3bb6377b7.png)
 
 ## DNS Enumeration
 
