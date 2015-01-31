@@ -1,4 +1,4 @@
-[[images/logo.png|align=center]]
+[[Images/logo.png|align=center]]
 
 ##  What is BeEF?
 
