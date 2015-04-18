@@ -48,8 +48,8 @@ Note, in any place listing RVM installation instructions you can replcae them wi
     sudo apt-get install curl git
     curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
     source ~/.rvm/scripts/rvm
-    rvm install ruby-1.9.3
-    rvm use 1.9.3 -- default
+    rvm install 2.1.5
+    rvm use 2.1.5 -- default
     gem install bundler
 ```
 
@@ -76,8 +76,8 @@ Follow this instruction http://rvm.io/integration/gnome-terminal
 ```bash
     curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
     source ~/.rvm/scripts/rvm
-    rvm install 1.9.3
-    rvm use 1.9.3 --default
+    rvm install 2.1.5
+    rvm use 2.1.5 --default
     gem install bundler
 ```
 
@@ -114,12 +114,12 @@ cd beef
 
 ## Installation on MAC OS
 
-**Install RVM and Ruby 1.9.3:**
+**Install RVM and Ruby 2.1.5:**
 
 ```bash
     bash -s stable < <(curl -s https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer) source ~/.bash_profile
-    rvm install 1.9.3-p0 --with-gcc=clang
-    rvm use 1.9.3
+    rvm install 2.1.5 --with-gcc=clang
+    rvm use 2.1.5
 ```
 
 **Download BeEF**
@@ -139,13 +139,13 @@ You can download the [zip](https://github.com/beefproject/beef/zipball/master) o
 
 ## Installation on MAC OS
 
-**Install RVM and Ruby 1.9.3:**
+**Install RVM and Ruby 2.1.5:**
 
 ```bash
     curl -sSL https://raw.githubusercontent.com/wayneeseguin/rvm/master/binscripts/rvm-installer | bash -s stable
     source ~/.rvm/scripts/rvm
-    rvm install 1.9.3
-    rvm use 1.9.3 --default
+    rvm install 2.1.5
+    rvm use 2.1.5 --default
     gem install bundler
 ```
 
