@@ -6,11 +6,11 @@ A Rakefile, `<beef_root>/Rakefile`, contains testing tasks, organized by categor
 
 To run all tests, run (from `<beef_root>`):
 
-`rake all`
+`bundle exec rake all`
 
 Otherwise, to run only some testing categories, for instance 'integration', run:
 
-`rake integration`
+`bundle exec rake integration`
 
 Before running the tests locally on your machine, you must install necessary gems:
 
@@ -135,5 +135,12 @@ def test_jools_simple
   end
 ```
 
+### Testing Metasploit
+
+To test Metasploit integration, run:
+`bundle exec rake msf`
+
+This will clone the latest version of Metasploit to /tmp/msf-test/
+
 ## Conclusion
-We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with VirtualMachines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
+We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with Virtual Machines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
