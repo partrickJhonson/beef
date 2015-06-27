@@ -12,12 +12,19 @@ Otherwise, to run only some testing categories, for instance 'integration', run:
 
 `rake integration`
 
-Before running the tests locally on your machine, it's mandatory that you change in <beef_root>/test/common/test_constants.rb the values of ATTACK and VICTIM_DOMAIN, to something like:
+Before running the tests locally on your machine, you must install necessary gems:
+
+```
+export BEEF_TEST=1
+bundle install
+```
+
+Before running the tests locally on your machine, you may need to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
 ```ruby
 ATTACK_DOMAIN = "127.0.0.1"
-VICTIM_DOMAIN = "127.0.0.1"
+VICTIM_DOMAIN = "localhost"
 ```
-On our continuos integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure to don't commit/push these changes to the BeEF repo.
+On our continuous integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure to don't commit/push these changes to the BeEF repository.
 
 ## Testing categories
 The BeEF testing framework is a mix of 2 types of tests:
@@ -71,7 +78,7 @@ For functional tests, other than using some aspects of the unit tests, we use Ca
     session.fill_in 'user', :with => 'beef'
     session.fill_in 'pass', :with => 'beef'
     session.click_button('Login')
-    sleep 20.0
+    sleep 10.0
 
     session
   end
