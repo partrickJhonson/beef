@@ -4,7 +4,7 @@ BeEF should be configured through the main configuration file : [config.yaml](ht
 
 ### Network limitations
 
-Web interface for hooking or for managing BeEF can be limited by network subdomain. For example:
+The web interface for hooking or for managing BeEF can be limited by subnet. For example:
 
 ```yaml
     restrictions:
@@ -21,9 +21,14 @@ The webserver can be fully configured :
         debug: false # Will print verbose message in BeEF console
         host: "0.0.0.0" # IP address of the web server
         port: "3000" #Port of the web server
-        public: "8.7.6.5" # Should be defined if BeEF is behind a NAT
+
+        # If BeEF is running behind a reverse proxy or NAT
+        #  set the public hostname and port here
+        public: "8.7.6.5"
+        public_port: "3000"
+
         dns: "localhost" # Address of DNS server
-        panel_path: "/ui/panel" # Path for UI panel
+        web_ui_basepath: "/ui" # Path for admin UI
         hook_file: "/hook.js" # Path for hooking script
         hook_session_name: "BEEFHOOK" #Name of session
         session_cookie_name: "BEEFSESSION" # Name of BeEF cookie
@@ -54,9 +59,11 @@ Extensions should be enabled in the main [config.yaml](https://github.com/beefpr
                 enable: false
 ```
 
+The Demos extension should be disabled in production by setting `enable: false` in [extensions/demos/config.yaml](https://github.com/beefproject/beef/blob/master/extensions/demos/config.yaml):
+
 ### Metasploit
 
-The metasploit extension should be configured by modifying the [config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) fil in _extensions/metasploit_ :
+The Metasploit extension should be configured by modifying the [config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) file in _extensions/metasploit_ :
 
 ```yaml
             name: 'Metasploit'
@@ -66,8 +73,8 @@ The metasploit extension should be configured by modifying the [config.yml](http
             user: "msf"
             pass: "abc123"
             uri: '/api'
-            ssl: false
-            ssl_version: 'SSLv3'
+            ssl: true
+            ssl_version: 'TLSv1'
             ssl_verify: true
             callback_host: "127.0.0.1"
             autopwn_url: "autopwn"
@@ -75,10 +82,10 @@ The metasploit extension should be configured by modifying the [config.yml](http
 
 Most of the configuration can be let with default value, except the **host** and **callback_host** parameters which should have the IP address of the host.
 
-For enabling RPC communication, the following command should be launched in metasploit:
+For enabling RPC communication, the following command should be launched in Metasploit:
 
 ```ruby
-load msgrpc ServerHost=127.0.0.1 Pass=abc123
+load msgrpc ServerHost=127.0.0.1 User=msf Pass=abc123 SSL=y
 ```
 
 This command can be written in a file and launched with **-r** option to _msfconsole_.
