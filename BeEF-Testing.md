@@ -19,11 +19,13 @@ export BEEF_TEST=1
 bundle install
 ```
 
-Before running the tests locally on your machine, you may need to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
+Before running the tests locally on your machine, you may want to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
 ```ruby
 ATTACK_DOMAIN = "127.0.0.1"
 VICTIM_DOMAIN = "localhost"
 ```
+These values must differ however it is acceptable if both resolve to the same host.
+
 On our continuous integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure to don't commit/push these changes to the BeEF repository.
 
 ## Testing categories
