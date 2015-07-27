@@ -13,7 +13,14 @@ On successful hook, the ARE checks if any rulesets present in the core_arerules 
 * (WIP) Plugin type/version
 * (WIP) OS architecture
 
-
+```json
+{
+  "browser": "S",
+  "browser_version": ">= 7",
+  "os": "OSX",
+  "os_version": "<= 10.10"
+}
+```
 
 ## Chaining mode
 sequential or nested-forward
