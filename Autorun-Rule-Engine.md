@@ -69,6 +69,7 @@ The resulting wrapper is something like this:
 ```
 
 Display a fake notification (target only IE >= 10 on Windows 7 or higher, then after 2 seconds call the Clippy module with a custom Windows-only dropper that was pre-mounted in BeEF.
+
 ```javascript
 {
   "name": "Ie Fake Notification + Clippy",
@@ -101,7 +102,8 @@ Display a fake notification (target only IE >= 10 on Windows 7 or higher, then a
   "execution_delay": [0,2000],
   "chain_mode": "sequential"
 }
-```javascript
+```
+
 ### Nested-forward
 Call N modules, where module N is executed only if N-1 returns a certain status. Module N can use as input the output from module N-1 (eventually mangling it before processing it).
 
