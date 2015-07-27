@@ -43,6 +43,14 @@ Trigger only on Firefox (at least version 31), on any Linux system.
 }
 ```
 
+The following are the allowed Browser/OS types and version supported with the ARE:
+```ruby
+  BROWSER = ['FF','C','IE','S','O','ALL']
+  OS = ['Linux','Windows','OSX','Android','iOS','BlackBerry','ALL']
+  VERSION = ['<','<=','==','>=','>','ALL','Vista','XP']
+```
+Have a look in browser.js and os.js (<beef_root>/core/main/client) to see exactly what is supported.
+
 ## Chaining mode
 sequential or nested-forward
 
