@@ -143,16 +143,16 @@ As most command modules are asynchronous, meaning that they might return in a no
 ```yaml
 # Autorun Rule Engine
 autorun:
-# this is used when rule chain_mode type is nested-forward, needed as command results are checked via setInterval
-# to ensure that we can wait for async command results. The timeout is needed to prevent infinite loops or eventually
-# continue execution regardless of results.
-# If you're chaining multiple async modules, and you expect them to complete in more than 5 seconds, increase the timeout.
-result_poll_interval: 300
-result_poll_timeout: 5000
+  # this is used when rule chain_mode type is nested-forward, needed as command results are checked via setInterval
+  # to ensure that we can wait for async command results. The timeout is needed to prevent infinite loops or   eventually 
+  # continue execution regardless of results.
+  # If you're chaining multiple async modules, and you expect them to complete in more than 5 seconds, increase the   timeout.
+  result_poll_interval: 300
+  result_poll_timeout: 5000
 
-# If the modules doesn't return status/results and timeout exceeded, continue anyway with the chain.
-# This is useful to call modules (nested-forward chain mode) that are not returning their status/results.
-continue_after_timeout: true
+  # If the modules doesn't return status/results and timeout exceeded, continue anyway with the chain.
+  # This is useful to call modules (nested-forward chain mode) that are not returning their status/results.
+  continue_after_timeout: true
 ```
 
 ## RESTful API
