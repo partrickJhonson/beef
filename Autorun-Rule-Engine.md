@@ -13,12 +13,33 @@ On successful hook, the ARE checks if any rulesets present in the core_arerules 
 * (WIP) Plugin type/version
 * (WIP) OS architecture
 
+Trigger only on Safari browsers >= 7, on OSX Yosemite or below.
 ```javascript
 {
   "browser": "S",
   "browser_version": ">= 7",
   "os": "OSX",
   "os_version": "<= 10.10"
+}
+```
+
+Trigger only on Internet Explorer (any version), on Windows 7 or greater.
+```javascript
+{
+  "browser": "IE",
+  "browser_version": "ALL",
+  "os": "Windows",
+  "os_version": ">= 7"
+}
+```
+
+Trigger only on Firefox (at least version 31), on any Linux system.
+```javascript
+{
+  "browser": "FF",
+  "browser_version": ">= 31",
+  "os": "Linux",
+  "os_version": "ALL"
 }
 ```
 
