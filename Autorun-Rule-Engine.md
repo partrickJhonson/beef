@@ -156,13 +156,13 @@ var end = parseInt(s[3])+1;
 var mod_input = s[0]+'.'+s[1]+'.'+s[2]+'.'+start+'-'+s[0]+'.'+s[1]+'.'+s[2]+'.'+end;
 ```
 As you can see it's dumb-proof. Few things to note here:
-* condition : value 'null' if you just want to proceed with execution. Alternatively you can check for previous command module execution status with:
+* **condition** : value 'null' if you just want to proceed with execution. Alternatively you can check for previous command module execution status with:
 ```javascript
 status==1  // continue if previous module execution status is success
 status==0  // continue if previous module execution status is unknown
 status==-1 // continue if previous module execution status is error
 ```
-* code: arbitrary JavaScript as shown above. Use <<mod_input>> as command module option (input) in the ruleset, and make sure you declare the 'var mod_input' variable in the code property value. You can reference previous module's output with <command_module_name>_mod_output (get_internal_ip_webrtc_mod_output in the previous example). Note that the get_internal_ip_webrtc BeEF command.js was modified to return execution status and result data (internal IP):
+* **code**: arbitrary JavaScript as shown above. Use <<mod_input>> as command module option (input) in the ruleset, and make sure you declare the 'var mod_input' variable in the code property value. You can reference previous module's output with <command_module_name>_mod_output (get_internal_ip_webrtc_mod_output in the previous example). Note that the get_internal_ip_webrtc BeEF command.js was modified to return execution status and result data (internal IP):
 
 ```javascript
 get_internal_ip_webrtc_mod_output = [beef.are.status_success(), displayAddrs.join(",")];
