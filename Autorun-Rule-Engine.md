@@ -4,7 +4,7 @@ that are automatically triggered on the hooked browser if certain conditions are
 
 If you are a BeEF aficionado, you were probably waiting for this form a long time. The old static autorun functionality has been removed. The main features of the new ARE are the following:
 * **Dynamic** : pre-load rules from <beef_root>/arerules/enabled directory at start-up, or load them at runtime while BeEF is running, then trigger them on each hooked browser. RESTful API calls are documented in detail later here.
-* **Non-intrusive** : command modules now have support for returning execution status and result data (useful for chaining). This didn't required a huge refactoring, but some smart changes in the API only. If you need chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to the command modules if the rule is in nested-forward chain mode (more on this later here).
+* **Non-intrusive** : command modules now have support for returning execution status and result data (useful for chaining). This didn't required a huge refactoring, but some smart changes in the API only. Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You can still launch them with the sequential chaining mode. If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to the command modules if the rule is in nested-forward chain mode (more on this later here). 
 
 ## Matching
 On successful hook, the ARE checks if any rulesets present in the core_arerules table match against the hooked browsers. Various hooked browser properties are checked:
@@ -100,20 +100,44 @@ The following is an example of chaining an internal network fingerprinting activ
 ```
 
 The wrapper created for this rule will be something like:
-
+```javascript
 module_one()
-if module_one_result == success
-     module_two(module_one_output) // IP retrieved with first module
-
-This is also one of the cases where the second module input expects something different than the first module output, so we need a way to change module output. The code property allows you to specify arbitrary JavaScript (no multilines, one line only). In this specific case, let's assume the output of the first module is 172.16.35.166. The  
-second module requires an input like the following though: "start_ip-stop_ip", as in 172.16.35.160-172.16.35.170 for internal network fingerprinting. The following is the code property value for the second module:
+if condition
+     /* input for the second module is the IP retrieved via the first module, 
+      * with code() executed before calling the function
+      */
+     code()
+     module_two(module_one_output) 
+```
+This is also one of the cases where the second module input expects something different than the first module output, so we need a way to change module output. The code property allows you to specify arbitrary JavaScript (no multilines, one line only). In this specific case, let's assume the output of the first module is 172.16.35.2. The  
+second module requires an input like the following though: "start_ip-stop_ip", as in 172.16.35.1-172.16.35.3 for internal network fingerprinting. The following is the code property value for the second module:
 ```javascript
 var s = get_internal_ip_webrtc_mod_output.split('.');
 var start = parseInt(s[3])-1;
 var end = parseInt(s[3])+1;
 var mod_input = s[0]+'.'+s[1]+'.'+s[2]+'.'+start+'-'+s[0]+'.'+s[1]+'.'+s[2]+'.'+end;
 ```
-As you can see it's dumb-proof. 
+As you can see it's dumb-proof. Few things to note here:
+* condition : value 'null' if you just want to proceed with execution. Alternatively you can check for previous command module execution status with:
+```javascript
+status==1  // continue if previous module execution status is success
+status==0  // continue if previous module execution status is unknown
+status==-1 // continue if previous module execution status is error
+```
+* code: arbitrary JavaScript as shown above. Use <<mod_input>> as command module option (input) in the ruleset, and make sure you declare the 'var mod_input' variable in the code property value. You can reference previous module's output with <command_module_name>_mod_output (get_internal_ip_webrtc_mod_output in the previous example). Note that the get_internal_ip_webrtc BeEF command.js was modified to return execution status and result data (internal IP):
+
+```javascript
+get_internal_ip_webrtc_mod_output = [beef.are.status_success(), displayAddrs.join(",")];
+
+/*
+ * Generic syntax:
+ * <module_name>_mod_output = [beef.are.status_success(), module_result_data];
+ * beef.are.status_success() -> status 1
+ * beef.are.status_unknown() -> status 0 
+ * beef.are.status_error()   -> status -1
+ */
+```
+
 
 Note: command result status is checked, and you can properly chain input into output, having also
 the flexibility of slightly mangling it to adapt to module needs.
