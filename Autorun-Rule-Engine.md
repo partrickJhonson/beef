@@ -53,7 +53,8 @@ Have a look in browser.js and os.js (<beef_root>/core/main/client) to see exactl
 
 ## Chaining mode
 There are currently two chain modes implemented, which should cover most of your client-side needs.
-* **Sequential** : call N modules with different configurable time delays.
+### Sequential
+Call N modules with different configurable time delays.
 Sequential mode wraps module bodies in their own function, using setTimeout() to trigger them with a time delay if specified. Execution order is also available to let you write down modules in an organised way in the JSON file, but then call them in different order. 
 
 Note that module execution status is not checked, and results are ignored. Useful if you just want to launch some modules without caring what their status will be (for instance, a bunch of blind XSRFs on a set of targets).
@@ -65,7 +66,8 @@ The resulting wrapper is something like this:
  setTimeout(module_three(), 3000);
 ```
 
-* **Nested-forward** : call N modules, where module N is executed only if N-1 returns a certain status. Module N can use as input the output from module N-1 (eventually mangling it before processing it).
+### Nested-forward
+Call N modules, where module N is executed only if N-1 returns a certain status. Module N can use as input the output from module N-1 (eventually mangling it before processing it).
 
 ## RESTful API
 add/delete/list rule, trigger rule
