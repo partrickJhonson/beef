@@ -5,7 +5,7 @@ that are automatically triggered on the hooked browser if certain conditions are
 If you are a BeEF aficionado, you were probably waiting for this form a long time. The old static autorun functionality has been removed.
 
 ARE main features:
-* ** ** : lol
+* ** Dynamic ** : pre-load rules from <beef_root>/arerules/enabled directory, or load them at runtime while BeEF is running, then trigger them on each hooked browser.
 * ** ** : lol
 * ** ** : lol
 * ** ** : lol
