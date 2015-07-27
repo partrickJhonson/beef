@@ -138,15 +138,25 @@ get_internal_ip_webrtc_mod_output = [beef.are.status_success(), displayAddrs.joi
  */
 ```
 
+As most command modules are asynchronous, meaning that they might return in a non-deterministic time, it's necessary to poll for command status/results every X milliseconds, until a specified timeout. This is automatically taken care of and polling/timeout values can be specified in the main BeEF config.yaml file:
 
-Note: command result status is checked, and you can properly chain input into output, having also
-the flexibility of slightly mangling it to adapt to module needs.
-Note: Useful in situations where you want to launch 2 modules, where the second one will execute only
-if the first once return with success. Also, the second module has the possibility of mangling first
-module output and use it as input for some of its module inputs.
+```yaml
+# Autorun Rule Engine
+autorun:
+# this is used when rule chain_mode type is nested-forward, needed as command results are checked via setInterval
+# to ensure that we can wait for async command results. The timeout is needed to prevent infinite loops or eventually
+# continue execution regardless of results.
+# If you're chaining multiple async modules, and you expect them to complete in more than 5 seconds, increase the timeout.
+result_poll_interval: 300
+result_poll_timeout: 5000
+
+# If the modules doesn't return status/results and timeout exceeded, continue anyway with the chain.
+# This is useful to call modules (nested-forward chain mode) that are not returning their status/results.
+continue_after_timeout: true
+```
 
 ## RESTful API
-add/delete/list rule, trigger rule
+TODO add/delete/list rule, trigger rule
 
 ## Rules examples:
-various examples from public rules
+TODO various examples from public rules
