@@ -281,4 +281,4 @@ Both of the call will return something like the following is successful:
 
 ## Rules examples:
 As mentioned earlier on, the ARE is evolving, so there will be likely many more rulesets in the near future.
-All public rulesets will be in the main BeEF repository, inside <beef_root>/arerules.
+All public rulesets will be in the main BeEF repository, inside (beef_root)/arerules.
