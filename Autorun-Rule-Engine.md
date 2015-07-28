@@ -248,8 +248,37 @@ This is quite self-explanatory ;-)
 curl http://172.16.45.1:3000/api/autorun/rule/delete/1?token=xyz
 ```
 ### List rule(s)
-```javascript
+If you need to retrieve rule definition data back in JSON, you can do it in two ways:
 
+Getting a specific ruleset (with id 1 in the example):
+```javascript
+curl http://172.16.45.1:3000/api/autorun/rule/list/1?token=xyz
 ```
+
+Getting all the rulesets in the database:
+```javascript
+curl http://172.16.45.1:3000/api/autorun/rule/list/all?token=xyz
+```
+
+Both of the call will return something like the following is successful:
+```javascript
+{
+    "success": true,
+    "rules": [
+        {
+            "id": 2,
+            "name": "HTA PowerShell",
+            ...
+        },
+        {
+            "id": 3,
+            "name": "Get Internal IP (WebRTC)",
+            ...
+        }
+    ]
+}
+```
+
 ## Rules examples:
-TODO various examples from public rules
+As mentioned earlier on, the ARE is evolving, so there will be likely many more rulesets in the near future.
+All public rulesets will be in the main BeEF repository, inside <beef_root>/arerules.
