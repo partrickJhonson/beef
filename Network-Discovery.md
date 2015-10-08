@@ -1,4 +1,4 @@
-_With Javascript hacks, it is possible to launch network attacks through a hooked browser._
+_With JavaScript hacks, it is possible to launch network attacks through a hooked browser._
 
 ## Get Internal IP Address
 
@@ -63,6 +63,82 @@ You can see the list of CSRF modules in the [[module|BeEF-modules]] page.
 ## IRC NAT Pinning
 
 By simulating IRC communication from the browser, it is possible to deceive firewall for opening TCP ports. This hack is called [[NAT Pinning|http://samy.pl/natpin/]] and it is included in the BeEF [[IRC NAT Pinning module|Module:-IRC-NAT-Pinning]]. You can find more information and exemple on the [BeEF's blog](http://blog.beefproject.com/2012/07/opening-closed-ports-on-nat-device-and.html).
+
+## Admin UI
+
+### Network Map
+
+The Network Map, available under the `Network -> Map` tab in Admin UI, presents a dynamic map of the zombie browser's local network(s). Identified network hosts are added to the map automatically.
+
+![Network Map of a zombie browser's local network](https://cloud.githubusercontent.com/assets/434827/10267111/0117cf3a-6ad2-11e5-9b39-cb747f06a13c.png)
+
+The Network Map makes use of HTML5 canvas which allows you to save the map as an image.
+
+![Save Network Map canvas as image](https://cloud.githubusercontent.com/assets/434827/10267112/06171dc4-6ad2-11e5-9e3d-7da364f3285e.png)
+
+### Network Hosts
+
+Right-clicking anywhere in the `Network -> Hosts` grid provides a context menu which provides options for host discovery.
+
+![host-discovery](https://cloud.githubusercontent.com/assets/434827/6025988/e49e6dca-ac2a-11e4-909a-18c1de74ac27.png)
+
+The first two menu items (for Chrome and Firefox) attempt to detect the local network IP address ranges:
+* [Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-webrtc). (C, FF)
+* Identify LAN subnets (C, FF)
+
+The remaining options perform host discovery on a user-specified IP address range or a predefined list of commonly used LAN IP addresses:
+* Discover Routers (S, FF)
+* Discover Web Servers (ALL)
+* Fingerprint HTTP (C, FF, IE, S)
+* CORS Scan (IE10+, C, FF, S)
+
+
+Identified network hosts are available in the `Network -> Hosts` panel.
+
+Right-clicking a network host allows you to perform various actions on the host or all hosts in its local subnet, such as:
+* Scan for HTTP servers (ALL)
+* Fingerprint HTTP servers (C, FF, IE, S)
+* Cross-Origin scan for CORS enabled HTTP servers (IE10+, C, FF, S)
+* Scan for open TCP ports (C, FF)
+
+![service-discovery](https://cloud.githubusercontent.com/assets/434827/6026008/09b3323a-ac2b-11e4-90d5-2473208e5932.png)
+
+### Network Services
+
+Identified network services are available in the `Network -> Services` panel.
+
+Right-clicking a network service allows you to perform various actions, such as:
+* Fingerprint HTTP servers
+* Cross-Origin scan host for CORS enabled HTTP servers
+* Scan for remote file include (reverse shell)
+* Scan for known vulnerable Shell Shock CGIs. (reverse shell)
+
+![service-scanning](https://cloud.githubusercontent.com/assets/434827/6026013/14d547a2-ac2b-11e4-9cd3-9ce7ad51e7d4.png)
+
+
+## RESTful API
+
+The Network Extension RESTful API allows retrieval of the identified network hosts and services.
+```
+ # Returns the entire list of network hosts for all zombies
+curl http://127.0.0.1:3000/api/network/hosts?token=[token]
+
+# Returns the entire list of network services for all zombies
+curl http://127.0.0.1:3000/api/network/services?token=[token]
+
+# Returns all hosts given a specific hooked browser id
+curl http://127.0.0.1:3000/api/network/hosts/[id]?token=[token]
+
+# Returns all services given a specific hooked browser id
+curl http://127.0.0.1:3000/api/network/services/[id]?token=[token]
+
+# Returns a specific network host given its id
+curl http://127.0.0.1:3000/api/network/host/[id]?token=[token]
+
+# Returns a specific network service given its id
+curl http://127.0.0.1:3000/api/network/service/[id]?token=[token]
+```
+
 
 ***
 [[Previous|Social-Engineering]] | [[Next|Metasploit]]
