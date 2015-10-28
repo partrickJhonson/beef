@@ -40,6 +40,8 @@ We currently have the following testing categories:
  
  - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
 
+ - **thirdparty/bundle_audit**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
+
 You will also notice another directory, **common**. As the name suggests, it contains things shared across testing suites, for instance constants and methods.
 
 ## Unit tests
@@ -141,6 +143,11 @@ To test Metasploit integration, run:
 `bundle exec rake msf`
 
 This will clone the latest version of Metasploit to /tmp/msf-test/
+
+### Check Ruby Gems
+
+To check Ruby Gems for known vulnerabilities, run:
+`bundle exec rake bundle_audit`
 
 ## Conclusion
 We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with Virtual Machines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
