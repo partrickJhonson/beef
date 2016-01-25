@@ -18,3 +18,8 @@ Be sure to read the [[documentation|Metasploit]] (and [[here|Configuration]] als
 * Forward the public port (default 3000/tcp) from your border router to `<LAN IP>:3000` of the BeEF server.
 * Additionally, ports 61985/tcp and 61986/tcp must also be forwarded if web sockets are enabled for communicating with BeEF.
 * Likewise, some BeEF extensions, such as IPEC and DNS, require additional ports to be forwarded. Review the associated config.yaml file for each extension and ensure the appropriate ports are forwarded.
+
+
+### Can I use a domain name instead of IP address for the BeEF hook?
+
+Yes! Simply specify the public domain name and port in `beef.http.public` and `beef.http.public_port` respectively.
