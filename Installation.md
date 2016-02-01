@@ -11,8 +11,13 @@
 ruby dk.rb init
 ruby dk.rb install
 ```
-* Follow the steps described here: https://github.com/hiranpeiris/therubyracer_for_windows
+* Download and install Python 2.7: https://www.python.org/download/releases/2.7/
+* Follow the steps described here: https://github.com/eakmotion/therubyracer_for_windows
 This is needed because the admin UI is using the Uglifier gem, which needs a JavaScript environment. This is quite painful to install in Windows, so that link provides pre-compiled DLLs for the v8 engine and 2 required gems.
+* Install libv8 gem:
+```
+gem install libv8 -v '3.11.8.17' -- --with-system-v8
+```
 * Browse to where you extracted BeEF and run:
 ```
 gem install bundler
