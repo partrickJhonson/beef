@@ -30,11 +30,15 @@ Then, by using Java, it is possible to launch ping request and identify alive ho
 
 [[Images/module-ping-sweep1.png|align=center]]
 
-## Cross-Origin Scanner
+## Cross-Origin Scanner (CORS)
 
-The Cross-Origin Scanner sends CORS requests to a specified IP range and returns the IP address, port, HTTP status code, page title and page contents for each CORS enabled web server identified.
+The Cross-Origin Scanner (CORS) module sends CORS requests to a specified IP range and returns the IP address, port, HTTP status code, page title and page contents for each web server identified with a permissive CORS policy.
 
 ![Cross-Origin Scanner](https://cloud.githubusercontent.com/assets/434827/5973004/ebd4b0b2-a8b6-11e4-9777-f5e3bb6377b7.png)
+
+## Cross-Origin Scanner (Flash)
+
+The Cross-Origin Scanner (Flash) module sends requests to a specified IP range using Flash and returns the IP address, port, page title and page contents for each web server identified with a permissive flash cross-origin policy.
 
 ## DNS Enumeration
 
@@ -90,7 +94,8 @@ The remaining options perform host discovery on a user-specified IP address rang
 * Discover Routers (S, FF)
 * Discover Web Servers (ALL)
 * Fingerprint HTTP (C, FF, IE, S)
-* CORS Scan (IE10+, C, FF, S)
+* Cross-Origin CORS Scan (IE10+, C, FF, S)
+* Cross-Origin Flash Scan (C, FF)
 
 
 Identified network hosts are available in the `Network -> Hosts` panel.
@@ -99,6 +104,7 @@ Right-clicking a network host allows you to perform various actions on the host 
 * Scan for HTTP servers (ALL)
 * Fingerprint HTTP servers (C, FF, IE, S)
 * Cross-Origin scan for CORS enabled HTTP servers (IE10+, C, FF, S)
+* Cross-Origin scan for Flash cross-origin enabled HTTP servers (C, FF)
 * Scan for open TCP ports (C, FF)
 
 ![service-discovery](https://cloud.githubusercontent.com/assets/434827/6026008/09b3323a-ac2b-11e4-90d5-2473208e5932.png)
@@ -110,6 +116,7 @@ Identified network services are available in the `Network -> Services` panel.
 Right-clicking a network service allows you to perform various actions, such as:
 * Fingerprint HTTP servers
 * Cross-Origin scan host for CORS enabled HTTP servers
+* Cross-Origin scan host for Flash cross-origin enabled HTTP servers
 * Scan for remote file include (reverse shell)
 * Scan for known vulnerable Shell Shock CGIs. (reverse shell)
 
