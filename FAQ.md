@@ -23,3 +23,10 @@ Be sure to read the [[documentation|Metasploit]] (and [[here|Configuration]] als
 ### Can I use a domain name instead of IP address for the BeEF hook?
 
 Yes! Simply specify the public domain name and port in `beef.http.public` and `beef.http.public_port` respectively.
+
+
+### Why does BeeF update fail?
+
+If you're getting the error `Your local changes to the following files would be overwritten by merge: Gemfile.lock` it means BeEF's dependencies were recently updated.
+
+To fix, run `git checkout Gemfile.lock`, then update BeEF and run `bundle install` to install the updated packages.
