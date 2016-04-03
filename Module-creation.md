@@ -5,18 +5,18 @@ BeEF has been designed in a modular way, it is so very easy to create a new modu
 Basically, modules are all stored in the [module](https://github.com/beefproject/beef/tree/master/modules) directory and are composed of three main files :
 * **config.yaml** : The YAML configuration file which describe properties of the module
 * **module.rb**  which allow integrating the module in the BeEF web interface
-* **command.js** : the javascript "payload" which will be executed on the hooked browser
+* **command.js** : the JavaScript "payload" which will be executed on the hooked browser
 
 ## <a name="config"/>YAML Configuration file 
 
-The YAML configuration file embedds five informations :
+The YAML configuration file embeds five informations :
 * The name of the plugin
 * The name of the author
 * The description of the plugin
 * The category of the plugin
-* The browsers that can be targeted or not
+* The browsers and OS that can be targeted or not
 
-For example, here is the config.yml of the [detect_firebug](https://github.com/beefproject/beef/blob/master/modules/browser/detect_firebug/config.yaml) plugin:
+For example, here is the config.yaml of the [detect_firebug](https://github.com/beefproject/beef/blob/master/modules/browser/detect_firebug/config.yaml) plugin:
 ```yaml
 beef:
     module:
@@ -33,7 +33,7 @@ beef:
 
 Regarding list of browser, three arrays can be defined : **working**, **not_working** or **user_notify**. Browsers are defined by their main letters : **"FF"**, **"O"**, **"C"**, **"S"**, **"IE"** or **"All"**.
 
-It is possible to define versions exploitable by precising the minimum and maximum version of each browser. The [get_visited_url](https://github.com/beefproject/beef/blob/master/modules/browser/get_visited_urls/config.yaml) plugin is a good example :
+It is possible to define versions exploitable by providing the minimum and maximum version of each browser. The [get_visited_url](https://github.com/beefproject/beef/blob/master/modules/browser/get_visited_urls/config.yaml) plugin is a good example :
 ```yaml
 target:
     working:
@@ -137,19 +137,19 @@ It is possible to save information gathered by the script in the list of informa
   end
 ```
 
-* **@datastore** is a dictionnary of information returned by the javascript payload
-* The function define a dictionnary and save it with the **save** function.
+* **@datastore** is a dictionary of information returned by the JavaScript payload
+* The function define a dictionary and save it with the **save** function.
 
 ## <a name="javascriptpayload"/>Javascript payload
 
-The last mandatory file is the javascript payload **command.js**. The javascript payload should be included in a function called by **beef.execute**. Except that you can do anything you want here.
+The last mandatory file is the JavaScript payload **command.js**. The JavaScript payload should be included in a function called by **beef.execute**. Except that you can do anything you want here.
 
 The following command should be used to return information to the BeEF controller :
 ```erb
 beef.net.send("<%= @command_url %>", <%= @command_id %>, "data");
 ```
 
-The BeEF javascript API already includes a lot of interesting features and embed jQuery. You can see details on this API [[here|Javascript-API]]. If you think that some functions of your module may improve the global API, look the [[relevant section|Javascript-API#wiki-improve]].
+The BeEF JavaScript API already includes a lot of interesting features and embed jQuery. You can see details on this API [[here|Javascript-API]]. If you think that some functions of your module may improve the global API, look the [[relevant section|Javascript-API#wiki-improve]].
 
 Here is an interesting example taken from [clipboard_theft](https://github.com/beefproject/beef/blob/master/modules/host/clipboard_theft/command.js) :
 
@@ -181,6 +181,14 @@ class Your_module < BeEF::Core::Command
 end
 ```
 
+### Bind a raw HTTP response (headers and body) to a given URI :
+
+```ruby
+  def pre_send
+    BeEF::Core::NetworkStack::Handlers::AssetHandler.instance.bind_raw('200', {'Content-Type'=>'text/html'}, 'hello world!', '/hello_world', -1)
+  end
+```
+
 ### Use BeEF configuration information
 
 You can use information of the BeEF configuration in your module.rb :
@@ -197,13 +205,13 @@ class Your_module < BeEF::Core::Command
 end
 ````
 
-## What's now ?
+## What now ?
 
-If you think that your module can be usefull to other people, join the BeEF community on github, fork the beef repository, upload your module and create a new issue for proposing it. We like people with new ideas :).
+If you think that your module can be useful to other people, join the BeEF community on GitHub, fork the beef repository, upload your module and create a new issue for proposing it. We like people with new ideas :).
 
 ## References
 
-* [[Reference Page on config.yml file|Command-Module-Config]]
+* [[Reference Page on config.yaml file|Command-Module-Config]]
 * [[Reference Page on format type for module.rb file|Form-Data-Types]]
 
 ***
