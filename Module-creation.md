@@ -181,7 +181,9 @@ class Your_module < BeEF::Core::Command
 end
 ```
 
-### Bind a raw HTTP response (headers and body) to a given URI :
+### Bind a raw HTTP response to a given URI
+
+You can bind a raw HTTP response (headers and body) to a given URI in order to use it from the hooked browser :
 
 ```ruby
   def pre_send
