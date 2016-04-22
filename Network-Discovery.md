@@ -8,37 +8,43 @@ The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firef
 
 ![Get Internal IP Address WebRTC](https://cloud.githubusercontent.com/assets/434827/5973009/0a055c62-a8b7-11e4-82fd-96e726f8a60a.png)
 
-The [[Get Internal IP Address|Module:-Get-Internal-IP]] module uses a Java applet to retrieve the IP address.
+The [[Get Internal IP Address|Module:-Get-Internal-IP]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run.
 
 [[Images/module-get-internal-ip.png|align=center]]
 
 ## Identify LAN Subnets
 
-The Identify LAN Subnets module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules.
+The Identify LAN Subnets module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module works only with Firefox and Chrome.
 
 ![Identify LAN Subnets](https://cloud.githubusercontent.com/assets/434827/5973018/2059b59e-a8b7-11e4-9e67-17b7ea0b75bb.png)
 
 ## Get HTTP Servers
 
-The Get HTTP Servers module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules.
+The Get HTTP Servers module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module should be invisible to the user in Internet Explorer and Safari, however with other browsers the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
 
 ![Get HTTP Servers](https://cloud.githubusercontent.com/assets/434827/5973022/330d4c78-a8b7-11e4-90e9-89260effd9c8.png)
 
-## Ping Sweep (Java)
+## Ping Sweep
 
-Then, by using Java, it is possible to launch ping request and identify alive hosts on the network. This modules exists in two version, [[the default version|Module:-Ping-Sweep]] which directly uses Java API and [[the Java version|Module:-Ping-Sweep-(Java)]] which loads a Java applet.
+Then it is possible to launch ping request and identify alive hosts on the network. This modules exists in three versions.
+
+The [[Ping Sweep|Module:-Ping-Sweep]] module uses time-based JavaScript XHR requests to identify live hosts. This module works only in Firefox.
+
+The [[Ping Sweep (FF) module|Module:-Ping-Sweep-(FF)]] uses the Java API directly to send requests and time the response. This module works only in Firefox with Java installed.
+
+The [[Ping Sweep (Java)|Module:-Ping-Sweep-(Java)]] which loads a Java applet. Since Java introduced click-to-play the user must allow the unsigned Java applet to run.
 
 [[Images/module-ping-sweep1.png|align=center]]
 
 ## Cross-Origin Scanner (CORS)
 
-The Cross-Origin Scanner (CORS) module sends CORS requests to a specified IP range and returns the IP address, port, HTTP status code, page title and page contents for each web server identified with a permissive CORS policy.
+The Cross-Origin Scanner (CORS) module sends CORS requests to a specified IP range and returns the IP address, port, HTTP status code, page title and page contents for each web server identified with a permissive CORS policy. This module should work on all modern browsers which support CORS.
 
 ![Cross-Origin Scanner](https://cloud.githubusercontent.com/assets/434827/5973004/ebd4b0b2-a8b6-11e4-9777-f5e3bb6377b7.png)
 
 ## Cross-Origin Scanner (Flash)
 
-The Cross-Origin Scanner (Flash) module sends requests to a specified IP range using Flash and returns the IP address, port, page title and page contents for each web server identified with a permissive flash cross-origin policy.
+The Cross-Origin Scanner (Flash) module sends requests to a specified IP range using Flash and returns the IP address, port, page title and page contents for each web server identified with a permissive flash cross-origin policy. This module works only in Firefox and Chrome with Flash installed.
 
 ## DNS Enumeration
 
@@ -54,13 +60,13 @@ Now that we know the IP address of the hooked system and several hostnames, it w
 
 ## Network Fingerprinting
 
-The [[Network Fingerprinting module|Module:-Fingerprint-Network]] uses URL of default images to fingerprint the devices used on the network. It embedds a list of default pictures for Web servers (apache, IIS) and network devices (Linksys NAS, printers...) and check if one of this picture is available.
+The [[Network Fingerprinting module|Module:-Fingerprint-Network]] uses URL of default images to fingerprint the devices used on the network. It embedds a list of default pictures for Web servers (apache, IIS) and network devices (Linksys NAS, printers...) and check if one of this picture is available. This module should work in all browsers. The user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
 
 [[Images/module-network-fingerprint2.png|align=center|width=400px]]
 
 ## Remote CSRFs
 
-CSRF is still a vulnerabilty seldom taken into account by developers while it can have serious impact. BeEF includes a lot of CSRF modules, especially targeting personal routes (Linksys, Dlink...). Happily, we just detected one of those routers when fingerprinting the network during the previous step. Most of CSRF attacks allows modifying the admin password however several can be used to open external ports on the box.
+CSRF is still a vulnerability seldom taken into account by developers while it can have serious impact. BeEF includes a lot of CSRF modules, especially targeting personal routes (Linksys, Dlink...). Happily, we just detected one of those routers when fingerprinting the network during the previous step. Most of CSRF attacks allows modifying the admin password however several can be used to gain a reverse shell or open external ports on the box.
 
 You can see the list of CSRF modules in the [[module|BeEF-modules]] page.
 
