@@ -1,12 +1,12 @@
-_TODO_
+Discover active hosts in the internal network of the hooked browser using JavaScript XHR.
+
+Set the IP address range to 'common' to scan a list of common LAN addresses.
+
+The default number of workers (3) should be sufficient. Increasing the number of workers is likely to result in false negatives due to hitting the browser's maximum connection cap.
+
 
 ## Screenshots
 
-[[Images/module-ping-sweep1.png|align=center]]
+![ping sweep options](https://cloud.githubusercontent.com/assets/434827/14728907/6d5936aa-087c-11e6-9b21-dbdc5d68d3f5.png)
 
-[[Images/module-ping-sweep2.png|align=center]]
-
-## Feedback
-
-* The default value (2000 ms) seems to be valid for virtual network
-* Users should take care of the IP range format : **10.1.1.1-10.1.1.3** is valid, **10.1.1.1-3** is not
+![ping sweep results](https://cloud.githubusercontent.com/assets/434827/14728928/9dd46084-087c-11e6-93a8-44406fc89a11.png)
