@@ -1,3 +1,5 @@
+The console extension is currently **disabled** and **unsupported**.
+
 ## Introduction
 
 BeEF includes a metasploit-like console. This console can be used to control hooked browsers and send modules.
