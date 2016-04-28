@@ -1,1 +1,1 @@
-This module will retrieve the physical location of the hooked browser using the Geo-location API. The user will be prompted to share their location with the hooked origin, unless the hooked origin has been white-listed previously.
+This module will retrieve the physical location of the hooked browser using the Phonegap API.
