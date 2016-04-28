@@ -13,6 +13,7 @@
 1. [[Tunneling|Tunneling]]
 1. [[XSS Rays|XSS-Rays]]
 1. [[Persistence|Persistence]]
+1. [[Geolocation|Geolocation]]
 
 ## III - Advanced Utilization
 1. [[RestFul API|BeEF-RESTful-API]]
