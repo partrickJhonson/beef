@@ -74,7 +74,7 @@ The Metasploit extension should be configured by modifying the [config.yml](http
             pass: "abc123"
             uri: '/api'
             ssl: true
-            ssl_version: 'TLSv1'
+            ssl_version: 'TLS1'
             ssl_verify: true
             callback_host: "127.0.0.1"
             autopwn_url: "autopwn"
