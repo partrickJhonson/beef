@@ -1,41 +1,3 @@
-## Installation on Windows
-
-**Install dependencies**
-
-* Download and Install: http://rubyinstaller.org/
-* (Including the Development Kit, for more info see here: https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
-* Download and Extract into your Ruby BIN folder: http://www.sqlite.org/sqlitedll-3_7_0_1.zip
-* Add your Ruby BIN folder to your system PATH variable.
-* Open a command Prompt and browse to where you extracted the Development Kit, run:
-```
-ruby dk.rb init
-ruby dk.rb install
-```
-* Download and install Python 2.7: https://www.python.org/download/releases/2.7/
-* Follow the steps described here: https://github.com/eakmotion/therubyracer_for_windows
-This is needed because the admin UI is using the Uglifier gem, which needs a JavaScript environment. This is quite painful to install in Windows, so that link provides pre-compiled DLLs for the v8 engine and 2 required gems.
-* Install libv8 gem:
-```
-gem install libv8 -v '3.11.8.17' -- --with-system-v8
-```
-* Browse to where you extracted BeEF and run:
-```
-gem install bundler
-```
-* At this stage you should have the following gems installed:
-```
-bundler (1.5.1)
-ref (1.0.5)
-therubyracer (0.11.0beta1 x86-mingw32)
-```
-* You're now ready for the last step. After that, you can start BeEF.
-```
-bundle install
-```
-
-
-***
-
 ## Installation on Linux
 
 Note, in any place listing RVM installation instructions you can replcae them with this two steps:
@@ -152,6 +114,45 @@ You can download the [zip](https://github.com/beefproject/beef/zipball/master) o
     rvm install 2.1.5
     rvm use 2.1.5 --default
     gem install bundler
+```
+
+***
+
+## Installation on Windows
+
+Windows is no longer supported. The following instructions are outdated.
+
+**Install dependencies**
+
+* Download and Install: http://rubyinstaller.org/
+* (Including the Development Kit, for more info see here: https://github.com/oneclick/rubyinstaller/wiki/Development-Kit)
+* Download and Extract into your Ruby BIN folder: http://www.sqlite.org/sqlitedll-3_7_0_1.zip
+* Add your Ruby BIN folder to your system PATH variable.
+* Open a command Prompt and browse to where you extracted the Development Kit, run:
+```
+ruby dk.rb init
+ruby dk.rb install
+```
+* Download and install Python 2.7: https://www.python.org/download/releases/2.7/
+* Follow the steps described here: https://github.com/eakmotion/therubyracer_for_windows
+This is needed because the admin UI is using the Uglifier gem, which needs a JavaScript environment. This is quite painful to install in Windows, so that link provides pre-compiled DLLs for the v8 engine and 2 required gems.
+* Install libv8 gem:
+```
+gem install libv8 -v '3.11.8.17' -- --with-system-v8
+```
+* Browse to where you extracted BeEF and run:
+```
+gem install bundler
+```
+* At this stage you should have the following gems installed:
+```
+bundler (1.5.1)
+ref (1.0.5)
+therubyracer (0.11.0beta1 x86-mingw32)
+```
+* You're now ready for the last step. After that, you can start BeEF.
+```
+bundle install
 ```
 
 ***
