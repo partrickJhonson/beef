@@ -24,6 +24,15 @@ Be sure to read the [[documentation|Metasploit]] (and [[here|Configuration]] als
 
 Yes! Simply specify the public domain name and port in `beef.http.public` and `beef.http.public_port` respectively.
 
+### How do I fix `ArgumentError - invalid byte sequence in US-ASCII` ?
+
+Set the appropriate locale:
+
+```bash
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+```
 
 ### Why does BeeF update fail?
 
