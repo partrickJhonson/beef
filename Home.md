@@ -18,7 +18,12 @@ To join the standard mailing list send a mail to beef-subscribe@bindshell.net.
 
 To join the **development** mailing list send a mail to beef-dev-subscribe@bindshell.net.
 
-[[/Images/logo.png|align=center]]
+## FAQ
+
+[[Frequently Asked Questions|FAQ]]
 
 ***
+
+[[/Images/logo.png|align=center]]
+
 [Start !](wiki/Introducing-BeEF)
