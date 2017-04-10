@@ -51,7 +51,6 @@
 
 ## Exploits
 
-1. [[Axous 1.1.1 Add User CSRF|Module:-Axous-1.1.1-Add-User-CSRF]]
 1. [[ColdFusion Directory Traversal Exploit|Module:-ColdFusion-Directory-Traversal-Exploit]]
 1. [[GlassFish WAR Upload XSRF|Module:-GlassFish-WAR-Upload-XSRF]]
 1. [[Jboss 6.0.0M1 JMX Deploy Exploit|Module:-Jboss-6.0.0M1-JMX-Deploy-Exploit]]
@@ -115,7 +114,7 @@
 1. [[Get Registry Keys|Module:-Get-Registry-Keys]]
 1. [[Get Wireless Keys|Module:-Get-Wireless-Keys]]
 1. [[Detect CUPS|Module:-Detect-CUPS]]
-1. [[Make Telephon Call|Module:-Make-Telephon-Call]]
+1. [[Make Telephone Call|Module:-Make-Telephone-Call]]
 1. [[Detect Bit Defender 2012|Module:-Detect-BitDefender2012]]
 
 ## IPEC
@@ -169,11 +168,18 @@
 
 ## Social Engineering
 
+1. [[Autocomplete Theft|Module:-Autocomplete Theft]]
 1. [[Clickjacking|Module:-Clickjacking]]
 1. [[Clippy|Module:-Clippy]]
+1. [[Fake Evernote Web Clipper Login|Module:-Fake Evernote Web Clipper Login]]
 1. [[Fake Flash Update|Module:-Fake-Flash-Update]]
+1. [[Fake LastPass|Modile:-Fake LastPass]]
 1. [[Google Phishing|Module:-Google-Phishing]]
 1. [[Lcamtuf Download|Module:-Lcamtuf-Download]]
+1. [[Fake Notification Bar|Module:-Fake Notification Bar]]
+1. [[Fake Notification Bar (Chrome)|Module:-Fake Notification Bar (Chrome)]]
+1. [[Fake Notification Bar (FF)|Module:-Fake Notification Bar (FF)]]
+1. [[Fake Notification Bar (IE)|Module:-Fake Notification Bar (IE)]]
 1. [[Pretty Theft|Module:-Pretty-Theft]]
 1. [[Simple Hijacker|Module:-Simple-Hijacker]]
 1. [[TabNabbing|Module:-TabNabbing]]
