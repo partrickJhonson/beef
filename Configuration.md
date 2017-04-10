@@ -2,6 +2,17 @@
 
 BeEF should be configured through the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
 
+
+### Credentials
+
+Be sure to change the username and password for the web interface. For example:
+
+```yaml
+    credentials:
+        user:   "beef"
+        passwd: "beef"
+```
+
 ### Network limitations
 
 The web interface for hooking or for managing BeEF can be limited by subnet. For example:
@@ -59,7 +70,7 @@ Extensions should be enabled in the main [config.yaml](https://github.com/beefpr
                 enable: false
 ```
 
-The Demos extension should be disabled in production by setting `enable: false` in [extensions/demos/config.yaml](https://github.com/beefproject/beef/blob/master/extensions/demos/config.yaml):
+The Demos extension should be disabled in production by setting `enable: false` in [extensions/demos/config.yaml](https://github.com/beefproject/beef/blob/master/extensions/demos/config.yaml)
 
 ### Metasploit
 
