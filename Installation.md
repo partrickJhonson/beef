@@ -1,6 +1,6 @@
 ## Installation on Linux
 
-Note, in any place listing RVM installation instructions you can replcae them with this two steps:
+Note, in any place listing RVM installation instructions you can replace them with this two steps:
 
 1. get ruby - assuming you do not want RVM and know a way to get ruby
 2. run: `gem install bundler`
@@ -12,7 +12,7 @@ Note, in any place listing RVM installation instructions you can replcae them wi
 
 ```bash
     sudo apt-get update
-    sudo apt-get install curl git
+    sudo apt-get install curl git nodejs
     curl -sSL https://get.rvm.io | bash -s stable
 
     # Ubuntu
@@ -46,6 +46,7 @@ Follow this instruction http://rvm.io/integration/gnome-terminal
 **Install dependencies**
 
 ```bash
+    sudo yum install curl git nodejs
     curl -sSL https://get.rvm.io | bash -s stable
     source ~/.rvm/scripts/rvm
     rvm install 2.3.0
@@ -77,10 +78,6 @@ source ~/.bash_profile
 cd beef
 ./beef
 ```
-
-### BackTrack
-
-[[Look the dedicated page|BeEF-and-Backtrack-5]]
 
 ***
 
