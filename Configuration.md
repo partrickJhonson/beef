@@ -2,10 +2,15 @@
 
 BeEF should be configured through the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
 
+***
+
+## Authentication
 
 ### Credentials
 
-Be sure to change the username and password for the web interface. For example:
+**Be sure to change the username and password for the web interface.**
+
+For example:
 
 ```yaml
     credentials:
@@ -15,7 +20,11 @@ Be sure to change the username and password for the web interface. For example:
 
 ### Network limitations
 
-The web interface for hooking or for managing BeEF can be limited by subnet. For example:
+The web interface for hooking or for managing BeEF can be limited by subnet.
+
+**Access to the management interface should be restricted using the `permitted_ui_subnet` access control.**
+
+For example:
 
 ```yaml
     restrictions:
@@ -23,9 +32,21 @@ The web interface for hooking or for managing BeEF can be limited by subnet. For
         permitted_ui_subnet: "127.0.0.1/32"
 ```
 
-### Web server configuration
+The panel path should also be changed using the `beef.http.web_ui_basepath` configuration option (see Web server configuration section below). Note: this is security through obscurity and won't prevent attacks against the `/api/` REST interface.
 
-The webserver can be fully configured :
+
+### Login Throttling
+
+By default, the administration UI throttles login attempts to 1 attempt per second. This can be changed using the `beef.extensions.admin_ui.login_fail_delay: 1` value in `extensions/admin_ui/config.yaml`.
+
+Note: This does not prevent login brute-force attacks against the `/api/` REST API interface which does not have the same restrictions.
+
+
+***
+
+## Web server configuration
+
+The web server can be fully configured :
 
 ```yaml
     http:
@@ -44,6 +65,24 @@ The webserver can be fully configured :
         hook_session_name: "BEEFHOOK" #Name of session
         session_cookie_name: "BEEFSESSION" # Name of BeEF cookie
 ```
+
+### Web server imitation
+
+BeEF also features rudimentary web server imitation. The root page and HTTP 404 error pages can be changed to reflect one of several popular web servers (apache, iis, nginx) using the `beef.http.web_server_imitation` directive.
+
+For example:
+
+```yaml
+        # Imitate a specified web server (default root page, 404 default error page, 'Server' HTTP response header)
+        web_server_imitation:
+            enable: true
+            type: "apache" # Supported: apache, iis, nginx
+            hook_404: false # inject BeEF hook in HTTP 404 responses
+            hook_root: false # inject BeEF hook in the server home page
+```
+
+The `hook_404` and `hook_root` directives can be enabled to inject the BeEF hook on HTTP 404 error pages and the web root page respectively. This will hook the browser of anyone examining the web server.
+
 
 ***
 
@@ -82,7 +121,7 @@ The Metasploit extension should be configured by modifying the [config.yml](http
             host: "127.0.0.1"
             port: 55552
             user: "msf"
-            pass: "abc123"
+            pass: "<password>"
             uri: '/api'
             ssl: true
             ssl_version: 'TLS1'
@@ -91,12 +130,14 @@ The Metasploit extension should be configured by modifying the [config.yml](http
             autopwn_url: "autopwn"
 ```
 
+**Be sure to change the `password` field**. Authenticated access to the Metasploit RPC service can be used to [execute arbitrary commands](https://www.rapid7.com/db/modules/exploit/multi/misc/msf_rpc_console) on the underlying operating system.
+
 Most of the configuration can be let with default value, except the **host** and **callback_host** parameters which should have the IP address of the host.
 
 For enabling RPC communication, the following command should be launched in Metasploit:
 
 ```ruby
-load msgrpc ServerHost=127.0.0.1 User=msf Pass=abc123 SSL=y
+load msgrpc ServerHost=127.0.0.1 User=msf Pass=<password> SSL=y
 ```
 
 This command can be written in a file and launched with **-r** option to _msfconsole_.
