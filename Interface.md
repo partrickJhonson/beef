@@ -37,9 +37,12 @@ Go then directly to the command Tab :
 
 You will see bullets with different colors before each module. Internally, BeEF detects which browser you hooked and knows which modules are working on each browser :
 
-* Green : It works on the browser selected. Go !
-* Orange : It will work but the user may detect it. Notice that it can be legitimate for example for social engineering modules
-* Red : it won't work on this browser. But you still can try !
+* Green: The command module works against the target and should be invisible to the user
+* Orange: The command module works against the target, but may be visible to the user
+* Grey: The command module is yet to be verified against this target
+* Red: The command module does not work against this target
+
+Note that the traffic light system indicates whether the command module works on the zombie browser and underlying operating system in use by the zombie browser; however, the module may have other requirements, such as the presence of third-party browser addons such as Flash, may require execution within a privileged zone, such as `chrome://`, or may require the presence of third-party libraries such as the [PhoneGap API](https://phonegap.com/).
 
 For example, let's try to get the internal IP of the hooked browser. Select "Get Internal IP" in the Host category and click on "Execute" (this module should work on most browsers if the host has Java installed). After few seconds you will see a new command in the history part :
 
