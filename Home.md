@@ -9,7 +9,7 @@ The framework contains numerous command modules that employ BeEF's simple and po
 
 ## Main Site 
 
-[http://beefproject.com](http://beefproject.com) 
+[https://beefproject.com](https://beefproject.com) 
 
 ## Community 
 ### Mailing Lists ###
