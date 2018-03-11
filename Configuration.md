@@ -18,7 +18,11 @@ For example:
         passwd: "beef"
 ```
 
-### Network limitations
+**Note:** Failure to change the default password will cause BeEF to generate a new random password. This password is printed to the console when BeEF starts.
+
+## Access Controls
+
+### Network Limitations
 
 The web interface for hooking or for managing BeEF can be limited by subnet.
 
@@ -32,6 +36,19 @@ For example:
         permitted_ui_subnet: "127.0.0.1/32"
 ```
 
+**These access restrictions can be bypassed and should not be solely relied upon.**
+
+Ideally, BeEF should operate behind a reverse proxy which strips user-supplied proxy headers such as `X-Forwarded-For`. The `permitted_ui_subnet` should be restricted to `127.0.0.1/32` and accessed via a SSH tunnel.
+
+While it is not possible to bypass `/32` access controls, it is possible to bypass more permissive access controls, such as `/24` or `/16`. In these instances the IP address access controls can be bypassed by supplying a valid IP address within the permitted range in the `X-Forwarded-For` header.
+
+For example, `permitted_ui_subnet: "10.1.1.1/24"` could by bypassed by providing `X-Forwarded-For: 10.1.1.666`.
+
+By guessing a valid IP address in the correct subnet, an unauthorized user could infer the IP addresses of targets during a campaign by attempting to identify valid IP addresses in the `permitted_hooking_subnet`; or gain access to the administrator interface in the event the `permitted_ui_subnet` is not using a `/32` IP range.
+
+
+### Admin UI
+
 The panel path should also be changed using the `beef.http.web_ui_basepath` configuration option (see Web server configuration section below). Note: this is security through obscurity and won't prevent attacks against the `/api/` REST interface.
 
 
@@ -39,7 +56,7 @@ The panel path should also be changed using the `beef.http.web_ui_basepath` conf
 
 By default, the administration UI throttles login attempts to 1 attempt per second. This can be changed using the `beef.extensions.admin_ui.login_fail_delay: 1` value in `extensions/admin_ui/config.yaml`.
 
-Note: This does not prevent login brute-force attacks against the `/api/` REST API interface which does not have the same restrictions.
+By default, the REST API interface throttles login attempts to 1 attempt every 0.05 seconds. This can be changed using the `beef.restrictions.api_attempt_delay: 0.05` value in `config.yaml`.
 
 
 ***
@@ -109,11 +126,11 @@ Extensions should be enabled in the main [config.yaml](https://github.com/beefpr
                 enable: false
 ```
 
-The Demos extension should be disabled in production by setting `enable: false` in [extensions/demos/config.yaml](https://github.com/beefproject/beef/blob/master/extensions/demos/config.yaml)
+The Demos extension should be disabled in production by setting `enable: false` in `config.yaml`.
 
 ### Metasploit
 
-The Metasploit extension should be configured by modifying the [config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) file in _extensions/metasploit_ :
+The Metasploit extension should be configured by modifying the [extensions/metasploit/config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
 
 ```yaml
             name: 'Metasploit'
@@ -132,7 +149,7 @@ The Metasploit extension should be configured by modifying the [config.yml](http
 
 **Be sure to change the `password` field**. Authenticated access to the Metasploit RPC service can be used to [execute arbitrary commands](https://www.rapid7.com/db/modules/exploit/multi/misc/msf_rpc_console) on the underlying operating system.
 
-Most of the configuration can be let with default value, except the **host** and **callback_host** parameters which should have the IP address of the host.
+Most of the configuration can be let with default value, except the **host** and **callback_host** parameters which should have the IP address of the host on which Metasploit is accessible.
 
 For enabling RPC communication, the following command should be launched in Metasploit:
 
@@ -146,7 +163,8 @@ This command can be written in a file and launched with **-r** option to _msfcon
 
 Of course, IP address and password should be consistent with the previous yaml configuration file.
 
-### Launching BeEF
+
+## Launching BeEF
 
 You can now launch BeEF by launching the beef script in the root directory :
 
