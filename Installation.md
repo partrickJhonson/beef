@@ -1,4 +1,6 @@
-The following installation instructions are suitable for Linux and Mac OSX operating systems.
+The following installation instructions are suitable for **Linux and Mac OSX** operating systems.
+
+In theory, BeEF should work on any operating system which can run Ruby 2.3+ and nodejs. However, only MacOS and Linux are officially supported.
 
 
 ### Source
