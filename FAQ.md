@@ -14,15 +14,31 @@ Be sure to read the [[documentation|Metasploit]] (and [[here|Configuration]] als
 
 
 ### How do I configure BeEF on a server behind NAT?
+
 * Ensure `beef.http.public` and `beef.http.public_port` are set to the public WAN IP address and public WAN port respectively.
 * Forward the public port (default 3000/tcp) from your border router to `<LAN IP>:3000` of the BeEF server.
 * Additionally, ports 61985/tcp and 61986/tcp must also be forwarded if web sockets are enabled for communicating with BeEF.
 * Likewise, some BeEF extensions, such as IPEC and DNS, require additional ports to be forwarded. Review the associated config.yaml file for each extension and ensure the appropriate ports are forwarded.
 
+### How do I configure BeEF with ngrok?
+
+[Download ngrok](https://ngrok.com/), then tunnel your BeEF port (default: `3000`):
+
+```
+$ ngrok http 3000
+```
+
+Specify the public domain name `beef.http.public` and public port `beef.http.public_port` in `config.yaml`:
+
+```yaml
+        public: "<your-id>.ngrok.io"      # public hostname/IP address
+        public_port: "80"                 # public port (experimental) 
+```
 
 ### Can I use a domain name instead of IP address for the BeEF hook?
 
-Yes! Simply specify the public domain name and port in `beef.http.public` and `beef.http.public_port` respectively.
+Yes! Simply specify the public domain name and port in `beef.http.public` and `beef.http.public_port` respectively in `config.yaml`.
+
 
 ### How do I fix `ArgumentError - invalid byte sequence in US-ASCII` ?
 
