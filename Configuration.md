@@ -49,7 +49,7 @@ By guessing a valid IP address in the correct subnet, an unauthorized user could
 
 ### Admin UI
 
-The panel path should also be changed using the `beef.http.web_ui_basepath` configuration option (see Web server configuration section below). Note: this is security through obscurity and won't prevent attacks against the `/api/` REST interface.
+The panel path should also be changed using the `beef.extension.admin_ui.base_path` configuration option. Note: this is security through obscurity and won't prevent attacks against the `/api/` REST interface.
 
 
 ### Login Throttling
@@ -77,7 +77,6 @@ The web server can be fully configured :
         public_port: "3000"
 
         dns: "localhost" # Address of DNS server
-        web_ui_basepath: "/ui" # Path for admin UI
         hook_file: "/hook.js" # Path for hooking script
         hook_session_name: "BEEFHOOK" #Name of session
         session_cookie_name: "BEEFSESSION" # Name of BeEF cookie
