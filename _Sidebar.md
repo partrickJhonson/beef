@@ -18,7 +18,7 @@
 ## III - Advanced Utilization
 1. [[RestFul API|BeEF-RESTful-API]]
 1. [[Autorun Rule Engine|Autorun-Rule-Engine]]
-1. [[Twitter notification|Twitter-Notification]]
+1. [[Notifications|Notifications]]
 1. [[Console|BeEF Console]]
 1. [[Creating a module|Module-creation]]
 1. [[WebRTC Extension|WebRTC-Extension]]
