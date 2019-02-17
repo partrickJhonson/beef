@@ -2,19 +2,18 @@ BeEF has several methods to determine the hooked browser's location.
 
 ### IP Geolocation
 
-The enable IP Geolocation, download the MaxMind database:
+The enable IP Geolocation, download the MaxMind database. This can be achieved by using the `./update-geoipdb` script.
 
 ```bash
-curl -O http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
-gunzip GeoLiteCity.dat.gz && mkdir /opt/GeoIP && mv GeoLiteCity.dat /opt/GeoIP
+./update-geoipdb
 ```
 
-Then edit `config.yaml` to enable IP Geolocation and specify the path to the database. For example:
+By default, the MaxMind database is installed into `/opt/GeoIP`. If you opt to install the database manually, or change the page, you'll also need to update the path in `config.yaml` to the new path:
 
 ```yaml
     geoip:
         enable: true
-        database: '/opt/GeoIP/GeoLiteCity.dat'
+        database: '/opt/GeoIP/GeoLite2-City.mmdb'
 ```
 
 ### Modules
