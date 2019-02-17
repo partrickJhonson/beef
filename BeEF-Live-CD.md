@@ -1,3 +1,5 @@
+**NOTE: The LiveCD hasn't been maintained in years, is currently unsupported, and is likely full of security holes. DO NOT USE.**
+
 By far the most common queries or issues our users encounter is how to get the dependancies BeEF requires up and running on their system with a minimum of hassle. While our [[installation guide|Installation]] includes instructions for most *Nix distributions we also put together LiveCD which includes a working install or BeEF, metasploit and sqlmap. 
 
 ![BeEFLive](https://f.cloud.github.com/assets/1274050/58348/a67f24fe-5b6d-11e2-805a-1141d416e236.png)
