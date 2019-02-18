@@ -8,17 +8,26 @@ BeEF should be configured through the main configuration file : [config.yaml](ht
 
 ### Credentials
 
-**Be sure to change the username and password for the web interface.**
+**Change the username and password for the web interface.**
+
+**Change the username and password for the web interface.**
+
+**Change the username and password for the web interface.**
 
 For example:
 
 ```yaml
     credentials:
         user:   "beef"
-        passwd: "beef"
+        passwd: "something unique and complex"
 ```
 
-**Note:** Failure to change the default password will cause BeEF to generate a new random password. This password is printed to the console when BeEF starts.
+**Change the username and password for the web interface.**
+
+**Change the username and password for the web interface.**
+
+**Change the username and password for the web interface.**
+
 
 ## Access Controls
 
