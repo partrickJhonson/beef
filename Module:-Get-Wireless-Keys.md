@@ -1,8 +1,8 @@
 ### Summary
 
-This module will retrieve the wireless profiles from the target system (Windows Vista and Windows 7 only).
+This module will retrieve the wireless profiles from the target system (Windows Vista and Windows 7 only) using an unsigned Java applet.
 
-Note that this module makes use of an unsigned Java applet. The target browser must have Java enabled and must allow loading unsigned Java applets. Modern Java and modern browsers do not permit loading unsigned Java applets and will raise a lot of warnings.
+Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
 
 You will need to copy the results to 'exported_wlan_profiles.xml' and then reimport back into your Windows Vista/7 computers by running the command `netsh wlan add profile filename="exported_wlan_profiles.xml"`
 
