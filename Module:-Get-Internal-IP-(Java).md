@@ -1,11 +1,13 @@
-##Summary
+### Summary
 * **Objective**: Get the Internal IP of the hooked system
 * **Date**: June 2012
 * **Authors**: antisnatchor
 * **Browsers**: IE, Opera, Firefox (User is notified on Chrome and Safari)
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/host/get_internal_ip]]
 
-##Internal Working
+Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
+
+### Internal Working
 
 This applet is adapted from [Lars Kindermann applet](http://reglos.de/myaddress/MyAddress.html) and basically just use the Java Socket class to get the host address:
 ```java
