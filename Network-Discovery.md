@@ -8,7 +8,7 @@ The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firef
 
 ![Get Internal IP Address WebRTC](https://cloud.githubusercontent.com/assets/434827/5973009/0a055c62-a8b7-11e4-82fd-96e726f8a60a.png)
 
-The [[Get Internal IP Address|Module:-Get-Internal-IP]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run.
+The [[Get Internal IP Address (Java)|Module:-Get-Internal-IP-(Java)]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
 
 [[Images/module-get-internal-ip.png|align=center]]
 
@@ -32,7 +32,7 @@ The [[Ping Sweep|Module:-Ping-Sweep]] module uses time-based JavaScript XHR requ
 
 The [[Ping Sweep (FF) module|Module:-Ping-Sweep-(FF)]] uses the Java API directly to send requests and time the response. This module works only in Firefox with Java installed.
 
-The [[Ping Sweep (Java)|Module:-Ping-Sweep-(Java)]] which loads a Java applet. Since Java introduced click-to-play the user must allow the unsigned Java applet to run.
+The [[Ping Sweep (Java)|Module:-Ping-Sweep-(Java)]] which loads an unsigned Java applet. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
 
 [[Images/module-ping-sweep1.png|align=center]]
 
@@ -93,7 +93,7 @@ Right-clicking anywhere in the `Network -> Hosts` grid provides a context menu w
 ![host-discovery](https://cloud.githubusercontent.com/assets/434827/6025988/e49e6dca-ac2a-11e4-909a-18c1de74ac27.png)
 
 The first two menu items (for Chrome and Firefox) attempt to detect the local network IP address ranges:
-* [Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-webrtc). (C, FF)
+* [Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-webrtc) (C, FF)
 * Identify LAN subnets (C, FF)
 
 The remaining options perform host discovery on a user-specified IP address range or a predefined list of commonly used LAN IP addresses:
