@@ -32,7 +32,7 @@ The [[Get Geolocation|Module: Get Geolocation]] module will retrieve the physica
 
 **Get Physical Location**
 
-The [[Get Physical Location|Module: Get Physical Location]] module will retrieve Geo-location information based on the neighboring wireless access points using commands encapsulated within a signed Java Applet. The user will be prompted to run the Java applet.
+The [[Get Physical Location|Module: Get Physical Location]] module will retrieve Geo-location information based on the neighboring wireless access points using commands encapsulated within a self-signed Java Applet. The user will be prompted to run the Java applet.
 
 The details will include:
 
@@ -40,3 +40,5 @@ The details will include:
 * Street Address details
 
 If the victim machine has a firewall that monitors outgoing connections (Zonealaram, LittleSnitch, etc), calls to Google maps will be alerted.
+
+Note that modern Java (as of Java 7u51) will outright refuse to execute self-signed Java applets unless they're added to the exception list.
