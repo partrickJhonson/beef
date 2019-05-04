@@ -15,14 +15,26 @@ Be sure to read the [[documentation|Metasploit]] (and [[here|Configuration]] als
 
 ### How do I configure BeEF on a server behind NAT?
 
-* Ensure `beef.http.public` and `beef.http.public_port` are set to the public WAN IP address and public WAN port respectively.
-* Forward the public port (default 3000/tcp) from your border router to `<LAN IP>:3000` of the BeEF server.
-* Additionally, ports 61985/tcp and 61986/tcp must also be forwarded if web sockets are enabled for communicating with BeEF.
-* Likewise, some BeEF extensions, such as IPEC and DNS, require additional ports to be forwarded. Review the associated config.yaml file for each extension and ensure the appropriate ports are forwarded.
+[Forward](https://en.wikipedia.org/wiki/Port_forwarding) the public port (default 3000/tcp) from your border router to `<LAN IP>:3000` of the BeEF server.
+
+Check that your network configuration is working correctly by attempting to access the admin panel:
+
+```
+http://<your WAN IP address>:3000/ui/panel
+```
+
+If you cannot access the admin panel, then your network configuration is broken. BeEF does not have access to your router and cannot configure your network for you. You'll need to review your network configuration to ensure the port is forwarded correctly.
+
+Once you've confirmed that port 3000 is accessible remotely, ensure `beef.http.public` and `beef.http.public_port` are set to the public WAN IP address and public WAN port respectively in `config.yaml`. Note, you'll need to restart BeEF after making changes to the configuration file.
+
+Additionally, ports `61985/tcp` and `61986/tcp` must also be forwarded if web sockets are enabled for communicating with BeEF. Likewise, some BeEF extensions, such as IPEC and DNS, require additional ports to be forwarded. Review the associated `config.yaml` file for each extension and ensure the appropriate ports are forwarded.
+
 
 ### How do I configure BeEF with ngrok?
 
 [Download ngrok](https://ngrok.com/), then tunnel your BeEF port (default: `3000`):
+
+This can be achieved with the following command, which tells ngrok to open a tunnel from port `80` on the public server to port `3000` on your local host.
 
 ```
 $ ngrok http 3000
@@ -33,6 +45,12 @@ Specify the public domain name `beef.http.public` and public port `beef.http.pub
 ```yaml
         public: "<your-id>.ngrok.io"      # public hostname/IP address
         public_port: "80"                 # public port (experimental) 
+```
+
+You should then be able to access BeEF using the following URL:
+
+```
+http://<your-id>.ngrok.io/ui/panel
 ```
 
 ### Can I use a domain name instead of IP address for the BeEF hook?
