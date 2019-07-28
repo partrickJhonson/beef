@@ -41,8 +41,8 @@ For example:
 
 ```yaml
     restrictions:
-        permitted_hooking_subnet: "10.1.0.0/16"
-        permitted_ui_subnet: "127.0.0.1/32"
+        permitted_hooking_subnet: ["10.1.0.0/16"]
+        permitted_ui_subnet: ["127.0.0.1/32"]
 ```
 
 **These access restrictions can be bypassed and should not be solely relied upon.**
@@ -51,7 +51,7 @@ Ideally, BeEF should operate behind a reverse proxy which strips user-supplied p
 
 While it is not possible to bypass `/32` access controls, it is possible to bypass more permissive access controls, such as `/24` or `/16`. In these instances the IP address access controls can be bypassed by supplying a valid IP address within the permitted range in the `X-Forwarded-For` header.
 
-For example, `permitted_ui_subnet: "10.1.1.1/24"` could by bypassed by providing `X-Forwarded-For: 10.1.1.666`.
+For example, `permitted_ui_subnet: ["10.1.1.1/24"]` could by bypassed by providing `X-Forwarded-For: 10.1.1.666`.
 
 By guessing a valid IP address in the correct subnet, an unauthorized user could infer the IP addresses of targets during a campaign by attempting to identify valid IP addresses in the `permitted_hooking_subnet`; or gain access to the administrator interface in the event the `permitted_ui_subnet` is not using a `/32` IP range.
 
