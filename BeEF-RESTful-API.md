@@ -1,7 +1,7 @@
 ## Introduction
 From version 0.4.3.3, BeEF exposes a RESTful API allowing scripting BeEF through HTTP/JSON requests.
 
-##Authentication
+## Authentication
 
 In order to use the API, a _token_ parameter must be always added to requests, otherwise a 401 error (Not Authorized) is returned.
 
@@ -67,7 +67,7 @@ Response:
 }}}}
 ```
 
-## Browser's details
+## Browser Details
 
 In order to retrieve relative hooked browser details (like enabled plugins and technologies, cookies, screen size and additional info), we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
@@ -77,7 +77,7 @@ In order to retrieve relative hooked browser details (like enabled plugins and t
 * Parameters : 
   * :session : Session of the browser
 
-###Example
+### Example
 
 **Request**:
 
@@ -201,12 +201,12 @@ curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwa
 ```
 ## List Command Modules
 
-###Handler
+### Handler
 * **Handler** => /api/modules
 * Description : list available command modules
 * No parameters
 
-###Example
+### Example
 
 **Request** 
 
@@ -249,7 +249,7 @@ curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db79
 * Parameters :
   * module_id : ID of the BeEF module
 
-###Example
+### Example
 **Request**:
 
 ```bash
@@ -332,7 +332,7 @@ curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEo
 
 ## Send a Metasploit module
 
-###Handler
+### Handler
 * **URL** : POST /api/modules/:session/:module_id
 * **Description** : Launch a metasploit module on a given browser
 * **Parameters** :
@@ -364,7 +364,7 @@ This is why there is "command_id":"not_available" in the response.
 
 ## Send a module to multiple hooked browsers
 
-###Handler
+### Handler
 * **URL** : POST /api/modules/multi_browser
 * **Description** : Fire a new command module to multiple hooked browsers. Returns the command IDs of the launched module, or 0 if firing got issues.
 * **Parameters** :
@@ -393,7 +393,7 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_p
 
 ## Send multiple modules to a single hooked browser
 
-###Handler
+### Handler
 * **URL** : POST /api/modules/multi_module
 * **Description** : Fire multiple command modules to a single hooked browser. Returns the command IDs of the launched modules, or 0 if firing got issues.
 * **Parameters** :
