@@ -1,5 +1,8 @@
 ### What is the default login for BeEF?
-By default, beef/beef is the login. Check out the [[ documentation | https://github.com/beefproject/beef/wiki/Interface]].
+
+BeEF is configured with default placeholder credentials of `beef` / `beef`.
+
+However, BeEF will not start if configured with these credentials. The credentials must be changed in the configuration file `config.yaml`.
 
 
 ### How do I configure integration with Metasploit?
