@@ -6,16 +6,15 @@ First when you arrive on the BeEF web server (probably at [http://localhost:3000
 
 [[Images/interface-login.png|align=center]]
 
-By default, login and passwords are beef/beef.
+Please enter the user and password that you configured in the config.yaml file in the previous step (configuration).
 
 ## Home Page
 
-The home page look like this :
+The home page will look like this :
 
 [[Images/interface-home.png|align=center]]
 
-So first, you will see that there is few actions possible as you do not have any browser hooked. So you need to hook a browser, for example by using one of the demo page ( url should be [http://localhost:3000/demos/basic.html](http://localhost:3000/demos/basic.html) and [http://localhost:3000/demos/butcher/index.html](http://localhost:3000/demos/butcher/index.html) )
-
+Starting out, you will see that there are no browsers hooked and very few options available to you so the first step is to hook a browser, for example by using one of the demo page as described in the "Getting Started" tab.
 
 ## Hooked browsers
 
@@ -23,7 +22,7 @@ After a successful hook, you will quickly seen a new hooked browser in the beef 
 
 [[Images/interface-hooked.png|align=center]]
 
-By clicking on the new hooked browser, you will select theis browser as the current browser and you will see a new tab "Current Browser" on the left :
+By clicking on the new hooked browser, you will see a new tab "Current Browser" on the left :
 
 [[Images/interface-hooked2.png|align=center]]
 
@@ -31,7 +30,7 @@ This new tab presents details on the browser, the hooked page and the hooked hos
 
 ## Command Tab
 
-Go then directly to the command Tab :
+Go then directly to the "Command" tab :
 
 [[Images/interface-command.png|align=center]]
 
