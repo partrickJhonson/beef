@@ -4,7 +4,7 @@ _The first step is often to gather information on the remote host : which browse
 
 ## Browser fingerprinting
 
-When a browser is hooked, BeEF automatically gather several pieces of information on the hooked browser :
+When a browser is hooked, BeEF will automatically gather several pieces of information on the hooked browser :
 
 * Browser name and version
 * Browser User Agent
@@ -12,13 +12,15 @@ When a browser is hooked, BeEF automatically gather several pieces of informatio
 * Windows size
 
 _Default information on the hooked browser gathered by BeEF_ :
+
 [[Images/information-gathering1.png|align=center|width=500px]]
 
 You can then use different plugins to gather more detailed information on the browsers :
-* The module [[Browser Fingerprinting|Module:-browser-fingerprint]] uses custom url to identify the browser. It can be usefull if the user has changed its user agent.
+* The module [[Browser Fingerprinting|Module:-browser-fingerprint]] uses custom url to identify the browser. It can be useful if the user has changed its user agent.
 * You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect popup blocker|Module:-Detect-popup-blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]], [[Detect unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]]...
 
 _Result of the browser fingerprinting module_ :
+
 [[Images/information-gathering2.png|align=center|width=400px]]
 
 ## Information gathering on the system
