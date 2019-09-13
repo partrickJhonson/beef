@@ -18,7 +18,7 @@ There are future plans to extend the tunneling proxy capabilities integrating Er
 
 Browser -> ([[TP|https://github.com/beefproject/beef/wiki/Tunneling-Proxy/]]-[[CS|https://code.google.com/p/beef/w/edit/CommunicationServer]]) -> [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] -> (In-domain) Web Server -> [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] -> ([[TP|https://github.com/beefproject/beef/wiki/Tunneling-Proxy/]]-[[CS|https://code.google.com/p/beef/w/edit/CommunicationServer]]) -> Browser
 
-## Real scenarios
+## Real Scenarios
 
 Tunneling proxy real use cases are many:
  - browsing the authenticated surface of the hooked domain through the security context of the victim browser (cookies are automatically added to XmlHttpRequests with jQuery)
@@ -29,7 +29,7 @@ Tunneling proxy real use cases are many:
 
 A practical usage of the tunneling proxy, recorded as a screencast, can be found [[here|http://www.youtube.com/user/TheBeefproject#p/a/u/1/Z4cHyC3lowk]] on the official BeEF Youtube channel.
 
-## How to use the proxy extension
+## How to Use the Proxy Extension
 
 *1.* Select which [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] you want to use to tunnel requests (right click on the HB icon, then left click on "Use As Proxy")
 
