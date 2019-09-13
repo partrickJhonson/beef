@@ -12,21 +12,19 @@ BeEF should be configured through the main configuration file : [config.yaml](ht
 
 **Change the username and password for the web interface.**
 
-**Change the username and password for the web interface.**
+**PLEASE Change the username and password for the web interface.**
 
-For example:
+To edit the configuration file, navigate to the BeEF directory and use your favourite text editor (vim, nano etc) to edit the config.yaml file.
+
+Please edit the below section, found in the file:
 
 ```yaml
+    #Credentials to authenticate in BeEF.
+    #Used by both the RESTful API and the Admin interface
     credentials:
-        user:   "beef"
+        user:   "beef" 
         passwd: "something unique and complex"
 ```
-
-**Change the username and password for the web interface.**
-
-**Change the username and password for the web interface.**
-
-**Change the username and password for the web interface.**
 
 
 ## Access Controls
