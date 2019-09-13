@@ -10,7 +10,7 @@ The following diagrams and explanations should explain how BeEF works and the di
 
 [[/Images/BeEF_Overall.png|align=center]]
 
-When a user runs up BeEF currently, there are two components started: the User Interface and the Communication Server. These two components are the base components of BeEF and are discussed in detail below.
+When a user runs up BeEF currently, there are two components started: the User Interface and the Communication Server. These two components are the base components of BeEF and are discussed below.
 
 ### Components ###
 
@@ -29,7 +29,7 @@ This guy is essential to how BeEF works. The Communication Server (CS) is the co
 
 [[/Images/Pattern1.png|align=center]]
 
-This is the most basic usage pattern for BeEF. An attacker simply need run up BeEF (`beef.rb`) and login directly to the UI. From here the attacker can see which hooked browsers are online and which are offline, all information collected about/from a particular hooked browser, and run exploits against online hooked browsers.
+This is the most basic usage pattern for BeEF. An attacker simply starts up BeEF (`beef.rb`) and login directly to the UI. From here the attacker can see which hooked browsers are online and which are offline, all information collected about/from a particular hooked browser and run exploits against online hooked browsers.
 
 ***
 [[Previous|Introducing-BeEF]] | [[Next|Installation]]
