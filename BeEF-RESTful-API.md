@@ -3,7 +3,7 @@ From version 0.4.3.3, BeEF exposes a RESTful API allowing scripting BeEF through
 
 ## Authentication
 
-In order to use the API, a _token_ parameter must be always added to requests, otherwise a 401 error (Not Authorized) is returned.
+In order to use the API, a _token_ parameter must always be added to requests, otherwise a 401 error (Not Authorized) is returned.
 
 The pseudo-random token is newly generated every time BeEF starts, using _BeEF::Core::Crypto::api_token_ 
 and is then added to the _BeEF::Configuration_ object. It can be retrieved at any time via ruby using `BeEF::Core::Configuration.instance.get('beef.api_token')`
@@ -11,7 +11,7 @@ and is then added to the _BeEF::Configuration_ object. It can be retrieved at an
 When BeEF starts, look at the console output for 
 `[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
-Alternatively, for example if you want to write automated scripts that uses the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file (beef.credentials).
+Alternatively, for example if you want to write automated scripts that use the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file.
 An example with curl: 
 ```bash
 curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login
@@ -148,7 +148,7 @@ curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e7
 }
 ```
 
-## Browser's log
+## Browser's Log
 
 In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
