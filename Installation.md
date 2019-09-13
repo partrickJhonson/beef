@@ -19,8 +19,8 @@ $ git clone https://github.com/beefproject/beef
 
 ### Prerequisites
 
-BeEF requires Ruby 2.3 (or newer). Refer to your operating system documentation
-for instructions to install the latest stable version of Ruby.
+BeEF requires Ruby 2.4 (or newer). Refer to your operating system documentation
+for instructions to install the latest stable version of Ruby and Ruby-dev.
 
 ```bash
 # Debian based systems
@@ -30,7 +30,7 @@ sudo apt-get install ruby ruby-dev
 sudo yum install ruby ruby-devel
 ```
 
-If your operating system package manager does not support Ruby version 2.3 (or newer),
+If your operating system package manager does not support Ruby version 2.4 (or newer),
 you can add the brightbox ppa repository for the latest version of Ruby:
 
 ```bash
