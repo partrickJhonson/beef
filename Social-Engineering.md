@@ -2,10 +2,10 @@ When you have hooked a browser, you can modify the whole page and cause differen
 
 # Ask for Credentials
 
-Simplest attacks are often the most efficient ones, you can simply ask users for their credentials using different modules :
+Simplest attacks are often the most efficient ones, you can simply ask users for their credentials using different modules:
 
-* [[The Pretty Theft|Module:-Pretty-Theft]] module prints a simple message to the user for requiring login and password and explaining that the session has timed out
-* [[The Simple Hijacker|Module:-Simple-Hijacker]] module proposes several social engineering templates and prompt them to the user when he will click on a link on the page.
+* [[The Pretty Theft|Module:-Pretty-Theft]] module prints a simple message to the user requiring login and password and explaining that the session has timed out.
+* [[The Simple Hijacker|Module:-Simple-Hijacker]] module proposes several social engineering templates and prompts the user when they click on a link on the page.
 * [[Clippy|Module:-Clippy]] is a module that create a small browser assistant which propose browser updates.
 
 [[Images/module-prettytheft1.png|align=center]]
@@ -14,8 +14,8 @@ Simplest attacks are often the most efficient ones, you can simply ask users for
 
 You may also use BeEF modules to redirect to external pages :
 
-* By using the basic [[rediret browser|Module:-Redirect-Browser]] module, you can redirect the hooked page to any other page. Note that it may be weird for the user to be redirected and that you will lose the zombie. To avoid losing the browser from BeEF, you can also use the [[rediction module with iframe|Module:-Redirect-Browser-(iFrame)]] which will open a 100% iframe to the given url.
-* You can also use the great [[tabnabbing module|Module:-TabNabbing]] : this module will detect when the user loses focus on the current tab and modify the whole page to load the given URL in an iframe at this time. When the use comes back to the tab, he will directly see the new web page.
+* By using the basic [[Redirect Browser|Module:-Redirect-Browser]] module, you can redirect the hooked page to any other page. Note that it may be weird for the user to be redirected and that you will lose the zombie. To avoid losing the zombie from BeEF, you can also use the [[Redirect Browser module with iframe|Module:-Redirect-Browser-(iFrame)]] which will open a 100% iFrame to the given url.
+* You can also use the great [[TabNabbing module|Module:-TabNabbing]] : this module will detect when the user loses focus on the current tab and modify the whole page to load the given URL in an iFrame at this time. When the user comes back to the tab, they will directly see the new web page.
 
 # Chrome/Firefox Extensions
 
@@ -34,7 +34,7 @@ By using Chrome extensions module, it is possible to use the malicious extension
 
 # Other
 
-* There is also a nice [[clickjacking|Module:-Clickjacking]] module which allow custom clickjacking attack by giving the URL and  offset on the target page :
+* There is also a nice [[ClickJacking|Module:-Clickjacking]] module which allow a custom clickjacking attack by giving the URL and  offset on the target page :
 
 [[Images/module-clickjacking1.png|align=center]]
 
