@@ -2,21 +2,6 @@ The following installation instructions are suitable for **Linux and Mac OSX** o
 
 In theory, BeEF should work on any operating system which can run Ruby 2.4+ and nodejs. However, only MacOS and Linux are officially supported.
 
-
-### Source
-
-Obtain application source code either by downloading the latest archive:
-
-```bash
-$ wget https://github.com/beefproject/beef/archive/master.zip
-```
-
-Or cloning the Git repository from Github:
-
-```bash
-$ git clone https://github.com/beefproject/beef
-```
-
 ### Prerequisites
 
 BeEF requires Ruby 2.4 (or newer). Refer to your operating system documentation
@@ -41,6 +26,22 @@ Alternatively, consider using a Ruby environment manager such as
 [rbenv](https://github.com/rbenv/rbenv) or
 [rvm](https://rvm.io/rvm/install)
 to manager your Ruby versions.
+
+
+
+### Source
+
+Obtain application source code either by downloading the latest archive:
+
+```bash
+$ wget https://github.com/beefproject/beef/archive/master.zip
+```
+
+Or cloning the Git repository from Github:
+
+```bash
+$ git clone https://github.com/beefproject/beef
+```
 
 
 ### Installation
