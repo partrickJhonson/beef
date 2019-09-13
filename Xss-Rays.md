@@ -3,11 +3,14 @@ Xssrays is a pure Javascript XSS scanner. [Gareth Heyes](http://www.thespanner.c
 
 ## Details
 The original code by Heyes, from 2009, used the location.hash fragment in order to effectively have a callback between parent and child iFrames. This trick has been patched by recent browsers. BeEF uses a new approach which results in false-positive free findings. The reason they are false-positive free is that BeEF must exploit the XSS to discover the vulnerability. 
-## High level overview
+
+## High Level Overview
 In order to check for XSS cross-domain, we inject an XSS payload that will contact the BeEF server if the Javascript code is successfully executed (thus, the XSS confirmed). In order to check for XSS on cross-domain resources, the approach is completely blind (because we cannot read the HTTP response, respecting the Same Origin Policy). The approach BeEF is using is not free of false-negatives, because we can try a different attack vectors but the framework cannot determine which characters are allowed or if there are any length limitations in place. This issue can be minimised by adding more attack vectors that covers different scenarios.
+
+
 [[Images/xssrays1.png|align=center]]
 
-## How to use the Xssrays extension
+## How to Use the Xssrays Extension
 **1.** Select which [hooked browser](https://github.com/beefproject/beef/wiki/Hooked-Browser) to use to inject the Xssrays Javascript code. By default Xssrays will check for XSS on cross-domain resources. Note that the hooked browser domain is currently http://172.31.229.247/
 
 ![xssrays-how-to-use](http://antisnatchor.com/BeEF-images/XSSRAYS-select.png)
@@ -24,7 +27,7 @@ If you want to start a custom Xssrays scan, you can first configure the extensio
 
 [[Images/xssrays5.png|align=center]]
 
-## What's next
+## What's Next?
 If Xssrays has found an XSS on a cross-domain resource, and you don't have access to that resource (i.e. a victim's internal network web server), the user could always trigger the victim to open a link that points to the vulnerable resource using the BeEF hook in your attack vector. In this way your attack surface will be expanded, and the same victim browser will be hooked in BeEF on 2 different domains: the original one, and the new one with the XSS found by XssRays.
 
 ***
