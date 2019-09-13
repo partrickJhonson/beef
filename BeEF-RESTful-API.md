@@ -152,7 +152,7 @@ curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e7
 
 In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
-### Handler : 
+### Handler 
 * **URL** : GET /api/logs/:session
 * Description : Logs on one browser
 * Parameters : 
