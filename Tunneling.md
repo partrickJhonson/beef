@@ -8,22 +8,22 @@ The Tunneling Proxy (TP) effectively mimics a reverse HTTP proxy. A selected bro
 
 A browser (or generally any software that supports an HTTP proxy) with its proxy configured to use the framework will send all its requests via the TP. The TP will create a set of instructions based on the received request details. These instructions will induce a browser to conduct an equivalent request.  Next the instructions will be wrapped and sent to the selected browser session for execution on the [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]]. The browser becomes the exit node for the tunnel. It will perform the request and receive the HTTP response. Next the response is communicated back to the BeEF proxy which in turn delivers it to the browser. This process creates a tunnel with one being the TP and the other being the selected [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]].
 
-The requests are not cross-domain: this means that if the current domain of the [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] is `example.com`, the browser using the proxy can send requests only to example.com.
+The requests are not cross-origin: this means that if the current origin of the [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] is `http://example.com:80`, the browser using the proxy can send requests only to `http://example.com:80`.
 
-There are future plans to extend the tunneling proxy capabilities integrating Erlend Oftedal's [[malaRIA|http://erlend.oftedal.no/blog/?blogid=107]]. This will allow the tunneling proxy to forward requests to every domain with a liberal cross-domain policy.
+There are future plans to extend the tunneling proxy capabilities integrating Erlend Oftedal's [[malaRIA|http://erlend.oftedal.no/blog/?blogid=107]]. This will allow the tunneling proxy to forward requests to every origin with a liberal cross-origin policy.
 
-```<allow-access-from domain="*">```
+```<allow-access-from origin="*">```
 
 ## Communication Flow
 
-Browser -> ([[TP|https://github.com/beefproject/beef/wiki/Tunneling-Proxy/]]-[[CS|https://code.google.com/p/beef/w/edit/CommunicationServer]]) -> [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] -> (In-domain) Web Server -> [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] -> ([[TP|https://github.com/beefproject/beef/wiki/Tunneling-Proxy/]]-[[CS|https://code.google.com/p/beef/w/edit/CommunicationServer]]) -> Browser
+Browser -> ([[TP|https://github.com/beefproject/beef/wiki/Tunneling-Proxy/]]-[[CS|https://code.google.com/p/beef/w/edit/CommunicationServer]]) -> [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] -> (In-origin) Web Server -> [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] -> ([[TP|https://github.com/beefproject/beef/wiki/Tunneling-Proxy/]]-[[CS|https://code.google.com/p/beef/w/edit/CommunicationServer]]) -> Browser
 
 ## Real Scenarios
 
 Tunneling proxy real use cases are many:
- - browsing the authenticated surface of the hooked domain through the security context of the victim browser (cookies are automatically added to XmlHttpRequests with jQuery)
+ - browsing the authenticated surface of the hooked origin through the security context of the victim browser (cookies are automatically added to XmlHttpRequests with jQuery)
 
- - spidering the hooked domain through the security context of the victim browser
+ - spidering the hooked origin through the security context of the victim browser
 
  - finding and exploiting SQLi with [[Burp Pro Scanner|http://portswigger.net/suite/pro.html]] and [[sqlmap|http://sqlmap.sourceforge.net/]].
 
@@ -39,7 +39,7 @@ A practical usage of the tunneling proxy, recorded as a screencast, can be found
 
 [[Images/tunnel2.png|align=center]]
 
-*3.* In this case we had Opera (on the right of the screenshot) as [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] and Firefox (on the left of the screenshot) as the browser using the tunneling proxy. You can see that in Firefox we're browsing the same domain of the Opera hooked browser in a concurrent way (without stealing any cookies).  
+*3.* In this case we had Opera (on the right of the screenshot) as [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] and Firefox (on the left of the screenshot) as the browser using the tunneling proxy. You can see that in Firefox we're browsing the same origin of the Opera hooked browser in a concurrent way (without stealing any cookies).  
 
 [[Images/tunnel3.png|align=center]]
 
