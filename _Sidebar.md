@@ -32,6 +32,8 @@
 1. [[BeEF Testing|BeEF-Testing]]
 1. [[Database schema|Database-Schema]]
 1. [[Development Milestones|Milestones]]
+1. [Command Module Config](https://github.com/beefproject/beef/wiki/Command-Module-Config)
+1. [Command Module API](https://github.com/beefproject/beef/wiki/Command-Module-API)
 
 ## V - References
 1. [[FAQ|FAQ]]
