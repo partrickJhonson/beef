@@ -1,6 +1,6 @@
 ## I- Presentation
 1. [[Introducing BeEF|Introducing-BeEF]]
-1. [[Architecture|Architecture]]
+
 
 ## II - Basic Utilization
 1. [[Installation|Installation]]
