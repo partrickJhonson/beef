@@ -82,7 +82,7 @@ page on the wiki for important details on configuring and securing BeEF.
 
 # Start BeEF
 
-To start BeEF, simply run:
+To start BeEF, first change the username and password config.yaml and then simply run:
 
 ```bash
   $ ./beef
