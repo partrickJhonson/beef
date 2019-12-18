@@ -1,8 +1,10 @@
 ## I- Presentation
+
 1. [[Introducing BeEF|Introducing-BeEF]]
 
 
 ## II - Basic Utilization
+
 1. [[Installation|Installation]]
 1. [[Configuration|Configuration]]
 1. [[Interface|Interface]]
@@ -16,6 +18,7 @@
 1. [[Geolocation|Geolocation]]
 
 ## III - Advanced Utilization
+
 1. [[RestFul API|BeEF-RESTful-API]]
 1. [[Autorun Rule Engine|Autorun-Rule-Engine]]
 1. [[Notifications|Notifications]]
@@ -24,6 +27,7 @@
 1. [[WebRTC Extension|WebRTC-Extension]]
 
 ## IV - Development
+
 1. [[Organization|Development-Organization]]
 1. [[Core BeEF organization|Core-BeEF-Organization]]
 1. [[BeEF Javascript API|Javascript-API]]
@@ -36,6 +40,7 @@
 1. [Command Module API](https://github.com/beefproject/beef/wiki/Command-Module-API)
 
 ## V - References
+
 1. [[FAQ|FAQ]]
 1. [[Other|Other]]
 1. [[References|References]]
