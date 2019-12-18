@@ -15,7 +15,7 @@ RedHat / Fedora
 sudo yum install ruby ruby-devel
 ```
 
-If your operating system package manager does not support Ruby version 2.4 (or newer),
+If your operating system package manager does not support Ruby version 2.5 (or newer),
 you can add the brightbox ppa repository for the latest version of Ruby:
 
 ```bash
