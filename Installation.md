@@ -87,7 +87,20 @@ To start BeEF, first change the username and password config.yaml and then simpl
 ```bash
   $ ./beef
 ```
+## I want to run the tests
 
+If you want to install the test pre-requisites just run 
+
+``
+$bundle install --with test
+``
+
+This will install the pre-requisite gem's for tests.
+
+If you want to run the test suit run:
+``
+$bundle exec rake
+``
 # Updating
 
 Due to the fast-paced nature of web browser development and webappsec landscape,
