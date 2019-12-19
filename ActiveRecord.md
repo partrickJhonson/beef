@@ -35,6 +35,22 @@ where the class looks like this:
         end
     end
 
+
+# Connects to DB
+
+***
+When Beef starts, in the setup file:
+``
+$beef/beef
+``
+It will load the the database by 
+``
+db_file = config.get('beef.database.file')
+``
+and it will then reset the database if it receives the -x flag.
+The start file will then connect to the database and migrate if required.
+See the file for more detailed information.
+
 [Refer to the Database Scheme ](https://github.com/beefproject/beef/wiki/Database-Schema)
 
 
