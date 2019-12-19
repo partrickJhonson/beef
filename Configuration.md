@@ -8,10 +8,6 @@ BeEF should be configured through the main configuration file : [config.yaml](ht
 
 ### Credentials
 
-**Change the username and password for the web interface.**
-
-**Change the username and password for the web interface.**
-
 **PLEASE Change the username and password for the web interface.**
 
 To edit the configuration file, navigate to the BeEF directory and use your favourite text editor (vim, nano etc) to edit the config.yaml file.
@@ -31,7 +27,16 @@ Please edit the below section, found in the file:
 
 ### Network Limitations
 
-The web interface for hooking or for managing BeEF can be limited by subnet.
+The web interface for hooking or for managing BeEF can be limited by subnet. 
+This is done in the 
+``
+$beef/config.yaml 
+``
+ in the Interface / IP restrictions or 
+``
+$beef/config.yaml.beef.restrictions.https
+``
+
 
 **Access to the management interface should be restricted using the `permitted_ui_subnet` access control.**
 
@@ -70,7 +75,7 @@ By default, the REST API interface throttles login attempts to 1 attempt every 0
 
 ## Web server configuration
 
-The web server can be fully configured :
+The web server can be fully configured, this is done in the config.yaml file in http:
 
 ```yaml
     http:
@@ -133,9 +138,13 @@ Extensions should be enabled in the main [config.yaml](https://github.com/beefpr
 ```
 
 The Demos extension should be disabled in production by setting `enable: false` in `config.yaml`.
-
+***
 ### Metasploit
-
+To enable Metasploit you need to enable it in 
+``
+beef/config.yaml.beef.extensions
+``
+ by making it true not false.
 The Metasploit extension should be configured by modifying the [extensions/metasploit/config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
 
 ```yaml
