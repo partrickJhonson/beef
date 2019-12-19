@@ -6,7 +6,8 @@ First when you arrive on the BeEF web server (default is [http://localhost:3000/
 
 [[Images/interface-login.png|align=center]]
 
-Please enter the user and password that you configured in the config.yaml file in the previous step (configuration).
+Please enter the user and password that you configured in the config.yaml in the 
+
 
 ## Home Page
 
