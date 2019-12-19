@@ -151,10 +151,13 @@ extension:
               metasploit:
                    enable: true
 ```
-The Metasploit extension should be configured by modifying the [extensions/metasploit/config.yml]
+***
+
+The Metasploit extension should be configured by modifying the config file that is in extensions/metasploit/config.yml
+(below)
 
 ``
-$beef/extensions/metasploit/config.yaml.beef.extensions.metasploitt
+$beef/extensions/metasploit/config.yaml.beef.extensions.metasploit
 ``
 (https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
 
@@ -186,7 +189,7 @@ load msgrpc ServerHost=127.0.0.1 User=msf Pass=<password> SSL=y
 
 This command can be written in a file and launched with **-r** option to _msfconsole_.
 Usually its easier to just run it in the metasploit terminal. Have the settings (host, user, pass and ssl)
-the same as in the commant
+the same as in the config file.
 
 [[Images/msf1.png|align=center]]
 
