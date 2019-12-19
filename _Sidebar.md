@@ -1,11 +1,10 @@
 ## I - Presentation
 
 1. [[Introducing BeEF|Introducing-BeEF]]
-
+1. [[Installation|Installation]]
 
 ## II - Basic Utilization
 
-1. [[Installation|Installation]]
 1. [[Configuration|Configuration]]
 1. [[Interface|Interface]]
 1. [[Information Gathering|Information-Gathering]]
