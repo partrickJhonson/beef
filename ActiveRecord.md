@@ -27,23 +27,13 @@ They look like this:
 ``
 where the class looks like this:
 
-``
-class CreateCommandModules < ActiveRecord::Migration[6.0]
-
     def change
 
         create_table :command_modules do |t|
-
             t.text :name 
-
             t.text :path
-
         end
-
     end
-
-end
-``
 
 [Refer to the Database Scheme ](https://github.com/beefproject/beef/wiki/Database-Schema)
 
