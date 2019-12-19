@@ -144,8 +144,19 @@ To enable Metasploit you need to enable it in
 ``
 beef/config.yaml.beef.extensions.metasploit
 ``
- by making it true not false.
-The Metasploit extension should be configured by modifying the [extensions/metasploit/config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
+ by making it true not false,
+```
+extension:
+       admin_ui:
+              metasploit:
+                   enable: true
+```
+The Metasploit extension should be configured by modifying the [extensions/metasploit/config.yml]
+
+``
+$beef/extensions/metasploit/config.yaml.beef.extensions.metasploitt
+``
+(https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
 
 ```yaml
             name: 'Metasploit'
@@ -164,7 +175,8 @@ The Metasploit extension should be configured by modifying the [extensions/metas
 
 **Be sure to change the `password` field**. Authenticated access to the Metasploit RPC service can be used to [execute arbitrary commands](https://www.rapid7.com/db/modules/exploit/multi/misc/msf_rpc_console) on the underlying operating system.
 
-Most of the configuration can be let with default value, except the **host** and **callback_host** parameters which should have the IP address of the host on which Metasploit is accessible.
+Most of the configuration can be left with default value, except the **host** and **callback_host** parameters which should have the IP address of the host on which Metasploit is accessible.
+Use the same host for the below with the User and Password information.
 
 For enabling RPC communication, the following command should be launched in Metasploit:
 
@@ -173,6 +185,8 @@ load msgrpc ServerHost=127.0.0.1 User=msf Pass=<password> SSL=y
 ```
 
 This command can be written in a file and launched with **-r** option to _msfconsole_.
+Usually its easier to just run it in the metasploit terminal. Have the settings (host, user, pass and ssl)
+the same as in the commant
 
 [[Images/msf1.png|align=center]]
 
