@@ -1,6 +1,7 @@
 # Configuring BeEF
 
-BeEF should be configured through the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
+Most of the BeEF configurations are in the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
+Otherwise to do other configurations they will usually be done in other config.yaml files in the extension you are tying to change.
 
 ***
 
