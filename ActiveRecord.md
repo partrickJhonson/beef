@@ -15,6 +15,36 @@ Active Record gives us several mechanisms, the most important being the ability 
 Represent models, their data, their relationship to other models, the inheritance through the related models, validating the models before they achieve persistence and perform those operations in an object oriented way.
 
 
+# Migrations 
+The Migrations for ActiveRecord are located in 
+``
+$ beef/core/main/ar-migrations
+``
+
+They look like this:
+``
+001_create_command_modules.rb
+``
+where the class looks like this:
+
+``
+class CreateCommandModules < ActiveRecord::Migration[6.0]
+
+    def change
+
+        create_table :command_modules do |t|
+
+            t.text :name 
+
+            t.text :path
+
+        end
+
+    end
+
+end
+
+``
 [Refer to the Database Scheme ](https://github.com/beefproject/beef/wiki/Database-Schema)
 
 
