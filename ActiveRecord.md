@@ -43,8 +43,8 @@ class CreateCommandModules < ActiveRecord::Migration[6.0]
     end
 
 end
-
 ``
+
 [Refer to the Database Scheme ](https://github.com/beefproject/beef/wiki/Database-Schema)
 
 
