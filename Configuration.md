@@ -142,7 +142,7 @@ The Demos extension should be disabled in production by setting `enable: false` 
 ### Metasploit
 To enable Metasploit you need to enable it in 
 ``
-beef/config.yaml.beef.extensions
+beef/config.yaml.beef.extensions.metasploit
 ``
  by making it true not false.
 The Metasploit extension should be configured by modifying the [extensions/metasploit/config.yml](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
