@@ -8,4 +8,4 @@ Amid growing concerns about web-borne attacks against both web and mobile client
 
 
 ***
-[[Next|Installation On Linux and Mac OS]]
+[[Next|Installation]]
