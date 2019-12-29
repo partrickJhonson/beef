@@ -26,4 +26,4 @@ To join the **development** mailing list send a mail to beef-dev-subscribe@binds
 
 [[/Images/logo.png|align=center]]
 
-[Start !](wiki/Introducing-BeEF)
+[Start](wiki/Introducing-BeEF)
