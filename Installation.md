@@ -35,7 +35,7 @@ $ sudo apt-add-repository -y ppa:brightbox/ruby-ng
 Alternatively, consider using a Ruby environment manager such as
 [rbenv](https://github.com/rbenv/rbenv) or
 [rvm](https://rvm.io/rvm/install)
-to manage your Ruby versions.
+to manage your Ruby versions. These are 
 
 ### Bundler
 Bundler is essential for tracking and installing the correct gems in ruby projects.
