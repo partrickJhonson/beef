@@ -2,7 +2,7 @@ BeEF has several methods to determine the hooked browser's location.
 
 ### IP Geolocation
 
-The enable IP Geolocation, download the MaxMind database. This can be achieved by using the `./update-geoipdb` script.
+To enable IP Geolocation, download the MaxMind database. This can be achieved by using the `./update-geoipdb` script.
 
 ```bash
 ./update-geoipdb
