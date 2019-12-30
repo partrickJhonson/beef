@@ -30,13 +30,13 @@ Please edit the below section, found in the file:
 
 The web interface for hooking or for managing BeEF can be limited by subnet. 
 This is done in the 
-``
-$beef/config.yaml 
-``
+```
+$ beef/config.yaml 
+```
  in the Interface / IP restrictions or 
-``
-$beef/config.yaml.beef.restrictions.https
-``
+```
+$ beef/config.yaml.beef.restrictions.https
+```
 
 
 **Access to the management interface should be restricted using the `permitted_ui_subnet` access control.**
@@ -55,7 +55,7 @@ Ideally, BeEF should operate behind a reverse proxy which strips user-supplied p
 
 While it is not possible to bypass `/32` access controls, it is possible to bypass more permissive access controls, such as `/24` or `/16`. In these instances the IP address access controls can be bypassed by supplying a valid IP address within the permitted range in the `X-Forwarded-For` header.
 
-For example, `permitted_ui_subnet: ["10.1.1.1/24"]` could by bypassed by providing `X-Forwarded-For: 10.1.1.666`.
+For example, `permitted_ui_subnet: ["10.1.1.1/24"]` could by bypassed by providing `X-Forwarded-For: 10.1.1.123`.
 
 By guessing a valid IP address in the correct subnet, an unauthorized user could infer the IP addresses of targets during a campaign by attempting to identify valid IP addresses in the `permitted_hooking_subnet`; or gain access to the administrator interface in the event the `permitted_ui_subnet` is not using a `/32` IP range.
 

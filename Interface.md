@@ -8,7 +8,7 @@ First when you arrive on the BeEF web server (default is [http://localhost:3000/
 
 Please enter the user and password that you configured in the config.yaml in the 
 ``
-$beef/config.yaml
+beef/config.yaml
 ``
 file.
 

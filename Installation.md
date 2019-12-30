@@ -17,7 +17,7 @@ You just need the following:
 BeEF requires Ruby 2.5 (or newer). Refer to your operating system documentation
 for instructions to install the latest stable version of Ruby and Ruby-dev.
 
-```bash
+```
 Debian based systems
 sudo apt-get install ruby ruby-dev
 
@@ -28,7 +28,7 @@ sudo yum install ruby ruby-devel
 If your operating system package manager does not support Ruby version 2.5 (or newer),
 you can add the brightbox ppa repository for the latest version of Ruby:
 
-```bash
+```
 $ sudo apt-add-repository -y ppa:brightbox/ruby-ng
 ```
 
@@ -40,11 +40,11 @@ These are command line tools that allow for simple management of different ruby 
 ### Bundler
 Bundler is essential for tracking and installing the correct gems in ruby projects.
 When installing, you may get the error:
-```bash
-$ line 208: bundle: command not found 
+```
+line 208: bundle: command not found 
 ```
 This just means you do not have bundler installed, to fix this simply run:
-```bash
+```
 $ gem install bundler
 ```
 
@@ -52,13 +52,13 @@ $ gem install bundler
 
 Obtain application source code either by downloading the latest archive:
 
-```bash
+```
 $ wget https://github.com/beefproject/beef/archive/master.zip
 ```
 
 Or cloning the Git repository from Github:
 
-```bash
+```
 $ git clone https://github.com/beefproject/beef
 ```
 
@@ -68,7 +68,7 @@ $ git clone https://github.com/beefproject/beef
 Once a suitable version of Ruby is installed, run the
 [install script](https://github.com/beefproject/beef/blob/master/install) in the BeEF directory:
 
-```bash
+```
 $ ./install
 ```
 
@@ -84,23 +84,23 @@ page on the wiki for important details on configuring and securing BeEF.
 
 To start BeEF, first change the username and password config.yaml and then simply run:
 
-```bash
+```
   $ ./beef
 ```
 ## I want to run the tests
 
 If you want to install the test pre-requisites just run 
 
-``
-$bundle install --with test
-``
+```
+$ bundle install --with test
+```
 
 This will install the pre-requisite gem's for tests.
 
 If you want to run the test suit run:
-``
-$bundle exec rake
-``
+```
+$ bundle exec rake
+```
 # Updating
 
 Due to the fast-paced nature of web browser development and webappsec landscape,
@@ -108,7 +108,7 @@ it's best to regularly update BeEF to the latest version.
 
 If you're using BeEF from the GitHub repository, updating is as simple as:
 
-```bash
+```
 $ git pull
 ```
 
