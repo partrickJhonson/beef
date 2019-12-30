@@ -18,7 +18,7 @@ _Default Information Gathered from a Hooked Browser:_
 [[Images/information-gathering1.png|align=center|width=500px]]
 
 You can then use different plugins to gather more specific information on the browsers, for example:
-* The module [[Browser Fingerprinting|Module:-browser-fingerprint]] uses a number of custom URLs to identify the hooked browser. It can also be useful if the user changes their user agent.
+* The [[Browser Fingerprinting|Module:-browser-fingerprint]] uses a number of custom URLs to identify the hooked browser. This can be useful if you are concerned that the user has changed their user agent.
 * You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect Popup Blocker|Module:-Detect-Popup-Blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]], [[Detect Unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]]...
 
 _Example Result from the Browser Fingerprinting Module:_
@@ -27,7 +27,7 @@ _Example Result from the Browser Fingerprinting Module:_
 
 ## Information Gathering on the System
 
-By using several modules, you can also gather information on the system of the hooked browser:
+BeEF enables you to gather information on the system of the hooked browser:
 * Internet Explorer has permissions that allow system software detection (see [[Detect Softwares|Module:-Detect-Software]]) and even [[registry keys|Module:-Get-Registry-Keys]] (please note that attempting to use the registry keys module will prompt the browser's user for authorization).
 * If the browser authorizes Java, the [[Get Internal IP|Module:-Get-Internal-IP]] module allows BeEF to detect the IP address of the system (don't worry, more fun network tricks with the will be described [[later|Network-discovery]])
 * The [[Get System Info|Module:-Get-System-Info]] module can gather additional information on the system from a Java Applet including: Operating System details, Java JVM info, IP addresses, Processor/Memory specs, and more.
