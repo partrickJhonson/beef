@@ -6,6 +6,8 @@ To configure extensions, the config.yaml files will be found in the extension fo
 
 ***
 
+* [Authenication](#authentication)
+
 ## Authentication
 
 ### Credentials
