@@ -23,7 +23,7 @@ Starting out, you will see that there are no browsers hooked and very few option
 
 ## Hooked browsers
 
-After a successful hook, you will quickly seen a new hooked browser in the beef menu :
+After a successful hook, you will quickly see a new hooked browser in the beef menu :
 
 [[Images/interface-hooked.png|align=center]]
 
