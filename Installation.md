@@ -37,6 +37,37 @@ Alternatively, consider using a Ruby environment manager such as
 [rvm](https://rvm.io/rvm/install).
 These are command line tools that allow for simple management of different ruby environments.
 
+### BeEF on Ubuntu
+It's highly recommended that you use a Ruby environment manager when installing BeEF on Ubuntu, due to restricted permissions.
+
+To install RVM, firstly go to https://rvm.io/rvm/install and install the GPG keys.
+Then install RVM, without dependencies:
+
+```bash
+$ \curl -sSL https://get.rvm.io | bash -s -- --autolibs=install-packages 
+```
+Now install those dependencies as root while in the applications users $HOME directory:
+
+```bash
+$ sudo .rvm/bin/rvm requirements 
+```
+
+Now that the dependencies are installed we need to install the stable releases of both RVM and Ruby. As the application user enter:
+
+```bash
+$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
+
+Then simply reload your shell!
+
+You can verify your installation of RVM and Ruby by running:
+
+```bash
+$ rvm -v
+$ ruby -v
+```
+After following the above steps, simply clone the repository and install BeEF as per below.
+
 ### Bundler
 Bundler is essential for tracking and installing the correct gems in ruby projects.
 When installing, you may get the error:
