@@ -13,11 +13,11 @@ When a browser is hooked, BeEF will automatically gather several pieces of infor
 * Plugins (including Java, ActiveX, VBS, Flash...)
 * If Adobe Flash Player is installed
 
-_Default information on the hooked browser gathered by BeEF:_
+_Default Information Gathered from a Hooked Browser:_
 
 [[Images/information-gathering1.png|align=center|width=500px]]
 
-You can then use different plugins to gather more detailed information on the browsers:
+You can then use different plugins to gather more specific information on the browsers, for example:
 * The module [[Browser Fingerprinting|Module:-browser-fingerprint]] uses a number of custom URLs to identify the hooked browser. It can also be useful if the user changes their user agent.
 * You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect Popup Blocker|Module:-Detect-Popup-Blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]], [[Detect Unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]]...
 
