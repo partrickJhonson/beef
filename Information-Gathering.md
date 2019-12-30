@@ -29,7 +29,7 @@ _Example Result from the [[Browser Fingerprinting|Module:-browser-fingerprint]] 
 
 BeEF enables you to gather information on the system of the hooked browser:
 * Internet Explorer has permissions that allow system software detection (see [[Detect Softwares|Module:-Detect-Software]]) and even [[registry keys|Module:-Get-Registry-Keys]] (please note that attempting to use the registry keys module will prompt the browser's user for authorization).
-* If the browser authorizes Java, the [[Get Internal IP|Module:-Get-Internal-IP]] module allows BeEF to detect the IP address of the system (don't worry, more fun network tricks with the will be described [[later|Network-discovery]])
+* If the browser authorizes Java, the [[Get Internal IP|Module:-Get-Internal-IP]] module allows BeEF to detect the IP address of the system (don't worry, more fun network tricks  will be described [[later|Network-discovery]])
 * The [[Get System Info|Module:-Get-System-Info]] module can gather additional information on the system from a Java Applet including: Operating System details, Java JVM info, IP addresses, Processor/Memory specs, and more.
 * It is also possible to retrieve the location of the user by using the [[Geolocation API|Module:-Get-Geolocation]] or by using [[a trick requesting Google maps|Module:-Get-Physical-Location]].
 * The default Javascript API allows access to data stored [[in the clipboard|Module:-Get-Clipboard]].
