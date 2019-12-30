@@ -1,6 +1,6 @@
 With JavaScript hacks, it is possible to launch network attacks through a hooked browser.
 
-## Getting Internal IP Addresses
+## Get Internal IP Addresses
 
 Two modules exist to retrieve the IP addresses in use by the zombie browser's host system. From these IP addresses it becomes possible to imagine the internal network addressing plan and more effectively utilise other BeEF modules.
 
@@ -14,13 +14,13 @@ Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned
 
 [[Images/module-get-internal-ip.png|align=center]]
 
-## Identifying LAN Subnets
+## Identify LAN Subnets
 
 The [[Identify LAN Subnets|Module:-Identify-LAN-Subnets]] module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and more effectively utilise other BeEF modules. This module works only with Firefox and Chrome.
 
 ![Identify LAN Subnets](https://cloud.githubusercontent.com/assets/434827/5973018/2059b59e-a8b7-11e4-9e67-17b7ea0b75bb.png)
 
-## Getting HTTP Servers
+## Get HTTP Servers
 
 The [[Get HTTP Servers|Module:-Identify-HTTP-Servers]] module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module should be invisible to the user in Internet Explorer and Safari, however with other browsers the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
 
