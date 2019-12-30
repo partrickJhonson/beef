@@ -1,21 +1,25 @@
-When you have hooked a browser, you can modify the whole page and cause different actions (redirection...), so there are a lot of possibilities for social engineering attacks. 
+Once BeEF has hooked a browser, it can modify and/or send content directly to the viewport or other open tabs. This functionality allows you to craft and perform sophisticated social engineering attacks. 
 
 # Ask for Credentials
 
-Simplest attacks are often the most efficient ones, you can simply ask users for their credentials using different modules:
+Simple attacks are often the most efficient ones. BeEF comes with several command modules that present the target with familiar interfaces requesting credentials:
 
-* [[The Pretty Theft|Module:-Pretty-Theft]] module prints a simple message to the user requiring login and password and explaining that the session has timed out.
-* [[The Simple Hijacker|Module:-Simple-Hijacker]] module proposes several social engineering templates and prompts the user when they click on a link on the page.
+* [[The Pretty Theft|Module:-Pretty-Theft]] module prints a simple message to the user requiring login and password, explaining that the session has timed out. It has a number of presets that imitate popular social network/marketplace themes.
+* [[The Simple Hijacker|Module:-Simple-Hijacker]] module allows you to load a number of common pop-ups when a user clicks any link on their current page. Pop-up templates include certificate warnings, standard alert style prompts, and credit card payment forms.
 * [[Clippy|Module:-Clippy]] is a module that create a small browser assistant which propose browser updates.
+
+_A Sample Pretty Theft Pop-up:_ 
 
 [[Images/module-prettytheft1.png|align=center]]
 
 # Redirect to Another Page
 
-You may also use BeEF modules to redirect to external pages :
+A number BeEF modules exist that allow you to redirect to external pages:
 
-* By using the basic [[Redirect Browser|Module:-Redirect-Browser]] module, you can redirect the hooked page to any other page. Note that it may be weird for the user to be redirected and that you will lose the zombie. To avoid losing the zombie from BeEF, you can also use the [[Redirect Browser module with iframe|Module:-Redirect-Browser-(iFrame)]] which will open a 100% iFrame to the given url.
-* You can also use the great [[TabNabbing module|Module:-TabNabbing]] : this module will detect when the user loses focus on the current tab and modify the whole page to load the given URL in an iFrame at this time. When the user comes back to the tab, they will directly see the new web page.
+* The [[Redirect Browser|Module:-Redirect-Browser]] module can redirect the hooked page to any other page. 
+  * Please note that a spontaneous redirect without any action from the user may cause them to immediately close the zombie. 
+  * To avoid losing the zombie from BeEF, the [[Redirect Browser (iFrame)|Module:-Redirect-Browser-(iFrame)]] sub-module will create a full viewport iFrame which redirects to the specified URL.
+* The [[TabNabbing|Module:-TabNabbing]] module will detect when the user loses focus on the current tab and modify it in the background. When the user comes back to the tab, they will be viewing a full viewport iFrame containing the contents of the specified URL.
 
 # Chrome/Firefox Extensions
 
@@ -32,9 +36,9 @@ By using Chrome extensions module, it is possible to use the malicious extension
 * [[Take screenshot|Module:-Screenshot]]
 * [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
 
-# Other
+# Other Notable Social Engineering Modules
 
-* There is also a nice [[ClickJacking|Module:-Clickjacking]] module which allow a custom clickjacking attack by giving the URL and  offset on the target page :
+* The [[ClickJacking|Module:-Clickjacking]] module which allow a custom clickjacking attack by giving the URL and  offset on the target page :
 
 [[Images/module-clickjacking1.png|align=center]]
 
