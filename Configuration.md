@@ -4,7 +4,7 @@ BeEF utilises YAML files in order to configure the core functionality, as well a
 
 #### Table of Contents
 
-* [Authetnication](#authentication)
+* [Authentication](#authentication)
 * [Access Controls](#access-controls)
 * [Web Server Configuration](#web-server-configuration)
 * [Configuring Extensions](#configuring-extensions)
