@@ -4,21 +4,22 @@ _Details of the database schema_
 
 Database Schema
 
-### Tables ###
+### ActiveRecord Tables ###
 
 ```
-sqlite> .tables
-autoloading                        extension_distributedengine_rules
-commands                           extension_dns_rules              
-core_areexecution                  extension_requester_http         
-core_arerules                      extension_seng_interceptor       
-core_browserdetails                extension_seng_webcloner         
-core_commandmodules                extension_webrtc_rtcmanage       
-core_hookedbrowsers                extension_webrtc_rtcsignals      
-core_logs                          extension_xssrays_details        
-core_optioncache                   extension_xssrays_scans          
-core_results                       network_host                     
-extension_adminui_users            network_service                  
+autoloader                         rules
+commands                           dns_rule             
+executions                         http         
+mass_mailer                        interceptors       
+browser_details                    web_cloner         
+command_modules                    rtc_manage       
+hooked_browsers                    rtc_signal
+ipec_exploit                       rtc_status
+ipec_exploit_run                   rtc_module_status
+logs                               xssrays_details        
+option_caches                      xssrays_scans          
+network_service                    network_host                     
+results                              
 ```
 
 **HookedBrowser**
