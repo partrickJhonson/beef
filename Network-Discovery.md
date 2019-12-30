@@ -16,6 +16,8 @@ With JavaScript hacks, it is possible to launch network attacks through a hooked
 * [Admin UI](#admin-ui)
   * [Network Map](#network-map)
   * [Network Hosts](#network-hosts)
+    * [Discovery](#discovery)
+    * [Post-Discovery](#post-discovery)
   * [Network Services](#network-services)
 * [RESTful API](#restful-api)
 
@@ -99,13 +101,13 @@ This attack was included in the [[Port Scanner|Module:-Port-Scanner]] module.
 
 ## Network Fingerprinting
 
-The [[Network Fingerprinting module|Module:-Fingerprint-Network]] uses URL of default images to fingerprint the devices used on the network. 
+The [[Network Fingerprinting module|Module:-Fingerprint-Network]] uses the URL of default images to fingerprint the devices used on the network. 
 
-It embeds a list of default pictures for Web servers (Apache, IIS) and network devices (Linksys NAS, printers...) and check if one of this picture is available. 
+It embeds a list of default pictures for Web servers (Apache, IIS) and network devices (Linksys NAS, printers, etc) and checks to see if any of the pictures listed are available. 
 
 This module should work in all browsers. 
 
-Note that the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
+Note that the user may notice if any of the scanned hosts pop a _401 Authentication Required_ prompt.
 
 [[Images/module-network-fingerprint2.png|align=center|width=400px]]
 
@@ -141,13 +143,21 @@ The Network Map makes use of HTML5 canvas which allows you to save the map as an
 
 ### Network Hosts
 
+#### Discovery
+
 Right-clicking anywhere in the `Network -> Hosts` grid provides a context menu which provides options for host discovery.
 
 ![host-discovery](https://cloud.githubusercontent.com/assets/434827/6025988/e49e6dca-ac2a-11e4-909a-18c1de74ac27.png)
 
+##### Key
+* **C:** Chrome
+* **FF:** Firefox
+* **S:** Safari
+* **IE:** Internet Explorer
+
 The first two menu items (for Chrome and Firefox) attempt to detect the local network IP address ranges:
-* [Get Internal IP WebRTC](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-webrtc) (C, FF)
-* Identify LAN subnets (C, FF)
+* [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] (C, FF)
+* [Identify LAN Subnets](#identify-lan-subnets) (C, FF)
 
 The remaining options perform host discovery on a user-specified IP address range or a predefined list of commonly used LAN IP addresses:
 * Discover Routers (S, FF)
@@ -156,6 +166,7 @@ The remaining options perform host discovery on a user-specified IP address rang
 * Cross-Origin CORS Scan (IE10+, C, FF, S)
 * Cross-Origin Flash Scan (C, FF)
 
+#### Post-Discovery
 
 Identified network hosts are available in the `Network -> Hosts` panel.
 
@@ -177,7 +188,7 @@ Right-clicking a network service allows you to perform various actions, such as:
 * Cross-Origin scan host for CORS enabled HTTP servers
 * Cross-Origin scan host for Flash cross-origin enabled HTTP servers
 * Scan for remote file include (reverse shell)
-* Scan for known vulnerable Shell Shock CGIs. (reverse shell)
+* Scan for known vulnerable Shell Shock CGIs (reverse shell)
 
 ![service-scanning](https://cloud.githubusercontent.com/assets/434827/6026013/14d547a2-ac2b-11e4-9cd3-9ce7ad51e7d4.png)
 
