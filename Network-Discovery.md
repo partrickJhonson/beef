@@ -16,11 +16,6 @@ With JavaScript hacks, it is possible to launch network attacks through a hooked
 * [Remote CSRFs](#remote-csrfs)
 * [IRC NAT Pinning](#irc-nat-pinning)
 * [Admin UI](#admin-ui)
-  * [Network Map](#network-map)
-  * [Network Hosts](#network-hosts)
-    * [Discovery](#discovery)
-    * [Post-Discovery](#post-discovery)
-  * [Network Services](#network-services)
 * [RESTful API](#restful-api)
 
 ## Get Internal IP Addresses
