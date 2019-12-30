@@ -9,7 +9,7 @@
 1. [[Interface|Interface]]
 1. [[Information Gathering|Information-Gathering]]
 1. [[Social Engineering|Social-Engineering]]
-1. [[Network discovery|Network-discovery]]
+1. [[Network Discovery|Network-Discovery]]
 1. [[Metasploit|Metasploit]]
 1. [[Tunneling|Tunneling]]
 1. [[XSS Rays|XSS-Rays]]
