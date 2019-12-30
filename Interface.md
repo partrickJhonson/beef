@@ -1,5 +1,3 @@
-# Interface
-
 ## Login
 
 First when you arrive on the BeEF web server (default is [http://localhost:3000/ui/panel](http://localhost:3000/ui/panel) if you haven't customised as in [Configuration](https://github.com/beefproject/beef/wiki/Configuration)), you'll see the login page :
