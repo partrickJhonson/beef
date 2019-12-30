@@ -1,3 +1,5 @@
+## Introduction
+
 So now, you have BeEF up and running, and you have hooked your first browser. You might be wondering what the next step is.
 
 Your first step will often be to perform reconnaissance on the remote host. Which browser and plugins do they have running? Which website have you hooked?
