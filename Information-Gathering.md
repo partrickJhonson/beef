@@ -6,12 +6,12 @@ _This page will provide some information on how you may begin to go about this p
 
 ## Browser Fingerprinting
 
-When a browser is hooked, BeEF will automatically gather several pieces of information on the hooked browser:
+When a browser is hooked, BeEF will automatically gather several pieces of information on the hooked browser, including:
 
 * Browser Name and Version
 * Browser User Agent
 * Plugins (including Java, ActiveX, VBS, Flash...)
-* Windows Size
+* If Adobe Flash Player is installed
 
 _Default information on the hooked browser gathered by BeEF:_
 
