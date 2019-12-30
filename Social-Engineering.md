@@ -8,7 +8,7 @@ Simple attacks are often the most efficient ones. BeEF comes with several comman
 * [[The Simple Hijacker|Module:-Simple-Hijacker]] module allows you to load a number of common pop-ups when a user clicks any link on their current page. Pop-up templates include certificate warnings, standard alert style prompts, and credit card payment forms.
 * [[Clippy|Module:-Clippy]] is a module that create a small browser assistant which propose browser updates.
 
-_A Sample Pretty Theft Pop-up:_ 
+##### A Pretty Theft Pop-up Template 
 
 [[Images/module-prettytheft1.png|align=center]]
 
@@ -35,7 +35,7 @@ Using BeEF it is possible to get a user to install a malicious browser extension
     * [[Taking Screenshots|Module:-Screenshot]]
     * [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
 
-_Fake Flash Update Interface:_ 
+##### The Fake Flash Update Pop-up
 
 [[Images/module-fake-flash-update2.png|align=center]]
 
@@ -44,8 +44,6 @@ _Fake Flash Update Interface:_
 BeEF contains a module that enables clickjacking attacks in a hooked browser:
 
 * The [[ClickJacking|Module:-Clickjacking]] module will create an iFrame which follows the users cursor around the page, displaying the content at the specified URL.
-
-[[Images/module-clickjacking1.png|align=center]]
 
 ***
 [[Previous|Information-Gathering]] | [[Next|Network-discovery]]
