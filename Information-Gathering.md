@@ -21,7 +21,7 @@ You can then use different plugins to gather more specific information on the br
 * The [[Browser Fingerprinting|Module:-browser-fingerprint]] uses a number of custom URLs to identify the hooked browser. This can be useful if you are concerned that the user has changed their user agent.
 * You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect Popup Blocker|Module:-Detect-Popup-Blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]], [[Detect Unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]]...
 
-_Example Result from the Browser Fingerprinting Module:_
+_Example Result from the [[Browser Fingerprinting|Module:-browser-fingerprint]] Module:_
 
 [[Images/information-gathering2.png|align=center|width=400px]]
 
@@ -34,7 +34,7 @@ BeEF enables you to gather information on the system of the hooked browser:
 * It is also possible to retrieve the location of the user by using the [[Geolocation API|Module:-Get-Geolocation]] or by using [[a trick requesting Google maps|Module:-Get-Physical-Location]].
 * The default Javascript API allows access to data stored [[in the clipboard|Module:-Get-Clipboard]].
 
-_Result of Get System Info Module:_
+_Example Result of [[Get System Info|Module:-Get-System-Info]] Module:_
 
 [[Images/module-get-systeminfo.png|align=center|width=500px]]
 
@@ -45,6 +45,8 @@ A hooked browser allows BeEF to discover information on the behaviour of the use
 * Utilising some Javascript tricks, it is possible to detect if the browser has already visited [[a given URL|Module:-Detect-Visited-URL]] or [[a given domain|Module:-Get-Visited-Domains]].
 * The [[Detect Social Networks|Module:-Detect-Social-Networks]] module can identify if the user of the hooked browser has a current session on Facebook, Twitter, or Gmail.
 * The [[Detect TOR|Module:-Detect-TOR]] module can identify if the user of the hooked browser is currently using TOR.
+
+_Example Result of [[Detect Social Networks|Module:-Detect-Social-Networks]] Module:_
 
 [[Images/module-detect-social-network.png|align=center|width=500px]]
 
