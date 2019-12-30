@@ -1,7 +1,8 @@
 # Configuring BeEF
 
-Most of the BeEF configurations are in the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
-Otherwise to do other configurations they will usually be done in other config.yaml files in the extension you are tying to change.
+Most of the core BeEF configurations are in the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
+
+To configure extensions, the config.yaml files will be found in the extension folder that you're trying to modify.
 
 ***
 
@@ -9,7 +10,7 @@ Otherwise to do other configurations they will usually be done in other config.y
 
 ### Credentials
 
-**PLEASE Change the username and password for the web interface.**
+**In order to use BeEF, you must change the username and password.**
 
 To edit the configuration file, navigate to the BeEF directory and use your favourite text editor (vim, nano etc) to edit the config.yaml file.
 
@@ -22,7 +23,6 @@ Please edit the below section, found in the file:
         user:   "beef" 
         passwd: "something unique and complex"
 ```
-
 
 ## Access Controls
 
