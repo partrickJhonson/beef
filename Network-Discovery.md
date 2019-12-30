@@ -1,26 +1,28 @@
-_With JavaScript hacks, it is possible to launch network attacks through a hooked browser._
+With JavaScript hacks, it is possible to launch network attacks through a hooked browser.
 
-## Get Internal IP Address
+## Getting Internal IP Addresses
 
-Two modules exist to retrieve the IP addresses in use by the zombie browser host system. From these IP addresses it becomes possible to imagine the internal network addressing plan and use the other modules.
+Two modules exist to retrieve the IP addresses in use by the zombie browser's host system. From these IP addresses it becomes possible to imagine the internal network addressing plan and more effectively utilise other BeEF modules.
 
 The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firefox and Chrome uses WebRTC to retrieve the IP address for each network interface.
 
 ![Get Internal IP Address WebRTC](https://cloud.githubusercontent.com/assets/434827/5973009/0a055c62-a8b7-11e4-82fd-96e726f8a60a.png)
 
-The [[Get Internal IP Address (Java)|Module:-Get-Internal-IP-(Java)]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
+The [[Get Internal IP Address (Java)|Module:-Get-Internal-IP-(Java)]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. 
+
+Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
 
 [[Images/module-get-internal-ip.png|align=center]]
 
-## Identify LAN Subnets
+## Identifying LAN Subnets
 
-The Identify LAN Subnets module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module works only with Firefox and Chrome.
+The [[Identify LAN Subnets|Module:-Identify-LAN-Subnets]] module uses time-based XHR to determine whether any commonly used LAN IP addresses are in use on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and more effectively utilise other BeEF modules. This module works only with Firefox and Chrome.
 
 ![Identify LAN Subnets](https://cloud.githubusercontent.com/assets/434827/5973018/2059b59e-a8b7-11e4-9e67-17b7ea0b75bb.png)
 
-## Get HTTP Servers
+## Getting HTTP Servers
 
-The Get HTTP Servers module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module should be invisible to the user in Internet Explorer and Safari, however with other browsers the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
+The [[Get HTTP Servers|Module:-Identify-HTTP-Servers]] module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module should be invisible to the user in Internet Explorer and Safari, however with other browsers the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
 
 ![Get HTTP Servers](https://cloud.githubusercontent.com/assets/434827/5973022/330d4c78-a8b7-11e4-90e9-89260effd9c8.png)
 
