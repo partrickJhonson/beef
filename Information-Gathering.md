@@ -6,6 +6,12 @@ Your first step will often be to perform reconnaissance on the remote host. Whic
 
 This page will provide some information on how you may begin to go about this process.
 
+#### Table of Contents
+
+* [Browser Fingerprinting](#browser-fingerprinting)
+* [Information Gathering on the System](#information-gathering-on-the-system)
+* [User Behaviour Fingerprinting](#user-behaviour-fingerprinting)
+
 ## Browser Fingerprinting
 
 When a browser is hooked, BeEF will automatically gather several pieces of information, including:
