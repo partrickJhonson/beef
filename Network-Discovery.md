@@ -1,5 +1,24 @@
 With JavaScript hacks, it is possible to launch network attacks through a hooked browser.
 
+#### Table of Contents
+
+* [Get Internal IP Addresses](#get-internal-ip-addresses)
+* [Identify LAN Subnets](#identify-lan-subnets)
+* [Get HTTP Servers](#get-http-servers)
+* [Ping Sweep](#ping-sweep)
+* [Cross-Origin Scanner (CORS)](#cross-origin-scanner-cors)
+* [Cross-Origin Scanner (Flash)](#cross-origin-scanner-flash)
+* [DNS Enumeration](#dns-enumeration)
+* [Port Scanning](#port-scanning)
+* [Network Fingerprinting](#network-fingerprinting)
+* [Remote CSRFs](#remote-csrfs)
+* [IRC NAT Pinning](#irc-nat-pinning)
+* [Admin UI](#admin-ui)
+  * [Network Map](#network-map)
+  * [Network Hosts](#network-hosts)
+  * [Network Services](#network-services)
+* [RESTful API](#restful-api)
+
 ## Get Internal IP Addresses
 
 Two modules exist to retrieve the IP addresses in use by the zombie browser's host system. From these IP addresses it becomes possible to imagine the internal network addressing plan and more effectively utilise other BeEF modules.
@@ -22,19 +41,22 @@ The [[Identify LAN Subnets|Module:-Identify-LAN-Subnets]] module uses time-based
 
 ## Get HTTP Servers
 
-The [[Get HTTP Servers|Module:-Identify-HTTP-Servers]] module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and use the other modules. This module should be invisible to the user in Internet Explorer and Safari, however with other browsers the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
+The [[Get HTTP Servers|Module:-Identify-HTTP-Servers]] module loads favicon images from predictable paths (/favicon.ico, /favicon.png, /images/favicon.ico, /images/favicon.png) on specified IP address(es) to detect web servers on the zombie's local area network(s). From these IP addresses, it becomes possible to imagine the internal addressing plan and more effectively utilise other BeEF modules. 
+
+This module should be invisible to the user in Internet Explorer and Safari, however with other browsers the user may notice if any of the scanned hosts pop a 401 Authentication Required prompt.
 
 ![Get HTTP Servers](https://cloud.githubusercontent.com/assets/434827/5973022/330d4c78-a8b7-11e4-90e9-89260effd9c8.png)
 
 ## Ping Sweep
 
-Then it is possible to launch ping request and identify alive hosts on the network. This modules exists in three versions.
+Then it is possible to launch ping request and identify alive hosts on the network. This modules exists in three versions:
 
-The [[Ping Sweep|Module:-Ping-Sweep]] module uses time-based JavaScript XHR requests to identify live hosts. This module works only in Firefox.
+* The [[Ping Sweep|Module:-Ping-Sweep]] module uses time-based JavaScript XHR requests to identify live hosts. This module works only in Firefox.
 
-The [[Ping Sweep (FF) module|Module:-Ping-Sweep-(FF)]] uses the Java API directly to send requests and time the response. This module works only in Firefox with Java installed.
+* The [[Ping Sweep (FF)|Module:-Ping-Sweep-(FF)]] module uses the Java API directly to send requests and time the response. This module works only in Firefox with Java installed.
 
-The [[Ping Sweep (Java)|Module:-Ping-Sweep-(Java)]] which loads an unsigned Java applet. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
+* The [[Ping Sweep (Java)|Module:-Ping-Sweep-(Java)]] module loads an unsigned Java applet. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. 
+  * Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
 
 [[Images/module-ping-sweep1.png|align=center]]
 
