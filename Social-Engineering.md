@@ -37,7 +37,7 @@ Using BeEF it is possible to get a user to install a malicious browser extension
     * [[Taking Screenshots|Module:-Screenshot]]
     * [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
 
-##### The Fake Flash Update Pop-up:
+##### Fake Flash Update Pop-up:
 
 [[Images/module-fake-flash-update2.png|align=center]]
 
