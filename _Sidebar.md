@@ -18,24 +18,24 @@
 
 ## III - Advanced Utilization
 
-1. [[RestFul API|BeEF-RESTful-API]]
+1. [[RESTful API|BeEF-RESTful-API]]
 1. [[Autorun Rule Engine|Autorun-Rule-Engine]]
 1. [[Notifications|Notifications]]
 1. [[Console|BeEF Console]]
-1. [[Creating a module|Module-creation]]
+1. [[Creating a Module|Module-creation]]
 1. [[WebRTC Extension|WebRTC-Extension]]
 
 ## IV - Development
 1. [ActiveRecord](https://github.com/beefproject/beef/wiki/ActiveRecord)
 1. [[Organization|Development-Organization]]
-1. [[Core BeEF organization|Core-BeEF-Organization]]
+1. [[Core BeEF Organization|Core-BeEF-Organization]]
 1. [[BeEF Javascript API|Javascript-API]]
-1. [[Advanced module creation|Advanced-Module-Creation]]
-1. [[Creating a new extension|Creating-An-Extension]]
+1. [[Advanced Module Creation|Advanced-Module-Creation]]
+1. [[Creating a New Extension|Creating-An-Extension]]
 1. [[BeEF Testing|BeEF-Testing]]
-1. [[Database schema|Database-Schema]]
+1. [[Database Schema|Database-Schema]]
 1. [[Development Milestones|Milestones]]
-1. [Config.Yaml](https://github.com/beefproject/beef/wiki/Command-Module-Config)
+1. [Config.yaml](https://github.com/beefproject/beef/wiki/Command-Module-Config)
 1. [Command Module API](https://github.com/beefproject/beef/wiki/Command-Module-API)
 
 ## V - References
