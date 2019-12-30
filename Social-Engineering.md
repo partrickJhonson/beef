@@ -1,3 +1,5 @@
+## Introduction
+
 Once BeEF has hooked a browser, it can modify and/or send content directly to the viewport or other open tabs. This functionality allows you to craft and perform sophisticated social engineering attacks. 
 
 # Ask for Credentials
