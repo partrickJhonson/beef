@@ -23,13 +23,12 @@ With JavaScript hacks, it is possible to launch network attacks through a hooked
 
 Two modules exist to retrieve the IP addresses in use by the zombie browser's host system. From these IP addresses it becomes possible to imagine the internal network addressing plan and more effectively utilise other BeEF modules.
 
-The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firefox and Chrome uses WebRTC to retrieve the IP address for each network interface.
+* The [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] module for Firefox and Chrome uses WebRTC to retrieve the IP address for each network interface.
 
 ![Get Internal IP Address WebRTC](https://cloud.githubusercontent.com/assets/434827/5973009/0a055c62-a8b7-11e4-82fd-96e726f8a60a.png)
 
-The [[Get Internal IP Address (Java)|Module:-Get-Internal-IP-(Java)]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. 
-
-Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
+* The [[Get Internal IP Address (Java)|Module:-Get-Internal-IP-(Java)]] module uses a Java applet to retrieve the IP address. Since Java introduced click-to-play the user must allow the unsigned Java applet to run. 
+  * Note that modern Java (as of Java 7u51) will outright refuse to execute unsigned Java applets, and will also reject self-signed Java applets unless they're added to the exception list.
 
 [[Images/module-get-internal-ip.png|align=center]]
 
