@@ -6,7 +6,7 @@ _This page will provide some information on how you may begin to go about this p
 
 ## Browser Fingerprinting
 
-When a browser is hooked, BeEF will automatically gather several pieces of information on the hooked browser, including:
+When a browser is hooked, BeEF will automatically gather several pieces of information, including:
 
 * Browser Name and Version
 * Browser User Agent
