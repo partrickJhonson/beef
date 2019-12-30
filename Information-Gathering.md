@@ -1,6 +1,6 @@
 _So now, you have BeEF up and running, and you've hooked your first browser. What's the next step?_
 
-_Your first step will often be to perform reconnaissance on the remote host. Which browser and plugins do they have running? Which website have you hooked? _
+_Your first step will often be to perform reconnaissance on the remote host. Which browser and plugins do they have running? Which website have you hooked?_
 
 ## Browser Fingerprinting
 
