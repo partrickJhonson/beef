@@ -23,18 +23,21 @@ A number BeEF modules exist that allow you to redirect to external pages:
 
 # Chrome/Firefox Extensions
 
-By requiring the user to install [[a fake flash update|Module:-Fake-Flash-Update]], it is possible to install a malicious Firefox/Chrome extension. Once installed this extension can communicate directly with BeEF and have access to much more information than code in the hooked browser.
+Using BeEF it is possible to get a user to install a malicious browser extension:
+
+* The [[Fake Flash Update|Module:-Fake-Flash-Update]] module prompts the hooked browser's user to install a flash update. Instead of installing a Flash update, a browser extension will be installed that can communicate with BeEF and provide access to far more information than is available by default.
+  * For example, if the extension were installed in Chrome, BeEF could execute the following modules:
+    * [[Get All Cookies|Module:-Get-All-Cookies]]
+    * [[List Chrome Extensions|Module:-Get-Chrome-Extensions]]
+    * [[Grab Google Contacts from Logged in User|Module:-Grab-Google-Contacts]]
+    * [[Inject BeEF in All Tabs|Module:-Inject-BeEF]] 
+    * [[Execute Arbitrary Javascript Code|Module:-Execute-On-Tab]]
+    * [[Taking Screenshots|Module:-Screenshot]]
+    * [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
+
+_Fake Flash Update Interface:_ 
 
 [[Images/module-fake-flash-update2.png|align=center]]
-
-By using Chrome extensions module, it is possible to use the malicious extension to :
-* [[Get all cookies|Module:-Get-All-Cookies]]
-* [[List chrome extensions|Module:-Get-Chrome-Extensions]]
-* [[Grab Google contacts|Module:-Grab-Google-Contacts]] of the logged in Google account
-* [[Inject BeEF|Module:-Inject-BeEF]] in all tabs
-* [[Execute javascript code in a new tab|Module:-Execute-On-Tab]]
-* [[Take screenshot|Module:-Screenshot]]
-* [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
 
 # Other Notable Social Engineering Modules
 
