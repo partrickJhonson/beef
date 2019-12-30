@@ -2,7 +2,7 @@
 
 Once BeEF has hooked a browser, it can modify and/or send content directly to the viewport or other open tabs. This functionality allows you to craft and perform sophisticated social engineering attacks. 
 
-# Ask for Credentials
+## Ask for Credentials
 
 Simple attacks are often the most efficient ones. BeEF comes with several command modules that present the target with familiar interfaces requesting credentials:
 
@@ -14,7 +14,7 @@ Simple attacks are often the most efficient ones. BeEF comes with several comman
 
 [[Images/module-prettytheft1.png|align=center]]
 
-# Redirect to Another Page
+## Redirect to Another Page
 
 A number BeEF modules exist that allow you to redirect to external pages:
 
@@ -23,7 +23,7 @@ A number BeEF modules exist that allow you to redirect to external pages:
   * To avoid losing the zombie from BeEF, the [[Redirect Browser (iFrame)|Module:-Redirect-Browser-(iFrame)]] sub-module will create a full viewport iFrame which redirects to the specified URL.
 * The [[TabNabbing|Module:-TabNabbing]] module will detect when the user loses focus on the current tab and modify it in the background. When the user comes back to the tab, they will be viewing a full viewport iFrame containing the contents of the specified URL.
 
-# Chrome/Firefox Extensions
+## Chrome/Firefox Extensions
 
 Using BeEF it is possible to get a user to install a malicious browser extension:
 
@@ -41,7 +41,7 @@ Using BeEF it is possible to get a user to install a malicious browser extension
 
 [[Images/module-fake-flash-update2.png|align=center]]
 
-# Clickjacking
+## Clickjacking
 
 BeEF contains a module that enables clickjacking attacks in a hooked browser:
 
