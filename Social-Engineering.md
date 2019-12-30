@@ -2,6 +2,13 @@
 
 Once BeEF has hooked a browser, it can modify and/or send content directly to the viewport or other open tabs. This functionality allows you to craft and perform sophisticated social engineering attacks. 
 
+#### Table of Contents
+
+* [Ask for Credentials](#ask-for-credentials)
+* [Redirect to Another Page](#redirect-to-another-page)
+* [Chrome/Firefox Extensions](#chromefirefox-extensions)
+* [Clickjacking](#clickjacking)
+
 ## Ask for Credentials
 
 Simple attacks are often the most efficient ones. BeEF comes with several command modules that present the target with familiar interfaces requesting credentials:
