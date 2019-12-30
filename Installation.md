@@ -3,16 +3,14 @@ The following installation instructions are suitable for **Linux and Mac OSX** o
 
 In theory, BeEF should work on any operating system which can run Ruby 2.5+ and nodejs. However, only MacOS and Linux are officially supported.
 
-It is very easy to get BeEF setup with the basic pre-requisites.
+#### Table of Contents
+* [Prerequisites](#prerequisites)
+* [Source](#source)
+* [Installation](#installation)
+* [Start BeEF](#start-beef)
+* [Testing](#testing)
+* [Updating](#updating)
 
-You just need the following:
-
-* Supported Ruby version
-* The repository
-* Run 
-``
-./install
-``
 ## Prerequisites
 
 BeEF requires Ruby 2.5 (or newer). Refer to your operating system documentation
