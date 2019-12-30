@@ -1,15 +1,15 @@
+## Introduction
+BeEF's interface organises a collection of hooked browsers, commands and results. The below guide has been created to assist you in navigating BeEF and familiarising yourself with the types of exploits available.
+
 ## Login
 
 First when you arrive on the BeEF web server (default is [http://localhost:3000/ui/panel](http://localhost:3000/ui/panel) if you haven't customised as in [Configuration](https://github.com/beefproject/beef/wiki/Configuration)), you'll see the login page :
 
+<p align="center">
 [[Images/interface-login.png|align=center]]
+</p>
 
-Please enter the user and password that you configured in the config.yaml in the 
-``
-$beef/config.yaml
-``
-file.
-
+Please enter the username and password that you configured in the config.yaml file in the beef directory.
 
 ## Home Page
 
