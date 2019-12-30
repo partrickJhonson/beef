@@ -7,6 +7,11 @@ To configure extensions, the config.yaml files will be found in the extension fo
 ***
 
 * [Authenication](#authentication)
+* [Access Controls](#access-controls)
+* [Web Server Configuration](#web-server-configuration)
+* [Configuring Extensions](#configuring-extensions)
+* [Launching BeEF](#launching-beef)
+
 
 ## Authentication
 
