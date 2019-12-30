@@ -4,23 +4,22 @@ _Details of the database schema_
 
 Database Schema
 
-### ActiveRecord Tables ###
+### Database Tables ###
 
 ```
-autoloader                         rules
-commands                           dns_rule             
-executions                         http         
-mass_mailer                        interceptors       
-browser_details                    web_cloner         
-command_modules                    rtc_manage       
-hooked_browsers                    rtc_signal
-ipec_exploit                       rtc_status
-ipec_exploit_run                   rtc_module_status
-logs                               xssrays_details        
-option_caches                      xssrays_scans          
-network_service                    network_host                     
-results                              
+sqlite> .tables
+ar_internal_metadata  interceptors          rtc_manage          
+autoloader            ipec_exploit          rtc_module_status   
+browser_details       ipec_exploit_run      rtc_signal          
+command_modules       logs                  rtc_status          
+commands              mass_mailer           rules               
+dns_rule              network_hosts         schema_migrations   
+executions            network_services      web_cloner          
+hooked_browsers       option_caches         xssrays_detail      
+http                  results               xssrays_scan 
 ```
 
-To view all fields within these tables please see the ActiveRecord::Migration
-https://github.com/beefproject/beef/tree/master/core/main/ar-migrations
+0|key|varchar|1||1
+1|value|varchar|0||0
+2|created_at|datetime(6)|1||0
+3|updated_at|datetime(6)|1||0
