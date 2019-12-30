@@ -26,7 +26,7 @@ A number BeEF modules exist that allow you to redirect to external pages:
 Using BeEF it is possible to get a user to install a malicious browser extension:
 
 * The [[Fake Flash Update|Module:-Fake-Flash-Update]] module prompts the hooked browser's user to install a flash update. Instead of installing a Flash update, a browser extension will be installed that can communicate with BeEF and provide access to far more information than is available by default.
-  * For example, if the extension were installed in Chrome, BeEF could execute the following modules:
+  * If the extension were installed in Chrome, for example, BeEF could run the following modules:
     * [[Get All Cookies|Module:-Get-All-Cookies]]
     * [[List Chrome Extensions|Module:-Get-Chrome-Extensions]]
     * [[Grab Google Contacts from Logged in User|Module:-Grab-Google-Contacts]]
@@ -39,9 +39,11 @@ _Fake Flash Update Interface:_
 
 [[Images/module-fake-flash-update2.png|align=center]]
 
-# Other Notable Social Engineering Modules
+# Clickjacking
 
-* The [[ClickJacking|Module:-Clickjacking]] module which allow a custom clickjacking attack by giving the URL and  offset on the target page :
+BeEF contains a module that enables clickjacking attacks in a hooked browser:
+
+* The [[ClickJacking|Module:-Clickjacking]] module will create an iFrame which follows the users cursor around the page, displaying the content at the specified URL.
 
 [[Images/module-clickjacking1.png|align=center]]
 
