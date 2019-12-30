@@ -23,7 +23,7 @@ beef:
 
 ## console usage
 
-When this extension is written, the console module is still usable and supported. Unfornately, it is no longer usable.
+When this extension is written, the console module is still usable and supported. Unfortunately, it is no longer usable.
 
 see https://blog.beefproject.com/2015/01/hooked-browser-meshed-networks-with_26.html for console usage examples
 
@@ -93,7 +93,7 @@ curl -d '{"from":1, "to":2, "message":"%alert(\"hello\");"}' \
 
 ### stealth mode
 
-Stealth mode is also sent as a message between two browsers. The `to` browser will be put into stealth mode, tunneling its communication with the BeEF server through the `from` browser.
+Stealth mode is also sent as a message between two browsers. The `to` browser will be put into stealth mode, tunnelling its communication with the BeEF server through the `from` browser.
 
 ### going into stealth mode
 
@@ -130,7 +130,7 @@ curl -d '{"from":1, "to":2, "cmdid":102, "options":[{"name":"Domain","value":"de
 	 http://127.0.0.1:3000/api/webrtc/cmdexec?token=498641adfe687860b55fb90eb6a4b9789fd5c4ca
 ```
 
-The result will be displayed in the BeEF terminal ouput, and stored in the command events of the `from` browser.
+The result will be displayed in the BeEF terminal output, and stored in the command events of the `from` browser.
 
 
 ### Getting event data from a browser
