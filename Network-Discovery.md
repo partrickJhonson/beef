@@ -1,3 +1,5 @@
+## Introduction
+
 With JavaScript hacks, it is possible to launch network attacks through a hooked browser.
 
 #### Table of Contents
