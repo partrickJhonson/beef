@@ -143,17 +143,17 @@ The Network Map makes use of HTML5 canvas which allows you to save the map as an
 
 ### Network Hosts
 
-#### Discovery
-
-Right-clicking anywhere in the `Network -> Hosts` grid provides a context menu which provides options for host discovery.
-
-![host-discovery](https://cloud.githubusercontent.com/assets/434827/6025988/e49e6dca-ac2a-11e4-909a-18c1de74ac27.png)
-
 ##### Key
 * **C:** Chrome
 * **FF:** Firefox
 * **S:** Safari
 * **IE:** Internet Explorer
+
+#### Discovery
+
+Right-clicking anywhere in the `Network -> Hosts` grid provides a context menu which provides options for host discovery.
+
+![host-discovery](https://cloud.githubusercontent.com/assets/434827/6025988/e49e6dca-ac2a-11e4-909a-18c1de74ac27.png)
 
 The first two menu items (for Chrome and Firefox) attempt to detect the local network IP address ranges:
 * [[Get Internal IP (WebRTC)|Module:-Get-Internal-IP-WebRTC]] (C, FF)
