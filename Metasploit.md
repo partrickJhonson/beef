@@ -1,14 +1,22 @@
+## Introduction
+
+BeEF supports Metasploit integration, and only requires some simple [[configuration|Configuration]] to get up and running. Once running Metasploit modules can be run directly through the BeEF interface.
+
+#### Table of Contents
+* [Metasploit Modules](#metasploit-modules)
+* [Browser Autopwn](#browser-autopwn)
+
 ## Metasploit Modules
 
-Once Metasploit has been [[configured|Configuration]] and launched, Metasploit modules are directly included in the BeEF command modules tree:
+After launching Metasploit, its modules can be found in the BeEF command modules tree:
 
 [[Images/msf2.png|align=center]]
 
-When selecting a payload, all options of Metasploit modules can be directly given in the BeEF web interface :
+All regular payload CLI arguments have their own form fields in the module's interface:
 
 [[Images/msf3.png|align=center]]
 
-You then just have to wait for the exploit to work :
+Now, sit back and wait for the exploit to work:
 
 [[Images/msf6.png|align=center]]
 
