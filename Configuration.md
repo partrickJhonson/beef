@@ -145,7 +145,7 @@ To enable Metasploit you need to enable it in
 ``
 beef/config.yaml.beef.extensions.metasploit
 ``
- by making it true not false,
+by changing the value to true.
 ```
 extension:
        admin_ui:
