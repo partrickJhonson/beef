@@ -19,7 +19,14 @@ hooked_browsers       option_caches         xssrays_detail
 http                  results               xssrays_scan 
 ```
 
-0|key|varchar|1||1
-1|value|varchar|0||0
-2|created_at|datetime(6)|1||0
-3|updated_at|datetime(6)|1||0
+### Table Info ###
+
+```
+sqlite> PRAGMA table_info(ar_internal_metadata);
+```
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | key | varchar | 1 | | 1
+1 | value | varchar | 0 | | 0
+2 | created_at | datetime(6) | 1 | | 0
+3 | updated_at | datetime(6) | 1 | | 0
