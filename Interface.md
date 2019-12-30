@@ -1,8 +1,15 @@
 ## Introduction
 BeEF's interface organises a collection of hooked browsers, commands and results. The below guide has been created to assist you in navigating BeEF and familiarising yourself with the types of exploits available.
 
-## Login
+#### Table of Contents
 
+* [Login](#login)
+* [Home Page](#home-page)
+* [Hooked Browsers](#hooked-browsers)
+* [Command Tab](#command-tab)
+
+
+## Login
 First when you arrive on the BeEF web server (default is [http://localhost:3000/ui/panel](http://localhost:3000/ui/panel) if you haven't customised as in [Configuration](https://github.com/beefproject/beef/wiki/Configuration)), you'll see the login page :
 
 <p align="center">
@@ -19,7 +26,7 @@ The home page will look like this :
 
 Starting out, you will see that there are no browsers hooked and very few options available to you so the first step is to hook a browser, for example by using one of the demo page as described in the "Getting Started" tab.
 
-## Hooked browsers
+## Hooked Browsers
 
 After a successful hook, you will quickly see a new hooked browser in the beef menu :
 
