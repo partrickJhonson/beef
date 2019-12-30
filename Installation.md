@@ -1,3 +1,4 @@
+## Introduction
 The following installation instructions are suitable for **Linux and Mac OSX** operating systems.
 
 In theory, BeEF should work on any operating system which can run Ruby 2.5+ and nodejs. However, only MacOS and Linux are officially supported.
@@ -12,7 +13,7 @@ You just need the following:
 ``
 ./install
 ``
-# Prerequisites
+## Prerequisites
 
 BeEF requires Ruby 2.5 (or newer). Refer to your operating system documentation
 for instructions to install the latest stable version of Ruby and Ruby-dev.
@@ -79,7 +80,7 @@ This just means you do not have bundler installed, to fix this simply run:
 $ gem install bundler
 ```
 
-# Source
+## Source
 
 Obtain application source code either by downloading the latest archive:
 
@@ -94,7 +95,7 @@ $ git clone https://github.com/beefproject/beef
 ```
 
 
-# Installation
+## Installation
 
 Once a suitable version of Ruby is installed, run the
 [install script](https://github.com/beefproject/beef/blob/master/install) in the BeEF directory:
@@ -111,14 +112,14 @@ Upon successful installation, be sure to read the
 page on the wiki for important details on configuring and securing BeEF.
 
 
-# Start BeEF
+## Start BeEF
 
 To start BeEF, first change the username and password config.yaml and then simply run:
 
 ```bash
   $ ./beef
 ```
-## I want to run the tests
+## Testing
 
 If you want to install the test pre-requisites just run 
 
@@ -132,7 +133,7 @@ If you want to run the test suit run:
 ``
 $bundle exec rake
 ``
-# Updating
+## Updating
 
 Due to the fast-paced nature of web browser development and webappsec landscape,
 it's best to regularly update BeEF to the latest version.
