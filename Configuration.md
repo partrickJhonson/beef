@@ -1,10 +1,10 @@
 ## Introduction
 
-BeEF utilises YAML files in order to configure the core functionality, as well as the extensions. Most of the core BeEF configurations are in the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml), found in the BeEF directory. To configure extensions, the config.yaml files will be found in the extension folder that you're trying to modify.
+BeEF utilises YAML files in order to configure the core functionality, as well as the extensions. Most of the core BeEF configurations are in the main configuration file: [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml), found in the BeEF directory. To configure extensions, the config.yaml files will be found in the extension folder that you're trying to modify.
 
 #### Table of Contents
 
-* [Authenication](#authentication)
+* [Authetnication](#authentication)
 * [Access Controls](#access-controls)
 * [Web Server Configuration](#web-server-configuration)
 * [Configuring Extensions](#configuring-extensions)
