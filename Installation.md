@@ -7,6 +7,7 @@ In theory, BeEF should work on any operating system which can run Ruby 2.5+ and 
 * [Prerequisites](#prerequisites)
 * [Source](#source)
 * [Installation](#installation)
+* [BeEF on Ubuntu](#beef-on-ubuntu)
 * [Start BeEF](#start-beef)
 * [Testing](#testing)
 * [Updating](#updating)
