@@ -44,7 +44,9 @@ A practical usage of the tunneling proxy, recorded as a screencast, can be found
 
 *2.* Configure another browser to use the BeEF tunneling proxy as HTTP proxy. By default the address of the proxy is 127.0.0.1:6789
 
+<p align=center>
 [[Images/tunnel2.png|align=center]]
+</p>
 
 *3.* In this case we had Opera (on the right of the screenshot) as [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] and Firefox (on the left of the screenshot) as the browser using the tunneling proxy. You can see that in Firefox we're browsing the same origin of the Opera hooked browser in a concurrent way (without stealing any cookies).  
 
