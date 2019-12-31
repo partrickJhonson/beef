@@ -1,6 +1,6 @@
 ## Introduction
 
-Tunnelling Proxy (TP) effectively mimics a reverse HTTP proxy. It will process requests via a selected browser session. This session becomes the tunnel and its [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] the exit point. 
+Tunneling Proxy (TP) effectively mimics a reverse HTTP proxy. It will process requests via a selected browser session. This session becomes the tunnel and its [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] the exit point. 
 
 #### Table of Contents
 
@@ -11,7 +11,7 @@ Tunnelling Proxy (TP) effectively mimics a reverse HTTP proxy. It will process r
 
 ## Details
 
-A browser (or generally any software that supports an HTTP proxy) with its proxy configured to use BeEF will send all requests via the TP. 
+A browser (or generally any software that supports a HTTP proxy) with its proxy configured to use BeEF will send all requests via the TP. 
 
 The TP will create a set of instructions based on the received request details. These instructions will induce an equivalent request in whichever browser executes them. 
 
@@ -21,7 +21,7 @@ The HTTP response is then communicated back to the BeEF proxy which delivers it 
 
 The requests are not cross-origin: this means that if the current origin of the [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] is `http://example.com:80`, the browser using the proxy can send requests only to `http://example.com:80`.
 
-There are future plans to extend the tunnelling proxy capabilities integrating Erlend Oftedal's [[malaRIA|http://erlend.oftedal.no/blog/?blogid=107]]. This will allow the tunnelling proxy to forward requests to every origin with a liberal cross-origin policy.
+There are future plans to extend the tunneling proxy capabilities integrating Erlend Oftedal's [[malaRIA|http://erlend.oftedal.no/blog/?blogid=107]]. This will allow the tunneling proxy to forward requests to every origin with a liberal cross-origin policy.
 
 ```<allow-access-from origin="*">```
 
