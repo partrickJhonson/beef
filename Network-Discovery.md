@@ -55,7 +55,7 @@ This module should be invisible to the user in Internet Explorer and Safari, how
 
 ## Ping Sweep
 
-Then it is possible to launch ping request and identify alive hosts on the network. This modules exists in three versions:
+Then it is possible to launch ping request and identify alive hosts on the network. These modules exist in three versions:
 
 * The [[Ping Sweep|Module:-Ping-Sweep]] module uses time-based JavaScript XHR requests to identify live hosts. This module works only in Firefox.
 
@@ -114,7 +114,7 @@ CSRF is still a vulnerability seldom taken into account by developers, especiall
 
 BeEF includes a lot of CSRF modules, especially targeting personal routes (Linksys, Dlink, etc). Happily, we just detected one of those routers when fingerprinting the network during the previous step. 
 
-Most of CSRF attacks allows modifying the admin password however several can be used to gain a reverse shell or open external ports on the box.
+Most CSRF attacks allow for modifying the admin password, however there are several that can be used to gain a reverse shell or open external ports on the box.
 
 You can see the list of CSRF modules in the [[module|BeEF-modules]] page.
 
@@ -124,7 +124,7 @@ By simulating IRC communication from the browser, it is possible to deceive the 
 
 This hack is called [[NAT Pinning|http://samy.pl/natpin/]] and it is included in the BeEF [[IRC NAT Pinning module|Module:-IRC-NAT-Pinning]]. 
 
-You can find more information and exemple on the [BeEF's blog](http://blog.beefproject.com/2012/07/opening-closed-ports-on-nat-device-and.html).
+You can find more information and example on the [BeEF's blog](http://blog.beefproject.com/2012/07/opening-closed-ports-on-nat-device-and.html).
 
 ## Admin UI
 
@@ -188,7 +188,6 @@ Right-clicking a network service allows you to perform various actions, such as:
 * Scan for known vulnerable Shell Shock CGIs (reverse shell)
 
 ![service-scanning](https://cloud.githubusercontent.com/assets/434827/6026013/14d547a2-ac2b-11e4-9cd3-9ce7ad51e7d4.png)
-
 
 ## RESTful API
 
