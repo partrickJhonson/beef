@@ -33,4 +33,4 @@ beef:
               username: "notifier" # Username can be anything
 ```
 ***
-[[Previous|Autorun Rule Engine]] | [[Next|Console]]
+[[Previous|Autorun Rule Engine]] | [[Next|BeEF Console]]
