@@ -50,4 +50,4 @@ Note that modern Java (as of Java 7u51) will outright refuse to execute self-sig
 
 ***
 
-[[Back: Persistence|Persistence]]
+[[Back|Persistence]]
