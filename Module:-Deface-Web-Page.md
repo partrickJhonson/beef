@@ -15,4 +15,4 @@ This command modify the HTML, the title and the favicon of the page with the par
 	beef.browser.changeFavicon("<%= @deface_favicon %>");
 ```
 
-##Feedback
+## Feedback
