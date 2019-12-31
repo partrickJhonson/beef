@@ -1,8 +1,8 @@
 ## Introduction
 
-Metasploit is another ruby based, open source security tool used for penetration testing. It has a collection of exploits, payloads, shellcodes and more in order to exploit vulnerabilities. 
+Metasploit is another ruby based, open source security tool used for penetration testing. It has a collection of exploits, payloads, shellcodes and more that can be used to exploit vulnerabilities. 
 
-BeEF supports Metasploit integration, and only requires some simple [[configuration|Configuration]] to get up and running. Once running Metasploit modules can be run directly through the BeEF interface.
+BeEF supports Metasploit integration, and only requires some simple [[configuration|Configuration]] to get it up and running. Once running, Metasploit modules can run directly through the BeEF interface.
 
 #### Table of Contents
 
