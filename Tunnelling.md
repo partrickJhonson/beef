@@ -40,7 +40,7 @@ A practical use of the TP, recorded as a screencast, can be found [[here|http://
 
 ## How to Use the Proxy Extension
 
-1. Select which [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] you want to use to tunnel requests (right click on the hooked browser icon, then left click on "Use As Proxy")
+1. Select which [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] you want to use to tunnel requests. Right click on the hooked browser icon, then left click on "Use As Proxy".
 
 [[Images/tunnel1.png|align=center]]
 
