@@ -1,6 +1,13 @@
 ## Introduction
 Xssrays is a pure Javascript XSS scanner. [Gareth Heyes](http://www.thespanner.co.uk/2009/03/25/xss-rays/) developed it originally in 2009. What Xssrays does is basically parse all the links and forms of the page where it has been loaded and check for XSS on GET, POST parameters, and also in the URI path creating hidden iFrames.
 
+#### Table of Contents
+
+* [Details](#details)
+* [High Level Overview](#high-level-overview)
+* [How to Use Xssrays Extension](#how-to-use-the-xssrays-extension)
+* [What's Next?](#whats-next)
+
 ## Details
 The original code by Heyes, from 2009, used the location.hash fragment in order to effectively have a callback between parent and child iFrames. This trick has been patched by recent browsers. BeEF uses a new approach which results in false-positive free findings. The reason they are false-positive free is that BeEF must exploit the XSS to discover the vulnerability. 
 
