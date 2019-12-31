@@ -56,7 +56,7 @@ Auxiliary action:
 
 ```
 
-First, launch browser_autopwn or browser_autopwn2 in Metasploit and get the BrowserAutoPwn URL, for example:
+First, launch `browser_autopwn` or `browser_autopwn2` in Metasploit and get the BrowserAutoPwn URL, for example:
 
 ```
 msf auxiliary(browser_autopwn2) > run -z 
