@@ -1,7 +1,9 @@
 ## Introduction
-The following installation instructions are suitable for **Linux and Mac OSX** operating systems.
+The following installation instructions are suitable for **Linux** based operating systems.
 
-In theory, BeEF should work on any operating system which can run Ruby 2.5+ and nodejs. However, only MacOS and Linux are officially supported.
+In theory, BeEF should work on any operating system which can run Ruby 2.5+ and NodeJS. However, only MacOS and Linux are officially supported.
+
+You will not find MacOS installation instructions in this guide. They are currently high on the list of wiki tasks to be completed.
 
 #### Table of Contents
 * [Prerequisites](#prerequisites)
@@ -15,7 +17,7 @@ In theory, BeEF should work on any operating system which can run Ruby 2.5+ and 
 ## Prerequisites
 
 BeEF requires Ruby 2.5 (or newer). Refer to your operating system documentation
-for instructions to install the latest stable version of Ruby and Ruby-dev.
+for instructions to install the latest stable version of Ruby and Ruby Developer Tools.
 
 ```bash
 Debian based systems
@@ -35,9 +37,11 @@ $ sudo apt-add-repository -y ppa:brightbox/ruby-ng
 Alternatively, consider using a Ruby environment manager such as
 [rbenv](https://github.com/rbenv/rbenv) or
 [rvm](https://rvm.io/rvm/install).
-These are command line tools that allow for simple management of different ruby environments.
+
+These are command line tools that allow for simple management of different Ruby environments.
 
 ### Bundler
+
 Bundler is essential for tracking and installing the correct gems in ruby projects.
 When installing, you may get the error:
 ```bash
@@ -48,9 +52,10 @@ This just means you do not have bundler installed, to fix this simply run:
 $ gem install bundler
 ```
 ## BeEF on Ubuntu
-It's highly recommended that you use a Ruby environment manager when installing BeEF on Ubuntu, due to restricted permissions. Please note: you do not need to install ruby as per the above instructions, if using a Ruby Environment Manager.
 
-In order to install BeEF and RVM you will need to install Git and Curl first, as they do not come with Ubuntu.
+It's highly recommended that you use a Ruby Environment Manager when installing BeEF on Ubuntu, due to restricted permissions. Please note that you do not need to install Ruby as per the above instructions, if using Ruby Environment Manager.
+
+In order to install BeEF and RVM you will need to install Git and Curl first, as they do not come out of the box with Ubuntu.
 
 ```bash
 $ sudo apt-get install git
@@ -131,18 +136,19 @@ To start BeEF, first change the username and password config.yaml and then simpl
 ```
 ## Testing
 
-If you want to install the test pre-requisites just run 
+If you want to install the test pre-requisites just run:
 
-``
+``` bash
 $ bundle install --with test
-``
+```
 
 This will install the pre-requisite gem's for tests.
 
 If you want to run the test suit run:
-``
+
+```bash
 $ bundle exec rake
-``
+```
 ## Updating
 
 Due to the fast-paced nature of web browser development and webappsec landscape,
