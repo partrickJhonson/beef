@@ -13,4 +13,4 @@ This modules does two actions:
 
 **Warning**: This module will not work if the BeEF hook script has another name (changed in the BeEF configuration).
 
-##Feedback
+## Feedback
