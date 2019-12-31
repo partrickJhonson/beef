@@ -1,8 +1,7 @@
-_Details of the database schema_
 
 ### Introduction ###
 
-Database Schema
+The below details the Database Schema of BeEF.
 
 ### Database Tables ###
 
