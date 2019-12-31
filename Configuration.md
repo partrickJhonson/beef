@@ -76,9 +76,6 @@ By default, the administration UI throttles login attempts to 1 attempt per seco
 
 By default, the REST API interface throttles login attempts to 1 attempt every 0.05 seconds. This can be changed using the `beef.restrictions.api_attempt_delay: 0.05` value in `config.yaml`.
 
-
-***
-
 ## Web server configuration
 
 The web server can be fully configured, this is done in the config.yaml file in http:
@@ -117,9 +114,6 @@ For example:
 
 The `hook_404` and `hook_root` directives can be enabled to inject the BeEF hook on HTTP 404 error pages and the web root page respectively. This will hook the browser of anyone examining the web server.
 
-
-***
-
 ## Configuring Extensions
 
 ### Enabling extensions
@@ -144,7 +138,6 @@ Extensions should be enabled in the main [config.yaml](https://github.com/beefpr
 ```
 
 The Demos extension should be disabled in production by setting `enable: false` in `config.yaml`.
-***
 ### Metasploit
 To enable Metasploit you need to enable it in 
 ``
@@ -157,7 +150,6 @@ extension:
               metasploit:
                    enable: true
 ```
-***
 
 The Metasploit extension should be configured by modifying the config file that is in extensions/metasploit/config.yml
 (below)
