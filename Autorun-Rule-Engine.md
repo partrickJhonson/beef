@@ -7,6 +7,13 @@ If you are a BeEF aficionado, you were probably waiting for this from a long tim
 * **Non-intrusive** : command modules now have support for returning execution status and result data (useful for chaining). This didn't required a huge refactoring, but some smart changes in the API only. Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You can still launch them with the sequential chaining mode. If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to the command modules if the rule is in nested-forward chain mode (more on this later here). 
 * **Evolving** : you will likely see the ARE evolve to address common client-side needs for the lazy pentester.
 
+#### Table of Contents
+
+* [Matching](#matching)
+* [Chaining Mode](#chaining-mode)
+* [RESTful API](#restful-api)
+
+
 ## Matching
 On successful hook, the ARE checks if any rulesets present in the core_arerules table match against the hooked browsers. Various hooked browser properties are checked:
 * Browser type and version
