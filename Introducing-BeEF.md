@@ -1,4 +1,6 @@
+<p align=center>
 [[Images/logo.png|align=center]]
+</p>
 
 ##  What is BeEF?
 
