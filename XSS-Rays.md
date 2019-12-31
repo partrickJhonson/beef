@@ -1,5 +1,5 @@
 ## Introduction
-Xssrays is a pure Javascript XSS scanner. [Gareth Heyes](http://www.thespanner.co.uk/2009/03/25/xss-rays/) developed it originally in 2009. What Xssrays does is basically parse all the links and forms of the page where it has been loaded and check for XSS on GET, POST parameters, and also in the URI path creating hidden iFrames.
+XSS Rays is a pure Javascript Cross-Site Scripting ([XSS](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))) scanner, orginally [developed by Gareth Heyes](http://www.thespanner.co.uk/2009/03/25/xss-ray) in 2009. XSS Rays parses all the links and forms of the page where it has been loaded and checks for XSS on the GET, POST parameters, and the URI path by creating hidden iFrames.
 
 #### Table of Contents
 
