@@ -1,4 +1,5 @@
-These four modules have been developed to keep browsers hooked.
+## Introduction
+These four modules have been developed to keep maintain persistence on hooked browsers.
 
 ## Old School : Pop under the browser
 
@@ -7,9 +8,9 @@ These four modules have been developed to keep browsers hooked.
 ## Dirty : Ask for Confirmation for Closing the Tab
 
 The [[Dirty|Module:-Confirm-Close-Tab]] module will ask the user to confirm that they want to close this tab again and again and again. Dirty!
-
+<p align=center>
 [[Images/module-confirm-close-tab1.png|align=center]]
-
+</p>
 ## Stealth : Redirect Links to Foreground iFrames
 
 [[Stealth|Module:-Create-Foreground-iFrame]] will rewrite all the links in the webpage to avoid leaving the current page. Instead, the module will load the target URL in a 100% foreground iFrame. Stealth but the URL still does not change!
