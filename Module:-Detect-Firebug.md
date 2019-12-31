@@ -6,7 +6,7 @@
 * **Browser**: Firefox
 * [code](https://github.com/beefproject/beef/tree/master/modules/browser/detect_firebug)
 
-##Internal working
+## Internal working
 
 This module test if _window.console.firebug_ or _window.console.exception_ objects exists to detect enabled firefbug module:
 
@@ -18,6 +18,3 @@ beef.execute(function() {
 });
 ```
 
-##Feedback
-
-##References
