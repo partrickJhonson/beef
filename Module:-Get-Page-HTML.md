@@ -1,11 +1,11 @@
-##Summary
+## Summary
 * **Objective**: This module will retrieve the HTML from the current page.
 * **Date**: ???
 * **Authors**: bcoles
 * **Browsers**: All
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/browser/hooked_domain/get_page_html]]
 
-##Internal Working
+## Internal Working
 
 This module returns the HTML of the header and body of the hooked web page :
 
@@ -22,4 +22,4 @@ try {
 }
 ```
 
-##Feedback
+## Feedback
