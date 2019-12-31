@@ -85,4 +85,7 @@ Social engineering is considered one of the most used techniques by targeted att
 
 The phishing component of the framework would have the ability to clone portions of websites to convince a target to enter his credentials on it. Also, with the tab nabbing feature, it is possible to direct the target to a site will look interesting but long to read. After the user switches to another tab, the whole page is changed to resemble the login page of the phished website. Now the user might think that he has been logged out of his account and trip into entering his credentials in our phishing site.
 
-On the other hand, the social media component plays a big role in acquiring information from different social networking websites. <Add text here>
+On the other hand, the social media component plays a big role in acquiring information from different social networking websites. 
+
+***
+[[Database Schema|Database Schema]] | [[Command Module Configuration|Command Module Config]]
