@@ -484,3 +484,5 @@ TODO
 * send: function (data)
 * alive
 
+***
+[[Previous|Core BeEF Organization]] | [[Next|Advanced Module Creation]]
