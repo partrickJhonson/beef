@@ -597,4 +597,4 @@ curl -X DELETE http://beefserver.com:3000/api/dns/rule/45ce397?token=320f3cf4da7
 If you have realized any script that you would like to share with the community, please contact [Nbblr](https://github.com/Nbblrr)
 
 ***
-[[Previous|Persistence]] | [[Next|Autorun]]
+[[Previous|Persistence]] | [[Next|Autorun Rule Engine]]
