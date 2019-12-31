@@ -36,11 +36,11 @@ The approach BeEF is using is not free of false-negatives. We can try different 
   
 [[Images/xssrays3.png|align=center]]
 
-2. When a XSS vulnerability is found, you will see a notification in the BeEF logs. Opening the XssRays -> Logs tab will show you more details about the discovered XSS.
+2. When a XSS vulnerability is found, you will see a notification in the BeEF logs. Opening the `XssRays -> Logs` tab will show you more details about the discovered XSS.
 
 [[Images/xssrays4.png|align=center]]
 
-3. If you have direct access to the application, you can test the XSS Rays finding using the PoC provided in the Logs tab shown in the previous step.
+3. If you have direct access to the application, you can test the XSS Rays finding using the PoC provided in the `Logs` tab shown in the previous step.
 
 [[Images/xssrays5.png|align=center]]
 
