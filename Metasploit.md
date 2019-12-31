@@ -108,7 +108,7 @@ Exploits
 
 Note the BrowserAutoPwn URL: `http://10.1.1.175:8080/5WNrYZjr`
 
-Then use the `Create Invisible Iframe` command module to load the autopwn webpage in an iFrame:
+Then use the [[Create Invisible Iframe|Module:-Create-Invisible-Iframe]] command module to load the autopwn webpage in an iFrame:
 <p align=center>
 [[Images/msf8.png|align=center]]
 </p>
