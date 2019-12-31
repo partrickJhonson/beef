@@ -5,7 +5,7 @@
 * **Parameters** : No parameters needed
 * [Code](https://github.com/beefproject/beef/tree/master/modules/persistence/confirm_close_tab)
 
-##Internal Working
+## Internal Working
 
 This modules uses the confirm function to prompt the user and the automated window.onbeforeunload to ask it several times :
 
