@@ -1,11 +1,21 @@
 ## Introduction
 
-BeEF has been designed in a modular way, it is so very easy to create a new module and add it to BeEF.
+BeEF has been designed in a modular way, it is very easy to create a new module and add it to BeEF.
 
 Basically, modules are all stored in the [module](https://github.com/beefproject/beef/tree/master/modules) directory and are composed of three main files :
 * **config.yaml** : The YAML configuration file which describe properties of the module
 * **module.rb**  which allow integrating the module in the BeEF web interface
 * **command.js** : the JavaScript "payload" which will be executed on the hooked browser
+
+#### Table of Contents
+
+* [YAML Configuration File](#yaml-configuration-file)
+* [Interface with Rails Web GUI](#interface-with-rails-web-gui)
+* [Javascript Payload](#javascript-payload)
+* [Other Useful Examples](#other-useful-examples)
+* [What Now?](#what-now-)
+
+
 
 ## <a name="config"/>YAML Configuration file 
 
