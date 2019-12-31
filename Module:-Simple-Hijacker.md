@@ -1,4 +1,4 @@
-##Summary
+## Summary
 * **Objective**: Hijack clicks on links to display what you want.
 * **Authors**: gallypette
 * **Browsers**: All (user notified)
