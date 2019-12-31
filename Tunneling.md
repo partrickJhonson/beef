@@ -1,8 +1,15 @@
-_Tunneling Proxy will process requests via a selected browser session._
 
 ## Introduction
+_Tunneling Proxy will process requests via a selected browser session._
 
 The Tunneling Proxy (TP) effectively mimics a reverse HTTP proxy. A selected browser session becomes the tunnel and its [[hooked browser|https://github.com/beefproject/beef/wiki/Hooked-Browser]] the exit point. 
+
+#### Table of Contents
+
+* [Details](#details)
+* [Communication Flow](#communication-flow)
+* [Real Scenarios](#real-scenarios)
+* [How To Use The Proxy Extension](#how-to-use-the-proxy-extension)
 
 ## Details
 
