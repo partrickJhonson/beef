@@ -25,7 +25,7 @@ When a browser is hooked, BeEF will automatically gather several pieces of infor
 [[Images/information-gathering1.png|align=center|width=500px]]
 
 You can then use different plugins to gather more specific information on the browsers, for example:
-* The [[Browser Fingerprinting|Module:-browser-fingerprint]] uses a number of custom URLs to identify the hooked browser. This can be useful if you are concerned that the user has changed their user agent.
+* The [[Browser Fingerprinting|Module:-browser-fingerprint]] module uses a number of custom URLs to identify the hooked browser. This can be useful if you are concerned that the user has changed their user agent.
 * You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect Popup Blocker|Module:-Detect-Popup-Blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]] or [[Detect Unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]].
 
 ##### Output from the [[Browser Fingerprinting|Module:-browser-fingerprint]] Module:
