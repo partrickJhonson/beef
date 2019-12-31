@@ -1,4 +1,6 @@
-##Development Cycle
+_Please Note: This is just a guideline and should be used as best practice._
+
+## Development Cycle
 
 This page describes the project development cycle. The process is aimed to provide the new project developer a simple and quick to understand set of instructions. The most important factor in development is proactive communication. 
 
