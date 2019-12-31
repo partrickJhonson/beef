@@ -43,7 +43,7 @@ hasVisited: function(urls) {
 ```
 Basically, it loads a URL and look if the style has been automatically changed by the browser because the user already reached that URL.
 
-##Feedback
+## Feedback
 
-##References
+## References
 * http://jeremiahgrossman.blogspot.com/2006/08/i-know-where-youve-been.html
