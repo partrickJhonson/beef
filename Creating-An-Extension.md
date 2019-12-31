@@ -197,3 +197,6 @@ No problems here.
 # Moving Forward
 
 Our Daytime server was just a simple way to show the structure and layout of extensions. In reality, it's unlikely that BeEF would ever actually need it. If you feel comfortable with everything so far, a good way to move forward is to learn from the host of already existing extensions in the `extensions/` directory. Sometimes the best way to learn is by example.
+
+***
+[[Previous|Advanced Module Creation]] | [[Next|BeEF Testing]]
