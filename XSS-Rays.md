@@ -20,7 +20,7 @@ BeEF utilises a new approach to this technique which results in false-positive f
 
 In order to check for XSS cross-origin, we inject an XSS payload that will contact the BeEF server if the Javascript code is successfully executed, thereby confirming XSS. In order to check for XSS on cross-origin resources, the approach is completely blind (because we cannot read the HTTP response, respecting the Same Origin Policy).
 
-The approach BeEF is using is not free of false-negatives. We can try a different attack vectors but the framework cannot determine which characters are allowed or if there are any length limitations in place. This issue can only be minimised by adding more attack vectors that covers a larger variety of scenarios.
+The approach BeEF is using is not free of false-negatives. We can try different attack vectors but the framework cannot determine which characters are allowed or if there are any length limitations in place. This issue can only be minimised by adding more attack vectors that covers a larger variety of scenarios.
 
 #### BeEF XSS Rays Integration:
 
