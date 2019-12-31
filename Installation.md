@@ -25,6 +25,8 @@ $ sudo apt-get install ruby ruby-dev
 
 RedHat / Fedora
 $ sudo yum install ruby ruby-devel
+
+See below for Ubuntu installation instructions
 ```
 
 If your operating system package manager does not support Ruby version 2.5 (or newer),
