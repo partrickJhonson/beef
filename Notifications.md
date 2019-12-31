@@ -32,3 +32,5 @@ beef:
               channel: "#beef"     # Slack channel
               username: "notifier" # Username can be anything
 ```
+***
+[[Previous|Autorun Rule Engine]] | [[Next|Console]]
