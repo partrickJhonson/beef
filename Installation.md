@@ -20,13 +20,13 @@ BeEF requires Ruby 2.5 (or newer). Refer to your operating system documentation
 for instructions to install the latest stable version of Ruby and Ruby Developer Tools.
 
 ```bash
-Debian based systems
+# Debian based systems
 $ sudo apt-get install ruby ruby-dev
 
-RedHat / Fedora
+# RedHat / Fedora
 $ sudo yum install ruby ruby-devel
 
-See below for Ubuntu installation instructions
+# See below for Ubuntu installation instructions
 ```
 
 If your operating system package manager does not support Ruby version 2.5 (or newer),
