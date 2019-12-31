@@ -1,25 +1,26 @@
 ## Introduction
 
-BeEF supports Metasploit integration, and only requires some simple [[configuration|Configuration]] to get up and running. Once running Metasploit modules can be run directly through the BeEF interface.
+Metasploit is another ruby based, open source security tool used for penetration testing. It has a collection of exploits, payloads, shellcodes and more in order to exploit vulnerabilities. BeEF supports Metasploit integration, and only requires some simple [[configuration|Configuration]] to get up and running. Once running Metasploit modules can be run directly through the BeEF interface.
 
 #### Table of Contents
+
 * [Metasploit Modules](#metasploit-modules)
 * [Browser Autopwn](#browser-autopwn)
 
 ## Metasploit Modules
 
 After launching Metasploit, its modules can be found in the BeEF command modules tree:
-
+<p align=center>
 [[Images/msf2.png|align=center]]
-
+</p>
 All regular payload CLI arguments have their own form fields in the module's interface:
-
+<p align=center>
 [[Images/msf3.png|align=center]]
-
+</p>
 Now, sit back and wait for the exploit to work:
-
+<p align=center>
 [[Images/msf6.png|align=center]]
-
+</p>
 ## Browser Autopwn
 
 While the feature is not directly integrated in BeEF, you can easily use the Browser Autopwn function of Metasploit with BeEF.
@@ -103,13 +104,12 @@ Exploits
 Note the BrowserAutoPwn URL: `http://10.1.1.175:8080/5WNrYZjr`
 
 Then use the "Create Invisible Iframe" command module to load the autopwn webpage in an iframe:
-
+<p align=center>
 [[Images/msf8.png|align=center]]
-
+</p>
 You just have to wait for a shell :
-
+<p align=center>
 [[Images/msf9.png|align=center]]
-
-***
+</p>
 
 [[Previous|Network-discovery]] | [[Next|Tunneling]] 
