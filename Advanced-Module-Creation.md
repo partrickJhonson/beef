@@ -1,4 +1,4 @@
 TODO
 
 ***
-[[Previous|BeEF Javascript API]] | [[Next|Creating a New Extension]]
+[[Previous|Javascript API]] | [[Next|Creating An Extension]]
