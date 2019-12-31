@@ -90,7 +90,7 @@ See the corresponding [[BeEF module|Module:-DNS-Enumeration]].
 
 ## Port Scanning
 
-Now that we know the IP address of the hooked system and several hostnames, it would be interesting to launch port scanning. Happily several researchers have found that it is possible to use the same timing hack to scan ports by loading images into the browser with Firefox and Chrome. 
+Now that we know the IP address of the hooked system and several hostnames, it would be interesting to launch port scanning. Several security researchers have found that it is possible to use the same timing hack to scan ports by loading images into the browser with Firefox and Chrome. 
 
 This attack was included in the [[Port Scanner|Module:-Port-Scanner]] module.
 
@@ -112,7 +112,7 @@ Note that the user may notice if any of the scanned hosts pop a _401 Authenticat
 
 CSRF is still a vulnerability seldom taken into account by developers, especially considering how serious of an impact can be made via it's exploitation.
 
-BeEF includes a lot of CSRF modules, especially targeting personal routes (Linksys, Dlink, etc). Happily, we just detected one of those routers when fingerprinting the network during the previous step. 
+BeEF includes a lot of CSRF modules, especially targeting personal routes (Linksys, Dlink, etc). We just detected one of those routers when fingerprinting the network during the previous step. 
 
 Most CSRF attacks allow for modifying the admin password, however there are several that can be used to gain a reverse shell or open external ports on the box.
 
@@ -146,7 +146,7 @@ The Network Map makes use of HTML5 canvas which allows you to save the map as an
 * **S:** Safari
 * **IE:** Internet Explorer
 
-#### Discovery
+##### Discovery
 
 Right-clicking anywhere in the `Network -> Hosts` grid provides a context menu which provides options for host discovery.
 
@@ -184,7 +184,7 @@ Right-clicking a network service allows you to perform various actions, such as:
 * Fingerprint HTTP servers
 * Cross-Origin scan host for CORS enabled HTTP servers
 * Cross-Origin scan host for Flash cross-origin enabled HTTP servers
-* Scan for remote file include (reverse shell)
+* Scan for remote file inclusion (reverse shell)
 * Scan for known vulnerable Shell Shock CGIs (reverse shell)
 
 ![service-scanning](https://cloud.githubusercontent.com/assets/434827/6026013/14d547a2-ac2b-11e4-9cd3-9ce7ad51e7d4.png)
