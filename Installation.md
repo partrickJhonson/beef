@@ -18,10 +18,10 @@ for instructions to install the latest stable version of Ruby and Ruby-dev.
 
 ```bash
 Debian based systems
-sudo apt-get install ruby ruby-dev
+$ sudo apt-get install ruby ruby-dev
 
 RedHat / Fedora
-sudo yum install ruby ruby-devel
+$ sudo yum install ruby ruby-devel
 ```
 
 If your operating system package manager does not support Ruby version 2.5 (or newer),
@@ -36,8 +36,25 @@ Alternatively, consider using a Ruby environment manager such as
 [rvm](https://rvm.io/rvm/install).
 These are command line tools that allow for simple management of different ruby environments.
 
-### BeEF on Ubuntu
-It's highly recommended that you use a Ruby environment manager when installing BeEF on Ubuntu, due to restricted permissions.
+### Bundler
+Bundler is essential for tracking and installing the correct gems in ruby projects.
+When installing, you may get the error:
+```bash
+$ line 208: bundle: command not found 
+```
+This just means you do not have bundler installed, to fix this simply run:
+```bash
+$ gem install bundler
+```
+## BeEF on Ubuntu
+It's highly recommended that you use a Ruby environment manager when installing BeEF on Ubuntu, due to restricted permissions. Please note: you do not need to install ruby as per the above instructions, if using a Ruby Environment Manager.
+
+In order to install BeEF and RVM you will need to install Git and Curl first, as they do not come with Ubuntu.
+
+```bash
+$ sudo apt-get install git
+$ sudo apt-get install curl
+```
 
 To install RVM, firstly go to https://rvm.io/rvm/install and install the GPG keys.
 Then install RVM, without dependencies:
@@ -56,6 +73,11 @@ Now that the dependencies are installed we need to install the stable releases o
 ```bash
 $ \curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
+BeEF requires Ruby 2.5.x. Before navigating to the beef directory run:
+
+```bash
+$ rvm install "ruby-2.5.3"
+```
 
 Then simply reload your shell!
 
@@ -65,19 +87,8 @@ You can verify your installation of RVM and Ruby by running:
 $ rvm -v
 $ ruby -v
 ```
+
 After following the above steps, simply clone the repository and install BeEF as per below.
-
-### Bundler
-Bundler is essential for tracking and installing the correct gems in ruby projects.
-When installing, you may get the error:
-```bash
-$ line 208: bundle: command not found 
-```
-This just means you do not have bundler installed, to fix this simply run:
-```bash
-$ gem install bundler
-```
-
 ## Source
 
 Obtain application source code either by downloading the latest archive:
