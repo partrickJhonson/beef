@@ -1,4 +1,4 @@
-The console extension is currently **disabled** and **unsupported**.
+_**The console extension is currently **disabled** and **unsupported**, this page is kept for historical purposes only in the case that this is enabled again.**_
 
 ## Introduction
 
