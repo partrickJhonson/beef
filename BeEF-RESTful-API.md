@@ -1,5 +1,23 @@
 ## Introduction
-From version 0.4.3.3, BeEF exposes a RESTful API allowing scripting BeEF through HTTP/JSON requests.
+From version 0.4.3.3, BeEF exposes a RESTful API. This allows scripting BeEF through HTTP/JSON requests.
+#### Table of Contents
+
+* [Authentication](#authentication)
+* [Hooked Browsers](#hooked-browsers)
+* [logs](#logs)
+* [Browser's Log](#browsers-log)
+* [List Command Modules](#list-command-modules)
+* [Information on Specific Modules](#informations-on-a-specific-module)
+* [Launch a Command on a Specific Browser](#launch-a-command-on-a-specific-browser)
+* [Return Information a Specific Command Previously Executed](#return-information-about-the-specific-command-module-previously-executed)
+* [Send a Metasploit module](#send-a-metasploit-module)
+* [Send a Module to Multiple Hooked Browsers](#send-a-module-to-multiple-hooked-browsers)
+* [Send Multiple Modules to a Single Hooked Browser](#send-multiple-modules-to-a-single-hooked-browser)
+* [List the DNS ruleset](#list-the-dns-ruleset)
+* [List a Specific DNS Rule](#list-a-specific-dns-rule)
+* [Add a New DNS Rule](#add-a-new-dns-rule)
+* [Remove an Existing DNS Rule](#remove-an-existing-dns-rule)
+* [Scripts](#scripts)
 
 ## Authentication
 
@@ -241,7 +259,7 @@ curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db79
 }
 ```
 
-## Informations on a specific module
+## Information on a Specific Module
 
 ### Handler
 * **URL** : GET /api/modules/:module_id
@@ -272,7 +290,7 @@ curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5d
     ]
 }
 ```
-## Launch a command on a specific browser
+## Launch a Command on a Specific Browser
 
 ### Handler
 
@@ -301,7 +319,7 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}'
     "command_id": "1"
 }
 ```
-## Return information about the specific command module previously executed
+## Return Information About the Specific Command Module Previously Executed
 
 Reusing the previous example, we want to know the command module execution results (or, what the victim entered to the prompt dialog). In this case the victim entered _don't know_ :D
 
@@ -330,7 +348,7 @@ curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEo
 }
 ```
 
-## Send a Metasploit module
+## Send a Metasploit Module
 
 ### Handler
 * **URL** : POST /api/modules/:session/:module_id
@@ -362,7 +380,7 @@ This is why there is "command_id":"not_available" in the response.
 }
 ```
 
-## Send a module to multiple hooked browsers
+## Send a Module to Multiple Hooked Browsers
 
 ### Handler
 * **URL** : POST /api/modules/multi_browser
@@ -391,7 +409,7 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_p
 }
 ```
 
-## Send multiple modules to a single hooked browser
+## Send Multiple Modules to a Single Hooked Browser
 
 ### Handler
 * **URL** : POST /api/modules/multi_module
@@ -489,7 +507,7 @@ curl http://beefserver.com:3000/api/dns/ruleset?token=320f3cf4da7bf0df7566a517c5
 }
 ```
 
-## List a specific DNS rule
+## List a Specific DNS Rule
 
 ### Handler
 
@@ -520,7 +538,7 @@ curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a
 }
 ```
 
-## Add a new DNS rule
+## Add a New DNS Rule
 
 ### Handler
 
@@ -548,7 +566,7 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example
 }
 ```
 
-## Remove an existing DNS rule
+## Remove an Existing DNS Rule
 
 ### Handler
 
