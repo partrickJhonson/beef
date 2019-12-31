@@ -18,8 +18,9 @@ Simple attacks are often the most efficient ones. BeEF comes with several comman
 * [[Clippy|Module:-Clippy]] is a module that create a small browser assistant which propose browser updates.
 
 ##### A Pretty Theft Pop-up Template:
-
+<p align=center>
 [[Images/module-prettytheft1.png|align=center]]
+</p>
 
 ## Redirect to Another Page
 
@@ -45,8 +46,9 @@ Using BeEF it is possible to get a user to install a malicious browser extension
     * [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
 
 ##### Fake Flash Update Pop-up:
-
+<p align=center>
 [[Images/module-fake-flash-update2.png|align=center]]
+</p>
 
 ## Clickjacking
 
