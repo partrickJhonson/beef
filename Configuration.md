@@ -1,6 +1,8 @@
 ## Introduction
 
-BeEF utilises YAML files in order to configure the core functionality, as well as the extensions. Most of the core BeEF configurations are in the main configuration file: [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml), found in the BeEF directory. To configure extensions, the config.yaml files will be found in the extension folder that you're trying to modify.
+BeEF utilises YAML files in order to configure the core functionality, as well as the extensions. Most of the core BeEF configurations are in the main configuration file: [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml), found in the BeEF directory.
+
+To configure extensions, the config.yaml files will be found in the extension folder that you're trying to modify.
 
 #### Table of Contents
 
@@ -17,9 +19,9 @@ BeEF utilises YAML files in order to configure the core functionality, as well a
 
 **In order to use BeEF, you must change the username and password.**
 
-To edit the configuration file, navigate to the BeEF directory and use your favourite text editor (vim, nano etc) to edit the config.yaml file.
+Navigate to the BeEF directory and use your favourite text editor (Vim, Nano, etc) to edit `config.yaml`.
 
-Please edit the below section, found in the file:
+Please update the section shown in the example below (lines 17-21):
 
 ```yaml
     #Credentials to authenticate in BeEF.
