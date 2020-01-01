@@ -4,10 +4,10 @@ From version 0.4.3.3, BeEF exposes a RESTful API. This allows scripting BeEF thr
 
 * [Authentication](#authentication)
 * [Hooked Browsers](#hooked-browsers)
-* [logs](#logs)
+* [Logs](#logs)
 * [Browser's Log](#browsers-log)
 * [List Command Modules](#list-command-modules)
-* [Information on Specific Modules](#informations-on-a-specific-module)
+* [Information on Specific Modules](#information-on-a-specific-module)
 * [Launch a Command on a Specific Browser](#launch-a-command-on-a-specific-browser)
 * [Return Information a Specific Command Previously Executed](#return-information-about-the-specific-command-module-previously-executed)
 * [Send a Metasploit module](#send-a-metasploit-module)
@@ -44,8 +44,8 @@ In this way you can parse the JSON response grabbing the token, and use it for y
 ### Handler 
 
 * **Handler** : /api/hooks
-* Description : The _hooks_ handler gives information about the hooked browsers, both online and offline.
-* No parameters
+* **Description** : The _hooks_ handler gives information about the hooked browsers, both online and offline.
+* **No parameters**
 
 ### Example
 
@@ -91,8 +91,8 @@ In order to retrieve relative hooked browser details (like enabled plugins and t
 
 ### Handler
 * **Request** : GET /api/hooks/:session
-* Description : Gather informations on a hooked browser
-* Parameters : 
+* **Description** : Gather informations on a hooked browser
+* **Parameters** : 
   * :session : Session of the browser
 
 ### Example
@@ -135,8 +135,8 @@ curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDw
 
 ### Handler
 * **URL** :  /api/logs
-* Description : The _logs_ handler gives information about hooked browser logs, both global and relative ones.
-* No parameters
+* **Description** : The _logs_ handler gives information about hooked browser logs, both global and relative ones.
+* **No parameters**
 
 ### Example
 
@@ -168,17 +168,17 @@ curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e7
 
 ## Browser's Log
 
-In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
+In order to retrieve relative hooked browser logs, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
 
 ### Handler 
 * **URL** : GET /api/logs/:session
-* Description : Logs on one browser
-* Parameters : 
+* **Description** : Logs on one browser
+* **Parameters** : 
   * session : session of the user
 
 ### Example
 
-** Request**:
+**Request**:
 
 ```bash
 curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
@@ -221,8 +221,8 @@ curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwa
 
 ### Handler
 * **Handler** => /api/modules
-* Description : list available command modules
-* No parameters
+* **Description** : list available command modules
+* **No parameters**
 
 ### Example
 
@@ -263,8 +263,8 @@ curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db79
 
 ### Handler
 * **URL** : GET /api/modules/:module_id
-* Description : 
-* Parameters :
+* **Description** : 
+* **Parameters** :
   * module_id : ID of the BeEF module
 
 ### Example
@@ -295,8 +295,8 @@ curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5d
 ### Handler
 
 * **URL** : POST /api/modules/:session/:module_id
-* Description : launch the module given on the zombie browser given
-* Parameters :
+* **Description** : launch the module given on the zombie browser given
+* **Parameters** :
   * :session : session of the hooked browser
   * :module_id : ID of the BeEF module
   * + parameters needed for the module
@@ -594,7 +594,5 @@ curl -X DELETE http://beefserver.com:3000/api/dns/rule/45ce397?token=320f3cf4da7
 ## Scripts
 * [[Java-1.6.0u27 mass-pwner|Script:-Java-1.6.0u27-mass-pwner]]
 
-If you have realized any script that you would like to share with the community, please contact [Nbblr](https://github.com/Nbblrr)
-
 ***
-[[Previous|Persistence]] | [[Next|Autorun Rule Engine]]
+[[Persistence|Persistence]] | [[Autorun Rule Engine|Autorun Rule Engine]]
