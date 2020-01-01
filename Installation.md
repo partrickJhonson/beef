@@ -163,4 +163,4 @@ $ git pull
 ```
 
 ***
-[[Previous|Introducing BeEF]] | [[Next|Configuration]]
+[[Introducing BeEF|Introducing BeEF]] | [[Configuration|Configuration]]
