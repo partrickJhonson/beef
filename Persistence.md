@@ -34,4 +34,4 @@ The Same Origin Policy prevents this behaviour on other domains, so in the event
 
 ***
 
-[[Xss Rays|Xss-Rays]] | [[BeEF RESTful API|BeEF-RESTful-API]]
+[[XSS Rays|Xss-Rays]] | [[BeEF RESTful API|BeEF-RESTful-API]]
