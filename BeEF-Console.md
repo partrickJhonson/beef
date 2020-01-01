@@ -124,4 +124,4 @@ Response:
 google_desktop=Not Installed
 ```
 ***
-[[Previous|Notifications]] | [[Next|Module creation]]
+[[Notifications|Notifications]] | [[Module creation|Module creation]]
