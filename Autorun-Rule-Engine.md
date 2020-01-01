@@ -290,4 +290,4 @@ As mentioned earlier on, the ARE is evolving, so there will be likely many more 
 All public rulesets will be in the main BeEF repository, inside (beef_root)/arerules.
 
 ***
-[[Previous|BeEF RESTful API]] | [[Next|Notifications]]
+[[BeEF RESTful API|BeEF RESTful API]] | [[Notifications|Notifications]]
