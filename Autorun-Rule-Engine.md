@@ -3,19 +3,9 @@ The Autorun Rule Engine (ARE) is a core BeEF component which allows you to defin
 that are automatically triggered on the hooked browser if certain conditions are matched.
 
 If you are a BeEF aficionado, you were probably waiting for this for a long time :-) The old static autorun functionality has been removed. The main features of the new ARE are the following:
-* **Dynamic:** 
-  * Pre-load rules from `<beef_root>/arerules/enabled` directory at start-up, or load them at runtime while BeEF is 
-    running, then trigger them on each hooked browser. 
-  * RESTful API calls are documented in detail later here.
-* **Non-intrusive:** 
-  * Command modules now have support for returning execution status and result data (useful for chaining). 
-  * This didn't require a huge amount of refactoring, just some smart changes to the API only. 
-  * Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You 
-    can still launch them with the sequential chaining mode. 
-  * If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to 
-    the command modules if the rule is in nested-forward chain mode (more on this later here). 
-* **Evolving:** 
-  * You will likely see the ARE evolve to address common client-side needs for the lazy pentester.
+* **Dynamic:** pre-load rules from <beef_root>/arerules/enabled directory at start-up, or load them at runtime while BeEF is running, then trigger them on each hooked browser. RESTful API calls are documented in detail later here.
+* **Non-intrusive:** command modules now have support for returning execution status and result data (useful for chaining). This didn't require a huge amount of refactoring, just some smart changes to the API only. Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You can still launch them with the sequential chaining mode. If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to the command modules if the rule is in nested-forward chain mode (more on this later here). 
+* **Evolving:** you will likely see the ARE evolve to address common client-side needs for the lazy pentester.
 
 #### Table of Contents
 
@@ -121,7 +111,7 @@ Display a fake notification (target only IE >= 10 on Windows 7 or higher, then a
 }
 ```
 
-### Nested-forward
+### Nested-Forward
 Call N modules, where module N is executed only if N-1 returns a certain status. Module N can use as input the output from module N-1 (eventually mangling it before processing it).
 
 Nested-forward mode wraps module bodies in their own function, then start to execute them from the first, polling for command execution status/results (with configurable polling interval and timeout). After execution of the first module in the chain, depending on the module condition specified, execution will continue or stop.
@@ -164,8 +154,7 @@ if condition
      code()
      module_two(module_one_output) 
 ```
-This is also one of the cases where the second module input expects something different than the first module output, so we need a way to change module output. The code property allows you to specify arbitrary JavaScript (no multilines, one line only). In this specific case, let's assume the output of the first module is 172.16.35.2. The  
-second module requires an input like the following though: "start_ip-stop_ip", as in 172.16.35.1-172.16.35.3 for internal network fingerprinting. The following is the code property value for the second module:
+This is also one of the cases where the second module input expects something different than the first module output, so we need a way to change module output. The code property allows you to specify arbitrary JavaScript (no multilines, one line only). In this specific case, let's assume the output of the first module is 172.16.35.2. The second module requires an input like the following though: "start_ip-stop_ip", as in 172.16.35.1-172.16.35.3 for internal network fingerprinting. The following is the code property value for the second module:
 ```javascript
 var s = get_internal_ip_webrtc_mod_output.split('.');
 var start = parseInt(s[3])-1;
@@ -296,7 +285,7 @@ Both of the call will return something like the following is successful:
 }
 ```
 
-## Rules examples:
+## Rules Examples:
 As mentioned earlier on, the ARE is evolving, so there will be likely many more rulesets in the near future.
 All public rulesets will be in the main BeEF repository, inside (beef_root)/arerules.
 
