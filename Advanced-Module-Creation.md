@@ -1,4 +1,4 @@
 TODO
 
 ***
-[[Previous|Javascript API]] | [[Next|Creating An Extension]]
+[[Javascript API|Javascript API]] | [[Creating An Extension|Creating An Extension]]
