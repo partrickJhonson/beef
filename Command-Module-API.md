@@ -29,4 +29,4 @@ def callback
 end
 ```
 ***
-[[Database Schema|Database Schema]]
+[[Command Module Config|Command Module Config]]
