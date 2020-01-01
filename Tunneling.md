@@ -61,4 +61,4 @@ A practical use of the TP, recorded as a screencast, can be found [[here|http://
 
 ***
 
-[[Previous|Metasploit]] | [[Next|Xss-Rays]]
+[[Metasploit|Metasploit]] | [[XssRays|Xss-Rays]]
