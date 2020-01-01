@@ -58,4 +58,4 @@ A hooked browser allows BeEF to discover information on the behaviour of the use
 [[Images/module-detect-social-network.png|align=center|width=500px]]
 
 ***
-[[Previous|Interface]] | [[Next|Social-Engineering]]
+[[Interface|Interface]] | [[Social Engineering|Social-Engineering]]
