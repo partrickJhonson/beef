@@ -98,4 +98,4 @@ The final rating is converted into an icon in BeEF:
 * Red (VERIFIED_NOT_WORKING) for doesn't work
 * Grey (VERIFIED_UNKNOWN) for unknown
 ***
-[[Command Module Configuration|Command Module Config]] | [[Command Module API|Command Module API]]
+[[Database Schema|Database Schema]] | [[Command Module API|Command Module API]]
