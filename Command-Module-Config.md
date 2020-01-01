@@ -97,3 +97,5 @@ The final rating is converted into an icon in BeEF:
 * Orange (VERIFIED_USER_NOTIFY) for user will be notified
 * Red (VERIFIED_NOT_WORKING) for doesn't work
 * Grey (VERIFIED_UNKNOWN) for unknown
+***
+[[Command Module Configuration|Command Module Config]] | [[Command Module Configuration|Command Module Config]]
