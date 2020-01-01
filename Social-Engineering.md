@@ -57,4 +57,4 @@ BeEF contains a module that enables clickjacking attacks in a hooked browser:
 * The [[ClickJacking|Module:-Clickjacking]] module will create an iFrame which follows the users cursor around the page, displaying the content at the specified URL.
 
 ***
-[[Previous|Information-Gathering]] | [[Next|Network-discovery]]
+[[Information Gathering|Information-Gathering]] | [[Network Discovery|Network-discovery]]
