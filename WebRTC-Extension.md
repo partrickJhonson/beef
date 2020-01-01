@@ -1,3 +1,3 @@
 @xntrik to draft shortly!
 
-[[Previous|Module-creation]] | [[Next|Development-Organization]]
+[[Module Creation|Module-creation]] | [[Development Organization|Development-Organization]]
