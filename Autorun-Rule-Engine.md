@@ -3,9 +3,19 @@ The Autorun Rule Engine (ARE) is a core BeEF component which allows you to defin
 that are automatically triggered on the hooked browser if certain conditions are matched.
 
 If you are a BeEF aficionado, you were probably waiting for this for a long time :-) The old static autorun functionality has been removed. The main features of the new ARE are the following:
-* **Dynamic:** pre-load rules from <beef_root>/arerules/enabled directory at start-up, or load them at runtime while BeEF is running, then trigger them on each hooked browser. RESTful API calls are documented in detail later here.
-* **Non-intrusive:** command modules now have support for returning execution status and result data (useful for chaining). This didn't require a huge amount of refactoring, just some smart changes to the API only. Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You can still launch them with the sequential chaining mode. If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to the command modules if the rule is in nested-forward chain mode (more on this later here). 
-* **Evolving:** you will likely see the ARE evolve to address common client-side needs for the lazy pentester.
+* **Dynamic:** 
+  * Pre-load rules from `<beef_root>/arerules/enabled` directory at start-up, or load them at runtime while BeEF is 
+    running, then trigger them on each hooked browser. 
+  * RESTful API calls are documented in detail later here.
+* **Non-intrusive:** 
+  * Command modules now have support for returning execution status and result data (useful for chaining). 
+  * This didn't require a huge amount of refactoring, just some smart changes to the API only. 
+  * Command modules that are not adapted to be run with nested-forward chaining mode return UNKNOWN status by default. You 
+    can still launch them with the sequential chaining mode. 
+  * If you need to chain modules output/input though, you will need to add one or two lines of dumb-proof JavaScript to 
+    the command modules if the rule is in nested-forward chain mode (more on this later here). 
+* **Evolving:** 
+  * You will likely see the ARE evolve to address common client-side needs for the lazy pentester.
 
 #### Table of Contents
 
