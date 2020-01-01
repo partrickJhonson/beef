@@ -210,4 +210,4 @@ Once configured, you can check that Metasploit modules are loaded when launching
 
 
 ***
-[[Back|Installation]] | [[Next|Interface]]
+[[Installation|Installation]] | [[Interface|Interface]]
