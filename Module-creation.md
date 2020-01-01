@@ -228,4 +228,4 @@ If you think that your module can be useful to other people, join the BeEF commu
 
 ***
 
-[[Previous|BeEF-Console]] | [[Next|WebRTC-Extension]]
+[[BeEF Console|BeEF-Console]] | [[WebRTC Extension|WebRTC-Extension]]
