@@ -266,7 +266,7 @@ Getting all the rulesets in the database:
 curl http://172.16.45.1:3000/api/autorun/rule/list/all?token=xyz
 ```
 
-Both of the call will return something like the following is successful:
+Both of the calls will return something like the following, if successful:
 ```javascript
 {
     "success": true,
