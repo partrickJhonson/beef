@@ -118,4 +118,4 @@ Then, just wait for a shell :
 [[Images/msf9.png|align=center]]
 </p>
 
-[[Previous|Network-discovery]] | [[Next|Tunneling]] 
+[[Network Discovery|Network-discovery]] | [[Tunneling|Tunneling]] 
