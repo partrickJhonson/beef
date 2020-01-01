@@ -52,4 +52,4 @@ By doing this, your attack surface will be expanded, and the same victim browser
 
 ***
 
-[[Previous|Tunneling]] | [[Next|Persistence]]
+[[Tunneling|Tunneling]] | [[Persistence|Persistence]]
