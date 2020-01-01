@@ -356,5 +356,5 @@ cid | name | type | notnull | default | pk
 8 | is_finished | boolean | 0 |  | 0
 
 ***
-[[Previous|BeEF Testing]] | [[Next|Milestones]]
+[[BeEF Testing|BeEF Testing]] | [[Milestones|Milestones]]
 
