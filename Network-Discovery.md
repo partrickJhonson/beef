@@ -214,4 +214,4 @@ curl http://127.0.0.1:3000/api/network/service/[id]?token=[token]
 
 
 ***
-[[Previous|Social-Engineering]] | [[Next|Metasploit]]
+[[Social Engineering|Social-Engineering]] | [[Metasploit|Metasploit]]
