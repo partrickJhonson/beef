@@ -14,4 +14,4 @@ This page describes the project development cycle. The process is aimed to provi
 
 ***
 
-[[Previous|WebRTC-Extension]] | [[Next|Core-BeEF-Organization]]
+[[WebRTC Extension|WebRTC-Extension]] | [[Core BeEF Organization|Core-BeEF-Organization]]
