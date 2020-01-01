@@ -485,4 +485,4 @@ TODO
 * alive
 
 ***
-[[Previous|Core BeEF Organization]] | [[Next|Advanced Module Creation]]
+[[Core BeEF Organization|Core BeEF Organization]] | [[Advanced Module Creation|Advanced Module Creation]]
