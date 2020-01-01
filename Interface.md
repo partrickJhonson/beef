@@ -72,4 +72,4 @@ Last tabs are dedicated to [[Tunneling Proxy|Tunneling]] and [[Xss Rays|Xss-Rays
 
 ***
 
-[[Previous|Configuration]] | [[Next|Information-Gathering]]
+[[Configuration|Configuration]] | [[Information Gathering|Information-Gathering]]
