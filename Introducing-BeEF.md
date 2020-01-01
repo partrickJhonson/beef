@@ -12,4 +12,4 @@ BeEF started in 2006 as a Ruby project, developed by a team led by Wade Alcorn. 
 
 
 ***
-[[Next|Installation]]
+[[Installation|Installation]]
