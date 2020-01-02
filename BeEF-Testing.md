@@ -6,11 +6,11 @@ A Rakefile, `<beef_root>/Rakefile`, contains testing tasks, organized by categor
 
 To run all tests, run (from `<beef_root>`):
 
-`bundle exec rake all`
+`bundle exec rake --all`
 
 Otherwise, to run only some testing categories, for instance 'integration', run:
 
-`bundle exec rake integration`
+`bundle exec rake spec`
 
 Before running the tests locally on your machine, you must install necessary gems:
 
