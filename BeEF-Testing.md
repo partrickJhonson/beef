@@ -1,7 +1,7 @@
 ## Introduction
 Testing is important in every serious software development process. Although in BeEF we don't use TDD (Test-driven development), we do have a testing suite. 
 
-BeEF tests are all contained inside `<beef_root>/test` directory.
+BeEF tests are all contained inside `<beef_root>/spec` directory.
 A Rakefile, `<beef_root>/Rakefile`, contains testing tasks, organized by categories.
 
 To run all tests, run (from `<beef_root>`):
@@ -16,7 +16,7 @@ Before running the tests locally on your machine, you must install necessary gem
 
 ```
 export BEEF_TEST=1
-bundle install
+bundle install --with test
 ```
 
 Before running the tests locally on your machine, you may want to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
@@ -140,7 +140,7 @@ def test_jools_simple
 ### Testing Metasploit
 
 To test Metasploit integration, run:
-`bundle exec rake msf`
+`bundle exec rake msf_start`
 
 This will clone the latest version of Metasploit to /tmp/msf-test/
 
