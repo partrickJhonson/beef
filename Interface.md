@@ -57,14 +57,14 @@ For example, let's try to get the internal IP of the hooked browser. Select "Get
 
 [[Images/interface-command2.png|align=center]]
 
-If you now go to the "Logs" tab, you will see two informations :
+If you now go to the "Logs" tab, you will see two pieces of information:
 
 * The browsers joined the zombie horde
 * You launched the "Get Internal IP" on the hooked browser
 
 [[Images/interface-log.png|align=center]]
 
-You can also see that the main tab "Logs" has now a list on all actions done on all browsers :
+You can also see that the main tab "Logs" has now a list on all actions completed on all browsers :
 
 [[Images/interface-log2.png|align=center]]
 
