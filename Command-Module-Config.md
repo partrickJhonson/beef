@@ -1,4 +1,3 @@
-_This page discusses command module configuration files_
 
 ### Introduction ###
 
