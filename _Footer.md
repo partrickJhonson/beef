@@ -1,1 +1,1 @@
-[BeEF project](http://beefproject.com/) | [Blog](http://blog.beefproject.com/) | [Code](https://github.com/beefproject/beef) | [Youtube](https://www.youtube.com/channel/UCTWxIZmvyDGRzYuVVvL54ww) | [Twitter](https://twitter.com/beefproject?lang=en)
+[Introduction](https://github.com/beefproject/beef/wiki/Introducing-BeEF) | [BeEF project](http://beefproject.com/) | [Blog](http://blog.beefproject.com/) | [Code](https://github.com/beefproject/beef) | [Youtube](https://www.youtube.com/channel/UCTWxIZmvyDGRzYuVVvL54ww) | [Twitter](https://twitter.com/beefproject?lang=en)
