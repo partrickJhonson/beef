@@ -7,7 +7,7 @@
 * **Browsers**: All (User will be warned)
 * [Code](https://github.com/beefproject/beef/tree/master/modules/browser/webcam)
 
-## Internal working
+## Internal Working
 
 TODO
 
