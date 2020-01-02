@@ -1,10 +1,10 @@
 ### Introduction ###
 
-The framework allows command modules to set and get details about the hooked browser. Details set from the results of one module may be used to better target another. The base class `BeEF::Command` has the two more methods: `set_browser_details()` and `get_browser_detail()`.
+The framework allows command modules to set and get details about the hooked browser. Details set from the results of one module may be used to better target another. The base class `BeEF::Command` has two more methods: `set_browser_details()` and `get_browser_detail()`.
 
 ### Example ###
 
-For example, a module might use `get_browser_detail('UA')` which returns the user agent. Then the code may vary to better target the browser.
+For example, a module might use `get_browser_detail('UA')` , which returns the user agent. Then the code may vary to better target the browser.
 
 ### Alert Command Module ###
 
