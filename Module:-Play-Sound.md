@@ -5,7 +5,7 @@
 * **Browsers**: All
 * [Code](https://github.com/beefproject/beef/tree/master/modules/browser/play_sound)
 
-## Internal working
+## Internal Working
 
 This module add an audio tag linked to the file given in parameter.
 
