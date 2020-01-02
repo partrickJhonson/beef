@@ -195,8 +195,8 @@ curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e7
 * **Description**
   * The `logs` handler gives information about a **specified** hooked browser's logs.
 * **Parameters** : 
-  * `{session}` - session ID of the user. This ID is the `session_key` value returned in the response to the [`/api/] 
-   (#hooked-browsers).
+  * `{session}` - session ID of the user. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers).
 
 ### Example
 
