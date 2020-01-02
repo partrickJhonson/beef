@@ -25,7 +25,7 @@ If you are a BeEF aficionado, you were probably waiting for this for a long time
 
 
 ## Matching
-On successful hook, the ARE checks if any rulesets present in the core_arerules table match against the hooked browsers. Various hooked browser properties are checked:
+On a successful hook, the ARE checks if any rulesets present in the core_arerules table match against the hooked browsers. Various hooked browser properties are checked:
 * Browser type and version
 * Operating system type and version
 * (WIP) Plugin type/version
@@ -171,7 +171,7 @@ if condition
      module_two(module_one_output) 
 ```
 
-This is also one of the cases where the second module input expects something different than the output of the first module, so we need a way to change module output. The code property allows you to specify arbitrary JavaScript (no multi-lines, one line only)
+This is also one of the cases where the second module input expects something different than the output of the first module, so we need a way to change module output. The code property allows you to specify arbitrary JavaScript (no multi-lines, one line only).
 
 In this specific case, let's assume the output of the first module is `172.16.35.2`. The second module requires an input like the following though: `start_ip-stop_ip` (i.e. `172.16.35.1-172.16.35.3`) for internal network fingerprinting.
 
@@ -328,7 +328,7 @@ Both of the calls will return something like the following, if successful:
 ```
 
 ## Rules Examples
-The ARE is evolving, so there will be likely many more rulesets in the near future.
+The ARE is evolving, so there will likely be many more rulesets in the near future.
 All public rulesets will be in the main BeEF repository, inside `<beef_root>/arerules`.
 
 ***
