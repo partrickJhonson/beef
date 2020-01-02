@@ -51,7 +51,7 @@ BeEF::Core::Configuration.instance.get('beef.api_token')
 * **Request Content**
   * **Body**
     * `username` - your username set in [`beef/config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
-    * `password` - your username set in [`beef/config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
+    * `password` - your password set in [`beef/config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
 
 
 ### Example
