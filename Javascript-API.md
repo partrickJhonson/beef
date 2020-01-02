@@ -28,6 +28,10 @@
 
 **beef.are**
 
+* status_success
+* status_unknown
+* status_error
+
 **beef.browser**
 
 * getBrowserReportedName
