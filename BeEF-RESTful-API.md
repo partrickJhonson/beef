@@ -126,7 +126,7 @@ curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e
 * **Description**
   * Provides information (browser and OS version, cookies, enabled plugins, etc) about a **specific** hooked browser.
 * **Request Components** 
-  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/hooks`](#hooked-browsers) request.
 * **Query Parameters**
   * `{token}` - your authentication token (see [Authentication](#authentication))
 
@@ -217,7 +217,8 @@ curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e7
 * **Description**
   * The `logs` handler gives information about a **specified** hooked browser's logs.
 * **Request Components** : 
-  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
 * **Query Parameters**
   * `{token}` - your authentication token (see [Authentication](#authentication)).
 
@@ -355,7 +356,8 @@ curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5d
 * **Description**
   * Launch a **specific** BeEF command module against a **given** hooked browser.
 * **Request Components**
-  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
   * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
 * **Query Parameters**
   * `{token}` - your authentication token (see [Authentication](#authentication))
@@ -392,7 +394,8 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}'
 * **Description**
   * Returns information about a **specific** previously launched BeEF command module.
 * **Request Components**
-  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
   * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
   * `{cmd_id}` - ID of the command launched. See [Launch Command Module](#launch-command-module-on-a-specific-browser).
 * **Query Parameters**
@@ -425,7 +428,8 @@ curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEo
 * **Description**
   * Launch a **specific** Metasploit module against a **given** hooked browser
 * **Request Components** :
-  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
   * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
 * **Query Parameters**
   * `{token}` - your authentication token (see [Authentication](#authentication))
@@ -514,7 +518,8 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_p
   * **Headers**
     * Content-Type: `application/json; charset=UTF-8`
   * **Body**
-    * `hb` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
+  * `hb_id` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.(#hooked-browsers) request.
     * `modules` - an array containing all the modules to be launched, with the following two keys:
       * `mod_id` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
       * `mod_input` - any ncessary module parameters.
