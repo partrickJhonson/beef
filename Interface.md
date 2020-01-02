@@ -68,7 +68,7 @@ You can also see that the main tab "Logs" has now a list on all actions complete
 
 [[Images/interface-log2.png|align=center]]
 
-Last tabs are dedicated to [[Tunneling Proxy|Tunneling]] and [[Xss Rays|Xss-Rays]] which will be addressed in next parts of this documentation.
+The last tabs are dedicated to [[Tunneling Proxy|Tunneling]] and [[Xss Rays|Xss-Rays]] which will be addressed later on in this wiki.
 
 ***
 
