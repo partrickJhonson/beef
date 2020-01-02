@@ -1,5 +1,3 @@
-_This page details the Command Module API_
-
 ### Introduction ###
 
 The framework allows command modules to set and get details about the hooked browser. Details set from the results of one module may be used to better target another. The base class `BeEF::Command` has the two more methods: `set_browser_details()` and `get_browser_detail()`.
