@@ -1,6 +1,6 @@
 ## Introduction
 
-BeEF has been designed in a modular way, it is very easy to create a new module and add it to BeEF.
+BeEF has been designed in a modular way so that it is very easy to create a new module and add it to BeEF.
 
 Basically, modules are all stored in the [module](https://github.com/beefproject/beef/tree/master/modules) directory and are composed of three main files :
 * **config.yaml** : The YAML configuration file which describe properties of the module
@@ -19,7 +19,7 @@ Basically, modules are all stored in the [module](https://github.com/beefproject
 
 ## <a name="config"/>YAML Configuration file 
 
-The YAML configuration file embeds five informations :
+The YAML configuration file embeds five pieces of information :
 * The name of the plugin
 * The name of the author
 * The description of the plugin
@@ -69,9 +69,9 @@ You can find more detailed information on [[this page|Command-Module-Config]].
 
 ## <a name="modulerb"/>Interface with rails web GUI
 
-Next, you need to write the _module.rb_ file which will allow to be included in the BeEF interface. Don't Panic, you won't need to be a rails guru to write such file, BeEF defined high level methods and objects to do this.
+Next, you need to write the _module.rb_ file which will allow to be included in the BeEF interface. Don't panic, you won't need to be a rails guru to write such a file, BeEF defined high level methods and objects to do this.
 
-### Basic architecture
+### Basic Architecture
 
 Basically, your file will look like this :
 ```ruby
@@ -91,7 +91,7 @@ class Your_module < BeEF::Core::Command
 end
 ```
 
-### Defining data types
+### Defining Data Types
 
 The **self.options** method should return an array which defines data proposed to the user. Here is an example with different fields taken from existing modules :
 
@@ -129,9 +129,9 @@ The **self.options** method should return an array which defines data proposed t
   end
 ```
 
-More detailed information on data types can be found [[here|Form-Data-Types]]
+More detailed information on data types can be found [[here|Form-Data-Types]].
 
-### Save returned information
+### Save Returned Information
 
 It is possible to save information gathered by the script in the list of information on the hooked browser. This action should be done in the **post_execute** function, for example here is the source code of the [browser_fingerprint](https://github.com/beefproject/beef/blob/master/modules/browser/browser_fingerprinting/module.rb) plugin :
 
@@ -173,9 +173,9 @@ beef.execute(function() {
 });
 ```
 
-## Other useful examples
+## Other Useful Examples
 
-### Bind an external object to a given URI
+### Bind an External Object to a Given URI
 
 You can bind an external object to a defined URI in order to use it from the hooked browser :
 
@@ -201,7 +201,7 @@ You can bind a raw HTTP response (headers and body) to a given URI in order to u
   end
 ```
 
-### Use BeEF configuration information
+### Use BeEF Configuration Information
 
 You can use information of the BeEF configuration in your module.rb :
 
@@ -217,7 +217,7 @@ class Your_module < BeEF::Core::Command
 end
 ````
 
-## What now ?
+## What Now?
 
 If you think that your module can be useful to other people, join the BeEF community on GitHub, fork the beef repository, upload your module and create a new issue for proposing it. We like people with new ideas :).
 
