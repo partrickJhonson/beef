@@ -30,7 +30,7 @@ When BeEF starts the token is printed to the console. It should look something l
 `[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
 **NOTE:**
-* If require access to the token and you are writing Ruby code somewhere in BeEF, it can be called using:
+* If you require access to the token and you are writing Ruby code somewhere in BeEF, it can be called using:
 ```ruby
 BeEF::Core::Configuration.instance.get('beef.api_token')
 ```
