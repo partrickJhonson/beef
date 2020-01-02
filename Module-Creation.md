@@ -235,7 +235,7 @@ We like people with new ideas! :)
 ## References
 
 * [`config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
-* [`module.rb` Form Data Types](https://github.com/beefproject/beef/wiki/Form-Data-Types)
+* [`module.rb`](https://github.com/beefproject/beef/wiki/Form-Data-Types)
 
 ***
 
