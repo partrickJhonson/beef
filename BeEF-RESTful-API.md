@@ -1,9 +1,11 @@
 ## Introduction
-From version 0.4.3.3, BeEF exposes a RESTful API. This allows scripting BeEF through HTTP/JSON requests.
+From version 0.4.3.3 onwards, BeEF exposes a RESTful API. This allows users to script BeEF through HTTP/JSON requests.
+
 #### Table of Contents
 
 * [Authentication](#authentication)
 * [Hooked Browsers](#hooked-browsers)
+* [Browser Details](#browser-details)
 * [Logs](#logs)
 * [Browser's Log](#browsers-log)
 * [List Command Modules](#list-command-modules)
@@ -21,40 +23,51 @@ From version 0.4.3.3, BeEF exposes a RESTful API. This allows scripting BeEF thr
 
 ## Authentication
 
-In order to use the API, a _token_ parameter must always be added to requests, otherwise a 401 error (Not Authorized) is returned.
+In order to use the API, a `token` parameter must always be added to requests, otherwise a 401 error (Not Authorized) is returned.
 
-The pseudo-random token is newly generated every time BeEF starts, using _BeEF::Core::Crypto::api_token_ 
-and is then added to the _BeEF::Configuration_ object. It can be retrieved at any time via ruby using `BeEF::Core::Configuration.instance.get('beef.api_token')`
+A new pseudo-random token is generated each time BeEF starts, using `BeEF::Core::Crypto::api_token`. The token is added to the `BeEF::Configuration` object.
 
-When BeEF starts, look at the console output for 
+When BeEF starts the token is printed to the console. It should look something like:
+
 `[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
-Alternatively, for example if you want to write automated scripts that use the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file.
-An example with curl: 
+#### Grabbing the Token from BeEF's API
+
+You can issue a POST request to `/api/admin/login` using the BeEF credentials you have set in the main [`config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config) file. This request will return the token in the response. You can parse the JSON and use it for your next requests requiring authentication.
+
+An example with cURL:
 ```bash
 curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login
 
 response: {"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}
 ```
 
-In this way you can parse the JSON response grabbing the token, and use it for your next requests to BeEF.
+#### Grabbing the Token Directly in BeEF Code
+
+If require access to the token and you are writing Ruby code somewhere in BeEF, it can be called using:
+```ruby
+BeEF::Core::Configuration.instance.get('beef.api_token')
+```
 
 ## Hooked Browsers
 
 ### Handler 
 
-* **Handler** : /api/hooks
-* **Description** : The _hooks_ handler gives information about the hooked browsers, both online and offline.
-* **No parameters**
+* **Endpoint** 
+  * `GET /api/hooks`
+* **Description** 
+  * The `hooks` handler gives information about the hooked browsers, both online and offline.
+* **Query Parameters** 
+  * N/A
 
 ### Example
 
-**Request**: 
+#### Request 
 ```bash
 curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-Response:
+#### Response
 ```json
 {
     "hooked-browsers": {
@@ -87,13 +100,16 @@ Response:
 
 ## Browser Details
 
-In order to retrieve relative hooked browser details (like enabled plugins and technologies, cookies, screen size and additional info), we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
-
 ### Handler
-* **Request** : GET /api/hooks/:session
-* **Description** : Gather informations on a hooked browser
-* **Parameters** : 
-  * :session : Session of the browser
+* **Endpoint**
+  * `GET /api/hooks/{session}`
+* **Description**
+  * In order to retrieve details about a hooked browser (enabled plugins and technologies, cookies, screen size, etc), we 
+    must specify the unique session ID that identifies the browser in the BeEF framework.
+  * This ID is returned in the response to the `/api/hooks` (see last section above). The value we need from the response 
+    is the `session_ key`.
+* **Query Parameters** 
+  * `{session}` - Session of the browser
 
 ### Example
 
@@ -105,29 +121,30 @@ curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDw
 
 **Response**:
 
-```json
-{ "BrowserName" : "O",
-  "BrowserPlugins" : "Shockwave Flash\nJava Applet Plug-in\nQuickTime Plug-in 7.7.1\nSharePoint Browser Plug-in\nSilverlight Plug-In\nWebEx64 General Plugin Container",
-  "BrowserReportedName" : "Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.62",
-  "BrowserType" : "{"O11":true,"O":true}",
-  "BrowserVersion" : "11",
-  "Cookies" : "BEEFHOOK=nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk",
-  "HasActiveX" : "No",
-  "HasFlash" : "Yes",
-  "HasGoogleGears" : "No",
-  "HasWebSocket" : "No",
-  "HostName" : "127.0.0.1",
-  "JavaEnabled" : "Yes",
-  "OsName" : "Macintosh",
-  "PageReferrer" : "No Referrer",
-  "PageTitle" : "BeEF Basic Demo",
-  "PageURI" : "http://127.0.0.1:3000/demos/basic.html",
-  "ScreenParams" : "{"width"=>1680, "height"=>1050, "colordepth"=>32}",
-  "SystemPlatform" : "MacIntel",
-  "VBScriptEnabled" : "No",
-  "WindowSize" : "{"width"=>1000, "height"=>729}",
-  "hasPersistentCookies" : "Yes",
-  "hasSessionCookies" : "Yes"
+```javascript
+{ 
+  "BrowserName": "O",
+  "BrowserPlugins": "Shockwave Flash\nJava Applet Plug-in\nQuickTime Plug-in 7.7.1\nSharePoint Browser Plug-in\nSilverlight Plug-In\nWebEx64 General Plugin Container",
+  "BrowserReportedName": "Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.62",
+  "BrowserType": "{"O11":true,"O":true}",
+  "BrowserVersion": "11",
+  "Cookies": "BEEFHOOK=nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk",
+  "HasActiveX": "No",
+  "HasFlash": "Yes",
+  "HasGoogleGears": "No",
+  "HasWebSocket": "No",
+  "HostName": "127.0.0.1",
+  "JavaEnabled": "Yes",
+  "OsName": "Macintosh",
+  "PageReferrer": "No Referrer",
+  "PageTitle": "BeEF Basic Demo",
+  "PageURI": "http://127.0.0.1:3000/demos/basic.html",
+  "ScreenParams": "{"width"=>1680, "height"=>1050, "colordepth"=>32}",
+  "SystemPlatform": "MacIntel",
+  "VBScriptEnabled": "No",
+  "WindowSize": "{"width"=>1000, "height"=>729}",
+  "hasPersistentCookies": "Yes",
+  "hasSessionCookies": "Yes"
 }
 ```
 
