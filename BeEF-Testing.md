@@ -8,14 +8,14 @@ To run all tests, run (from `<beef_root>`):
 
 `bundle exec rake --all`
 
-Otherwise, to run only some testing categories, for instance 'integration', run:
+Otherwise, to run only some testing categories, for instance 'spec', run:
 
 `bundle exec rake spec`
 
 Before running the tests locally on your machine, you must install necessary gems:
 
 ```
-export BEEF_TEST=1
+export BEEF_TEST=true
 bundle install --with test
 ```
 
@@ -30,20 +30,23 @@ On our continuous integration server, responsible to run all the tests suite on 
 
 ## Testing categories
 The BeEF testing framework is a mix of 2 types of tests:
- - unit tests
+ - rspec tests
  - functional tests
 
 We currently have the following testing categories:
- - **integration**: mainly functional tests. We use Capybara and WebDriver in order to instrument the browser to do stuff for us. When running these tests, you will see a browser being open (currently Firefox, we're working on extending the testing suite including all the other browser). The integration testing suite is responsible to run functional tests on the Web GUI and test module execution.
-
+ - **ssl:**: creates a new SSL certificate and Re-generate the SSL certificate
+- **rdoc:**: creates the rdox 
  - **unit**: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested here.
  
  - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
 
  - **thirdparty/bundle_audit**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
 
-You will also notice another directory, **common**. As the name suggests, it contains things shared across testing suites, for instance constants and methods.
-
+To run these tests just on their own run:
+`bundle exec rake`
+and the specific category, for example:
+`bundle exec rake rdoc`
+To run rdoc.
 ## Unit tests
 When writing unit tests, you will mainly use two functions:
 
