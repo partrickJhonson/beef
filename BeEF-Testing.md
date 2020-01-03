@@ -51,8 +51,7 @@ We currently have the following testing categories:
 - **cde:**: this will download and make the CDE Executable plus generate a cde package in cde-package
 - **cde_beef_start:**: starts the CDE/beef enviorment set-up
 - **db:**: requires the :environment to require beef
- - **thirdparty/msf:**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
- - **thirdparty/bundle_audit:**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
+
 
 ## Unit Tests
 When writing unit tests, you will mainly use two functions:
