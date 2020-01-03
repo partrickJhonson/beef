@@ -1,7 +1,36 @@
-
 ### Introduction ###
 
 The below details the Database Schema of BeEF.
+
+### Table of Contents
+
+* [ar_internal_metadata](#ar_internal_metadata)
+* [autoloader](#autoloader)
+* [browser_details](#browser_details)
+* [command_modules](#command_modules)
+* [commands](#commands)
+* [dns_rule](#dns_rule)
+* [executions](#executions)
+* [hooked_browsers](#hooked_browsers)
+* [http](#http)
+* [interceptors](#interceptors)
+* [ipec_exploit](#ipec_exploit)
+* [ipec_exploit_run](#ipec_exploit_run)
+* [logs](#logs)
+* [mass_mailer](#mass_mailer)
+* [network_hosts](#network_hosts)
+* [network_services](#network_services)
+* [option_caches](#option_caches)
+* [results](#results)
+* [rtc_manage](#rtc_manage)
+* [rtc_module_status](#rtc_module_status)
+* [rtc_signal](#rtc_signal)
+* [rtc_status](#rtc_status)
+* [rules](#rules)
+* [schema_migrations](#schema_migrations)
+* [web_cloner](#web_cloner)
+* [xssrays_detail](#xssrays_detail)
+* [xssrays_scan](#xssrays_scan)
 
 ### Database Tables ###
 
@@ -20,6 +49,8 @@ http                  results               xssrays_scan
 
 ### Table Info ###
 
+#### ar_internal_metadata
+
 ```
 sqlite> PRAGMA table_info(ar_internal_metadata);
 ```
@@ -30,6 +61,8 @@ cid | name | type | notnull | default | pk
 2 | created_at | datetime(6) | 1 | | 0
 3 | updated_at | datetime(6) | 1 | | 0
 
+#### autoloader
+
 ```
 sqlite> PRAGMA table_info(autoloader);
 ```
@@ -38,6 +71,8 @@ cid | name | type | notnull | default | pk
 0 | id | integer | 1 |  | 1
 1 | command_id | integer | 0 |  | 0
 2 | in_use | boolean | 0 |  | 0
+
+#### browser_details
 
 ```
 sqlite> PRAGMA table_info(browser_details);
@@ -50,6 +85,8 @@ cid | name | type | notnull | default | pk
 2 | detail_key | text | 0 |  | 0
 3 | detail_value | text | 0 |  | 0
 
+#### command_modules
+
 ```
 sqlite> PRAGMA table_info(command_modules);
 ```
@@ -59,6 +96,8 @@ cid | name | type | notnull | default | pk
 0 | id | integer | 1 |  | 1
 1 | name | text | 0 |  | 0
 2 | path | text | 0 |  | 0
+
+#### commands
 
 ```
 sqlite> PRAGMA table_info(commands);
@@ -74,6 +113,8 @@ cid | name | type | notnull | default | pk
 5 | label | text | 0 |  | 0
 6 | instructions_sent | boolean | 0 | 0 | 0
 
+#### dns_rule
+
 ```
 sqlite> PRAGMA table_info(dns_rule);
 ```
@@ -85,6 +126,8 @@ cid | name | type | notnull | default | pk
 2 | resource | text | 0 |  | 0
 3 | response | text | 0 |  | 0
 4 | callback | text | 0 |  | 0
+
+#### executions
 
 ```
 sqlite> PRAGMA table_info(executions);
@@ -101,6 +144,8 @@ cid | name | type | notnull | default | pk
 6 | rule_token | text | 0 |  | 0  
 7 | is_sent | boolean | 0 |  | 0  
     
+#### hooked_browsers
+
 ```
 sqlite> PRAGMA table_info(hooked_browsers);
 ```
@@ -116,6 +161,8 @@ cid | name | type | notnull | default | pk
 7 | port | integer | 0 |  | 0
 8 | count | integer | 0 |  | 0
 9 | is_proxy | boolean | 0 |  | 0
+
+#### http
 
 ```
 sqlite> PRAGMA table_info(http);
@@ -142,6 +189,8 @@ cid | name | type | notnull | default | pk
 16 | response_date | datetime | 0 |  | 0
 17 | request_date | datetime | 0 |  | 0
 
+#### interceptors
+
 ```
 sqlite> PRAGMA table_info(interceptors);
 ```
@@ -151,6 +200,8 @@ cid | name | type | notnull | default | pk
 0 | id | integer | 1 |  | 1
 1 | ip | text | 0 |  | 0
 2 | post_data | text | 0 |  | 0
+
+#### ipec_exploit
 
 ```
 sqlite> PRAGMA table_info(ipec_exploit);
@@ -163,6 +214,8 @@ cid | name | type | notnull | default | pk
 2 | protocol | text | 0 |  | 0
 3 | os | text | 0 |  | 0
 
+#### ipec_exploit_run
+
 ```
 sqlite> PRAGMA table_info(ipec_exploit_run);
 ```
@@ -173,6 +226,8 @@ cid | name | type | notnull | default | pk
 1 | launched | boolean | 0 |  | 0
 2 | http_headers | text | 0 |  | 0
 3 | junk_size | text | 0 |  | 0
+
+#### logs
 
 ```
 sqlite> PRAGMA table_info(logs);
@@ -186,6 +241,8 @@ cid | name | type | notnull | default | pk
 3 | date | datetime | 0 |  | 0
 4 | hooked_browser_id | integer | 0 |  | 0
 
+#### mass_mailer
+
 ```
 sqlite> PRAGMA table_info(mass_mailer);
 ```
@@ -193,6 +250,8 @@ sqlite> PRAGMA table_info(mass_mailer);
 cid | name | type | notnull | default | pk
 --- | --- | --- | --- | --- | ---
 0 | id | integer | 1 |  | 1
+
+#### network_hosts
 
 ```
 sqlite> PRAGMA table_info(network_hosts);
@@ -209,6 +268,8 @@ cid | name | type | notnull | default | pk
 6 | mac | text | 0 |  | 0
 7 | lastseen | text | 0 |  | 0
 
+#### network_services
+
 ```
 sqlite> PRAGMA table_info(network_services);
 ```
@@ -222,6 +283,8 @@ cid | name | type | notnull | default | pk
 4 | port | text | 0 |  | 0
 5 | ntype | text | 0 |  | 0
 
+#### option_caches
+
 ```
 sqlite> PRAGMA table_info(option_caches);
 ```
@@ -231,6 +294,8 @@ cid | name | type | notnull | default | pk
 0 | id | integer | 1 |  | 1
 1 | name | text | 0 |  | 0
 2 | value | text | 0 |  | 0
+
+#### results
 
 ```
 sqlite> PRAGMA table_info(results);
@@ -245,6 +310,8 @@ cid | name | type | notnull | default | pk
 4 | status | integer | 0 |  | 0
 5 | data | text | 0 |  | 0
 
+#### rtc_manage
+
 ```
 sqlite> PRAGMA table_info(rtc_manage);
 ```
@@ -255,6 +322,8 @@ cid | name | type | notnull | default | pk
 1 | hooked_browser_id | integer | 0 |  | 0
 2 | message | text | 0 |  | 0
 3 | has_sent | text | 0 | 'waiting' | 0
+
+#### rtc_module_status
 
 ```
 sqlite> PRAGMA table_info(rtc_module_status);
@@ -268,6 +337,8 @@ cid | name | type | notnull | default | pk
 3 | target_hooked_browser_id | integer | 0 |  | 0
 4 | status | text | 0 |  | 0
 
+#### rtc_signal
+
 ```
 sqlite> PRAGMA table_info(rtc_signal);
 ```
@@ -280,6 +351,8 @@ cid | name | type | notnull | default | pk
 3 | signal | text | 0 |  | 0
 4 | has_sent | text | 0 | 'waiting' | 0
 
+#### rtc_status
+
 ```
 sqlite> PRAGMA table_info(rtc_status);
 ```
@@ -290,6 +363,8 @@ cid | name | type | notnull | default | pk
 1 | hooked_browser_id | integer | 0 |  | 0
 2 | target_hooked_browser_id | integer | 0 |  | 0
 3 | status | text | 0 |  | 0
+
+#### rules
 
 ```
 sqlite> PRAGMA table_info(rules);
@@ -309,6 +384,8 @@ cid | name | type | notnull | default | pk
 9 | execution_delay | text | 0 |  | 0
 10 | chain_mode | text | 0 |  | 0
 
+#### schema_migrations
+
 ```
 sqlite> PRAGMA table_info(schema_migrations);
 ```
@@ -316,6 +393,8 @@ sqlite> PRAGMA table_info(schema_migrations);
 cid | name | type | notnull | default | pk
 --- | --- | --- | --- | --- | ---
 0 | version | varchar | 1 |  | 1
+
+#### web_cloner
 
 ```
 sqlite> PRAGMA table_info(web_cloner);
@@ -326,6 +405,8 @@ cid | name | type | notnull | default | pk
 0 | id | integer | 1 |  | 1
 1 | uri | text | 0 |  | 0
 2 | mount | text | 0 |  | 0
+
+#### xssrays_detail
 
 ```
 sqlite> PRAGMA table_info(xssrays_detail);
@@ -338,6 +419,8 @@ cid | name | type | notnull | default | pk
 2 | vector_name | text | 0 |  | 0
 3 | vector_method | text | 0 |  | 0
 4 | vector_poc | text | 0 |  | 0
+
+#### xssrays_scan
 
 ```
 sqlite> PRAGMA table_info(xssrays_scan);
@@ -357,4 +440,3 @@ cid | name | type | notnull | default | pk
 
 ***
 [[BeEF Testing|BeEF Testing]] | [[Milestones|Milestones]]
-
