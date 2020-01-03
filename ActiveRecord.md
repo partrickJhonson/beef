@@ -53,4 +53,6 @@ See the file for more detailed information.
 
 [Refer to the Database Schema](https://github.com/beefproject/beef/wiki/Database-Schema)
 
+***
 
+[[WebRTC Extension|WebRTC-Extension]] | [[Development Organization|Development Organization]]
