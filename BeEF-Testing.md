@@ -1,5 +1,11 @@
 ## Introduction
 Testing is important in every serious software development process. Although in BeEF we don't use TDD (Test-driven development), we do have a testing suite. 
+Before running the tests locally on your machine, you must install necessary gems:
+
+```
+export BEEF_TEST=true
+bundle install --with test
+```
 
 BeEF tests are all contained inside `<beef_root>/spec` directory.
 A Rakefile, `<beef_root>/Rakefile`, contains testing tasks, organized by categories.
@@ -11,13 +17,6 @@ To run all tests, run (from `<beef_root>`):
 Otherwise, to run only some testing categories, for instance 'spec', run:
 
 `bundle exec rake spec`
-
-Before running the tests locally on your machine, you must install necessary gems:
-
-```
-export BEEF_TEST=true
-bundle install --with test
-```
 
 Before running the tests locally on your machine, you may want to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
 ```ruby
@@ -33,20 +32,27 @@ The BeEF testing framework is a mix of 2 types of tests:
  - rspec tests
  - functional tests
 
-We currently have the following testing categories:
- - **ssl:**: creates a new SSL certificate and Re-generate the SSL certificate
-- **rdoc:**: creates the rdox 
- - **unit**: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested here.
- 
- - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
-
- - **thirdparty/bundle_audit**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
-
 To run these tests just on their own run:
 `bundle exec rake`
 and the specific category, for example:
 `bundle exec rake rdoc`
 To run rdoc.
+
+We currently have the following testing categories:
+- **ssl:**: creates a new SSL certificate and Re-generate the SSL certificate
+- **rdoc:**: creates the rdoc information
+- **beef_start:**: sets up and starts BeEF
+- **beef_stop:**: cleanup and stops beef
+- **msf_start:**: starts the msf_console
+- **msf_stop:**:kills the MSF_process
+- **msf_update:**: git pulls the msf repo
+- **dmg:**: creates the Mac DMG file
+- **cde:**: this will download and make the CDE Executable plus generate a cde package in cde-package
+- **cde_beef_start:**: starts the CDE/beef enviorment set-up
+- **db:**: requires the :environment to require beef
+ - **thirdparty/msf:**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
+ - **thirdparty/bundle_audit:**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
+
 ## Unit tests
 When writing unit tests, you will mainly use two functions:
 
