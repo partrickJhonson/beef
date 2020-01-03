@@ -14,7 +14,7 @@ The framework contains numerous command modules that employ BeEF's simple and po
 ## Community 
 ### Mailing Lists ###
 
-To join the standard mailing list send a mail to beef-subscribe@bindshell.net.
+To join the **standard** mailing list send a mail to beef-subscribe@bindshell.net.
 
 To join the **development** mailing list send a mail to beef-dev-subscribe@bindshell.net.
 
