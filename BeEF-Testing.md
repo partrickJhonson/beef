@@ -18,16 +18,17 @@ Otherwise, to run only some testing categories, for instance 'spec', run:
 
 `bundle exec rake spec`
 
-Before running the tests locally on your machine, you may want to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
+Before running the tests locally on your machine, you may want to change the values of ATTACK_DOMAIN and VICTIM_DOMAIN in `<beef_root>/test/common/test_constants.rb`, to something like:
+
 ```ruby
 ATTACK_DOMAIN = "127.0.0.1"
 VICTIM_DOMAIN = "localhost"
 ```
-These values must differ however it is acceptable if both resolve to the same host.
+These values must differ, however it is acceptable if both resolve to the same host.
 
-On our continuous integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure to don't commit/push these changes to the BeEF repository.
+On our continuous integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure not to commit/push these changes to the BeEF repository.
 
-## Testing categories
+## Testing Categories
 The BeEF testing framework is a mix of 2 types of tests:
  - rspec tests
  - functional tests
@@ -53,7 +54,7 @@ We currently have the following testing categories:
  - **thirdparty/msf:**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
  - **thirdparty/bundle_audit:**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
 
-## Unit tests
+## Unit Tests
 When writing unit tests, you will mainly use two functions:
 
 assert(Boolean) -> test pass if the Boolean condition is true.
@@ -79,7 +80,7 @@ assert_nothing_raised do
     something
 end
 ```
-## Functional tests
+## Functional Tests
 
 For functional tests, other than using some aspects of the unit tests, we use Capybara and Selenium-WebDriver. The result is the possibility to programmatically control a browser (at the moment Firefox, we're working to improve our testing suite with Webkit and other browsers) from a user's point-of-view. For instance, we're able to instrument the browser to login into the BeEF Web GUI, as you can see here below:
 ```ruby
@@ -96,9 +97,9 @@ For functional tests, other than using some aspects of the unit tests, we use Ca
     session
   end
 ```
-### Testing command modules
+### Testing Command Modules
 In order to inject custom JavaScript into the hooked browser during testing, you have 2 choices:
- - **execute_script** : available from objects of type Capybara::Session. It comes handy when the JavaScript you want to inject is actually returning something. Example:
+ - **execute_script** : available from objects of type Capybara::Session. It comes in handy when the JavaScript you want to inject is actually returning something. Example:
 ```javascript
 def test_jools_simple
         victim = BeefTest.new_victim
@@ -109,7 +110,7 @@ def test_jools_simple
        assert_equal result,'ciccio_pasticcio'
     end
 ```
- - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can use it also for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module),see the following example. Also, have a look at `<beef_root>/test/integration/tc_debug_modules.rb` in order to see how some variables like `hb_session`, `token` and others are retrieved from previous tests.
+ - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can also use it for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module), see the following example. Also, have a look at `<beef_root>/test/integration/tc_debug_modules.rb` in order to see how some variables like `hb_session`, `token` and others are retrieved from previous tests.
 
 ```ruby
 ## Test debug module "Test_return_long_string" using the RESTful API
