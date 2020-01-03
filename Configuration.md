@@ -2,7 +2,7 @@
 
 BeEF utilises YAML files in order to configure the core functionality, as well as the extensions. Most of the core BeEF configurations are in the main configuration file: [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml), found in the BeEF directory.
 
-To configure extensions, modify the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) files located in the extension folder that you're trying to modify.
+To configure extensions, modify the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) files located in the extension folder that you're trying to modify. For more information on the command module config files, please see: [Command Module Config](https://github.com/beefproject/beef/wiki/Command-Module-Config).
 
 #### Table of Contents
 
