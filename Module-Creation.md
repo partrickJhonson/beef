@@ -3,7 +3,7 @@
 BeEF has been designed using modular development principles so that it is very easy to create and add new functionality with command modules.
 
 Modules are all stored in the [beef/modules](https://github.com/beefproject/beef/tree/master/modules) directory and are composed of three main files:
-* **config.yaml** - configuration file describing the properties of a module
+* **config.yaml** - [configuration file](https://github.com/beefproject/beef/wiki/Command-Module-Config) describing the properties of a module.
 * **module.rb** - enables integration of the module with the BeEF web interface
 * **command.js** -  the JavaScript "payload" which will be executed on the hooked browser
 
