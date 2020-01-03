@@ -54,7 +54,7 @@ Using BeEF it is possible to get a user to install a malicious browser extension
 
 BeEF contains a module that enables clickjacking attacks in a hooked browser:
 
-* The [[ClickJacking|Module:-Clickjacking]] module will create an iFrame which follows the users cursor around the page, displaying the content at the specified URL.
+* The [[Clickjacking|Module:-Clickjacking]] module will create an iFrame which follows the users cursor around the page, displaying the content at the specified URL.
 
 ***
 [[Information Gathering|Information-Gathering]] | [[Network Discovery|Network-discovery]]
