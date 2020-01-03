@@ -51,6 +51,6 @@ and it will then reset the database if it receives the -x flag.
 The start file will then connect to the database and migrate if required.
 See the file for more detailed information.
 
-[Refer to the Database Scheme ](https://github.com/beefproject/beef/wiki/Database-Schema)
+[Refer to the Database Schema](https://github.com/beefproject/beef/wiki/Database-Schema)
 
 
