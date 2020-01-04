@@ -519,7 +519,7 @@ curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_p
     * Content-Type: `application/json; charset=UTF-8`
   * **Body**
   * `hb_id` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
-    [`/api/hooks`](#hooked-browsers) request.(#hooked-browsers) request.
+    [`/api/hooks`](#hooked-browsers) request.
     * `modules` - an array containing all the modules to be launched, with the following two keys:
       * `mod_id` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
       * `mod_input` - any ncessary module parameters.
