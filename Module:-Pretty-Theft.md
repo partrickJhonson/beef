@@ -11,7 +11,7 @@
 
 ## Internal Working
 
-This module will just print a dialog box imitating Facebook or Linked and asking for credentials. Nothing complex here, [the code ](https://github.com/beefproject/beef/blob/master/modules/social_engineering/pretty_theft/command.js) is a bit long due to styles modification but it is not very complex to read.
+This module will just print a dialog box imitating Facebook or Linkedin and asking for credentials. Nothing complex here, [the code ](https://github.com/beefproject/beef/blob/master/modules/social_engineering/pretty_theft/command.js) is a bit long due to styles modification but it is not very complex to read.
 
 ## Screenshots
 
