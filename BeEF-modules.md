@@ -108,7 +108,7 @@
 1. [[Get Internal IP WebRTC|Module:-Get-Internal-IP-WebRTC]]
 1. [[Get Physical Location|Module:-Get-Physical-Location]]
 1. [[Get Protocol Handlers|Module:-Get-Protocol-Handlers]]
-1. [[Get System Info|Module:-Get-System-Info]]
+1. [[Get System Info Java|Module:-Get-System-Info-(Java)]]
 1. [[Hook Default Browser|Module:-Hook-Default-Browser]]
 1. [[Get Geolocation|Module:-Get-Geolocation]]
 1. [[Get Registry Keys|Module:-Get-Registry-Keys]]
