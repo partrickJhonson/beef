@@ -1,137 +1,442 @@
-_Details of the database schema_
-
 ### Introduction ###
 
-Database Schema
+The below details the Database Schema of BeEF.
 
-### Tables ###
+### Table of Contents
+
+* [ar_internal_metadata](#ar_internal_metadata)
+* [autoloader](#autoloader)
+* [browser_details](#browser_details)
+* [command_modules](#command_modules)
+* [commands](#commands)
+* [dns_rule](#dns_rule)
+* [executions](#executions)
+* [hooked_browsers](#hooked_browsers)
+* [http](#http)
+* [interceptors](#interceptors)
+* [ipec_exploit](#ipec_exploit)
+* [ipec_exploit_run](#ipec_exploit_run)
+* [logs](#logs)
+* [mass_mailer](#mass_mailer)
+* [network_hosts](#network_hosts)
+* [network_services](#network_services)
+* [option_caches](#option_caches)
+* [results](#results)
+* [rtc_manage](#rtc_manage)
+* [rtc_module_status](#rtc_module_status)
+* [rtc_signal](#rtc_signal)
+* [rtc_status](#rtc_status)
+* [rules](#rules)
+* [schema_migrations](#schema_migrations)
+* [web_cloner](#web_cloner)
+* [xssrays_detail](#xssrays_detail)
+* [xssrays_scan](#xssrays_scan)
+
+### Database Tables ###
 
 ```
 sqlite> .tables
-autoloading                        extension_distributedengine_rules
-commands                           extension_dns_rules              
-core_areexecution                  extension_requester_http         
-core_arerules                      extension_seng_interceptor       
-core_browserdetails                extension_seng_webcloner         
-core_commandmodules                extension_webrtc_rtcmanage       
-core_hookedbrowsers                extension_webrtc_rtcsignals      
-core_logs                          extension_xssrays_details        
-core_optioncache                   extension_xssrays_scans          
-core_results                       network_host                     
-extension_adminui_users            network_service                  
+ar_internal_metadata  interceptors          rtc_manage          
+autoloader            ipec_exploit          rtc_module_status   
+browser_details       ipec_exploit_run      rtc_signal          
+command_modules       logs                  rtc_status          
+commands              mass_mailer           rules               
+dns_rule              network_hosts         schema_migrations   
+executions            network_services      web_cloner          
+hooked_browsers       option_caches         xssrays_detail      
+http                  results               xssrays_scan 
 ```
 
-**HookedBrowser**
+### Table Info ###
 
-Stores hooked browser
+#### ar_internal_metadata
 
-```ruby
-  storage_names[:default] = 'core_hookedbrowsers'
-  property :id, Serial
-  property :session, Text, :lazy => false
-  property :ip, Text, :lazy => false
-  property :firstseen, String, :length => 15
-  property :lastseen, String, :length => 15
-  property :httpheaders, Text, :lazy => false
-  # @note the domain originating the hook request
-  property :domain, Text, :lazy => false
-  property :port, Integer, :default => 80
-  property :count, Integer, :lazy => false
-  property :has_init, Boolean, :default => false
-  property :is_proxy, Boolean, :default => false
-  # @note if true the HB is used as a tunneling proxy
+```
+sqlite> PRAGMA table_info(ar_internal_metadata);
+```
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | key | varchar | 1 | | 1
+1 | value | varchar | 0 | | 0
+2 | created_at | datetime(6) | 1 | | 0
+3 | updated_at | datetime(6) | 1 | | 0
+
+#### autoloader
+
+```
+sqlite> PRAGMA table_info(autoloader);
+```
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | command_id | integer | 0 |  | 0
+2 | in_use | boolean | 0 |  | 0
+
+#### browser_details
+
+```
+sqlite> PRAGMA table_info(browser_details);
 ```
 
-**Command**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | session_id | text | 0 |  | 0
+2 | detail_key | text | 0 |  | 0
+3 | detail_value | text | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'commands'
-  property :id, Serial
-  property :data, Text
-  property :creationdate, String, :length => 15, :lazy => false
-  property :label, Text, :lazy => false
-  property :instructions_sent, Boolean, :default => false
+#### command_modules
+
+```
+sqlite> PRAGMA table_info(command_modules);
 ```
 
-**CommandModule**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | name | text | 0 |  | 0
+2 | path | text | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'core_commandmodules'
-  property :id, Serial
-  property :name, Text, :lazy => false
-  property :path, Text, :lazy => false
+#### commands
+
+```
+sqlite> PRAGMA table_info(commands);
 ```
 
-**BrowserDetails**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | command_module_id | integer | 0 |  | 0
+2 | hooked_browser_id | integer | 0 |  | 0
+3 | data | text | 0 |  | 0
+4 | creationdate | datetime | 0 |  | 0
+5 | label | text | 0 |  | 0
+6 | instructions_sent | boolean | 0 | 0 | 0
 
-```ruby
-  storage_names[:default] = 'core_browserdetails'
-  property :session_id, String, :length => 255, :key => true
-  property :detail_key, String, :length => 255, :lazy => false, :key => true
-  property :detail_value, Text, :lazy => false
+#### dns_rule
+
+```
+sqlite> PRAGMA table_info(dns_rule);
 ```
 
-**Log**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | pattern | text | 0 |  | 0
+2 | resource | text | 0 |  | 0
+3 | response | text | 0 |  | 0
+4 | callback | text | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'core_logs'
-  property :id, Serial
-  property :type, Text, :lazy => false
-  property :event, Text, :lazy => false
-  property :date, DateTime, :lazy => false
-  property :hooked_browser_id, Text, :lazy => false
+#### executions
+
+```
+sqlite> PRAGMA table_info(executions);
 ```
 
-**OptionCache**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | session_id | text | 0 |  | 0       
+2 | mod_count | integer | 0 |  | 0
+3 | mod_successful | integer | 0 |  | 0
+4 | mod_body | text | 0 |  | 0               
+5 | exec_time | text | 0 |  | 0
+6 | rule_token | text | 0 |  | 0  
+7 | is_sent | boolean | 0 |  | 0  
+    
+#### hooked_browsers
 
-```ruby
-  storage_names[:default] = 'core_optioncache'
-  property :id, Serial
-  property :name, Text
-  property :value, Text
+```
+sqlite> PRAGMA table_info(hooked_browsers);
+```
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | session | text | 0 |  | 0
+2 | ip | text | 0 |  | 0
+3 | firstseen | text | 0 |  | 0
+4 | lastseen | text | 0 |  | 0
+5 | httpheaders | text | 0 |  | 0
+6 | domain | text | 0 |  | 0
+7 | port | integer | 0 |  | 0
+8 | count | integer | 0 |  | 0
+9 | is_proxy | boolean | 0 |  | 0
+
+#### http
+
+```
+sqlite> PRAGMA table_info(http);
+```                                                                                                                                                                                             
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | request | text | 0 |  | 0
+3 | allow_cross_domain | boolean | 0 | 1 | 0
+4 | response_data | text | 0 |  | 0
+5 | response_status_code | integer | 0 |  | 0
+6 | response_status_text | text | 0 |  | 0
+7 | response_port_status | text | 0 |  | 0
+8 | response_headers | text | 0 |  | 0
+9 | method | text | 0 |  | 0
+10 | content_length | text | 0 | '0' | 0
+11 | proto | text | 0 |  | 0
+12 | domain | text | 0 |  | 0
+13 | port | text | 0 |  | 0
+14 | has_ran | text | 0 | 'waiting' | 0
+15 | path | text | 0 |  | 0
+16 | response_date | datetime | 0 |  | 0
+17 | request_date | datetime | 0 |  | 0
+
+#### interceptors
+
+```
+sqlite> PRAGMA table_info(interceptors);
 ```
 
-**Result**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | ip | text | 0 |  | 0
+2 | post_data | text | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'core_results'
-  property :id, Serial
-  property :date, String, :length => 15, :lazy => false
-  property :status, Integer
-  property :data, Text
+#### ipec_exploit
+
+```
+sqlite> PRAGMA table_info(ipec_exploit);
 ```
 
-**User**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | name | text | 0 |  | 0
+2 | protocol | text | 0 |  | 0
+3 | os | text | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'extension_adminui_users'
-  property :id, Serial
-  property :session_id, String, :length => 255
-  property :ip, Text
+#### ipec_exploit_run
+
+```
+sqlite> PRAGMA table_info(ipec_exploit_run);
 ```
 
-**NetworkHost**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | launched | boolean | 0 |  | 0
+2 | http_headers | text | 0 |  | 0
+3 | junk_size | text | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'network_host'
-  property :id, Serial
-  property :hooked_browser_id, Text, :lazy => false
-  property :ip, Text, :lazy => false
-  property :hostname, String, :lazy => false
-  property :type, String, :lazy => false # proxy, router, gateway, dns, etc
-  property :os, String, :lazy => false
-  property :mac, String, :lazy => false
-  property :lastseen, String, :length => 15
+#### logs
+
+```
+sqlite> PRAGMA table_info(logs);
 ```
 
-**NetworkService**
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | logtype | text | 0 |  | 0
+2 | event | text | 0 |  | 0
+3 | date | datetime | 0 |  | 0
+4 | hooked_browser_id | integer | 0 |  | 0
 
-```ruby
-  storage_names[:default] = 'network_service'
-  property :id, Serial
-  property :hooked_browser_id, Text, :lazy => false
-  property :proto, String, :lazy => false
-  property :ip, Text, :lazy => false
-  property :port, String, :lazy => false
-  property :type, String, :lazy => false
+#### mass_mailer
+
 ```
+sqlite> PRAGMA table_info(mass_mailer);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+
+#### network_hosts
+
+```
+sqlite> PRAGMA table_info(network_hosts);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | ip | text | 0 |  | 0
+3 | hostname | text | 0 |  | 0
+4 | ntype | text | 0 |  | 0
+5 | os | text | 0 |  | 0
+6 | mac | text | 0 |  | 0
+7 | lastseen | text | 0 |  | 0
+
+#### network_services
+
+```
+sqlite> PRAGMA table_info(network_services);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | proto | text | 0 |  | 0
+3 | ip | text | 0 |  | 0
+4 | port | text | 0 |  | 0
+5 | ntype | text | 0 |  | 0
+
+#### option_caches
+
+```
+sqlite> PRAGMA table_info(option_caches);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | name | text | 0 |  | 0
+2 | value | text | 0 |  | 0
+
+#### results
+
+```
+sqlite> PRAGMA table_info(results);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | command_id | integer | 0 |  | 0
+2 | hooked_browser_id | integer | 0 |  | 0
+3 | date | datetime | 0 |  | 0
+4 | status | integer | 0 |  | 0
+5 | data | text | 0 |  | 0
+
+#### rtc_manage
+
+```
+sqlite> PRAGMA table_info(rtc_manage);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | message | text | 0 |  | 0
+3 | has_sent | text | 0 | 'waiting' | 0
+
+#### rtc_module_status
+
+```
+sqlite> PRAGMA table_info(rtc_module_status);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | command_module_id | integer | 0 |  | 0
+3 | target_hooked_browser_id | integer | 0 |  | 0
+4 | status | text | 0 |  | 0
+
+#### rtc_signal
+
+```
+sqlite> PRAGMA table_info(rtc_signal);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | target_hooked_browser_id | integer | 0 |  | 0
+3 | signal | text | 0 |  | 0
+4 | has_sent | text | 0 | 'waiting' | 0
+
+#### rtc_status
+
+```
+sqlite> PRAGMA table_info(rtc_status);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | target_hooked_browser_id | integer | 0 |  | 0
+3 | status | text | 0 |  | 0
+
+#### rules
+
+```
+sqlite> PRAGMA table_info(rules);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | name | text | 0 |  | 0
+2 | author | text | 0 |  | 0
+3 | browser | text | 0 |  | 0
+4 | browser_version | text | 0 |  | 0
+5 | os | text | 0 |  | 0
+6 | os_version | text | 0 |  | 0
+7 | modules | text | 0 |  | 0
+8 | execution_order | text | 0 |  | 0
+9 | execution_delay | text | 0 |  | 0
+10 | chain_mode | text | 0 |  | 0
+
+#### schema_migrations
+
+```
+sqlite> PRAGMA table_info(schema_migrations);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | version | varchar | 1 |  | 1
+
+#### web_cloner
+
+```
+sqlite> PRAGMA table_info(web_cloner);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | uri | text | 0 |  | 0
+2 | mount | text | 0 |  | 0
+
+#### xssrays_detail
+
+```
+sqlite> PRAGMA table_info(xssrays_detail);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | vector_name | text | 0 |  | 0
+3 | vector_method | text | 0 |  | 0
+4 | vector_poc | text | 0 |  | 0
+
+#### xssrays_scan
+
+```
+sqlite> PRAGMA table_info(xssrays_scan);
+```
+
+cid | name | type | notnull | default | pk
+--- | --- | --- | --- | --- | ---
+0 | id | integer | 1 |  | 1
+1 | hooked_browser_id | integer | 0 |  | 0
+2 | scan_start | datetime | 0 |  | 0
+3 | scan_finish | datetime | 0 |  | 0
+4 | domain | text | 0 |  | 0
+5 | cross_domain | text | 0 |  | 0
+6 | clean_timeout | integer | 0 |  | 0
+7 | is_started | boolean | 0 |  | 0
+8 | is_finished | boolean | 0 |  | 0
+
+***
+[[BeEF Testing|BeEF Testing]] | [[Milestones|Milestones]]

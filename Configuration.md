@@ -1,10 +1,17 @@
-# Configuring BeEF
+## Introduction
 
-Most of the core BeEF configurations are in the main configuration file : [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml).
+BeEF utilises YAML files in order to configure the core functionality, as well as the extensions. Most of the core BeEF configurations are in the main configuration file: [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml), found in the BeEF directory.
 
-To configure extensions, the config.yaml files will be found in the extension folder that you're trying to modify.
+To configure extensions, modify the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) files located in the extension folder that you're trying to modify. For more information on the command module config files, please see: [Command Module Config](https://github.com/beefproject/beef/wiki/Command-Module-Config).
 
-***
+#### Table of Contents
+
+* [Authentication](#authentication)
+* [Access Controls](#access-controls)
+* [Web Server Configuration](#web-server-configuration)
+* [Configuring Extensions](#configuring-extensions)
+* [Launching BeEF](#launching-beef)
+
 
 ## Authentication
 
@@ -12,9 +19,9 @@ To configure extensions, the config.yaml files will be found in the extension fo
 
 **In order to use BeEF, you must change the username and password.**
 
-To edit the configuration file, navigate to the BeEF directory and use your favourite text editor (vim, nano etc) to edit the config.yaml file.
+Navigate to the BeEF directory and use your favourite text editor (Vim, Nano, etc) to edit [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml).
 
-Please edit the below section, found in the file:
+Please update the section shown in the example below:
 
 ```yaml
     #Credentials to authenticate in BeEF.
@@ -25,8 +32,8 @@ Please edit the below section, found in the file:
 ```
 
 ## Access Controls
-
 ### Network Limitations
+
 
 The web interface for hooking or for managing BeEF can be limited by subnet. 
 This is done in the 
@@ -37,6 +44,10 @@ $ beef/config.yaml
 ```
 $ beef/config.yaml.beef.restrictions.https
 ```
+
+The web interface for hooking or managing BeEF can be limited by subnet. 
+
+This can be done in the [`beef/config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file under the Interface / IP restrictions subsection (`beef/config.yaml.beef.restrictions.https`)
 
 
 **Access to the management interface should be restricted using the `permitted_ui_subnet` access control.**
@@ -62,21 +73,20 @@ By guessing a valid IP address in the correct subnet, an unauthorized user could
 
 ### Admin UI
 
-The panel path should also be changed using the `beef.extension.admin_ui.base_path` configuration option. Note: this is security through obscurity and won't prevent attacks against the `/api/` REST interface.
+The panel path should also be changed using the `beef.extension.admin_ui.base_path` configuration option i.e. the Extension > Admin UI subsection of the [`beef/config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file. 
+
+Note that this is security through obscurity and won't prevent attacks against the `/api/` REST interface.
 
 
 ### Login Throttling
 
-By default, the administration UI throttles login attempts to 1 attempt per second. This can be changed using the `beef.extensions.admin_ui.login_fail_delay: 1` value in `extensions/admin_ui/config.yaml`.
+By default, the administration UI throttles login attempts to 1 attempt per second. This can be changed altering `beef.extensions.admin_ui.login_fail_delay` value in `extensions/admin_ui/config.yaml`.
 
-By default, the REST API interface throttles login attempts to 1 attempt every 0.05 seconds. This can be changed using the `beef.restrictions.api_attempt_delay: 0.05` value in `config.yaml`.
+By default, the REST API interface throttles login attempts to 1 attempt every 0.05 seconds. This can be changed altering `beef.restrictions.api_attempt_delay` value in [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml).
 
+## Web Server Configuration
 
-***
-
-## Web server configuration
-
-The web server can be fully configured, this is done in the config.yaml file in http:
+The web server can be fully configured, this is done in the HTTP subsection of the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file:
 
 ```yaml
     http:
@@ -95,9 +105,9 @@ The web server can be fully configured, this is done in the config.yaml file in 
         session_cookie_name: "BEEFSESSION" # Name of BeEF cookie
 ```
 
-### Web server imitation
+### Web Server Imitation
 
-BeEF also features rudimentary web server imitation. The root page and HTTP 404 error pages can be changed to reflect one of several popular web servers (apache, iis, nginx) using the `beef.http.web_server_imitation` directive.
+BeEF also features rudimentary web server imitation. The root page and HTTP 404 error pages can be changed to reflect one of several popular web servers (Apache, IIS, NGINX) using the `beef.http.web_server_imitation` directive.
 
 For example:
 
@@ -112,14 +122,10 @@ For example:
 
 The `hook_404` and `hook_root` directives can be enabled to inject the BeEF hook on HTTP 404 error pages and the web root page respectively. This will hook the browser of anyone examining the web server.
 
-
-***
-
 ## Configuring Extensions
+### Enabling Extensions
 
-### Enabling extensions
-
-Extensions should be enabled in the main [config.yaml](https://github.com/beefproject/beef/blob/master/config.yaml):
+Extensions should be enabled in the main [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml):
 
 ```yaml
     extension:
@@ -138,29 +144,20 @@ Extensions should be enabled in the main [config.yaml](https://github.com/beefpr
                 enable: false
 ```
 
-The Demos extension should be disabled in production by setting `enable: false` in `config.yaml`.
-***
+The Demos extension should be disabled when using BeEF in production by setting `enable: false` in [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml).
+
 ### Metasploit
-To enable Metasploit you need to enable it in 
-``
-beef/config.yaml.beef.extensions.metasploit
-``
- by making it true not false,
-```
+
+To enable Metasploit you need to enable it in `beef/config.yaml.beef.extensions.metasploit` by changing the value to true.
+
+```yaml
 extension:
        admin_ui:
               metasploit:
                    enable: true
 ```
-***
 
-The Metasploit extension should be configured by modifying the config file that is in extensions/metasploit/config.yml
-(below)
-
-``
-$beef/extensions/metasploit/config.yaml.beef.extensions.metasploit
-``
-(https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) :
+The Metasploit extension should be configured by modifying the config file that is in [`extensions/metasploit/config.yml`](https://github.com/beefproject/beef/blob/master/extensions/metasploit/config.yaml) (see below) `beef/extensions/metasploit/config.yaml.beef.extensions.metasploit`:
 
 ```yaml
             name: 'Metasploit'
@@ -177,33 +174,37 @@ $beef/extensions/metasploit/config.yaml.beef.extensions.metasploit
             autopwn_url: "autopwn"
 ```
 
-**Be sure to change the `password` field**. Authenticated access to the Metasploit RPC service can be used to [execute arbitrary commands](https://www.rapid7.com/db/modules/exploit/multi/misc/msf_rpc_console) on the underlying operating system.
+**Be sure to change the `pass` field**.
+
+Authenticated access to the Metasploit RPC service can be used to [execute arbitrary commands](https://www.rapid7.com/db/modules/exploit/multi/misc/msf_rpc_console) on the underlying operating system.
 
 Most of the configuration can be left with default value, except the **host** and **callback_host** parameters which should have the IP address of the host on which Metasploit is accessible.
-Use the same host for the below with the User and Password information.
 
-For enabling RPC communication, the following command should be launched in Metasploit:
+Use the same host below in the next step (before the User and Password information).
+
+To enable RPC communication, the following command should be launched in Metasploit:
 
 ```ruby
 load msgrpc ServerHost=127.0.0.1 User=msf Pass=<password> SSL=y
 ```
 
-This command can be written in a file and launched with **-r** option to _msfconsole_.
-Usually its easier to just run it in the metasploit terminal. Have the settings (host, user, pass and ssl)
+This command can be written in a file and launched with `-r` option to `msfconsole`.
+
+Usually its easier to just run it in the Metasploit terminal. Have the settings (`host`, `user`, `pass` and `ssl`)
 the same as in the config file.
 
 [[Images/msf1.png|align=center]]
 
-Of course, IP address and password should be consistent with the previous yaml configuration file.
-
+Of course, IP address and password should be consistent with the previous YAML configuration file.
 
 ## Launching BeEF
 
-You can now launch BeEF by launching the beef script in the root directory :
+You can now launch BeEF by launching the `beef` script in the root directory:
 
 [[Images/conf-launch.png|align=center]]
 
-You can also use the following options :
+You can also use the following options:
+
 ```
 Usage: beef [options]
     -x, --reset                      Reset the database
@@ -214,10 +215,10 @@ Usage: beef [options]
     -w, --wsport WS_PORT             Change the default BeEF WebSocket listening port
 ```
 
-Once configured you can check that metasploit modules are loaded when launching BeEF:
+Once configured, you can check that Metasploit modules are loaded when launching BeEF:
 
 [[Images/conf_metasploit.png|align=center]]
 
 
 ***
-[[Back|Installation]] | [[Next|Interface]]
+[[Installation|Installation]] | [[Interface|Interface]]

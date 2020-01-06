@@ -1,16 +1,22 @@
-# Interface
+## Introduction
+BeEF's interface organises a collection of hooked browsers, commands and results. The below guide has been created to assist you in navigating BeEF and familiarising yourself with the types of exploits available.
+
+#### Table of Contents
+
+* [Login](#login)
+* [Home Page](#home-page)
+* [Hooked Browsers](#hooked-browsers)
+* [Command Tab](#command-tab)
+
 
 ## Login
-
 First when you arrive on the BeEF web server (default is [http://localhost:3000/ui/panel](http://localhost:3000/ui/panel) if you haven't customised as in [Configuration](https://github.com/beefproject/beef/wiki/Configuration)), you'll see the login page :
 
+<p align="center">
 [[Images/interface-login.png|align=center]]
+</p>
 
-Please enter the user and password that you configured in the config.yaml in the 
-``
-beef/config.yaml
-``
-file.
+Please enter the username and password that you configured in the config.yaml file in the beef directory.
 
 
 ## Home Page
@@ -21,9 +27,9 @@ The home page will look like this :
 
 Starting out, you will see that there are no browsers hooked and very few options available to you so the first step is to hook a browser, for example by using one of the demo page as described in the "Getting Started" tab.
 
-## Hooked browsers
+## Hooked Browsers
 
-After a successful hook, you will quickly seen a new hooked browser in the beef menu :
+After a successful hook, you will quickly see a new hooked browser in the beef menu :
 
 [[Images/interface-hooked.png|align=center]]
 
@@ -52,19 +58,19 @@ For example, let's try to get the internal IP of the hooked browser. Select "Get
 
 [[Images/interface-command2.png|align=center]]
 
-If you now go to the "Logs" tab, you will see two informations :
+If you now go to the "Logs" tab, you will see two pieces of information:
 
 * The browsers joined the zombie horde
 * You launched the "Get Internal IP" on the hooked browser
 
 [[Images/interface-log.png|align=center]]
 
-You can also see that the main tab "Logs" has now a list on all actions done on all browsers :
+You can also see that the main tab "Logs" has now a list on all actions completed on all browsers :
 
 [[Images/interface-log2.png|align=center]]
 
-Last tabs are dedicated to [[Tunneling Proxy|Tunneling]] and [[Xss Rays|Xss-Rays]] which will be addressed in next parts of this documentation.
+The last tabs are dedicated to [[Tunneling Proxy|Tunneling]] and [[Xss Rays|Xss-Rays]] which will be addressed later on in this wiki.
 
 ***
 
-[[Previous|Configuration]] | [[Next|Information-Gathering]]
+[[Configuration|Configuration]] | [[Information Gathering|Information-Gathering]]

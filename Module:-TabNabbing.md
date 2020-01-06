@@ -1,4 +1,4 @@
-##Summary
+## Summary
 * **Objective**: This module redirects to the specified URL after the tab has been inactive for a specified amount of time.
 * **Authors**: bcoles
 * **Browsers**: 1ll
@@ -7,7 +7,7 @@
   * **Wait** : Time before redirecting (in minutes)
 * [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/tabnabbing)
 
-##Internal Working 
+## Internal Working 
 
 Internal workig is pretty easy : when the tab loose focus, it starts a timer. When the timer ends the browser is redirected to the given URL :
 

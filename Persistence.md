@@ -1,23 +1,37 @@
-These four modules have been developed to keep browsers hooked.
+## Introduction
+BeEF has four modules that have been developed to help maintain persistence on hooked browsers.
 
-## Old School : Pop under the browser
+#### Table of Contents
 
-[[Old School |Module:-Create-Pop-Under]] will create a pop-up window under the browser which will open an empty BeEF page. Old school but it still works!
+* [Old School Module](#old-school-module)
+* [Dirty Module](#dirty-module)
+* [Stealth Module](#stealth-module)
+* [Clean Module](#clean-module)
 
-## Dirty : Ask for Confirmation for Closing the Tab
+## Old School Module 
+
+The [[Old School|Module:-Create-Pop-Under]] module will create a pop-up window underneath the victim's browser. This window will open an empty BeEF page. An old school technique but it still works!
+
+## Dirty Module
 
 The [[Dirty|Module:-Confirm-Close-Tab]] module will ask the user to confirm that they want to close this tab again and again and again. Dirty!
 
+<p align=center>
 [[Images/module-confirm-close-tab1.png|align=center]]
+</p>
 
-## Stealth : Redirect Links to Foreground iFrames
+## Stealth Module
 
-[[Stealth|Module:-Create-Foreground-iFrame]] will rewrite all the links in the webpage to avoid leaving the current page. Instead, the module will load the target URL in a 100% foreground iFrame. Stealth but the URL still does not change!
+The [[Stealth|Module:-Create-Foreground-iFrame]] module will rewrite all the links on the web-page causing them to load the target URL in a 100% foreground iFrame. This means that the victim sees the page they were expecting to be redirected to, but the URL still does not change!
 
-## Clean : Man In The Browser
+## Clean Module
 
-[[Clean|Module:-Man-In-The-Browser]] will launch a "man-in-the-browser" hack : the module loaded will handle every click on a new link. For links in the same domain, it will make an AJAX request and load the new page instead of the old one and add the page in the history, there is no difference for the user with a classical load but the browser is still hooked. Due to the Same Origin Policy, it is not possible to have the same behavior on other domain, so in this case, the module will open the link in a new tab. 
+The [[Clean|Module:-Man-In-The-Browser]] module launches a "man-in-the-browser" hack. It listens for and handles any click on a link. 
+
+For links within same domain, [[Clean|Module:-Man-In-The-Browser]] will make an AJAX request and load the new page instead of the old one and then add the page into the browser's history. There will be no visible difference to the victim. The page will load in the typical fashion but the browser is still hooked. 
+
+The Same Origin Policy prevents this behaviour on other domains, so in the event that the victim navigates to a domain that is not within the same domain, [[Clean|Module:-Man-In-The-Browser]] will open the requested web-page in a new tab. 
 
 ***
 
-[[Previous|Xss-Rays]] | [[Next|BeEF-RESTful-API]]
+[[XSS Rays|Xss-Rays]] | [[BeEF RESTful API|BeEF-RESTful-API]]

@@ -1,5 +1,8 @@
 ## Introduction
 
+
+WebRTC stands for Web Realtime Communications and allows for peer-to-peer communications between two web browsers. The code for the WebRTC Extension can be found [here.](https://github.com/beefproject/beef/tree/master/extensions/webrtc)
+
 By default, BeEF uses XMLHttpRequest objects to poll to your BeEF server every 5 seconds. The logic is in the `updater.js` file of the core BeEF JavaScript client. It executes a `setTimeout()` function call that executes `beef.updater.get_commands()`, requesting the `hook.js` file from the BeEF server.
 
 BeEF has options to use the WebSocket protocol as well, which shifts the comms from a polling mechanism to a more bi-directional streaming method of sending and receiving data between the server and browsers. 
@@ -8,20 +11,27 @@ The problem with both the hook polling and WebSocket communication is exposure o
 
 [[Images/beef-hooks.png|align=center]]
 
-## Enabling the webrtc extension
+## Configuration
 
-By default, the webrtc extension is disabled. To enable it, simply edit `<beef_root>/extensions/webrtc/config.yaml` and set enable to `true`
+to enable it, simply change enable to `true`
 
-snippet of the file:
-```yaml
+```bash
 beef:
     extension:
         webrtc:
             name: 'WebRTC'
-            enable: true #enable the extension
+            enable: false
+            authors: ["xntrik"]
+            stunservers: '["stun:stun.l.google.com:19302","stun:stun1.l.google.com:19302","turn:numb.viagenie.ca:3478"]'
+            # stunservers: '["stun:stun.l.google.com:19302"]'
+            turnservers: '{"username": "someone%40somewhere.com", "password": "somepass", "uris": ["turn:numb.viagenie.ca:3478?transport=udp","turn:numb.viagenie.ca:3478?transport=tcp"]}'
+
 ```
 
-## console usage
+## Utilization 
+WebRTC can be used to retrieve the internal (behind NAT) IP address of the victim machine, using the peer-to-peer connection framework. This command can be found under the Host module folder.
+
+### console usage
 
 When this extension is written, the console module is still usable and supported. Unfortunately, it is no longer usable.
 
@@ -157,4 +167,6 @@ For further information about the extension, read example RestAPI usage in
 
 `<beef_root>/extensions/webrtc/rest/webrtc.rb`
 
-[[Previous|Module-creation]] | [[Next|Development-Organization]]
+
+***
+[[Module Creation|Module-creation]] | [[Development Organization|Development-Organization]]

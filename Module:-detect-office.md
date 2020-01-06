@@ -1,4 +1,4 @@
-##Summary
+## Summary
 
 * **Objective**: Detect MS Office version from ActiveX trick
 * **Date**: June 2013
@@ -6,7 +6,7 @@
 * **Browsers**: IE
 * Code
 
-##Internal Working
+## Internal Working
 
 It basically make some tests on the response of activeX objects related to the different MS Office version :
 
@@ -50,6 +50,6 @@ It basically make some tests on the response of activeX objects related to the d
 
 [[Images/module-detect-office.png|align=center]]
 
-##Feedback
+## Feedback
 
 * **IE9**: Works perefectly on I8 with Office 2007 and 2010

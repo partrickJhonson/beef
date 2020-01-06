@@ -1,4 +1,4 @@
-## How to help to improve this documentation ?
+## How can I help improve this wiki?
 
 This documentation have been firstly reorganized and completed by [Nibbler](https://github.com/Nbblrr) based on the documentation and blog articles made by the whole community. This documentation is not perfect and it would be great for us to have any feedback on it or proposition of improvement.
 

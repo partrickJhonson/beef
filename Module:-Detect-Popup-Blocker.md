@@ -27,4 +27,3 @@ Uses the **beef.browser.popup.blocker_enbabled** function ([here](https://github
 * **IE6** seems to block popup
 * **Firefox 15** seems to allow popup (without extension)
 
-## References

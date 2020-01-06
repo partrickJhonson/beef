@@ -5,7 +5,7 @@
 * **Browsers**: All
 * [Code](https://github.com/beefproject/beef/tree/master/modules/browser/unhook)
 
-## Internal working
+## Internal Working
 
 This modules does two actions:
 * Look for script names hook.js and remove it
@@ -13,4 +13,4 @@ This modules does two actions:
 
 **Warning**: This module will not work if the BeEF hook script has another name (changed in the BeEF configuration).
 
-##Feedback
+## Feedback

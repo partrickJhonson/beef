@@ -1,4 +1,3 @@
-_This page discusses command module configuration files_
 
 ### Introduction ###
 
@@ -9,9 +8,11 @@ This file is used by the framework to set the category, name, description and va
 
 ### Details ###
 
-The config file is in YAML format. It must exist in the same directory as the command module and must be named "config.yaml"
+The config file is in YAML format. It must exist in the same directory as the command module and must be named `config.yaml`.
 
-Note that white-space is not allowed within a node name and tab characters cannot be used for indentation. A space is mandatory when separating strings within an array, for example: {{{authors: ["pdp", "wade", "bm", "xntrik"]}}} 
+Note that white-space is not allowed within a node name and tab characters cannot be used for indentation. A space is mandatory when separating strings within an array, for example:
+
+`authors: ["pdp", "wade", "bm", "xntrik"]`
 
 
 ### Example ###
@@ -97,3 +98,5 @@ The final rating is converted into an icon in BeEF:
 * Orange (VERIFIED_USER_NOTIFY) for user will be notified
 * Red (VERIFIED_NOT_WORKING) for doesn't work
 * Grey (VERIFIED_UNKNOWN) for unknown
+***
+[[Database Schema|Database Schema]] | [[Command Module API|Command Module API]]

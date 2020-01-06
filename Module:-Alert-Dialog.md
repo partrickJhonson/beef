@@ -1,11 +1,11 @@
-##Summary
+## Summary
 * **Objective**: Sends an alert dialog to the hooked browser.
 * **Date**: ???
 * **Authors**: wade, bm
 * **Browsers**: All
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/browser/hooked_domain/alert_dialog]]
 
-##Internal Working
+## Internal Working
 
 Really basic, here is the whole code :
 ```javascript
@@ -22,7 +22,7 @@ beef.net.send("<%= @command_url %>", <%= @command_id %>, "text=<%== format_multi
 
 [[Images/module-alert-dialog2.png|align=center]]
 
-##Feedback
+## Feedback
 
 * So basic, that it should work on any browser any version.
 

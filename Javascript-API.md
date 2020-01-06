@@ -1,3 +1,5 @@
+JSDoc was used for documenting this API, you can run this locally for and find the output HTML in the beef/doc/rdoc folder.
+
 * beef.are
 * beef.browser
 * beef.browser.cookie
@@ -484,3 +486,5 @@ TODO
 * send: function (data)
 * alive
 
+***
+[[Core BeEF Organization|Core BeEF Organization]] | [[Advanced Module Creation|Advanced Module Creation]]

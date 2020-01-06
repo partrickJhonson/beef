@@ -1,4 +1,4 @@
-The console extension is currently **disabled** and **unsupported**.
+_**The console extension is currently **disabled** and **unsupported**, this page is kept for historical purposes only in the case that this is enabled again.**_
 
 ## Introduction
 
@@ -12,7 +12,7 @@ The BeEF console is an extension which should be enabled in the main _config.yml
 
 The console is automatically launched with the beef script.
 
-###Help
+### Help
 
 ```
 Core Commands
@@ -123,3 +123,5 @@ Results retrieved: 2012-10-15 13:21:29 +0200
 Response:
 google_desktop=Not Installed
 ```
+***
+[[Notifications|Notifications]] | [[Module creation|Module creation]]

@@ -2,4 +2,4 @@ _TODO_
 
 ***
 
-[[Previous|Development-Organization]] | [[Next|Javascript-API]]
+[[Development Organization|Development-Organization]] | [[Javascript API|Javascript-API]]

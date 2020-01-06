@@ -1,4 +1,4 @@
-The Notifications extension offers methods for event notification over various channels, such as Twitter, email, Pushover and Slack. 
+The notifications extension offers methods for event notification over various channels, such as Twitter, email, Pushover and Slack. 
 
 ```yaml
 beef:
@@ -32,3 +32,5 @@ beef:
               channel: "#beef"     # Slack channel
               username: "notifier" # Username can be anything
 ```
+***
+[[Autorun Rule Engine|Autorun Rule Engine]] | [[BeEF Console|BeEF Console]]

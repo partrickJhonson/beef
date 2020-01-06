@@ -1,51 +1,61 @@
-_So now, you have BeEF up and running, and you have hooked your first browser. You might be wondering what the next step is._
+## Introduction
 
-_Your first step will often be to perform reconnaissance on the remote host. Which browser and plugins do they have running? Which website have you hooked?_
+So now, you have BeEF up and running, and you have hooked your first browser. You might be wondering what the next step is.
 
-_This page will provide some information on how you may begin to go about this process._
+Your first step will often be to perform reconnaissance on the remote host. Which browser and plugins do they have running? Which website have you hooked?
+
+This page will provide some information on how you may begin to go about this process.
+
+#### Table of Contents
+
+* [Browser Fingerprinting](#browser-fingerprinting)
+* [Information Gathering on the System](#information-gathering-on-the-system)
+* [User Behaviour Fingerprinting](#user-behaviour-fingerprinting)
 
 ## Browser Fingerprinting
 
-When a browser is hooked, BeEF will automatically gather several pieces of information on the hooked browser:
+When a browser is hooked, BeEF will automatically gather several pieces of information, including:
 
 * Browser Name and Version
 * Browser User Agent
-* Plugins (including Java, ActiveX, VBS, Flash...)
-* Windows Size
+* Plugins (including Java, ActiveX, VBS, Flash etc)
+* If Adobe Flash Player is installed
 
-_Default information on the hooked browser gathered by BeEF:_
-
+##### Default Information Gathered from a Hooked Browser:
 [[Images/information-gathering1.png|align=center|width=500px]]
 
-You can then use different plugins to gather more detailed information on the browsers:
-* The module [[Browser Fingerprinting|Module:-browser-fingerprint]] uses a number of custom URLs to identify the hooked browser. It can also be useful if the user changes their user agent.
-* You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect Popup Blocker|Module:-Detect-Popup-Blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]], [[Detect Unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]]...
+You can then use different plugins to gather more specific information on the browsers, for example:
+* The [[Browser Fingerprinting|Module:-browser-fingerprint]] module uses a number of custom URLs to identify the hooked browser. This can be useful if you are concerned that the user has changed their user agent.
+* You can complete the list of plugins with the modules [[Detect Firebug|Module:-Detect-Firebug]], [[Detect Popup Blocker|Module:-Detect-Popup-Blocker]], [[Detect Google Desktop|Module:-Detect-Google-Desktop]] or [[Detect Unsafe ActiveX|Module:-Detect-Unsafe-ActiveX]].
 
-_Result of the Browser Fingerprinting Module:_
+##### Output from the [[Browser Fingerprinting|Module:-browser-fingerprint]] Module:
 
 [[Images/information-gathering2.png|align=center|width=400px]]
 
 ## Information Gathering on the System
 
-By using several modules, you can also gather information on the system of the hooked browser :
-* Internet Explorer has permissive restrictions allowing to detect softwares installed (module [[Detect Softwares|Module:-Detect-Software]]) and even [[registry keys|Module:-Get-Registry-Keys]] (caution, in this case the user will be prompted with an authorization message).
-* If the browsers authorize Java, the module [[Get Internal IP|Module:-Get-Internal-IP]] allows to detect the IP address of the system (funnier tricks with the network will be described [[later|Network-discovery]])
-* The module [[Get System Info|Module:-Get-System-Info]] uses also a Java Applet to gather detailed information on the system : operating system details, Java JVM details, IP addresses, amount of memory...
-* It is also possible to retrieve the location of the user whether by using the [[geolocation API|Module:-Get-Geolocation]] or by using [[a trick requesting Google maps|Module:-Get-Physical-Location]].
-* The default javscript API allows of course, to get the data stored [[in the clipboard|Module:-Get-Clipboard]].
+BeEF enables you to gather information on the system of the hooked browser:
+* Internet Explorer has permissions that allow system software detection (see [[Detect Softwares|Module:-Detect-Software]]) and even [[registry keys|Module:-Get-Registry-Keys]] (please note that attempting to use the registry keys module will prompt the browser's user for authorization).
+* If the browser authorizes Java, the [[Get Internal IP|Module:-Get-Internal-IP]] module allows BeEF to detect the IP address of the system (don't worry, more fun network tricks  will be described [[later|Network-discovery]]).
+* The [[Get System Info|Module:-Get-System-Info]] module can gather additional information on the system from a Java Applet including: Operating System details, Java JVM info, IP addresses, Processor/Memory specs, and more.
+* It is also possible to retrieve the location of the user by using the [[Geolocation API|Module:-Get-Geolocation]] or by using [[a trick requesting Google maps|Module:-Get-Physical-Location]].
+* The default Javascript API allows access to data stored [[in the clipboard|Module:-Get-Clipboard]].
 
-_Result of Get System Info Module:_
+##### Output from [[Get System Info|Module:-Get-System-Info]] Module:
 
 [[Images/module-get-systeminfo.png|align=center|width=500px]]
 
 
-## User's behaviour fingerprinting
+## User Behaviour Fingerprinting
 
-The hooked browser also allows to discover several information on the behaviour of the user :
-* By using javascript tricks, it is possible to detect if the browser has already visited [[a given URL|Module:-Detect-Visited-URL]] or [[a given domain|Module:-Get-Visited-Domains]].
-* Two modules can be used to know if the user is logged [[on social networks|Module:-Detect-Social-Networks]], and if the user [[uses TOR|Module:-Detect-TOR]].
+A hooked browser allows BeEF to discover information on the behaviour of the user:
+* Utilising some Javascript tricks, it is possible to detect if the browser has already visited [[a given URL|Module:-Detect-Visited-URL]] or [[a given domain|Module:-Get-Visited-Domains]].
+* The [[Detect Social Networks|Module:-Detect-Social-Networks]] module can identify if the user of the hooked browser has a current session on Facebook, Twitter, or Gmail.
+* The [[Detect TOR|Module:-Detect-TOR]] module can identify if the user of the hooked browser is currently using TOR.
+
+##### Output from [[Detect Social Networks|Module:-Detect-Social-Networks]] Module:
 
 [[Images/module-detect-social-network.png|align=center|width=500px]]
 
 ***
-[[Previous|Interface]] | [[Next|Social-Engineering]]
+[[Interface|Interface]] | [[Social Engineering|Social-Engineering]]

@@ -1,4 +1,4 @@
-##Summary
+## Summary
 
 * **Description**: 
    * Prompts the user to install an update to Adobe Flash Player.The file to be delivered could be a Chrome or Firefox extension. 
@@ -16,7 +16,7 @@
   * **Payload** : Choose the payload (Chrome or Firefox)
 * [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/fake_flash_update)
 
-##Internal Working
+## Internal Working
 
 This module basically add a fake message in the center of the screen and redirect to the browser extension when the user clicks on it :
 

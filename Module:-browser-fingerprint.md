@@ -1,11 +1,11 @@
-##Summary
+## Summary
 * **Objective**: Fingerprint browser version by checking presence of browser images
 * **Date**: Septembre 2011
 * **Authors**: bcoles
 * **Browsers**: IE, Safari, Firefox
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/browser/browser_fingerprinting]]
 
-##Internal Working
+## Internal Working
 
 The module include a database of pictures accessible internally by the browser :
 
@@ -31,9 +31,8 @@ The module load each picture and check whether the load succeeded or failed.
 
 [[Images/information-gathering2.png|align=center]]
 
-##Feedback
+## Feedback
 
 * **Firefox 15**: _1+,4+,8+_ 
 * **IE6**: _IE 5-6_ 
 
-##References

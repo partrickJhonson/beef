@@ -1,50 +1,59 @@
 ## Introduction
 Testing is important in every serious software development process. Although in BeEF we don't use TDD (Test-driven development), we do have a testing suite. 
+Before running the tests locally on your machine, you must install necessary gems:
 
-BeEF tests are all contained inside `<beef_root>/test` directory.
+```
+export BEEF_TEST=true
+bundle install --with test
+```
+
+BeEF tests are all contained inside `<beef_root>/spec` directory.
 A Rakefile, `<beef_root>/Rakefile`, contains testing tasks, organized by categories.
 
 To run all tests, run (from `<beef_root>`):
 
-`bundle exec rake all`
+`bundle exec rake --all`
 
-Otherwise, to run only some testing categories, for instance 'integration', run:
+Otherwise, to run only some testing categories, for instance 'spec', run:
 
-`bundle exec rake integration`
+`bundle exec rake spec`
 
-Before running the tests locally on your machine, you must install necessary gems:
+Before running the tests locally on your machine, you may want to change the values of ATTACK_DOMAIN and VICTIM_DOMAIN in `<beef_root>/test/common/test_constants.rb`, to something like:
 
-```
-export BEEF_TEST=1
-bundle install
-```
-
-Before running the tests locally on your machine, you may want to change in `<beef_root>/test/common/test_constants.rb` the values of ATTACK_DOMAIN and VICTIM_DOMAIN, to something like:
 ```ruby
 ATTACK_DOMAIN = "127.0.0.1"
 VICTIM_DOMAIN = "localhost"
 ```
-These values must differ however it is acceptable if both resolve to the same host.
+These values must differ, however it is acceptable if both resolve to the same host.
 
-On our continuous integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure to don't commit/push these changes to the BeEF repository.
+On our continuous integration server, responsible to run all the tests suite on every GIT change, these constants already contain the proper default values. When you change these values for your local tests, be sure not to commit/push these changes to the BeEF repository.
 
-## Testing categories
+## Testing Categories
 The BeEF testing framework is a mix of 2 types of tests:
- - unit tests
+ - rspec tests
  - functional tests
 
+To run these tests just on their own run:
+`bundle exec rake`
+and the specific category, for example:
+`bundle exec rake rdoc`
+To run rdoc.
+
 We currently have the following testing categories:
- - **integration**: mainly functional tests. We use Capybara and WebDriver in order to instrument the browser to do stuff for us. When running these tests, you will see a browser being open (currently Firefox, we're working on extending the testing suite including all the other browser). The integration testing suite is responsible to run functional tests on the Web GUI and test module execution.
+- **ssl:**: creates a new SSL certificate and Re-generate the SSL certificate
+- **rdoc:**: creates the rdoc information
+- **beef_start:**: sets up and starts BeEF
+- **beef_stop:**: cleanup and stops beef
+- **msf_start:**: starts the msf_console
+- **msf_stop:**:kills the MSF_process
+- **msf_update:**: git pulls the msf repo
+- **dmg:**: creates the Mac DMG file
+- **cde:**: this will download and make the CDE Executable plus generate a cde package in cde-package
+- **cde_beef_start:**: starts the CDE/beef enviorment set-up
+- **db:**: requires the :environment to require beef
 
- - **unit**: as the word says, mainly unit tests. Things like the directory structure, default config options and basic components like the network_handler are tested here.
- 
- - **thirdparty/msf**: contains Metasploit related test files. With these tests Metasploit is started, connectivity and authentication to Metasploit's msgrpc is tested.
 
- - **thirdparty/bundle_audit**: updates Ruby Gems vulnerability database and checks gems for vulnerabilities using bundle-audit.
-
-You will also notice another directory, **common**. As the name suggests, it contains things shared across testing suites, for instance constants and methods.
-
-## Unit tests
+## Unit Tests
 When writing unit tests, you will mainly use two functions:
 
 assert(Boolean) -> test pass if the Boolean condition is true.
@@ -70,7 +79,7 @@ assert_nothing_raised do
     something
 end
 ```
-## Functional tests
+## Functional Tests
 
 For functional tests, other than using some aspects of the unit tests, we use Capybara and Selenium-WebDriver. The result is the possibility to programmatically control a browser (at the moment Firefox, we're working to improve our testing suite with Webkit and other browsers) from a user's point-of-view. For instance, we're able to instrument the browser to login into the BeEF Web GUI, as you can see here below:
 ```ruby
@@ -87,9 +96,9 @@ For functional tests, other than using some aspects of the unit tests, we use Ca
     session
   end
 ```
-### Testing command modules
+### Testing Command Modules
 In order to inject custom JavaScript into the hooked browser during testing, you have 2 choices:
- - **execute_script** : available from objects of type Capybara::Session. It comes handy when the JavaScript you want to inject is actually returning something. Example:
+ - **execute_script** : available from objects of type Capybara::Session. It comes in handy when the JavaScript you want to inject is actually returning something. Example:
 ```javascript
 def test_jools_simple
         victim = BeefTest.new_victim
@@ -100,7 +109,7 @@ def test_jools_simple
        assert_equal result,'ciccio_pasticcio'
     end
 ```
- - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can use it also for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module),see the following example. Also, have a look at `<beef_root>/test/integration/tc_debug_modules.rb` in order to see how some variables like `hb_session`, `token` and others are retrieved from previous tests.
+ - **RESTful API** : as you can launch command modules, and retrieve results through the RESTful API, you can also use it for testing purposes. This is particularly effective when the JavaScript to be injected in the hooked browser is complex or it's not explicitly returning a value (i.e.: returning data using only beef.net.send()). For example, to test the execution of a module (in this case a Debug module), see the following example. Also, have a look at `<beef_root>/test/integration/tc_debug_modules.rb` in order to see how some variables like `hb_session`, `token` and others are retrieved from previous tests.
 
 ```ruby
 ## Test debug module "Test_return_long_string" using the RESTful API
@@ -140,7 +149,7 @@ def test_jools_simple
 ### Testing Metasploit
 
 To test Metasploit integration, run:
-`bundle exec rake msf`
+`bundle exec rake msf_start`
 
 This will clone the latest version of Metasploit to /tmp/msf-test/
 
@@ -151,3 +160,6 @@ To check Ruby Gems for known vulnerabilities, run:
 
 ## Conclusion
 We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with Virtual Machines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
+
+***
+[[Creating An Extension|Creating An Extension]] | [[Database Schema|Database Schema]]

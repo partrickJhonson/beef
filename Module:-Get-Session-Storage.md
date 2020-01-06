@@ -1,11 +1,11 @@
-##Summary
+## Summary
 * **Objective**: Extracts data from the HTML5 sessionStorage object.
 * **Date**: ???
 * **Authors**: bcoles
 * **Browsers**: IE 8+, Firefox 4? Opera 11+, Safari 4+
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/browser/hooked_domain/get_session_storage]]
 
-##Internal Working
+## Internal Working
 
 This module just gather the session Storage for this page using the window['sessionStorage'] function :
 
@@ -17,4 +17,4 @@ beef.execute(function() {
 });
 ```
 
-##Feedback
+## Feedback

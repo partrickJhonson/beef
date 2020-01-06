@@ -1,42 +1,60 @@
-When you have hooked a browser, you can modify the whole page and cause different actions (redirection...), so there are a lot of possibilities for social engineering attacks. 
+## Introduction
 
-# Ask for Credentials
+Once BeEF has hooked a browser, it can modify and/or send content directly to the viewport or other open tabs. This functionality allows you to craft and perform sophisticated social engineering attacks. 
 
-Simplest attacks are often the most efficient ones, you can simply ask users for their credentials using different modules:
+#### Table of Contents
 
-* [[The Pretty Theft|Module:-Pretty-Theft]] module prints a simple message to the user requiring login and password and explaining that the session has timed out.
-* [[The Simple Hijacker|Module:-Simple-Hijacker]] module proposes several social engineering templates and prompts the user when they click on a link on the page.
+* [Ask for Credentials](#ask-for-credentials)
+* [Redirect to Another Page](#redirect-to-another-page)
+* [Chrome/Firefox Extensions](#chromefirefox-extensions)
+* [Clickjacking](#clickjacking)
+
+## Ask for Credentials
+
+Simple attacks are often the most efficient ones. BeEF comes with several command modules that present the target with familiar interfaces requesting credentials:
+
+* [[The Pretty Theft|Module:-Pretty-Theft]] module prints a simple message to the user requiring login and password, explaining that the session has timed out. It has a number of presets that imitate popular social network/marketplace themes.
+* [[The Simple Hijacker|Module:-Simple-Hijacker]] module allows you to load a number of common pop-ups when a user clicks any link on their current page. Pop-up templates include certificate warnings, standard alert style prompts, and credit card payment forms.
 * [[Clippy|Module:-Clippy]] is a module that create a small browser assistant which propose browser updates.
 
+##### A Pretty Theft Pop-up Template:
+<p align=center>
 [[Images/module-prettytheft1.png|align=center]]
+</p>
 
-# Redirect to Another Page
+## Redirect to Another Page
 
-You may also use BeEF modules to redirect to external pages :
+A number BeEF modules exist that allow you to redirect to external pages:
 
-* By using the basic [[Redirect Browser|Module:-Redirect-Browser]] module, you can redirect the hooked page to any other page. Note that it may be weird for the user to be redirected and that you will lose the zombie. To avoid losing the zombie from BeEF, you can also use the [[Redirect Browser module with iframe|Module:-Redirect-Browser-(iFrame)]] which will open a 100% iFrame to the given url.
-* You can also use the great [[TabNabbing module|Module:-TabNabbing]] : this module will detect when the user loses focus on the current tab and modify the whole page to load the given URL in an iFrame at this time. When the user comes back to the tab, they will directly see the new web page.
+* The [[Redirect Browser|Module:-Redirect-Browser]] module can redirect the hooked page to any other page. 
+  * Please note that a spontaneous redirect without any action from the user may cause them to immediately close the zombie. 
+  * To avoid losing the zombie from BeEF, the [[Redirect Browser (iFrame)|Module:-Redirect-Browser-(iFrame)]] sub-module will create a full viewport iFrame which redirects to the specified URL.
+* The [[TabNabbing|Module:-TabNabbing]] module will detect when the user loses focus on the current tab and modify it in the background. When the user comes back to the tab, they will be viewing a full viewport iFrame containing the contents of the specified URL.
 
-# Chrome/Firefox Extensions
+## Chrome/Firefox Extensions
 
-By requiring the user to install [[a fake flash update|Module:-Fake-Flash-Update]], it is possible to install a malicious Firefox/Chrome extension. Once installed this extension can communicate directly with BeEF and have access to much more information than code in the hooked browser.
+Using BeEF it is possible to get a user to install a malicious browser extension:
 
+* The [[Fake Flash Update|Module:-Fake-Flash-Update]] module prompts the hooked browser's user to install a flash update. Instead of installing a Flash update, a browser extension will be installed that can communicate with BeEF and provide access to far more information than is available by default.
+  * If the extension were installed in Chrome, for example, BeEF could run the following modules:
+    * [[Get All Cookies|Module:-Get-All-Cookies]]
+    * [[List Chrome Extensions|Module:-Get-Chrome-Extensions]]
+    * [[Grab Google Contacts from Logged in User|Module:-Grab-Google-Contacts]]
+    * [[Inject BeEF in All Tabs|Module:-Inject-BeEF]] 
+    * [[Execute Arbitrary Javascript Code|Module:-Execute-On-Tab]]
+    * [[Taking Screenshots|Module:-Screenshot]]
+    * [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
+
+##### Fake Flash Update Pop-up:
+<p align=center>
 [[Images/module-fake-flash-update2.png|align=center]]
+</p>
 
-By using Chrome extensions module, it is possible to use the malicious extension to :
-* [[Get all cookies|Module:-Get-All-Cookies]]
-* [[List chrome extensions|Module:-Get-Chrome-Extensions]]
-* [[Grab Google contacts|Module:-Grab-Google-Contacts]] of the logged in Google account
-* [[Inject BeEF|Module:-Inject-BeEF]] in all tabs
-* [[Execute javascript code in a new tab|Module:-Execute-On-Tab]]
-* [[Take screenshot|Module:-Screenshot]]
-* [[Send Gvoice SMS|Module:-Send-Gvoice-SMS]]
+## Clickjacking
 
-# Other
+BeEF contains a module that enables clickjacking attacks in a hooked browser:
 
-* There is also a nice [[ClickJacking|Module:-Clickjacking]] module which allow a custom clickjacking attack by giving the URL and  offset on the target page :
-
-[[Images/module-clickjacking1.png|align=center]]
+* The [[Clickjacking|Module:-Clickjacking]] module will create an iFrame which follows the users cursor around the page, displaying the content at the specified URL.
 
 ***
-[[Previous|Information-Gathering]] | [[Next|Network-discovery]]
+[[Information Gathering|Information-Gathering]] | [[Network Discovery|Network-discovery]]
