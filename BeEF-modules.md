@@ -173,7 +173,7 @@
 1. [[Clippy|Module:-Clippy]]
 1. [[Fake Evernote Web Clipper Login|Module:-Fake Evernote Web Clipper Login]]
 1. [[Fake Flash Update|Module:-Fake-Flash-Update]]
-1. [[Fake LastPass|Modile:-Fake LastPass]]
+1. [[Fake LastPass|Module:-Fake LastPass]]
 1. [[Google Phishing|Module:-Google-Phishing]]
 1. [[Lcamtuf Download|Module:-Lcamtuf-Download]]
 1. [[Fake Notification Bar|Module:-Fake Notification Bar]]
