@@ -104,7 +104,7 @@
 1. [[Detect Google Desktop|Module:-Detect-Google-Desktop]]
 1. [[Detect Softwares|Module:-Detect-Software]]
 1. [[Get Clipboard|Module:-Get-Clipboard]]
-1. [[Get Internal IP|Module:-Get-Internal-IP]]
+1. [[Get Internal IP|Module:-Get-Internal-IP-(Java)]]
 1. [[Get Internal IP WebRTC|Module:-Get-Internal-IP-WebRTC]]
 1. [[Get Physical Location|Module:-Get-Physical-Location]]
 1. [[Get Protocol Handlers|Module:-Get-Protocol-Handlers]]
