@@ -1,4 +1,4 @@
-##Summary
+## Summary
 
 * **Objective**: Detect Bit Defender 2012 on the system
 * **Date**: June 2013
@@ -6,7 +6,7 @@
 * **Browsers**: All
 * Code
 
-##Internal Working
+## Internal Working
 
 Bit Defender 2012 includes a javascript script in each browser to display this bar :
 [[Images/module_bitdefender2012_bar.png|align=center]]
@@ -30,5 +30,5 @@ So it is easy to look for the script in the DOM :
 
 [[Images/module-detect-bitdefender2012.png|align=center]]
 
-##Feedback
+## Feedback
 
