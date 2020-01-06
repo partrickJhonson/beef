@@ -14,6 +14,7 @@
 1. [[Tunneling|Tunneling]]
 1. [[XSS Rays|XSS-Rays]]
 1. [[Persistence|Persistence]]
+1. [[Creating a Module|Module-creation]]
 1. [[Geolocation|Geolocation]]
 
 ## III - Advanced Utilization
@@ -22,7 +23,6 @@
 1. [[Autorun Rule Engine|Autorun-Rule-Engine]]
 1. [[Notifications|Notifications]]
 1. [[Console|BeEF Console]]
-1. [[Creating a Module|Module-creation]]
 1. [[WebRTC Extension|WebRTC-Extension]]
 
 ## IV - Development
