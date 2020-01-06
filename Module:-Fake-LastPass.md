@@ -1,6 +1,6 @@
 ## Summary
 
-* **Objective**: Fake LastPass
+* **Objective**: Steal credentials via fake LastPass popup
 * **Authors**: xntrik, gcattani
 * **Browsers**: Chrome
 
