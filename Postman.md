@@ -16,10 +16,10 @@ Postman can be downloaded directly from their website: https://www.getpostman.co
 
 Once you have Postman and [BeEF](https://github.com/beefproject/beef/wiki/Installation) installed and running, simply select _File > Import_ and import the BeEF RESTful API json file. Once you have this opened, you should see “RESTful API” in your collections on the left. Click on this and you’ll see a list of all of the API requests available to you.
 
-In order to execute any of these you need to import and set up your environment variables. Import the environment variables in _File > Import_. On the top right corner, you should now see “BeEF” with a drop down arrow.  Select the eye symbol next to it and you will see a variety of variables to set up. The variables you should see are:
+In order to execute any of these you need to import and set up your environment variables. Import the environment variables in _File > Import_ and find the "BeEF postman environment .JSOn file". Once imported, in the top right corner, you should now see “BeEF” with a drop down arrow.  Select the eye symbol next to it and you will see a variety of variables to set up. The variables you should see are:
 
 ### Username and Password
-
+In the current value section of the Username and Password fields.
 Enter your username and password that you set up in the config.yaml file of the BeEF directory.
 
 ### Token
