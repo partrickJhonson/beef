@@ -4,7 +4,7 @@
 * **Authors**: xntrik, bcoles
 * **Browsers**: All (IE preferred)
 
-* [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/fake_notfication_ff)
+* [Code](https://github.com/beefproject/beef/tree/master/modules/social_engineering/fake_notfication_ie)
 
 ## Internal Working
 
