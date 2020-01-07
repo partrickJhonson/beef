@@ -1,4 +1,15 @@
-_TODO_ 
+## Summary
+
+* **Objective**: Detect extensions on Chrome and Firefox
+* **Authors**: koto, bcoles, nbblrr
+* **Browsers**: Chrome < 18, Firefox < 50
+
+* [Code](https://github.com/beefproject/beef/tree/master/modules/browser/detect_extensions)
+
+
+## Internal Working
+
+Loops over hardcoded extension IDs in Chrome and Firefox to detect which ones are installed.
 
 ## Feedback
 
