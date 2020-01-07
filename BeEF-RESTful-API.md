@@ -23,7 +23,7 @@ From version 0.4.3.3 onwards, BeEF exposes a RESTful API. This allows users to s
 
 ## Postman
 You can view the api through the postman file.
-Read [Postman](#https://github.com/beefproject/beef/wiki/Postman)
+Read [Postman](https://github.com/beefproject/beef/wiki/Postman)
 ## Authentication
 
 A new pseudo-random token is generated each time BeEF starts, using `BeEF::Core::Crypto::api_token`. The token is added to the `BeEF::Configuration` object.
