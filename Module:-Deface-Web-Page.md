@@ -2,7 +2,12 @@
 * **Objective**: Overwrite the page, title and shortcut icon on the hooked page.
 * **Date**: ???
 * **Authors**: antisnatchor
+* **Parameters**: 
+	* **New Title**
+	* **New Favicon**
+	* **Deface Content**: the HTML content to replace original page with
 * **Browsers**: All (User will be notified)
+
 * [[Code|https://github.com/beefproject/beef/tree/master/modules/browser/hooked_domain/deface_web_page]]
 
 ## Internal Working

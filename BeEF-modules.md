@@ -30,7 +30,7 @@
 1. [[Redirect Browser|Module:-Redirect-Browser]]
 1. [[Redirect Browser (Rickroll)|Module:-Redirect-Browser-(Rickroll)]]
 1. [[Redirect Browser (iFrame)|Module:-Redirect-Browser-(iFrame)]]
-1. [[Replace Content (Deface)|Module:-Replace-Content-(Deface)]]
+1. [[Replace Component (Deface)|Module:-Replace-Content-(Deface)]]
 1. [[Replace Videos|Module:-Replace-Videos]]
 1. [[iOS Address Bar Spoofing|Module:-iOS-Address-Bar-Spoofing]]
 
