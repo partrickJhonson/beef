@@ -8,7 +8,10 @@
 
 ## Internal Working
 
-Uses an unsigned Java applet (which means it won't run for updated Java and Browser versions) to ping hosts in the network.
+Uses an unsigned Java applet to ping hosts in the network.
+
+>- the user will be prompted for permissions to run an unsigned java applet
+>- unsigned appletes don't run at all for later Java and Browser versions
 
 snippet from command.js
 ```js
