@@ -4,7 +4,7 @@
 * **Authors**: bcoles
 * **Browsers**: All
 
-* [Code](https://github.com/beefproject/beef/tree/master/modules/hooked_domain/link_rewrite_sslstrip)
+* [Code](https://github.com/beefproject/beef/tree/master/modules/browser/hooked_domain/link_rewrite_sslstrip)
 
 ## Internal Working
 

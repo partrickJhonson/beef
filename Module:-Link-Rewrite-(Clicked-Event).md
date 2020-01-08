@@ -4,7 +4,7 @@
 * **Authors**: xntrik, @bilawalhameed, passbe
 * **Browsers**: All except Chrome
 
-* [Code](https://github.com/beefproject/beef/tree/master/modules/hooked_domain/link_rewrite_click_events)
+* [Code](https://github.com/beefproject/beef/tree/master/modules/browser/hooked_domain/link_rewrite_click_events)
 
 ## Internal Working
 
