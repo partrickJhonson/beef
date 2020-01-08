@@ -1,3 +1,15 @@
+## Module Format
+The Module Documentation is set out in the following ways:
+
+## Summary
+Describe the following things:
+     * Objective:   -What is the intent of the module, what is the module doing and what is the intended outcome.
+     * Date:        -When was this written?
+     * Author/s:
+     * Browsers: IE, Safari, Firefox
+     * Code
+
+
 ## Browser
 1. [[Browser Fingerprinting|Module:-browser-fingerprint]]
 1. [[Detect Firebug|Module:-Detect-Firebug]]
