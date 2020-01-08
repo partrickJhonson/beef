@@ -1,6 +1,5 @@
 ## How can I help improve this wiki?
-
-This documentation have been firstly reorganized and completed by [Nibbler](https://github.com/Nbblrr) based on the documentation and blog articles made by the whole community. This documentation is not perfect and it would be great for us to have any feedback on it or proposition of improvement.
+You are Welcome to make an issue with the Wiki information and say that you want it added to the wiki and then when it is reviewed, a maintainer will add it to Wiki once its verified.
 
 If you have any idea, please send us an email with your criticisms, ideas, feedbacks or proposition. If you want to complete a page still empty, please send us the draft with potential screenshot, we will manage the format and include in the wiki.
 
