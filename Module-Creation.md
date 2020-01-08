@@ -229,6 +229,7 @@ end
 ## What Now?
 
 If you think that your module can be useful to other people, join the BeEF community on GitHub, fork the beef repository, upload your module and create a new issue for proposing it.
+Make sure to have written Documentation describing the module and write test cases ensuring that it tests the functionality.
 
 We like people with new ideas! :)
 
