@@ -1,14 +1,27 @@
-## Module Format
-The Module Documentation is set out in the following ways:
+# Module Format
+## The Module Documentation is set out in the following ways:
 
-## Summary
+### Summary
 Describe the following things:
      * Objective:   -What is the intent of the module, what is the module doing and what is the intended outcome.
      * Date:        -When was this written?
-     * Author/s:
-     * Browsers: IE, Safari, Firefox
-     * Code
+     * Author/s:    - Who contributed to the module? 
+     * Browsers:    - Which browsers does this work on and which versions
+     * Code         - Link to the applicable code
 
+### Internal Working
+
+Give a brief overview of using the Module, include information such as use case, out-put, run example.
+This section should basically run through an example of the module in use.
+
+### Screenshots
+If there are any Screenshots that are used in describing the module in the above two images, or any other images that might help to understand the module, put them here.
+
+### Feedback
+
+Applicable feedback for the module goes here. 
+
+# List of Modules:
 
 ## Browser
 1. [[Browser Fingerprinting|Module:-browser-fingerprint]]
