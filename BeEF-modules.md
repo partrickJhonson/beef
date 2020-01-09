@@ -156,7 +156,7 @@ Applicable feedback for the module goes here.
 
 1. [[Create Invisible Iframe|Module:-Create-Invisible-Iframe]]
 1. [[Google Search|Module:-Google-Search]]
-1. [[iFrame Event Logger|Module:-iFrame-Event-Logger]]
+1. [[iFrame Event Key Logger|Module:-iFrame-Event-Key-Logger]]
 1. [[iFrame Sniffer|Module:-iFrame-Sniffer]]
 1. [[Local File Theft|Module:-Local-File-Theft]]
 1. [[Raw Javascript|Module:-Raw-Javascript]]
