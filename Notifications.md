@@ -1,4 +1,8 @@
+## Introduction
 The notifications extension offers methods for event notification over various channels, such as Twitter, email, Pushover and Slack. 
+
+## Setup
+To enable notifications simply go to the config.yaml file and change "enable" to true then supply the information below for the channel you would like notifications from.
 
 ```yaml
 beef:
@@ -32,5 +36,7 @@ beef:
               channel: "#beef"     # Slack channel
               username: "notifier" # Username can be anything
 ```
+## 
+
 ***
 [[Autorun Rule Engine|Autorun Rule Engine]] | [[BeEF Console|BeEF Console]]
