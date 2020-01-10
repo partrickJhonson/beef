@@ -487,4 +487,4 @@ TODO
 * alive
 
 ***
-[[Core BeEF Organization|Core BeEF Organization]] | [[Advanced Module Creation|Advanced Module Creation]]
+[[Core BeEF Organization|Core BeEF Organization]] | [[Step By Step Module Creation|Step By Step Module Creation]]
