@@ -30,7 +30,7 @@
 1. [[Organization|Development-Organization]]
 1. [[Core BeEF Organization|Core-BeEF-Organization]]
 1. [[BeEF Javascript API|Javascript-API]]
-1. [[Step By Step Module Creation|Step-Module-Creation]]
+1. [[Step By Step Module Creation|Module-Creation-Steps]]
 1. [[Creating a New Extension|Creating-An-Extension]]
 1. [[BeEF Testing|BeEF-Testing]]
 1. [[Database Schema|Database-Schema]]
