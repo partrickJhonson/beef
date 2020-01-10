@@ -238,11 +238,44 @@ Thus the parameter name must match that in `command.js`.
 
 ## Testing the module
 
-Now all that is done, when you fire up beef you should see one more module loaded than before. Open up the control panel and get a browser hooked.
+Now all that is done, when you fire up beef you should see one more module loaded than before. Open up the beef control panel and get a browser hooked.
 
-You can hook a browser locally by simple firing up Chrome and opening `http://localhost:3000/demos/basic.html`
+You can hook a browser locally by simple firing up Chrome and opening `http://localhost:3000/demos/basic.html`.
 
-Then search the name of your new module in the commands tab => Module Tree, and try it out!
+However, for testing this module we will use a custom web page with a login field.
+
+**login.html**
+```html
+
+<script src="http://localhost:3000/hook.js" type="text/javascript"></script>
+<form action="login.html" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+```
+
+This HTML page contains a login form, and is hooked to the beef browser. Now fill out the username and password, then execute the new module to see the results returned.
+
 
 [[Images/test-module.png|align=center]]
 
