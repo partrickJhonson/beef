@@ -142,7 +142,10 @@ beef:
 
 ## module options and results (module.rb)
 
-Now that the config file is taken care of, we start editting the `module.rb` file. This file includes three things - the options, `pre_send` function (ran before sending the payload), and post_execute (after BeEF receives and answer from the hooked brower)
+Now that the config file is taken care of, we start editting the `module.rb` file. This file determines how BeEF handles execution of the module, including three things - the options, `pre_send` function (ran before sending the payload), and `post_execute` (ran after BeEF receives and answer from the hooked brower)
+
+Open the file `modules/browser/autocomplete_theft_chrome/module.rb` in your preferred text editor.
+
 
 **Basic Architecture**
 
@@ -194,7 +197,11 @@ class Autocomplete_theft_chrome < BeEF::Core::Command
 end
 ```
 
+`content['results']` means to retrieve the data from parameter "results" in the HTTP response. So later when we send data from the browser in `command.js`, we need to use results as the parameter name.
+
 ## Javascript to execute on hooked browser: command.js
+
+Open the file `modules/browser/autocomplete_theft_chrome/command.js` in your preferred text editor.
 
 After that, we will now look at what we need to execute in the hooked browser to get what we want sent back to BeEF.
 
@@ -207,6 +214,7 @@ for (x of document.querySelectorAll("input")) {
 ```
 
 You can test this in the developer console of Chrome, on a website that you saved your login on. 
+(Open the developer console using F11 / right click -> inspect element)
 
 Now we just need to send the results back to BeEF.
 
@@ -238,7 +246,6 @@ The data sent back is prepended with `results` because on the receiving end, `mo
 
 ```rb
 content['results'] = @datastore['results']
-
 ```
 
 Thus the parameter name must match that in `command.js`.
@@ -260,11 +267,13 @@ beef.execute(function() {
 
 ```
 
-
+Make sure to save all files you have editted.
 
 ## Testing the module
 
-Now all that is done, when you fire up beef you should see one more module loaded than before. Open up the beef control panel and get a browser hooked.
+Now all that is done, fire up beef with `./beef`
+
+Open up the beef control panel and get a browser hooked.
 
 You can hook a browser locally by simple firing up Chrome and opening `http://localhost:3000/demos/basic.html`.
 
