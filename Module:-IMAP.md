@@ -39,4 +39,4 @@ https://e1tips.com/2014/03/17/allow-firefox-chrome-to-access-restricted-ports/
 
 ## Feedback
 
-Online works when the port is not blocked by the browser
+Online works when the port is not blocked by the browser.
