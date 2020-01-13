@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-Uses an invisible iframes to change config
+Uses an invisible iframes to change config.
 
 ```js
   var gateway = '<%= @base %>';
