@@ -27,7 +27,7 @@
 
 ## IV - Development
 1. [ActiveRecord](https://github.com/beefproject/beef/wiki/ActiveRecord)
-1. [[Organization|Development-Organization]]
+1. [[Development Organization|Development-Organization]]
 1. [[Architecture|Architecture]]
 1. [[BeEF Javascript API|Javascript-API]]
 1. [[Step By Step Module Creation|Module-Creation-Steps]]
