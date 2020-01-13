@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-adds a 100% size invisible iframe and an event listener that fires on keypress.
+Adds a 100% size invisible iframe and an event listener that fires on keypress.
 
 ```js
 
