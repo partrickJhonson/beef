@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-uses the `file://` scheme to launch an executable
+Uses the `file://` scheme to launch an executable.
 
 ```js
 baseTag.setAttribute('href', 'file://');
