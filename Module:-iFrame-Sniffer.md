@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-By using anchors (#) to request cross origin resources in an iframe, it can leak information based on the presence and absense of elements.
+By using anchors (#) to request cross-origin resources in an iframe, it can leak information based on the presence and absence of elements.
 
 Content can't be directly read with this technique, but data can be inferred from web applications.
 
