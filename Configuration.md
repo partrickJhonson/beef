@@ -62,7 +62,7 @@ For example:
 
 **These access restrictions can be bypassed and should not be solely relied upon.**
 
-Ideally, BeEF should operate behind a reverse proxy which strips user-supplied proxy headers such as `X-Forwarded-For`. The `permitted_ui_subnet` should be restricted to `127.0.0.1/32` and accessed via a SSH tunnel.
+Ideally, BeEF should operate behind a reverse proxy which strips user-supplied proxy headers such as `X-Forwarded-For`. The `permitted_ui_subnet` should be restricted to `127.0.0.1/32` and accessed via a SSH tunnel. The config setting `allow_reverse_proxy` which defaults to false, will need to be changed to true if using a reverse proxy. This will use the `X-Forwarded-For`IP address from the proxy header to determine if the request is permitted to access the Admin UI. Note: It is possible to spoof the IP address to the Admin UI when this setting is true. 
 
 While it is not possible to bypass `/32` access controls, it is possible to bypass more permissive access controls, such as `/24` or `/16`. In these instances the IP address access controls can be bypassed by supplying a valid IP address within the permitted range in the `X-Forwarded-For` header.
 
