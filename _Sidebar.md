@@ -26,7 +26,7 @@
 1. [[WebRTC Extension|WebRTC-Extension]]
 
 ## IV - Development
-1. [Contributing](https://github.com/beefproject/beef/.github/CONTRIBUTING.md)
+1. [Contributing](https://github.com/beefproject/beef/blob/master/.github/CONTRIBUTING.md)
 1. [ActiveRecord](https://github.com/beefproject/beef/wiki/ActiveRecord)
 1. [[Development Organization|Development-Organization]]
 1. [[Architecture|Architecture]]
