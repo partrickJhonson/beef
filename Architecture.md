@@ -105,6 +105,26 @@ Hooked browsers inside the internal network call out to the external beef server
 
 The flaw with this setup is that the organization network and the host computer which the hooked browser belongs to constantly reach out to BeEF, which increases the risk of exposing the BeEF endpoint if the network is being monitored.
 
+**Security Considerations**
+
+To prevent the exposure and compromise of the BeEF server, consider these configurations:
+
+1. Setup IP address whitelisting
+
+Edit config.yaml (in the beef root folder) to change the permitted web UI subnets. Beware if IPv6 configurations; if IPv6 routing is not going to be used to access the beef UI, it's better to limit it to ::1 (localhost).
+e.g. (this field is under `restrictions:`
+```
+permitted_ui_subnet: ["192.168.0.0/16", "::1"]
+```
+
+2. Setup a reverse proxy to a secure (HTTPS) endpoint
+
+This can be done in a variety of ways:
+
+- use public port forwarding services (like serveo.net, ngrok, portmap.io),
+- setup a Linux VPS (AWS, Vultr, Google Cloud, Azure) and use letsencrypt to have get a free certificate
+
+
 ### WebRTC mesh setup - internal browsers
 
 One setup to avoid the noise is to have one "master" hooked browser constantly talk to the BeEF server, while other hooked browsers in the same internal network will use WebRTC to setup p2p communication with the master hooked browser. This way, only one host is talking back to the BeEF server so things are less noisy.
