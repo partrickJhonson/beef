@@ -8,13 +8,16 @@
 
 ## Internal Working
 
-This module launches invisible iframes to attempt to load a resource with different protocols schemes, then detects if they load or not to determine availability of a protocol handler.
+This module launches invisible iframes in order to attempt to load a resource with different protocols schemes. It then detects if the resource loads or not to determine availability of a protocol handler.
 
-Firefox users are prompted to launch the application for which the protocol handler is responsible. (if applicable)
+Firefox users are prompted to launch the application for which the protocol handler is responsible (if applicable).
 
-Firefox users are warned when there is no application assigned to a protocol handler. (in the js console of the browser) 
+Firefox users are also warned when there is no application assigned to a protocol handler (In the js console of the browser).
 
-The possible return values are: unknown, exists, does not exist.
+The possible return values are: 
+* unknown
+* exists
+* does not exist.
 
 ```js
 

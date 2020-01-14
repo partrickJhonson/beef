@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-This module tries to take a screenshot of the current tab and returns it to the as base64 data. Only works if the `chrome.tabs.captureVisibleTab` method is available.
+This module tries to take a screenshot of the current tab and returns it as base64 data. Only works if the `chrome.tabs.captureVisibleTab` method is available.
 
 As of 2019, it does not work in the newer versions of Chrome. This method only works within the context of an extension having the `<all_urls>` permission.
 

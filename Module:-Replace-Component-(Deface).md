@@ -11,7 +11,7 @@
 
 ## Internal Working
 
-replaces a selected component of the web page to the defaced content.
+Replaces a selected component of the web page to the defaced content.
 
 ```js
 

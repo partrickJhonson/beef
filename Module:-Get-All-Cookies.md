@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-steals all (even HttpOnly) cookies, providing the hooked extension has cookies access.
+Steals all (even HttpOnly) cookies, provided that the hooked extension has cookies access.
 
 Note:
 Needs to have installed a Chrome extension with a beef hook / somehow hook a Chrome extension first for this to work.

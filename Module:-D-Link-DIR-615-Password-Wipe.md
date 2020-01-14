@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-uses iframes with a POST form to enable remote administration on port 8080 and change the admin password on a D-Link DIR-615 router
+Uses iframes with a POST form to enable remote administration on port 8080 and change the admin password on a D-Link DIR-615 router.
 
 ```js
 

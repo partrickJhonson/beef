@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-simple replaces all href elements in `<a>` tags
+Simply replaces all href elements in `<a>` tags.
 
 ```js
 

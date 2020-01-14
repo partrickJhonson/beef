@@ -8,7 +8,7 @@
 
 ## Internal Working
 
-Uses an invisible iframe with a GET request to add an admin account
+Uses an invisible iframe with a GET request to add an admin account.
 
 ```js
   var gateway  = '<%= @base %>';
