@@ -52,6 +52,19 @@ We currently have the following testing categories:
 - **cde_beef_start:**: starts the CDE/beef enviorment set-up
 - **db:**: requires the :environment to require beef
 
+## Running (temporarily) skipped tests
+
+RSpec tests that are defined with `xit` is skipped. If you would like to run those tests, change `xit` to `it` and it will run.
+
+e.g. as of Jan-17-2020, `spec/beef/extensions/requester_spec.rb` has a functional test that is skipped by default.
+```
+# change this
+xit 'requester works' do
+
+# to this
+it 'requester works' do
+```
+
 
 ## Unit Tests
 When writing unit tests, you will mainly use two functions:
@@ -153,10 +166,13 @@ To test Metasploit integration, run:
 
 This will clone the latest version of Metasploit to /tmp/msf-test/
 
+
 ### Check Ruby Gems
 
 To check Ruby Gems for known vulnerabilities, run:
 `bundle exec rake bundle_audit`
+
+
 
 ## Conclusion
 We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with Virtual Machines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
