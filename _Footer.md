@@ -9,7 +9,7 @@
 
 <h3 align='center'>Community</h3>
 <p align='center'>
-  <a href='http://blog.beefproject.com/'>Blog &nbsp;</a> | 
+  <a href='https://blog.beefproject.com/'>Blog &nbsp;</a> | 
   <a href='https://github.com/beefproject/beef'>&nbsp; Code &nbsp;</a> | 
   <a href='https://www.youtube.com/channel/UCTWxIZmvyDGRzYuVVvL54ww'>&nbsp; Youtube &nbsp;</a> | 
   <a href='https://twitter.com/beefproject?lang=en'>&nbsp; Twitter</a>
