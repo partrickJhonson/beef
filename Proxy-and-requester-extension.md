@@ -12,5 +12,6 @@ The files are located in beef root `extensions/proxy/config.yaml` and `extension
 ### Use a hooked browser as proxy
 <img src="Images/proxy.png">
 
-### Use a hooked browser as proxy
-<img src="Images/proxy.png">
+### Forge a request through a hooked browser
+<img src="Images/requester.png">
+
