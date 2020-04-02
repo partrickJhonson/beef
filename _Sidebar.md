@@ -45,4 +45,3 @@
 1. [[Other|Other]]
 1. [[References|References]]
 1. [[Modules|BeEF-modules]]
-1. [[Live CD|BeEF-Live-CD]]
