@@ -238,6 +238,14 @@ To stop your container:
 ```bash
   $ docker stop beef
 ```
+
+
+To start your container:
+
+```bash
+  $ docker start beef
+```
+
 ### Troubleshooting
 
 If you run into this error:
