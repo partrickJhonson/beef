@@ -188,7 +188,7 @@ $ git pull
 
 **Pre-requisites:** [Source Code](#source), [Docker](#docker-setup)
 
-If you'd prefer not to have to worry about configuring your host environment, running BeEF through Docker may be a better solution for you.
+Running BeEF through Docker alleviates any host setup pains, making the installation process as simple as executing a few commands.
 
 ### Setting Your Credentials
 
