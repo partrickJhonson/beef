@@ -19,9 +19,10 @@ You will not find MacOS installation instructions in this guide. They are curren
 - [Docker Setup](#docker-setup)
   - [Setting Your Credentials](#setting-your-credentials)
   - [Building Your Image & Container](#building-your-image--container)
+  - [Troubleshooting](#troubleshooting)
   - [Connecting to BeEF](#connecting-to-beef)
   - [Updating Your Image](#updating-your-image)
-  - [Troubleshooting](#troubleshooting)
+  
 
 ## Prerequisites
 
@@ -237,6 +238,17 @@ To stop your container:
 ```bash
   $ docker stop beef
 ```
+### Troubleshooting
+
+If you run into this error:
+
+```bash
+  You must use Bundler 2 or greater with this lockfile.
+  The command '/bin/sh -c apk add --no-cache git curl libcurl curl-dev ruby-dev libffi-dev make g++ gcc musl-dev zlib-dev sqlite-dev &&   bundle install --system --clean --no-cache \
+  --gemfile=/beef/Gemfile $BUNDLER_ARGS &&   rm -rf /usr/local/bundle/cache' returned a non-zero code: 20
+```
+
+Delete the Gemfile.lock from your BeEF directory and try again.
 
 ### Connecting to BeEF
 
@@ -263,18 +275,6 @@ Once you've identifed your containers IP address navigate to `http://IP_ADDRESS:
 ### Updating Your Image
 
 Every time you pull down the latest source code (`git pull origin master`), or update using `/beef/update-beef` you will need to rebuild your image as described above.
-
-### Troubleshooting
-
-If you run into this error:
-
-```bash
-  You must use Bundler 2 or greater with this lockfile.
-  The command '/bin/sh -c apk add --no-cache git curl libcurl curl-dev ruby-dev libffi-dev make g++ gcc musl-dev zlib-dev sqlite-dev &&   bundle install --system --clean --no-cache \
-  --gemfile=/beef/Gemfile $BUNDLER_ARGS &&   rm -rf /usr/local/bundle/cache' returned a non-zero code: 20
-```
-
-Delete the Gemfile.lock from your BeEF directory and try again.
 
 ***
 [[Introducing BeEF|Introducing BeEF]] | [[Configuration|Configuration]
