@@ -1,7 +1,7 @@
 ## I - Starting BeEF
 
 1. [[Introducing BeEF|Introducing-BeEF]]
-1. [[Installation on Linux and MacOS|Installation]]
+1. [[Installation|Installation]]
 
 ## II - Basic Utilization
 
