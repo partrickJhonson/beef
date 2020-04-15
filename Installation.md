@@ -285,4 +285,4 @@ Once you've identifed your containers IP address navigate to `http://IP_ADDRESS:
 Every time you pull down the latest source code (`git pull origin master`), or update using `/beef/update-beef` you will need to rebuild your image as described above.
 
 ***
-[[Introducing BeEF|Introducing BeEF]] | [[Configuration|Configuration]
+[[Introducing BeEF|Introducing BeEF]] | [[Configuration|Configuration]]
