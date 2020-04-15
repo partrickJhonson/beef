@@ -193,7 +193,7 @@ Running BeEF through Docker alleviates any host setup pains, making the installa
 
 ### Setting Your Credentials
 
-It is essential that you set your credentials BEFORE building your Docker image. BeEF by default has it's credentials set to `beef:beef`, but allow authentication with default credentials. Consequently if you build your image without changing the credentials you will not be able to authenticate to BeEF through your container.
+It is essential that you set your credentials BEFORE building your Docker image. BeEF by default has it's credentials set to `beef:beef`, but does not allow authentication with default credentials. Consequently if you build an image without changing the credentials you will not be able to authenticate your container's BeEF instance.
 
 With your preferred text editor open the `config.yaml` file found in the BeEF root folder:
 
