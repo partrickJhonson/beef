@@ -22,5 +22,10 @@ It does a lot of checks in the command module for the type of browser and respon
 They can be found here:
 * [Code](https://github.com/beefproject/beef/tree/master/modules/network/fetch_port_scanner/command.js)
 
+There are a statements to check what the type of browser is and uses that to determine what type it is and then uses those responses to determine if a port is open.
+
+The times have been determined after testing but may be subject to environment issues, please let us know if there are any issues. 
+A common issue is that if a port isnt returning back data it can lead to timeout.
+If a port is not sending back information it is possible that its in use by something else. Test with a server if youre having that issues.
 
 ## Feedback
