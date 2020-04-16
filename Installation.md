@@ -240,7 +240,7 @@ To stop your container:
 ```
 
 
-To start your container:
+To start it again after having stopped it:
 
 ```bash
   $ docker start beef
