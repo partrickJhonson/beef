@@ -26,6 +26,8 @@ There are a statements to check what the type of browser is and uses that to det
 
 The times have been determined after testing but may be subject to environment issues, please let us know if there are any issues. 
 A common issue is that if a port isnt returning back data it can lead to timeout.
-If a port is not sending back information it is possible that its in use by something else. Test with a server if youre having that issues.
+
+If a port is not sending back information it is possible that its in use by something else, its unfortunately hard to tell if thats the case as firefox and chrome may not send back any information. 
+
 
 ## Feedback
