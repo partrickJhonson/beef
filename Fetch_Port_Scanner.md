@@ -1,27 +1,26 @@
 ## Summary
 
-* **Description**: Scan ports in a given hostname, using WebSockets, CORS and img tags. It uses the three methods to avoid blocked ports or Same Origin Policy."
+* **Description**: Uses fetch to test the response in order to determine if a port is open or not."
 * **Authors**: Crimes by will, jcrew99
 * **Browsers**: Firefox, Chrome
 * **Parameters** :
-   * **IP or Hostname** : IP or hostname of the target to be scanned (only one per command)
-   * **Specific ports to scan** : list of ports to be scanned
-   * **Closed port timeout** : Time-out to detect closed port (in ms, default is 1100)
-   * **Open port time-out** : Time-out to detect open port (in ms, default is 2500ms)
-   * **Delay between requests** : in ms, default is 600ms
-   * **Debug** : Debug mode set to false by default
-* [Code](https://github.com/beefproject/beef/tree/master/modules/network/port_scanner)
+   * **ipHost** : IP or hostname of the target to be scanned (only one per command)
+   * **ports** : list of ports to be scanned
+
+* [Code](https://github.com/beefproject/beef/tree/master/modules/network/fetch_port_scanner)
 
 ## Internal Working
+There are two defined types of ports that are in an array which can be used for common ports.
+They are these, which you can use type in for ports which contain a common list to be scanned:
+ * default 
+ * top
 
-[Description to be done] Code is [here](https://github.com/beefproject/beef/blob/master/modules/network/port_scanner/command.js)
+There is a list of blocked ports which will not be scanned which are ones that will not return 
 
-## Screenshots
+The scan has a timeout timer of 5 seconds for a response, based on testing this was what got the most common response times. 
+It does a lot of checks in the command module for the type of browser and response times, see below in the code for what the times are.
+They can be found here:
+* [Code](https://github.com/beefproject/beef/tree/master/modules/network/fetch_port_scanner/command.js)
 
-_Command_ :
-[[Images/module-port-scanner1.png|align=center]]
-
-_Result_ :
-[[Images/module-port-scanner2.png|align=center]]
 
 ## Feedback
