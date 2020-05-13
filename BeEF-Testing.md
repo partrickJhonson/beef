@@ -175,7 +175,7 @@ To check Ruby Gems for known vulnerabilities, run:
 
 
 ## Conclusion
-We are actively working to improve the BeEF testing suite, exploring also TeamCity and other testing solutions with Virtual Machines. We'll do our best to keep this page updated. For any trouble, do not hesitate to contact us via email/twitter.
+We are actively working to improve the BeEF testing suite and exploring other testing solutions. For any trouble, do not hesitate to contact us via email/twitter or by raising a ticket in Github!
 
 ***
 [[Creating An Extension|Creating An Extension]] | [[Database Schema|Database Schema]]
