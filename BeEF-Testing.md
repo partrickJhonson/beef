@@ -18,7 +18,7 @@ Otherwise, to run only some testing categories, for instance 'spec', run:
 
 `bundle exec rake spec`
 
-Before running the tests locally on your machine, you may want to change the values of ATTACK_DOMAIN and VICTIM_DOMAIN in `<beef_root>/test/common/test_constants.rb`, to something like:
+Before running the tests locally on your machine, you may want to change the values of ATTACK_DOMAIN and VICTIM_DOMAIN in `<beef_root>/spec/support/test_constants.rb`, to something like:
 
 ```ruby
 ATTACK_DOMAIN = "127.0.0.1"
