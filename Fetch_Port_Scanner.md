@@ -29,5 +29,15 @@ A common issue is that if a port isnt returning back data it can lead to timeout
 
 If a port is not sending back information it is possible that its in use by something else, its unfortunately hard to tell if thats the case as firefox and chrome may not send back any information. 
 
+## Compatibility
+|  Browser  | Versions  |
+| :-------- | :-------: |
+| 'Firefox' | 75 - 61    |
+| 'Chrome'  | 81 - 77 |
+| 'Edge' | 81 - 44 |
+| 'Opera' | 68 - 29 |
+| 'Epiphany' | 85 - 81 |
+| 'Safari' | **Untested**  |
+| 'Internet Explorer' | **Fetch API not supported** |
 
 ## Feedback
