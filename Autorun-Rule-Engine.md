@@ -4,7 +4,7 @@ that are automatically triggered on the hooked browser if certain conditions are
 
 If you are a BeEF aficionado, you were probably waiting for this for a long time :-) The old static autorun functionality has been removed. The main features of the new ARE are the following:
 * **Dynamic:**
-  * Pre-load rules from `<beef_root>/arerules/` enabled directory at start-up, or load them at runtime while BeEF is 
+  * Pre-load rules from `<beef_root>/arerules/enabled` directory at start-up, or load them at runtime while BeEF is 
     running, then trigger them on each hooked browser.
   * RESTful API calls are documented in detail later here.
 * **Non-intrusive:**
