@@ -178,4 +178,4 @@ To check Ruby Gems for known vulnerabilities, run:
 We are actively working to improve the BeEF testing suite and exploring other testing solutions. For any trouble, do not hesitate to contact us via email/twitter or by raising a ticket in Github!
 
 ***
-[[Creating An Extension|Creating An Extension]] | [[Database Schema|Database Schema]]
+[[Creating An Extension|Creating An Extension]] | [[Compatibility|Compatibility]]
