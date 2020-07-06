@@ -439,4 +439,4 @@ cid | name | type | notnull | default | pk
 8 | is_finished | boolean | 0 |  | 0
 
 ***
-[[Compatibility|Compatibility]] | [[Milestones|Milestones]]
+[Browser & OS Compatibility](https://github.com/beefproject/beef/wiki/Browser-&-OS-Compatibility) | [[Milestones|Milestones]]
