@@ -34,7 +34,7 @@
 1. [[Step By Step Module Creation|Module-Creation-Steps]]
 1. [[Creating a New Extension|Creating-An-Extension]]
 1. [[BeEF Testing|BeEF-Testing]]
-1. [[Browser & OS Compatibility|Browser & OS Compatibility]]
+1. [Browser & OS Compatibility](https://github.com/beefproject/beef/wiki/Browser-&-OS-Compatibility)
 1. [[Database Schema|Database-Schema]]
 1. [[Development Milestones|Milestones]]
 1. [Command Module Config](https://github.com/beefproject/beef/wiki/Command-Module-Config)
