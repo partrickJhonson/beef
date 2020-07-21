@@ -47,7 +47,7 @@ $ beef/config.yaml.beef.restrictions.https
 
 The web interface for hooking or managing BeEF can be limited by subnet. 
 
-This can be done in the [`beef/config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file under the Interface / IP restrictions subsection (`beef/config.yaml.beef.restrictions.https`)
+This can be done in the [`beef/config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file under the Interface / IP restrictions subsection (`beef/config.yaml.beef.restrictions`)
 
 
 **Access to the management interface should be restricted using the `permitted_ui_subnet` access control.**
