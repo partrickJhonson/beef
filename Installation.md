@@ -182,7 +182,12 @@ it's best to regularly update BeEF to the latest version.
 If you're using BeEF from the GitHub repository, updating is as simple as:
 
 ```bash
+$ ./update-beef
+```
+OR manually with
+```bash
 $ git pull
+$ bundle
 ```
 
 ## Docker Setup
