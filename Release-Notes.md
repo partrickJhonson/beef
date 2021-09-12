@@ -126,7 +126,7 @@ The code used to delete the zombie referenced the hb_id
   });
 ```
 
-Do make sure the delete for both online/offline will work the following code could be used.
+To make sure the delete for both online/offline will work the following code could be used.
 Splits the id by `-` and references the last substring which contains the ID.
 
 ```Javascript
