@@ -46,4 +46,4 @@
 1. [[Other|Other]]
 1. [[References|References]]
 1. [[Modules|BeEF-modules]]
-1. [[ReleaeseNotes|ReleaseNotes]]
+1. [[ReleaeseNotes|Release-Notes]]
