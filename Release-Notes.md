@@ -1,6 +1,4 @@
-# Release Notes
-
-***
+This section is dedicated to a more verbose release notes.
 
 ## 0.5.2.0
 
