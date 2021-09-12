@@ -96,6 +96,41 @@ Ngrok would use the https protocol and if the user did not setup the beef local 
 
 With the net configuration items, the user can now have a https proxy that redirects to a http local host, please see the new setup instructions for ngrok [here](https://github.com/beefproject/beef/wiki/FAQ#how-do-i-configure-beef-with-ngrok)
 
+### Usability - `./beef` now includes user prompt to pull the latest repo and update BeEF. 
+
+The automatic pull and update prompt will timeout after 5 seconds and skip the update process. Found in `./beef` as shown:
+
+```Ruby
+if BeEF::Core::Console::CommandLine.parse[:update_disabled] == false
+  if BeEF::Core::Console::CommandLine.parse[:update_auto] == true
+  print "Pulling latest BeEF repository and updating"
+  `git pull && bundle`  
+  else
+    begin
+      answer = Timeout::timeout(5) do
+        print "Would you like to check and download the latest BeEF update? y/n: " 
+        response = gets
+        `git pull && bundle` if response.strip == 'y' 
+      end
+      rescue Timeout::Error
+        puts "\nUpdate Skipped with input timeout"
+      end
+  end
+end
+```
+
+Additionally there are 2 flags to allow update auto ('-ua') and update disabled ('-ud') added to the `commandline.rb` startup options as shown below:
+
+```Ruby
+              opts.on('-ud', '--update_disabled', 'Skips update') do 
+                @options[:update_disabled] = true
+              end
+
+              opts.on('-ua', '--update_auto', 'Automatic update with no prompt') do 
+                @options[:update_auto] = true
+              end
+```
+
 ### Fixed - Cannot delete offline hook browsers (#2044)
 Extension: Admin UI
 
