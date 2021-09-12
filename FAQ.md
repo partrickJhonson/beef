@@ -46,8 +46,21 @@ $ ngrok http 3000
 Specify the public domain name `beef.http.public` and public port `beef.http.public_port` in `config.yaml`:
 
 ```yaml
-        public: "<your-id>.ngrok.io"      # public hostname/IP address
-        public_port: "80"                 # public port (experimental) 
+        debug: false # Will print verbose message in BeEF console
+        host: "localhost" # IP address of the web server
+        port: "3000" #Port of the web server
+
+        public: 
+            host: "<your-id>.ngrok.io"      # public hostname/IP address
+            port: "443"
+            https: true
+
+        # Reverse Proxy / NAT
+        # If you want BeEF to be accessible behind a reverse proxy or NAT,
+        #   set both the publicly accessible hostname/IP address and port below:
+        # NOTE: Allowing the reverse proxy will enable a vulnerability where the ui/panel can be spoofed
+        #   by altering the X-FORWARDED-FOR ip address in the request header.
+        allow_reverse_proxy: true
 ```
 
 You should then be able to access BeEF using the following URL:
