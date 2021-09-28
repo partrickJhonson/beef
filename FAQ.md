@@ -89,3 +89,20 @@ export LC_ALL=en_US.UTF-8
 If you're getting the error `Your local changes to the following files would be overwritten by merge: Gemfile.lock` it means BeEF's dependencies were recently updated.
 
 To fix, run `git checkout Gemfile.lock`, then update BeEF and run `bundle install` to install the updated packages.
+
+### Installation of BeEF on Raspbian
+
+#### Error with package installation gcc9 using Rpi 3b+ and raspbian
+
+You get an error executing install script from beef, about gcc9 packages that are not found.
+
+#### Solution
+
+You need at first to follow this steps but be careful, installing gcc9 not 10
+https://solarianprogrammer.com/2017/12/08/raspberry-pi-raspbian-install-gcc-compile-cpp-17-programs/
+
+Then, you will need to edit 'install' file and find where is using apt-get to install gcc9 and clear dev and lib packages.
+
+That's all, beef will be on your RPi without problems 👍 
+
+Credit @f1se4 
